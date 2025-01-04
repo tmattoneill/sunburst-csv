@@ -1,0 +1,18 @@
+{
+  "name": "Root",
+  "value": 1000,
+  "children": [
+    {
+      "name": "Category A",
+      "value": 400,
+      "children": [
+        { "name": "Item A1", "value": 150 },
+        { "name": "Item A2", "value": 250 }
+      ]
+    },
+    {
+      "name": "Category B",
+      "value": 600
+    }
+  ]
+}
