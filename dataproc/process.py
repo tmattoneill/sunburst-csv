@@ -120,13 +120,14 @@ def update_json_tree(tree: Dict[str, Any], path: list, value: float, colors: lis
 
         current = next_node
 
-def create_sunburst_json(input_path: str, output_path: str) -> None:
+def create_sunburst_json(input_path: str, output_path: str, skip_header: bool = False) -> None:
     """
     Create a sunburst chart JSON from CSV data, processing one row at a time.
 
     Args:
         input_path: Path to input CSV file
         output_path: Path to output JSON file
+        skip_header: Whether to skip the first row of the CSV (default: False)
     """
     # Increase CSV field size limit for long rows
     maxInt = sys.maxsize
@@ -139,8 +140,8 @@ def create_sunburst_json(input_path: str, output_path: str) -> None:
 
     # Define colors for first level
     colors = [
-        '#2f4554', '#c23531', '#d48265', '#91c7ae', '#749f83',
-        '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'
+        '#03045e', '#0077b6', '#00b4d8', '#90e0ef', '#023e8a',
+        '#0096c7', '#48cae4', '#ade8f4', '#caf0f8', '#014f86'
     ]
 
     # Initialize the tree
@@ -150,7 +151,8 @@ def create_sunburst_json(input_path: str, output_path: str) -> None:
     try:
         with open(input_path, 'r', encoding='utf-8') as f:
             reader = csv.reader(f, quoting=csv.QUOTE_MINIMAL)
-            next(reader)  # Skip header
+            if skip_header:
+                next(reader)  # Skip header only if requested
 
             for row in reader:
                 try:
@@ -171,4 +173,4 @@ def create_sunburst_json(input_path: str, output_path: str) -> None:
         print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
-    create_sunburst_json('../data/dataset.csv', '../data/sunburst_data.json')
+    create_sunburst_json('../data/dataset.csv', '../data/sunburst_data.json', skip_header=False)

@@ -41,7 +41,7 @@ export default {
             rotate: 'tangential',
             overflow: 'truncate',
             ellipsis: '...',
-            fontSize: '12',
+            fontSize: '11',
           },
         },
       };

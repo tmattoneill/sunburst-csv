@@ -1,51 +1,111 @@
 {
   "name": "Root",
-  "value": 91.0,
+  "value": 231.0,
   "children": [
     {
       "name": "A",
-      "value": 10.0,
+      "value": 46.0,
       "itemStyle": {
-        "color": "#2f4554"
+        "color": "#03045e"
       },
       "children": [
         {
           "name": "A1",
-          "value": 10.0,
+          "value": 31.0,
           "itemStyle": {
-            "color": "#2f4554"
+            "color": "#03045e"
           },
           "children": [
             {
               "name": "A1a",
-              "value": 10.0,
+              "value": 11.0,
               "itemStyle": {
-                "color": "#2f4554"
+                "color": "#03045e"
+              },
+              "children": [
+                {
+                  "name": "A1ab",
+                  "value": 1.0,
+                  "itemStyle": {
+                    "color": "#03045e"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "A1b",
+              "value": 20.0,
+              "itemStyle": {
+                "color": "#03045e"
               }
             }
           ]
+        },
+        {
+          "name": "A2",
+          "value": 15.0,
+          "itemStyle": {
+            "color": "#03045e"
+          }
         }
       ]
     },
     {
       "name": "B",
-      "value": -15.0,
+      "value": 60.0,
       "itemStyle": {
-        "color": "#c23531"
+        "color": "#0077b6"
       },
       "children": [
         {
-          "name": "B1, with comma",
-          "value": -15.0,
+          "name": "B1",
+          "value": 30.0,
           "itemStyle": {
-            "color": "#c23531"
+            "color": "#0077b6"
           },
           "children": [
             {
               "name": "B1a",
-              "value": -15.0,
+              "value": 10.0,
               "itemStyle": {
-                "color": "#c23531"
+                "color": "#0077b6"
+              }
+            },
+            {
+              "name": "B1b",
+              "value": 20.0,
+              "itemStyle": {
+                "color": "#0077b6"
+              }
+            }
+          ]
+        },
+        {
+          "name": "B2",
+          "value": 10.0,
+          "itemStyle": {
+            "color": "#0077b6"
+          }
+        },
+        {
+          "name": "B3",
+          "value": 20.0,
+          "itemStyle": {
+            "color": "#0077b6"
+          },
+          "children": [
+            {
+              "name": "B3a",
+              "value": 15.0,
+              "itemStyle": {
+                "color": "#0077b6"
+              }
+            },
+            {
+              "name": "B3b",
+              "value": 5.0,
+              "itemStyle": {
+                "color": "#0077b6"
               }
             }
           ]
@@ -54,76 +114,104 @@
     },
     {
       "name": "C",
-      "value": 25.0,
+      "value": 45.0,
       "itemStyle": {
-        "color": "#d48265"
+        "color": "#00b4d8"
       },
       "children": [
         {
           "name": "C1",
-          "value": 25.0,
+          "value": 15.0,
           "itemStyle": {
-            "color": "#d48265"
+            "color": "#00b4d8"
+          }
+        },
+        {
+          "name": "C2",
+          "value": 30.0,
+          "itemStyle": {
+            "color": "#00b4d8"
           },
           "children": [
             {
-              "name": "C1a",
+              "name": "C2a",
               "value": 25.0,
               "itemStyle": {
-                "color": "#d48265"
-              },
-              "children": [
-                {
-                  "name": "C1a1",
-                  "value": 25.0,
-                  "itemStyle": {
-                    "color": "#d48265"
-                  },
-                  "children": [
-                    {
-                      "name": "C1a1a",
-                      "value": 25.0,
-                      "itemStyle": {
-                        "color": "#d48265"
-                      },
-                      "children": [
-                        {
-                          "name": "C1a1a1",
-                          "value": 25.0,
-                          "itemStyle": {
-                            "color": "#d48265"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+                "color": "#00b4d8"
+              }
+            },
+            {
+              "name": "C2b",
+              "value": 5.0,
+              "itemStyle": {
+                "color": "#00b4d8"
+              }
             }
           ]
         }
       ]
     },
     {
-      "name": "émoji_node",
-      "value": 5.0,
+      "name": "D",
+      "value": 15.0,
       "itemStyle": {
-        "color": "#91c7ae"
+        "color": "#90e0ef"
       },
       "children": [
         {
-          "name": "🌟",
-          "value": 5.0,
+          "name": "D1",
+          "value": 15.0,
           "itemStyle": {
-            "color": "#91c7ae"
+            "color": "#90e0ef"
+          }
+        }
+      ]
+    },
+    {
+      "name": "E",
+      "value": 55.0,
+      "itemStyle": {
+        "color": "#023e8a"
+      },
+      "children": [
+        {
+          "name": "E1",
+          "value": 55.0,
+          "itemStyle": {
+            "color": "#023e8a"
           },
           "children": [
             {
-              "name": "⭐",
-              "value": 5.0,
+              "name": "E1a",
+              "value": 55.0,
               "itemStyle": {
-                "color": "#91c7ae"
-              }
+                "color": "#023e8a"
+              },
+              "children": [
+                {
+                  "name": "E1aa",
+                  "value": 55.0,
+                  "itemStyle": {
+                    "color": "#023e8a"
+                  },
+                  "children": [
+                    {
+                      "name": "E1aaa",
+                      "value": 30.0,
+                      "itemStyle": {
+                        "color": "#023e8a"
+                      }
+                    },
+                    {
+                      "name": "E1aab",
+                      "value": 25.0,
+                      "itemStyle": {
+                        "color": "#023e8a"
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -131,217 +219,11 @@
     },
     {
       "name": "F",
-      "value": 0.0,
+      "value": 10.0,
       "itemStyle": {
-        "color": "#749f83"
+        "color": "#0096c7"
       },
       "children": []
-    },
-    {
-      "name": "G",
-      "value": 0.0,
-      "itemStyle": {
-        "color": "#ca8622"
-      },
-      "children": [
-        {
-          "name": "G1",
-          "value": 0.0,
-          "itemStyle": {
-            "color": "#ca8622"
-          }
-        }
-      ]
-    },
-    {
-      "name": "H",
-      "value": 1.0,
-      "itemStyle": {
-        "color": "#bda29a"
-      },
-      "children": [
-        {
-          "name": "H1",
-          "value": 1.0,
-          "itemStyle": {
-            "color": "#bda29a"
-          },
-          "children": [
-            {
-              "name": "H2",
-              "value": 1.0,
-              "itemStyle": {
-                "color": "#bda29a"
-              },
-              "children": [
-                {
-                  "name": "H3",
-                  "value": 1.0,
-                  "itemStyle": {
-                    "color": "#bda29a"
-                  },
-                  "children": [
-                    {
-                      "name": "H4",
-                      "value": 1.0,
-                      "itemStyle": {
-                        "color": "#bda29a"
-                      },
-                      "children": [
-                        {
-                          "name": "H5",
-                          "value": 1.0,
-                          "itemStyle": {
-                            "color": "#bda29a"
-                          },
-                          "children": [
-                            {
-                              "name": "H6",
-                              "value": 1.0,
-                              "itemStyle": {
-                                "color": "#bda29a"
-                              },
-                              "children": [
-                                {
-                                  "name": "H7",
-                                  "value": 1.0,
-                                  "itemStyle": {
-                                    "color": "#bda29a"
-                                  },
-                                  "children": [
-                                    {
-                                      "name": "H8",
-                                      "value": 1.0,
-                                      "itemStyle": {
-                                        "color": "#bda29a"
-                                      },
-                                      "children": [
-                                        {
-                                          "name": "H9",
-                                          "value": 1.0,
-                                          "itemStyle": {
-                                            "color": "#bda29a"
-                                          },
-                                          "children": [
-                                            {
-                                              "name": "H10",
-                                              "value": 1.0,
-                                              "itemStyle": {
-                                                "color": "#bda29a"
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "I",
-      "value": 30.0,
-      "itemStyle": {
-        "color": "#6e7074"
-      },
-      "children": [
-        {
-          "name": "I1",
-          "value": 30.0,
-          "itemStyle": {
-            "color": "#6e7074"
-          },
-          "children": [
-            {
-              "name": "I1a",
-              "value": 30.0,
-              "itemStyle": {
-                "color": "#6e7074"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Super, Duper, Really Really Long Node Name",
-      "value": 5.0,
-      "itemStyle": {
-        "color": "#546570"
-      },
-      "children": [
-        {
-          "name": "Short Child",
-          "value": 5.0,
-          "itemStyle": {
-            "color": "#546570"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Z",
-      "value": 30.0,
-      "itemStyle": {
-        "color": "#c4ccd3"
-      },
-      "children": [
-        {
-          "name": "Z1",
-          "value": 30.0,
-          "itemStyle": {
-            "color": "#c4ccd3"
-          },
-          "children": [
-            {
-              "name": "Z1a",
-              "value": 30.0,
-              "itemStyle": {
-                "color": "#c4ccd3"
-              },
-              "children": [
-                {
-                  "name": "Z1a1",
-                  "value": 30.0,
-                  "itemStyle": {
-                    "color": "#c4ccd3"
-                  },
-                  "children": [
-                    {
-                      "name": "Z1a1a",
-                      "value": 30.0,
-                      "itemStyle": {
-                        "color": "#c4ccd3"
-                      },
-                      "children": [
-                        {
-                          "name": "$$##@@",
-                          "value": 30.0,
-                          "itemStyle": {
-                            "color": "#c4ccd3"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }
