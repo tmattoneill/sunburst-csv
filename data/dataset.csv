@@ -1,15 +1,14 @@
 level1,level2,level3,size
 A,A1,A1a,10
-A,A1,A1b,20
-A,A2,15
-B,B1,B1a,10
-B,B1,B1b,20
-B,B2,10
-B,B3,B3a,15
-B,B3,B3b,5
-C,C1,15
-C,C2,C2a,25
-C,C2,C2b,5
-D,D1,15
-E,E1,E1a,E1aa,E1aaa,30
-F,10
+,,
+B,"B1, with comma",B1a,-15
+C,C1,C1a,C1a1,C1a1a,C1a1a1,25
+
+émoji_node,🌟,⭐,5
+F,0
+G,G1,0
+H,H1,H2,H3,H4,H5,H6,H7,H8,H9,H10,1
+I,I1,I1a,10
+I,I1,I1a,20
+"Super, Duper, Really Really Long Node Name",Short Child,5
+Z,Z1,Z1a,Z1a1,Z1a1a,$$##@@,30

@@ -1,11 +1,12 @@
-import pandas as pd
-import json
 import csv
+import json
 from typing import Dict, Any
+import sys
 
 def process_row(row: list) -> tuple[str, list, float]:
     """
     Process a single CSV row, returning the key (top level parent), path, and value.
+    Handles arbitrary length rows and values at any position.
 
     Args:
         row: A list of values from the CSV
@@ -16,26 +17,32 @@ def process_row(row: list) -> tuple[str, list, float]:
             - path: List of node names leading to the value
             - value: The numeric value for this path
     """
-    # Strip empty values from end of row
-    while row and not row[-1]:
-        row.pop()
+    # Clean the row - remove empty strings and whitespace
+    cleaned_row = [str(item).strip() for item in row if item and str(item).strip()]
 
-    if not row:
+    if not cleaned_row:
         return None, None, None
 
-    # Find the first non-empty value (key) and build path until we hit a number
+    # Find the first non-empty value for key and collect path until we hit a number
     path = []
     value = None
     key = None
 
-    for item in row:
-        if not item:  # Skip empty values
+    for item in cleaned_row:
+        if not item:  # Skip any remaining empty values
             continue
 
-        # Try to convert to float
+        # Try to convert to float (handle negative numbers and zero)
         try:
-            value = float(item)
-            break
+            test_val = float(item)
+            # Don't count 0 as a number if it's the first item (could be a node name)
+            if test_val == 0 and not path:
+                if key is None:
+                    key = item
+                path.append(item)
+            else:
+                value = test_val
+                break
         except ValueError:
             if key is None:
                 key = item
@@ -121,6 +128,15 @@ def create_sunburst_json(input_path: str, output_path: str) -> None:
         input_path: Path to input CSV file
         output_path: Path to output JSON file
     """
+    # Increase CSV field size limit for long rows
+    maxInt = sys.maxsize
+    while True:
+        try:
+            csv.field_size_limit(maxInt)
+            break
+        except OverflowError:
+            maxInt = int(maxInt/10)
+
     # Define colors for first level
     colors = [
         '#2f4554', '#c23531', '#d48265', '#91c7ae', '#749f83',
@@ -131,22 +147,28 @@ def create_sunburst_json(input_path: str, output_path: str) -> None:
     tree = {}
 
     # Process the CSV one row at a time
-    with open(input_path, 'r') as f:
-        reader = csv.reader(f)
-        next(reader)  # Skip header
-
-        for row in reader:
-            key, path, value = process_row(row)
-            if key and path and value is not None:
-                update_json_tree(tree, path, value, colors)
-
-    # Save the result
-    with open(output_path, 'w') as f:
-        json.dump(tree, f, indent=2)
-
-if __name__ == "__main__":
     try:
-        create_sunburst_json('../data/dataset.csv', '../data/sunburst_data.json')
-        print("Data processed and saved to ../data/sunburst_data.json")
+        with open(input_path, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f, quoting=csv.QUOTE_MINIMAL)
+            next(reader)  # Skip header
+
+            for row in reader:
+                try:
+                    key, path, value = process_row(row)
+                    if key and path and value is not None:
+                        update_json_tree(tree, path, value, colors)
+                except Exception as e:
+                    print(f"Warning: Error processing row {row}: {str(e)}")
+                    continue
+
+        # Save the result
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(tree, f, indent=2, ensure_ascii=False)
+
+        print(f"Data processed and saved to {output_path}")
+
     except Exception as e:
         print(f"Error: {str(e)}")
+
+if __name__ == "__main__":
+    create_sunburst_json('../data/dataset.csv', '../data/sunburst_data.json')
