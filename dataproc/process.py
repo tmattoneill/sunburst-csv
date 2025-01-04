@@ -63,7 +63,7 @@ def update_json_tree(tree: Dict[str, Any], path: list, value: float, colors: lis
     # Initialize if this is the first entry
     if 'name' not in tree:
         tree.update({
-            'name': 'Root',
+            'name': 'zMaticoo',
             'value': 0,
             'children': []
         })

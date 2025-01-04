@@ -7,9 +7,9 @@ def process_security_data():
 
         # Group by the requested columns and count occurrences
         grouped_data = df.groupby([
+            'Expected Behavior',
             'Provider Account',
             'Publisher Name',
-            'Expected Behavior',
             'Malware Condition'
         ]).size().reset_index(name='Count')
 

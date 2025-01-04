@@ -1,225 +1,252 @@
-Provider Account,Publisher Name,Expected Behavior,Malware Condition,Count
-Inspiritum_dsp,unityads,Phishing,Phishing Domain,68
-bidswitch_dsp,unityads,Impression Fraud,Ad Fraud,66
-pubnative,applovinalx,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,50
-pubnative,applovinalx,Impression Fraud,Ad Fraud,46
-bidswitch_dsp,vungle,Phishing,Phishing Domain,45
-bidswitch_dsp,fyber,Impression Fraud,Ad Fraud,43
-startio_dsp,mvungle,Phishing,Scam,40
-bidswitch_dsp,unityads,Phishing,Phishing Domain,39
-Inspiritum_dsp,fyber,Phishing,Phishing Domain,37
-bidswitch_dsp,unityads,Out-of-browser Redirect,App Store Redirect iOS,27
-Inspiritum_dsp,pubnative,Phishing,Phishing Domain,25
-sape_dsp,vungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,24
-bidswitch_dsp,fyber,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,23
-bidswitch_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,23
-bidswitch_dsp,vungle,Out-of-browser Redirect,App Store Redirect iOS,22
-sape_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,22
-Inspiritum_dsp,algorixeu,Phishing,Phishing Domain,20
-adsyield_dsp,fyber,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,19
-sape_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,19
-bidswitch_dsp,unityads,Out-of-browser Redirect,App Store Redirect Android,19
-bidswitch_dsp,fyberdisplay,Phishing,Phishing Domain,18
-adwmg_dsp,mvungle,Phishing,Scam,18
-bidswitch_dsp,mvungle,Impression Fraud,Ad Fraud,18
-Inspiritum_dsp,fyberdisplay,Phishing,Phishing Domain,17
-bidswitch_dsp,vungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,16
-startio_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,15
-xiaomi_dsp,unityads,Impression Fraud,Ad Fraud,15
-bidswitch_dsp,mvungle,Out-of-browser Redirect,App Store Redirect iOS,15
-bidswitch_dsp,vungle,Impression Fraud,Ad Fraud,15
-bidswitch_dsp,fyber,Out-of-browser Redirect,App Store Redirect Android,14
-zzmobi,seedtag,Phishing,Redirector,14
-bidswitch_dsp,fyber,Out-of-browser Redirect,App Store Redirect iOS,13
-bidswitch_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,13
-shareit_dsp,fyberdisplay,Impression Fraud,Ad Fraud,11
-startio_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,11
-Adsolut Media_dsp,unityads,Phishing,GhostCat - 3PC,10
-smartad_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,10
-nasmedia_dsp,unityads,Impression Fraud,Ad Fraud,10
-pubnative,applovinalx,Phishing,Scam,10
-aceex_dsp,unityads,Phishing,Phishing Domain,9
-algorix_dsp,applovinalx,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,9
-bidswitch_dsp,vungleus,Impression Fraud,Ad Fraud,9
-almaty_dsp,snow,Impression Fraud,Ad Fraud,8
-algorix_dsp,fyberdisplay,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,8
-bidswitch_dsp,mvungle,Phishing,Phishing Domain,8
-aceexchange_dsp,prebid,Impression Fraud,Ad Fraud,8
-Adsolut Media_dsp,unityads,Impression Fraud,Ad Fraud,8
-bidswitch_dsp,fyberdisplay,Impression Fraud,Ad Fraud,8
-pubnative,xiaomi,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,8
-magnite_dsp,mvungle,Impression Fraud,Ad Fraud,7
-betweenx_dsp,unityads,Impression Fraud,Ad Fraud,7
-bidswitch_dsp,mvungle,Out-of-browser Redirect,App Store Redirect Android,7
-bidswitch_dsp,fyber,Phishing,Phishing Domain,7
-nasmedia_dsp,prebid,Impression Fraud,Ad Fraud,7
-xiaomi_dsp,prebid,Impression Fraud,Ad Fraud,7
-smartad_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7
-pubnative,applovinalx,Out-of-browser Redirect,App Store Redirect Android,7
-shareit_dsp,bidmachine,Impression Fraud,Ad Fraud,7
-snow_dsp,snow,Out-of-browser Redirect,App Store Redirect iOS,6
-startio_dsp,mvungle,Compromised Content,Compromised Domain,6
-smartad_dsp,vungle,Compromised Content,E-Skimming,6
-bidswitch_dsp,pubnative,Phishing,Phishing Domain,6
-bidswitch_dsp,vungle,Out-of-browser Redirect,App Store Redirect Android,6
-adwmg_dsp,mvungle,Compromised Content,Compromised Domain,5
-bidswitch_dsp,vungleus,Out-of-browser Redirect,App Store Redirect iOS,5
-Inspiritum_dsp,maticooads,Phishing,Phishing Domain,5
-magnite_dsp,unityads,Out-of-browser Redirect,App Store Redirect Android,5
-startio_dsp,fyber,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,5
-smartad_dsp,mvungle,Phishing,Scam,5
-webeye_dsp,xiaomi,Phishing,Redirector,5
-screencore_dsp,fyberdisplay,Phishing,GhostCat - 3PC,4
-pubnative,xiaomi,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,4
-magnite_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,4
-opera_dsp,unityads,Phishing,Scam,4
-aceex_dsp,algorixeu,Impression Fraud,Ad Fraud,4
-bidswitch_dsp,vungleus,Phishing,Phishing Domain,4
-bidswitch_dsp,vungleus,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,4
-algorix_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,4
-algorix_dsp,unity,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,4
-smartad_dsp,prebid,Compromised Content,Compromised Domain,4
-startio_dsp,mvungle,Phishing,Redirector,4
-startio_dsp,fyber,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,4
-startio_dsp,mvungle,Compromised Content,E-Skimming,4
-smartad_dsp,vungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,4
-shareit_dsp,mvungle,Impression Fraud,Ad Fraud,4
-outbrain,seedtag,Phishing,Scam,4
-startio_dsp,fyber,Compromised Content,SocGholish,4
-startio_dsp,mvungle,Compromised Content,SocGholish,3
-bidswitch_dsp,vungleus,Out-of-browser Redirect,App Store Redirect Android,3
-Inspiritum_dsp,xiaomi,Phishing,Phishing Domain,3
-bidease_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,3
-algorix_dsp,unity,Impression Fraud,Ad Fraud,3
-bidswitch_dsp,fyberdisplay,Out-of-browser Redirect,App Store Redirect iOS,3
-bidswitch_dsp,startio,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,3
-tpmn_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,3
-bidswitch_dsp,fyberdisplay,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,3
-mezzomedia_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,3
-rixengine_dsp,unityads,Impression Fraud,Ad Fraud,3
-pubnative,unity,Impression Fraud,Ad Fraud,3
-snow_dsp,unityads,Impression Fraud,Ad Fraud,3
-pubnative,applovinalx,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,3
-playdigo_dsp,fyberdisplay,Phishing,Phishing Domain,3
-magnite_dsp,unityads,Impression Fraud,Ad Fraud,3
-nasmedia_dsp,fyber,Impression Fraud,Ad Fraud,3
-smartad_dsp,mvungle,Compromised Content,E-Skimming,3
-smartad_dsp,mvungle,Compromised Content,SocGholish,3
-xiaomi_dsp,unityads,Out-of-browser Redirect,App Store Redirect Android,3
-smartad_dsp,mvungle,Impression Fraud,Ad Fraud,3
-smartad_dsp,vungleus,Compromised Content,SocGholish,3
-smartad_dsp,vungleus,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,3
-smartad_dsp,vungleus,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,2
-snow_dsp,snow,Impression Fraud,Ad Fraud,2
-startio_dsp,fyberdisplay,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,2
-startio_dsp,mvungle,Compromised Content,MudOrange-3PC,2
-webeye_dsp,mvungle,Impression Fraud,Ad Fraud,2
-smartad_dsp,vungleus,Phishing,Scam,2
-smartad_dsp,vungleus,Impression Fraud,Ad Fraud,2
-spinx_dsp,fyber,Compromised Content,Compromised Domain,2
-snow_dsp,vungle,Impression Fraud,Ad Fraud,2
-startio_dsp,fyberdisplay,Compromised Content,SocGholish,2
-sharethrough_dsp,vungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,2
-sape_dsp,vungle,Impression Fraud,Ad Fraud,2
-outbrain,seedtag,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,2
-magnite_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,2
-operasg_dsp,fyberdisplay,Impression Fraud,Ad Fraud,2
-pubnative,applovinalx,Out-of-browser Redirect,App Store Redirect iOS,2
-magnite_dsp,fyber,Out-of-browser Redirect,App Store Redirect Android,2
-bidease_dsp,unityads,Phishing,Phishing Domain,2
-adwmg_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,2
-aceexchange_dsp,fyber,Impression Fraud,Ad Fraud,2
-adsyield_dsp,fyber,Impression Fraud,Ad Fraud,2
-bidence_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,2
-algorix_dsp,applovinalx,Phishing,Redirector,2
-algorix_dsp,fyberctr,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,2
-almaty_dsp,prebid,Phishing,GhostCat - 3PC,2
-betweenx_dsp,fyber,Phishing,Phishing Domain,2
-adwmg_dsp,vungleus,Phishing,Scam,2
-adsyield_dsp,fyber,Phishing,Phishing Domain,2
-outbrain,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,2
-playdigo_dsp,fyber,Phishing,Phishing Domain,2
-screencore_dsp,snow,Impression Fraud,Ad Fraud,2
-startio_dsp,fyber,Compromised Content,Compromised Domain,2
-smartad_dsp,vungle,Phishing,Scam,2
-smartad_dsp,vungle,Phishing,Phishing Domain,2
-pubnative,applovinalx,Phishing,Phishing Domain,2
-magnite_dsp,mvungle,Out-of-browser Redirect,App Store Redirect Android,2
-aceex_dsp,fyberdisplay,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-algorix_dsp,unityads,Impression Fraud,Ad Fraud,1
-9dots_dsp,unityads,Phishing,Phishing Domain,1
-9dots_dsp,unityads,Phishing,Scam,1
-aceex_dsp,algorixeu,Phishing,Phishing Domain,1
-aceex_dsp,fyberdisplay,Fake Anti-virus,StringRipper - 3PC,1
-aceex_dsp,fyberdisplay,Impression Fraud,Ad Fraud,1
-adsyield_dsp,fyber,Compromised Content,Compromised Domain,1
-adsyield_dsp,fyberdisplay,Phishing,Phishing Domain,1
-aceex_dsp,xiaomi,Impression Fraud,Ad Fraud,1
-adsyield_dsp,fyber,Out-of-browser Redirect,App Store Redirect Android,1
-adsyield_dsp,fyberdisplay,Impression Fraud,Ad Fraud,1
-adsyield_dsp,vungleus,Impression Fraud,Ad Fraud,1
-HyperAd_dsp,applovinalx,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-duopeak_dsp,unityads,Phishing,Phishing Domain,1
-duopeak_dsp,mvungle,Phishing,Phishing Domain,1
-duopeak_dsp,fyber,Phishing,Phishing Domain,1
-bidswitch_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-bidswitch_dsp,unityads,Software Install Prompt,PUP,1
-bidswitch_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-bidswitch_dsp,pubnative,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-bidswitch_dsp,pubnative,Out-of-browser Redirect,App Store Redirect iOS,1
-bidswitch_dsp,pubnative,Impression Fraud,Ad Fraud,1
-bidswitch_dsp,mvungle,Phishing,Redirector,1
-algorix_dsp,applovinalx,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-adwmg_dsp,vungleus,Compromised Content,Compromised Domain,1
-bidease_dsp,xiaomi,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-betweenx_dsp,unityads,Phishing,Phishing Domain,1
-bidease_dsp,prebid,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-bidswitch_dsp,fyberdisplay,Out-of-browser Redirect,App Store Redirect Android,1
-baidu_dsp,xiaomi,Phishing,Phishing Delivery,1
-magnite_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-magnite_dsp,mvungle,Out-of-browser Redirect,App Store Redirect iOS,1
-magnite_dsp,fyber,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-magnite_dsp,fyberdisplay,Impression Fraud,Ad Fraud,1
-ignite2_dsp,xiaomi,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-opera_dsp,vungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-operasg_dsp,vungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-opera_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-magnite_dsp,mvungle,Phishing,Redirector,1
-nasmedia_dsp,prebid,Out-of-browser Redirect,App Store Redirect Android,1
-nasmedia_dsp,prebid,Out-of-browser Redirect,App Store Redirect iOS,1
-nasmedia_dsp,unityads,Out-of-browser Redirect,App Store Redirect Android,1
-evolution_dsp,vungleus,Compromised Content,Compromised Domain,1
-evolution_dsp,mvungle,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-duopeak_dsp,vungleus,Phishing,Phishing Domain,1
-sape_dsp,xiaomi,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-rixengine_dsp,fyber,Phishing,GhostCat - 3PC,1
-rixengine_dsp,mvungle,Phishing,GhostCat - 3PC,1
-sape_dsp,mvungle,Impression Fraud,Ad Fraud,1
-playdigo_dsp,fyber,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,1
-outbrain,unityads,"Scam: ""Call Technical Support""",Dolos-3PC,1
-magnite_dsp,fyber,Impression Fraud,Ad Fraud,1
-magnite_dsp,fyber,Phishing,Spoofing,1
-evolution_dsp,mvungle,Compromised Content,SocGholish,1
-mezzomedia_dsp,unityads,Compromised Content,E-Skimming,1
-smartad_dsp,mvungle,Out-of-browser Redirect,App Store Redirect Android,1
-snow_dsp,vungle,Phishing,Phishing Domain,1
-smartad_dsp,vungleus,Phishing,GhostCat - 3PC,1
-smartad_dsp,fyberdisplay,Out-of-browser Redirect,App Store Redirect Android,1
-smartad_dsp,vungle,Impression Fraud,Ad Fraud,1
-smartad_dsp,vungle,Compromised Content,Compromised Domain,1
-startio_dsp,fyber,Phishing,Phishing Domain,1
-startio_dsp,fyber,Compromised Content,E-Skimming,1
-snow_dsp,unityads,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-startio_dsp,fyberdisplay,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-startio_dsp,mvungle,Phishing,Phishing Domain,1
-startio_dsp,fyber,Phishing,Scam,1
-startio_dsp,fyberdisplay,Phishing,Scam,1
-startio_dsp,vungleus,Phishing,Scam,1
-webeye_dsp,mvungle,Out-of-browser Redirect,App Store Redirect Android,1
-vk_dsp,mvungle,Phishing,Scam,1
-vk_dsp,mvungle,Phishing,Phishing Domain,1
-startio_dsp,vungleus,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,1
-startio_dsp,vungleus,Phishing,Redirector,1
-webeye_dsp,prebid,Impression Fraud,Ad Fraud,1
-xiaomi_dsp,vungle,Software Install Prompt,PUP,1
-zzmobi,seedtag,Phishing,Scam,1
+Expected Behavior,Provider Account,Publisher Name,Malware Condition,Count
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,applovinalx,Heuristic Flag,88
+Phishing,Inspiritum_dsp,unityads,Phishing Domain,87
+Impression Fraud,bidswitch_dsp,unityads,Ad Fraud,81
+Phishing,bidswitch_dsp,vungle,Phishing Domain,64
+Impression Fraud,pubnative,applovinalx,Ad Fraud,63
+Phishing,bidswitch_dsp,unityads,Phishing Domain,53
+Phishing,startio_dsp,mvungle,Scam,53
+Impression Fraud,bidswitch_dsp,fyber,Ad Fraud,43
+Phishing,Inspiritum_dsp,fyber,Phishing Domain,37
+Out-of-browser Redirect,bidswitch_dsp,unityads,App Store Redirect iOS,35
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,unityads,Heuristic Flag,33
+Phishing,adwmg_dsp,mvungle,Scam,30
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,vungle,Heuristic Flag,27
+Impression Fraud,bidswitch_dsp,mvungle,Ad Fraud,26
+Phishing,Inspiritum_dsp,pubnative,Phishing Domain,25
+Out-of-browser Redirect,bidswitch_dsp,vungle,App Store Redirect iOS,25
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,vungle,Heuristic Flag,24
+Phishing,bidswitch_dsp,mvungle,Phishing Domain,24
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,mvungle,DNE Domain,24
+Out-of-browser Redirect,bidswitch_dsp,unityads,App Store Redirect Android,24
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,fyber,Heuristic Flag,23
+Out-of-browser Redirect,bidswitch_dsp,mvungle,App Store Redirect iOS,22
+Impression Fraud,bidswitch_dsp,vungle,Ad Fraud,22
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,mvungle,Heuristic Flag,22
+Phishing,Inspiritum_dsp,algorixeu,Phishing Domain,20
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,unityads,Heuristic Flag,19
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adsyield_dsp,fyber,Heuristic Flag,19
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,mvungle,Heuristic Flag,18
+Phishing,bidswitch_dsp,fyberdisplay,Phishing Domain,18
+Phishing,zzmobi,seedtag,Redirector,18
+Phishing,Inspiritum_dsp,fyberdisplay,Phishing Domain,17
+Impression Fraud,xiaomi_dsp,unityads,Ad Fraud,15
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,mvungle,Heuristic Flag,15
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,mvungle,DNE Domain,14
+Out-of-browser Redirect,bidswitch_dsp,fyber,App Store Redirect Android,14
+Phishing,pubnative,applovinalx,Scam,13
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,mvungle,Heuristic Flag,13
+Compromised Content,adwmg_dsp,mvungle,Compromised Domain,13
+Out-of-browser Redirect,bidswitch_dsp,fyber,App Store Redirect iOS,13
+Phishing,Adsolut Media_dsp,unityads,GhostCat - 3PC,12
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,fyberdisplay,Heuristic Flag,12
+Impression Fraud,shareit_dsp,fyberdisplay,Ad Fraud,11
+Out-of-browser Redirect,pubnative,applovinalx,App Store Redirect Android,11
+Compromised Content,startio_dsp,mvungle,SocGholish,11
+Impression Fraud,aceexchange_dsp,prebid,Ad Fraud,11
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,xiaomi,DNE Domain,10
+Impression Fraud,nasmedia_dsp,unityads,Ad Fraud,10
+Out-of-browser Redirect,bidswitch_dsp,mvungle,App Store Redirect Android,10
+Phishing,aceex_dsp,unityads,Phishing Domain,9
+Phishing,algorix_dsp,fyberdisplay,GhostCat - 3PC,9
+Impression Fraud,bidswitch_dsp,vungleus,Ad Fraud,9
+Impression Fraud,Adsolut Media_dsp,unityads,Ad Fraud,9
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,applovinalx,Heuristic Flag,9
+Out-of-browser Redirect,snow_dsp,snow,App Store Redirect iOS,8
+Compromised Content,startio_dsp,mvungle,Compromised Domain,8
+Impression Fraud,magnite_dsp,mvungle,Ad Fraud,8
+Compromised Content,startio_dsp,fyber,SocGholish,8
+Impression Fraud,almaty_dsp,snow,Ad Fraud,8
+Impression Fraud,bidswitch_dsp,fyberdisplay,Ad Fraud,8
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungle,DNE Domain,7
+Impression Fraud,xiaomi_dsp,prebid,Ad Fraud,7
+Impression Fraud,shareit_dsp,bidmachine,Ad Fraud,7
+Out-of-browser Redirect,pubnative,applovinalx,App Store Redirect iOS,7
+Phishing,Inspiritum_dsp,maticooads,Phishing Domain,7
+Impression Fraud,nasmedia_dsp,prebid,Ad Fraud,7
+Impression Fraud,betweenx_dsp,unityads,Ad Fraud,7
+Phishing,bidswitch_dsp,fyber,Phishing Domain,7
+Compromised Content,smartad_dsp,vungle,E-Skimming,6
+Compromised Content,smartad_dsp,mvungle,SocGholish,6
+Out-of-browser Redirect,bidswitch_dsp,vungle,App Store Redirect Android,6
+Out-of-browser Redirect,magnite_dsp,unityads,App Store Redirect Android,6
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,mvungle,DNE Domain,6
+Phishing,bidswitch_dsp,pubnative,Phishing Domain,6
+Phishing,smartad_dsp,vungle,Scam,6
+Phishing,pubnative,applovinalx,Phishing Domain,5
+Phishing,smartad_dsp,mvungle,Scam,5
+Phishing,webeye_dsp,xiaomi,Redirector,5
+Phishing,opera_dsp,unityads,Scam,5
+Impression Fraud,magnite_dsp,unityads,Ad Fraud,5
+Impression Fraud,snow_dsp,vungle,Ad Fraud,5
+Out-of-browser Redirect,bidswitch_dsp,vungleus,App Store Redirect iOS,5
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyber,Heuristic Flag,5
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,xiaomi,Heuristic Flag,5
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,vungleus,Heuristic Flag,4
+Phishing,bidswitch_dsp,vungleus,Phishing Domain,4
+Phishing,startio_dsp,mvungle,Redirector,4
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),tpmn_dsp,unityads,DNE Domain,4
+Phishing,rixengine_dsp,unityads,Phishing Domain,4
+Phishing,screencore_dsp,fyberdisplay,GhostCat - 3PC,4
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyber,DNE Domain,4
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,unity,Heuristic Flag,4
+Compromised Content,smartad_dsp,prebid,Compromised Domain,4
+Impression Fraud,aceex_dsp,algorixeu,Ad Fraud,4
+Phishing,outbrain,seedtag,Scam,4
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,applovinalx,DNE Domain,4
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,unityads,Heuristic Flag,4
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,applovinalx,DNE Domain,4
+Compromised Content,startio_dsp,mvungle,E-Skimming,4
+Impression Fraud,shareit_dsp,mvungle,Ad Fraud,4
+Impression Fraud,snow_dsp,unityads,Ad Fraud,3
+Out-of-browser Redirect,xiaomi_dsp,unityads,App Store Redirect Android,3
+Phishing,mobfox_dsp,vungle,Redirector,3
+Phishing,playdigo_dsp,fyberdisplay,Phishing Domain,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,fyberdisplay,Heuristic Flag,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,unityads,Heuristic Flag,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adwmg_dsp,mvungle,Heuristic Flag,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidence_dsp,unityads,DNE Domain,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mezzomedia_dsp,unityads,DNE Domain,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,startio,Heuristic Flag,3
+Phishing,Inspiritum_dsp,xiaomi,Phishing Domain,3
+Out-of-browser Redirect,magnite_dsp,mvungle,App Store Redirect iOS,3
+Out-of-browser Redirect,bidswitch_dsp,fyberdisplay,App Store Redirect iOS,3
+Impression Fraud,smartad_dsp,mvungle,Ad Fraud,3
+Compromised Content,smartad_dsp,vungleus,SocGholish,3
+Compromised Content,smartad_dsp,mvungle,E-Skimming,3
+Impression Fraud,nasmedia_dsp,fyber,Ad Fraud,3
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungleus,Heuristic Flag,3
+Impression Fraud,rixengine_dsp,unityads,Ad Fraud,3
+Impression Fraud,pubnative,unity,Ad Fraud,3
+Impression Fraud,algorix_dsp,unity,Ad Fraud,3
+Impression Fraud,webeye_dsp,mvungle,Ad Fraud,2
+Phishing,adwmg_dsp,vungleus,Scam,2
+Impression Fraud,screencore_dsp,snow,Ad Fraud,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,unityads,DNE Domain,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungleus,DNE Domain,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),outbrain,unityads,Heuristic Flag,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyberdisplay,DNE Domain,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),outbrain,seedtag,Heuristic Flag,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,fyberctr,Heuristic Flag,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,fyberctr,DNE Domain,2
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,vungle,Heuristic Flag,2
+Compromised Content,startio_dsp,mvungle,MudOrange-3PC,2
+Compromised Content,startio_dsp,fyberdisplay,SocGholish,2
+Compromised Content,smartad_dsp,mvungle,Compromised Domain,2
+Compromised Content,pubnative,applovinalx,MudOrange-3PC,2
+Compromised Content,startio_dsp,fyber,Compromised Domain,2
+Impression Fraud,adsyield_dsp,fyber,Ad Fraud,2
+Compromised Content,smartad_dsp,vungle,Compromised Domain,2
+Impression Fraud,operasg_dsp,fyberdisplay,Ad Fraud,2
+Out-of-browser Redirect,magnite_dsp,mvungle,App Store Redirect Android,2
+Phishing,algorix_dsp,applovinalx,Redirector,2
+Phishing,adsyield_dsp,fyber,Phishing Domain,2
+Out-of-browser Redirect,magnite_dsp,fyber,App Store Redirect Android,2
+Out-of-browser Redirect,magnite_dsp,unityads,App Store Redirect iOS,2
+Impression Fraud,smartad_dsp,vungleus,Ad Fraud,2
+Impression Fraud,snow_dsp,snow,Ad Fraud,2
+Phishing,startio_dsp,mvungle,Phishing Domain,2
+Phishing,rixengine_dsp,mvungle,Phishing Domain,2
+Phishing,pubnative,applovinalx,GhostCat - 3PC,2
+Phishing,playdigo_dsp,fyber,Phishing Domain,2
+Phishing,almaty_dsp,prebid,GhostCat - 3PC,2
+Phishing,smartad_dsp,vungleus,Scam,2
+Phishing,bidease_dsp,unityads,Phishing Domain,2
+Phishing,betweenx_dsp,fyber,Phishing Domain,2
+Phishing,smartad_dsp,vungle,Phishing Domain,2
+Out-of-browser Redirect,bidswitch_dsp,vungleus,App Store Redirect Android,2
+Impression Fraud,sape_dsp,vungle,Ad Fraud,2
+Impression Fraud,aceexchange_dsp,fyber,Ad Fraud,2
+Fake Anti-virus,aceex_dsp,fyberdisplay,StringRipper - 3PC,1
+Compromised Content,adsyield_dsp,fyber,Compromised Domain,1
+Fake Anti-virus,duopeak_dsp,unityads,StringRipper - 3PC,1
+Compromised Content,evolution_dsp,mvungle,SocGholish,1
+Compromised Content,evolution_dsp,vungleus,Compromised Domain,1
+Out-of-browser Redirect,screencore_dsp,snow,App Store Redirect iOS,1
+Out-of-browser Redirect,pubnative,fyber,App Store Redirect iOS,1
+Out-of-browser Redirect,nasmedia_dsp,prebid,App Store Redirect iOS,1
+Phishing,9dots_dsp,unityads,Scam,1
+Phishing,9dots_dsp,unityads,Phishing Domain,1
+Impression Fraud,webeye_dsp,prebid,Ad Fraud,1
+Out-of-browser Redirect,bidswitch_dsp,pubnative,App Store Redirect iOS,1
+Out-of-browser Redirect,bidswitch_dsp,fyberdisplay,App Store Redirect Android,1
+Out-of-browser Redirect,adsyield_dsp,fyber,App Store Redirect Android,1
+Impression Fraud,smartad_dsp,vungle,Ad Fraud,1
+Compromised Content,smartad_dsp,prebid,E-Skimming,1
+Compromised Content,startio_dsp,fyber,E-Skimming,1
+Compromised Content,adwmg_dsp,vungleus,Compromised Domain,1
+Compromised Content,mezzomedia_dsp,unityads,E-Skimming,1
+Impression Fraud,algorix_dsp,fyberdisplay,Ad Fraud,1
+Impression Fraud,adsyield_dsp,fyberdisplay,Ad Fraud,1
+Impression Fraud,bidswitch_dsp,pubnative,Ad Fraud,1
+Impression Fraud,algorix_dsp,unityads,Ad Fraud,1
+Impression Fraud,adsyield_dsp,vungleus,Ad Fraud,1
+Impression Fraud,aceex_dsp,xiaomi,Ad Fraud,1
+Impression Fraud,aceex_dsp,fyberdisplay,Ad Fraud,1
+Impression Fraud,magnite_dsp,fyber,Ad Fraud,1
+Impression Fraud,magnite_dsp,fyberdisplay,Ad Fraud,1
+Impression Fraud,sape_dsp,mvungle,Ad Fraud,1
+Phishing,algorix_dsp,fyberdisplay,Phishing Domain,1
+Phishing,adsyield_dsp,fyberdisplay,Phishing Domain,1
+Phishing,aceex_dsp,algorixeu,Phishing Domain,1
+Out-of-browser Redirect,smartad_dsp,mvungle,App Store Redirect Android,1
+Out-of-browser Redirect,webeye_dsp,mvungle,App Store Redirect Android,1
+Out-of-browser Redirect,snow_dsp,snow,App Store Redirect Android,1
+Out-of-browser Redirect,nasmedia_dsp,unityads,App Store Redirect Android,1
+Out-of-browser Redirect,nasmedia_dsp,prebid,App Store Redirect Android,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceex_dsp,fyberdisplay,Heuristic Flag,1
+Phishing,xiaomi_dsp,vungle,Scam,1
+Phishing,xiaomi_dsp,mvungle,Scam,1
+Phishing,webeye_dsp,vungle,Scam,1
+Phishing,vk_dsp,mvungle,Scam,1
+Phishing,startio_dsp,fyber,Scam,1
+Phishing,startio_dsp,vungleus,Redirector,1
+Phishing,startio_dsp,vungleus,Scam,1
+Phishing,startio_dsp,fyber,Phishing Domain,1
+Phishing,snow_dsp,vungle,Phishing Domain,1
+Phishing,smartad_dsp,vungleus,GhostCat - 3PC,1
+Phishing,startio_dsp,fyberdisplay,Scam,1
+Phishing,baidu_dsp,xiaomi,Phishing Delivery,1
+Phishing,algorix_dsp,vungleus,GhostCat - 3PC,1
+Phishing,bidswitch_dsp,mvungle,Redirector,1
+Phishing,betweenx_dsp,unityads,Phishing Domain,1
+Phishing,duopeak_dsp,mvungle,Phishing Domain,1
+Phishing,magnite_dsp,mvungle,Redirector,1
+Phishing,loopme_dsp,snow,Phishing Domain,1
+Phishing,magnite_dsp,fyber,Spoofing,1
+Phishing,duopeak_dsp,unityads,Phishing Domain,1
+Phishing,duopeak_dsp,vungleus,Phishing Domain,1
+Phishing,rixengine_dsp,fyber,GhostCat - 3PC,1
+Phishing,rixengine_dsp,mvungle,GhostCat - 3PC,1
+Phishing,duopeak_dsp,fyber,Phishing Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),HyperAd_dsp,applovinalx,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Adsolut Media_dsp,unityads,Heuristic Flag,1
+Software Install Prompt,xiaomi_dsp,vungle,PUP,1
+"Scam: ""Call Technical Support""",zzmobi,seedtag,Dolos-3PC,1
+Software Install Prompt,bidswitch_dsp,unityads,PUP,1
+"Scam: ""Call Technical Support""",outbrain,unityads,Dolos-3PC,1
+Phishing,zzmobi,seedtag,Scam,1
+Phishing,vk_dsp,mvungle,Phishing Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,prebid,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,xiaomi,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,mvungle,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,unityads,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,pubnative,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,unityads,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),evolution_dsp,mvungle,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,vungle,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,unityads,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,fyber,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,mvungle,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),ignite2_dsp,xiaomi,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),playdigo_dsp,fyber,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,xiaomi,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operasg_dsp,vungle,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),shareit_dsp,fyberdisplay,DNE Domain,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),shareit_dsp,fyberdisplay,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),snow_dsp,unityads,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),spinx_dsp,unityads,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyberdisplay,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,vungleus,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,mvungle,Heuristic Flag,1
+Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),webeye_dsp,mvungle,Heuristic Flag,1

@@ -1,58 +1,42 @@
 <template>
-  <div ref="chartContainer" style="width: 800px; height: 600px"></div>
+  <div style="width: 800px; height: 600px">
+    <SunburstChart :chartData="chartData" v-if="chartData" />
+  </div>
+  <button @click="processData">Reprocess Data</button>
 </template>
 
 <script>
-import * as echarts from 'echarts';
+import SunburstChart from './components/SunburstChart.vue';
 
 export default {
+  components: {
+    SunburstChart,
+  },
   data() {
     return {
-      chart: null,
+      chartData: null,
     };
   },
   mounted() {
     this.fetchData();
   },
   methods: {
+    processData(){
+      this.fetchData()
+    },
     async fetchData() {
       try {
-        const response = await fetch('http://127.0.0.1:5001/data'); // Fetch data from Flask API
+        const response = await fetch('http://127.0.0.1:5001/data');
         if (!response.ok) {
           const message = `An error has occurred: ${response.status} from backend`;
-          throw new Error(message)
+          throw new Error(message);
         }
-        const data = await response.json();
-        this.renderChart(data)
+        this.chartData = await response.json();
+
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     },
-    renderChart(data) {
-      const chartDom = this.$refs.chartContainer;
-      this.chart = echarts.init(chartDom);
-
-      const option = {
-        series: {
-          type: 'sunburst',
-          data: [data],
-          radius: [0, '100%'],
-          label: {
-            rotate: 'tangential',
-            overflow: 'truncate',
-            ellipsis: '...',
-            fontSize: '11',
-          },
-        },
-      };
-
-      this.chart.setOption(option);
-    },
   },
-  beforeUnmount() {
-    if(this.chart) {
-      this.chart.dispose()
-    }
-  }
 };
 </script>
