@@ -5,38 +5,23 @@
     {
       "name": "Suspicious (Multiple indicators match known overt incidents but no overt actions detected.)",
       "value": 484.0,
-      "itemStyle": {
-        "color": "#ff6b6b"
-      },
       "children": [
         {
           "name": "pubnative",
           "value": 107.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "applovinalx",
               "value": 92.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 88.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -44,24 +29,15 @@
             {
               "name": "xiaomi",
               "value": 15.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 10.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "Heuristic Flag",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -71,31 +47,19 @@
         {
           "name": "bidswitch_dsp",
           "value": 111.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 34.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 33.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -103,16 +67,10 @@
             {
               "name": "vungle",
               "value": 27.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 27.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -120,16 +78,10 @@
             {
               "name": "fyber",
               "value": 23.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 23.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -137,24 +89,15 @@
             {
               "name": "mvungle",
               "value": 16.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 15.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -162,16 +105,10 @@
             {
               "name": "vungleus",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -179,16 +116,10 @@
             {
               "name": "startio",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -196,16 +127,10 @@
             {
               "name": "fyberdisplay",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -213,16 +138,10 @@
             {
               "name": "pubnative",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -232,23 +151,14 @@
         {
           "name": "sape_dsp",
           "value": 66.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 24.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 24.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -256,16 +166,10 @@
             {
               "name": "mvungle",
               "value": 22.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 22.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -273,16 +177,10 @@
             {
               "name": "unityads",
               "value": 19.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 19.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -290,16 +188,10 @@
             {
               "name": "xiaomi",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -309,31 +201,19 @@
         {
           "name": "startio_dsp",
           "value": 55.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 42.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 24.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "Heuristic Flag",
                   "value": 18.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -341,24 +221,15 @@
             {
               "name": "fyber",
               "value": 9.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -366,24 +237,15 @@
             {
               "name": "fyberdisplay",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -391,16 +253,10 @@
             {
               "name": "vungleus",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -410,23 +266,14 @@
         {
           "name": "adsyield_dsp",
           "value": 19.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 19.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 19.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -436,31 +283,19 @@
         {
           "name": "smartad_dsp",
           "value": 39.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 27.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 14.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "Heuristic Flag",
                   "value": 13.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -468,16 +303,10 @@
             {
               "name": "vungle",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -485,24 +314,15 @@
             {
               "name": "vungleus",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -512,23 +332,14 @@
         {
           "name": "algorix_dsp",
           "value": 38.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 12.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 12.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -536,24 +347,15 @@
             {
               "name": "applovinalx",
               "value": 13.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 9.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -561,16 +363,10 @@
             {
               "name": "unity",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -578,24 +374,15 @@
             {
               "name": "unityads",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -603,24 +390,15 @@
             {
               "name": "fyberctr",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "Heuristic Flag",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -630,31 +408,19 @@
         {
           "name": "magnite_dsp",
           "value": 10.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -662,16 +428,10 @@
             {
               "name": "unityads",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -679,16 +439,10 @@
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -698,23 +452,14 @@
         {
           "name": "tpmn_dsp",
           "value": 4.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -724,23 +469,14 @@
         {
           "name": "bidence_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -750,23 +486,14 @@
         {
           "name": "mezzomedia_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -776,23 +503,14 @@
         {
           "name": "bidease_dsp",
           "value": 5.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -800,16 +518,10 @@
             {
               "name": "xiaomi",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -817,16 +529,10 @@
             {
               "name": "prebid",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -836,23 +542,14 @@
         {
           "name": "adwmg_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -862,23 +559,14 @@
         {
           "name": "sharethrough_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -888,23 +576,14 @@
         {
           "name": "outbrain",
           "value": 4.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "seedtag",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -912,16 +591,10 @@
             {
               "name": "unityads",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -931,23 +604,14 @@
         {
           "name": "HyperAd_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "applovinalx",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -957,23 +621,14 @@
         {
           "name": "vk_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -983,23 +638,14 @@
         {
           "name": "spinx_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1009,23 +655,14 @@
         {
           "name": "snow_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1035,31 +672,19 @@
         {
           "name": "shareit_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 },
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1069,23 +694,14 @@
         {
           "name": "playdigo_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1095,23 +711,14 @@
         {
           "name": "operasg_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1121,23 +728,14 @@
         {
           "name": "opera_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1145,16 +743,10 @@
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1164,23 +756,14 @@
         {
           "name": "ignite2_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "xiaomi",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1190,23 +773,14 @@
         {
           "name": "evolution_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "DNE Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1216,23 +790,14 @@
         {
           "name": "aceex_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1242,23 +807,14 @@
         {
           "name": "Adsolut Media_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1268,23 +824,14 @@
         {
           "name": "webeye_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#ff6b6b"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#ff6b6b"
-              },
               "children": [
                 {
                   "name": "Heuristic Flag",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#ff6b6b"
-                  },
                   "children": []
                 }
               ]
@@ -1296,30 +843,18 @@
     {
       "name": "Phishing",
       "value": 619.0,
-      "itemStyle": {
-        "color": "#f06595"
-      },
       "children": [
         {
           "name": "Inspiritum_dsp",
           "value": 196.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 87.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 87.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1327,16 +862,10 @@
             {
               "name": "fyber",
               "value": 37.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 37.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1344,16 +873,10 @@
             {
               "name": "pubnative",
               "value": 25.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 25.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1361,16 +884,10 @@
             {
               "name": "algorixeu",
               "value": 20.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 20.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1378,16 +895,10 @@
             {
               "name": "fyberdisplay",
               "value": 17.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 17.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1395,16 +906,10 @@
             {
               "name": "maticooads",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1412,16 +917,10 @@
             {
               "name": "xiaomi",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1431,23 +930,14 @@
         {
           "name": "bidswitch_dsp",
           "value": 177.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 64.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 64.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1455,16 +945,10 @@
             {
               "name": "unityads",
               "value": 53.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 53.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1472,24 +956,15 @@
             {
               "name": "mvungle",
               "value": 25.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 24.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Redirector",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1497,16 +972,10 @@
             {
               "name": "fyberdisplay",
               "value": 18.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 18.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1514,16 +983,10 @@
             {
               "name": "fyber",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1531,16 +994,10 @@
             {
               "name": "pubnative",
               "value": 6.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1548,16 +1005,10 @@
             {
               "name": "vungleus",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1567,39 +1018,24 @@
         {
           "name": "startio_dsp",
           "value": 64.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 59.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 53.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Redirector",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1607,24 +1043,15 @@
             {
               "name": "vungleus",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Redirector",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1632,16 +1059,10 @@
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1649,24 +1070,15 @@
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1676,23 +1088,14 @@
         {
           "name": "adwmg_dsp",
           "value": 32.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 30.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 30.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1700,16 +1103,10 @@
             {
               "name": "vungleus",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1719,31 +1116,19 @@
         {
           "name": "zzmobi",
           "value": 19.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "seedtag",
               "value": 19.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Redirector",
                   "value": 18.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1753,39 +1138,24 @@
         {
           "name": "pubnative",
           "value": 20.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "applovinalx",
               "value": 20.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 13.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Phishing Domain",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "GhostCat - 3PC",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1795,23 +1165,14 @@
         {
           "name": "Adsolut Media_dsp",
           "value": 12.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 12.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "GhostCat - 3PC",
                   "value": 12.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1821,31 +1182,19 @@
         {
           "name": "algorix_dsp",
           "value": 13.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 10.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "GhostCat - 3PC",
                   "value": 9.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1853,16 +1202,10 @@
             {
               "name": "applovinalx",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Redirector",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1870,16 +1213,10 @@
             {
               "name": "vungleus",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "GhostCat - 3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1889,23 +1226,14 @@
         {
           "name": "aceex_dsp",
           "value": 10.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 9.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 9.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1913,16 +1241,10 @@
             {
               "name": "algorixeu",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1932,31 +1254,19 @@
         {
           "name": "smartad_dsp",
           "value": 16.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 8.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1964,16 +1274,10 @@
             {
               "name": "mvungle",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -1981,24 +1285,15 @@
             {
               "name": "vungleus",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "GhostCat - 3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2008,23 +1303,14 @@
         {
           "name": "opera_dsp",
           "value": 5.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2034,23 +1320,14 @@
         {
           "name": "webeye_dsp",
           "value": 6.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "xiaomi",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Redirector",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2058,16 +1335,10 @@
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2077,23 +1348,14 @@
         {
           "name": "screencore_dsp",
           "value": 4.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "GhostCat - 3PC",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2103,23 +1365,14 @@
         {
           "name": "rixengine_dsp",
           "value": 8.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2127,24 +1380,15 @@
             {
               "name": "mvungle",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "GhostCat - 3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2152,16 +1396,10 @@
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "GhostCat - 3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2171,23 +1409,14 @@
         {
           "name": "outbrain",
           "value": 4.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "seedtag",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2197,23 +1426,14 @@
         {
           "name": "mobfox_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Redirector",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2223,23 +1443,14 @@
         {
           "name": "playdigo_dsp",
           "value": 5.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2247,16 +1458,10 @@
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2266,23 +1471,14 @@
         {
           "name": "adsyield_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2290,16 +1486,10 @@
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2309,23 +1499,14 @@
         {
           "name": "almaty_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "prebid",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "GhostCat - 3PC",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2335,23 +1516,14 @@
         {
           "name": "betweenx_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2359,16 +1531,10 @@
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2378,23 +1544,14 @@
         {
           "name": "bidease_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2404,23 +1561,14 @@
         {
           "name": "baidu_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "xiaomi",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Delivery",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2430,31 +1578,19 @@
         {
           "name": "9dots_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2464,23 +1600,14 @@
         {
           "name": "snow_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2490,23 +1617,14 @@
         {
           "name": "xiaomi_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2514,16 +1632,10 @@
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2533,31 +1645,19 @@
         {
           "name": "vk_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Scam",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 },
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2567,23 +1667,14 @@
         {
           "name": "magnite_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Redirector",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2591,16 +1682,10 @@
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Spoofing",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2610,23 +1695,14 @@
         {
           "name": "loopme_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "snow",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2636,23 +1712,14 @@
         {
           "name": "duopeak_dsp",
           "value": 4.0,
-          "itemStyle": {
-            "color": "#f06595"
-          },
           "children": [
             {
               "name": "vungleus",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2660,16 +1727,10 @@
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2677,16 +1738,10 @@
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2694,16 +1749,10 @@
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#f06595"
-              },
               "children": [
                 {
                   "name": "Phishing Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#f06595"
-                  },
                   "children": []
                 }
               ]
@@ -2715,30 +1764,18 @@
     {
       "name": "Impression Fraud",
       "value": 416.0,
-      "itemStyle": {
-        "color": "#cc5de8"
-      },
       "children": [
         {
           "name": "bidswitch_dsp",
           "value": 190.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 81.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 81.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2746,16 +1783,10 @@
             {
               "name": "fyber",
               "value": 43.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 43.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2763,16 +1794,10 @@
             {
               "name": "mvungle",
               "value": 26.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 26.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2780,16 +1805,10 @@
             {
               "name": "vungle",
               "value": 22.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 22.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2797,16 +1816,10 @@
             {
               "name": "vungleus",
               "value": 9.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 9.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2814,16 +1827,10 @@
             {
               "name": "fyberdisplay",
               "value": 8.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 8.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2831,16 +1838,10 @@
             {
               "name": "pubnative",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2850,23 +1851,14 @@
         {
           "name": "pubnative",
           "value": 66.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "applovinalx",
               "value": 63.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 63.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2874,16 +1866,10 @@
             {
               "name": "unity",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2893,23 +1879,14 @@
         {
           "name": "xiaomi_dsp",
           "value": 22.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 15.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 15.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2917,16 +1894,10 @@
             {
               "name": "prebid",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2936,23 +1907,14 @@
         {
           "name": "aceexchange_dsp",
           "value": 13.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "prebid",
               "value": 11.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 11.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2960,16 +1922,10 @@
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -2979,23 +1935,14 @@
         {
           "name": "shareit_dsp",
           "value": 22.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 11.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 11.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3003,16 +1950,10 @@
             {
               "name": "bidmachine",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3020,16 +1961,10 @@
             {
               "name": "mvungle",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3039,23 +1974,14 @@
         {
           "name": "nasmedia_dsp",
           "value": 20.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 10.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 10.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3063,16 +1989,10 @@
             {
               "name": "prebid",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3080,16 +2000,10 @@
             {
               "name": "fyber",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3099,23 +2013,14 @@
         {
           "name": "Adsolut Media_dsp",
           "value": 9.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 9.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 9.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3125,23 +2030,14 @@
         {
           "name": "magnite_dsp",
           "value": 15.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 8.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 8.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3149,16 +2045,10 @@
             {
               "name": "unityads",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3166,16 +2056,10 @@
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3183,16 +2067,10 @@
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3202,23 +2080,14 @@
         {
           "name": "almaty_dsp",
           "value": 8.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "snow",
               "value": 8.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 8.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3228,23 +2097,14 @@
         {
           "name": "betweenx_dsp",
           "value": 7.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3254,23 +2114,14 @@
         {
           "name": "snow_dsp",
           "value": 10.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3278,16 +2129,10 @@
             {
               "name": "unityads",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3295,16 +2140,10 @@
             {
               "name": "snow",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3314,23 +2153,14 @@
         {
           "name": "aceex_dsp",
           "value": 6.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "algorixeu",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3338,16 +2168,10 @@
             {
               "name": "xiaomi",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3355,16 +2179,10 @@
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3374,23 +2192,14 @@
         {
           "name": "smartad_dsp",
           "value": 6.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3398,16 +2207,10 @@
             {
               "name": "vungleus",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3415,16 +2218,10 @@
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3434,23 +2231,14 @@
         {
           "name": "algorix_dsp",
           "value": 5.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unity",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3458,16 +2246,10 @@
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3475,16 +2257,10 @@
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3494,23 +2270,14 @@
         {
           "name": "rixengine_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3520,23 +2287,14 @@
         {
           "name": "adsyield_dsp",
           "value": 4.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3544,16 +2302,10 @@
             {
               "name": "vungleus",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3561,16 +2313,10 @@
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3580,23 +2326,14 @@
         {
           "name": "operasg_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3606,23 +2343,14 @@
         {
           "name": "sape_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3630,16 +2358,10 @@
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3649,23 +2371,14 @@
         {
           "name": "webeye_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3673,16 +2386,10 @@
             {
               "name": "prebid",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3692,23 +2399,14 @@
         {
           "name": "screencore_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#cc5de8"
-          },
           "children": [
             {
               "name": "snow",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#cc5de8"
-              },
               "children": [
                 {
                   "name": "Ad Fraud",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#cc5de8"
-                  },
                   "children": []
                 }
               ]
@@ -3720,38 +2418,23 @@
     {
       "name": "Out-of-browser Redirect",
       "value": 214.0,
-      "itemStyle": {
-        "color": "#845ef7"
-      },
       "children": [
         {
           "name": "bidswitch_dsp",
           "value": 161.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 59.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 35.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 24.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3759,24 +2442,15 @@
             {
               "name": "vungle",
               "value": 31.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 25.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3784,24 +2458,15 @@
             {
               "name": "mvungle",
               "value": 32.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 22.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 10.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3809,24 +2474,15 @@
             {
               "name": "fyber",
               "value": 27.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 14.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect iOS",
                   "value": 13.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3834,24 +2490,15 @@
             {
               "name": "vungleus",
               "value": 7.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 5.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3859,24 +2506,15 @@
             {
               "name": "fyberdisplay",
               "value": 4.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3884,16 +2522,10 @@
             {
               "name": "pubnative",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3903,31 +2535,19 @@
         {
           "name": "pubnative",
           "value": 19.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "applovinalx",
               "value": 18.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 11.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect iOS",
                   "value": 7.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3935,16 +2555,10 @@
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3954,31 +2568,19 @@
         {
           "name": "snow_dsp",
           "value": 9.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "snow",
               "value": 9.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 8.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -3988,31 +2590,19 @@
         {
           "name": "magnite_dsp",
           "value": 15.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 8.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect iOS",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4020,24 +2610,15 @@
             {
               "name": "mvungle",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4045,16 +2626,10 @@
             {
               "name": "fyber",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4064,23 +2639,14 @@
         {
           "name": "xiaomi_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4090,23 +2656,14 @@
         {
           "name": "smartad_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4116,23 +2673,14 @@
         {
           "name": "screencore_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "snow",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4142,23 +2690,14 @@
         {
           "name": "nasmedia_dsp",
           "value": 3.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4166,24 +2705,15 @@
             {
               "name": "prebid",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect iOS",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 },
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4193,23 +2723,14 @@
         {
           "name": "adsyield_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4219,23 +2740,14 @@
         {
           "name": "webeye_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#845ef7"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#845ef7"
-              },
               "children": [
                 {
                   "name": "App Store Redirect Android",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#845ef7"
-                  },
                   "children": []
                 }
               ]
@@ -4247,30 +2759,18 @@
     {
       "name": "Compromised Content",
       "value": 85.0,
-      "itemStyle": {
-        "color": "#5c7cfa"
-      },
       "children": [
         {
           "name": "adwmg_dsp",
           "value": 14.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 13.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "Compromised Domain",
                   "value": 13.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4278,16 +2778,10 @@
             {
               "name": "vungleus",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "Compromised Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4297,47 +2791,29 @@
         {
           "name": "startio_dsp",
           "value": 38.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 25.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "SocGholish",
                   "value": 11.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "Compromised Domain",
                   "value": 8.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "E-Skimming",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "MudOrange-3PC",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4345,32 +2821,20 @@
             {
               "name": "fyber",
               "value": 11.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "SocGholish",
                   "value": 8.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "Compromised Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "E-Skimming",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4378,16 +2842,10 @@
             {
               "name": "fyberdisplay",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "SocGholish",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4397,39 +2855,24 @@
         {
           "name": "smartad_dsp",
           "value": 27.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "mvungle",
               "value": 11.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "SocGholish",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "E-Skimming",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "Compromised Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4437,24 +2880,15 @@
             {
               "name": "vungle",
               "value": 8.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "E-Skimming",
                   "value": 6.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "Compromised Domain",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4462,24 +2896,15 @@
             {
               "name": "prebid",
               "value": 5.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "Compromised Domain",
                   "value": 4.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 },
                 {
                   "name": "E-Skimming",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4487,16 +2912,10 @@
             {
               "name": "vungleus",
               "value": 3.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "SocGholish",
                   "value": 3.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4506,23 +2925,14 @@
         {
           "name": "pubnative",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "applovinalx",
               "value": 2.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "MudOrange-3PC",
                   "value": 2.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4532,23 +2942,14 @@
         {
           "name": "adsyield_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "fyber",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "Compromised Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4558,23 +2959,14 @@
         {
           "name": "mezzomedia_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "E-Skimming",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4584,23 +2976,14 @@
         {
           "name": "evolution_dsp",
           "value": 2.0,
-          "itemStyle": {
-            "color": "#5c7cfa"
-          },
           "children": [
             {
               "name": "vungleus",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "Compromised Domain",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4608,16 +2991,10 @@
             {
               "name": "mvungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#5c7cfa"
-              },
               "children": [
                 {
                   "name": "SocGholish",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#5c7cfa"
-                  },
                   "children": []
                 }
               ]
@@ -4629,30 +3006,18 @@
     {
       "name": "Fake Anti-virus",
       "value": 2.0,
-      "itemStyle": {
-        "color": "#339af0"
-      },
       "children": [
         {
           "name": "duopeak_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#339af0"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#339af0"
-              },
               "children": [
                 {
                   "name": "StringRipper - 3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#339af0"
-                  },
                   "children": []
                 }
               ]
@@ -4662,23 +3027,14 @@
         {
           "name": "aceex_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#339af0"
-          },
           "children": [
             {
               "name": "fyberdisplay",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#339af0"
-              },
               "children": [
                 {
                   "name": "StringRipper - 3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#339af0"
-                  },
                   "children": []
                 }
               ]
@@ -4690,30 +3046,18 @@
     {
       "name": "Software Install Prompt",
       "value": 2.0,
-      "itemStyle": {
-        "color": "#22b8cf"
-      },
       "children": [
         {
           "name": "xiaomi_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#22b8cf"
-          },
           "children": [
             {
               "name": "vungle",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#22b8cf"
-              },
               "children": [
                 {
                   "name": "PUP",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#22b8cf"
-                  },
                   "children": []
                 }
               ]
@@ -4723,23 +3067,14 @@
         {
           "name": "bidswitch_dsp",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#22b8cf"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#22b8cf"
-              },
               "children": [
                 {
                   "name": "PUP",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#22b8cf"
-                  },
                   "children": []
                 }
               ]
@@ -4751,30 +3086,18 @@
     {
       "name": "Scam: \"Call Technical Support\"",
       "value": 2.0,
-      "itemStyle": {
-        "color": "#20c997"
-      },
       "children": [
         {
           "name": "zzmobi",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#20c997"
-          },
           "children": [
             {
               "name": "seedtag",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#20c997"
-              },
               "children": [
                 {
                   "name": "Dolos-3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#20c997"
-                  },
                   "children": []
                 }
               ]
@@ -4784,23 +3107,14 @@
         {
           "name": "outbrain",
           "value": 1.0,
-          "itemStyle": {
-            "color": "#20c997"
-          },
           "children": [
             {
               "name": "unityads",
               "value": 1.0,
-              "itemStyle": {
-                "color": "#20c997"
-              },
               "children": [
                 {
                   "name": "Dolos-3PC",
                   "value": 1.0,
-                  "itemStyle": {
-                    "color": "#20c997"
-                  },
                   "children": []
                 }
               ]

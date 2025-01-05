@@ -1,42 +1,47 @@
 <template>
-  <div style="width: 800px; height: 600px">
-    <SunburstChart :chartData="chartData" v-if="chartData" />
+  <div class="app">
+    <SunburstChart
+        :chart-data="data"
+        v-model:palette-name="currentPalette"
+    />
   </div>
-  <button @click="processData">Reprocess Data</button>
 </template>
 
 <script>
 import SunburstChart from './components/SunburstChart.vue';
 
 export default {
+  name: 'App',
   components: {
-    SunburstChart,
+    SunburstChart
   },
   data() {
     return {
-      chartData: null,
+      data: {},
+      currentPalette: 'ocean'
     };
   },
-  mounted() {
-    this.fetchData();
-  },
-  methods: {
-    processData(){
-      this.fetchData()
-    },
-    async fetchData() {
-      try {
-        const response = await fetch('http://127.0.0.1:5001/data');
-        if (!response.ok) {
-          const message = `An error has occurred: ${response.status} from backend`;
-          throw new Error(message);
-        }
-        this.chartData = await response.json();
-
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    },
-  },
+  async mounted() {
+    try {
+      const response = await fetch('http://localhost:5001/data');
+      this.data = await response.json();
+    } catch (error) {
+      console.error('Error fetching chart data:', error);
+    }
+  }
 };
 </script>
+
+<style>
+.app {
+  height: 500px;
+}
+
+/* Optional: Add some general styling for the app container */
+#app {
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 60px;
+}
+</style>
