@@ -1,178 +1,128 @@
-# Ad Security Analytics Dashboard
+# Sunburst Chart Visualization
 
-An interactive visualization dashboard that displays ad security threats and anomalies using a hierarchical sunburst chart. The application processes JSON data containing information about different types of security incidents, their sources, and characteristics.
+A Vue-based application for visualizing hierarchical data as interactive sunburst charts, supported by a Flask backend for serving data.
 
 ## Features
 
-- Interactive sunburst chart visualization using ECharts
-- Hierarchical display of security threats by category
-- Color-coded segments for different threat types
-- Drill-down capability to explore nested data
-- Hover tooltips with detailed information
-- Responsive design for different screen sizes
-
-## Tech Stack
-
-### Backend
-- Python 3.8+
-- FastAPI
-- Uvicorn
-- Pydantic for data validation
-
-### Frontend
-- Vue.js 3
-- ECharts 5
-- Axios for API calls
-- Tailwind CSS for styling
+- Interactive Sunburst Charts - Visualize complex hierarchical data in a clear and engaging way
+- Responsive Design - Works seamlessly across devices
+- Backend Integration - A Flask API serves dynamic JSON data for the charts
+- Customizable Styling - Designed with user-friendly and visually appealing themes
 
 ## Project Structure
-
 ```
 .
 ├── README.md
-├── api/
-│   └── api.py                # FastAPI application
-├── data/
-│   ├── dataset.csv           # Processed dataset
-│   ├── raw/
-│   │   └── raw_data_7_days.csv  # Raw input data
-│   └── sunburst_data.json    # Processed JSON for visualization
-├── dataproc/
+├── api
+│   └── api.py
+├── data
+│   ├── dataset.csv
+│   ├── raw
+│   │   └── raw_data_7_days.csv
+│   └── sunburst_data.json
+├── dataproc
 │   ├── __init__.py
-│   ├── palettes.py          # Color scheme definitions
-│   ├── proc_raw.py          # Raw data processing
-│   └── process.py           # Main data processing logic
-├── frontend/
-│   ├── README.md
+│   └── report_processor.py
+├── frontend
 │   ├── babel.config.js
 │   ├── jsconfig.json
 │   ├── package.json
-│   ├── public/
-│   │   ├── ico-manifest/    # App icons and manifests
+│   ├── public
 │   │   └── index.html
-│   ├── src/
+│   ├── src
 │   │   ├── App.vue
-│   │   ├── assets/
-│   │   ├── components/
+│   │   ├── assets
+│   │   │   └── logo.png
+│   │   ├── components
 │   │   │   └── SunburstChart.vue
-│   │   └── main.js
+│   │   ├── main.js
+│   │   └── palettes.js
 │   └── vue.config.js
 └── requirements.txt
 ```
 
-## Data Processing
+## Requirements
 
-The application includes a robust data processing pipeline:
+### Frontend
+- Vue.js v3.5.13
+- ECharts v5.6.0
 
-1. `dataproc/proc_raw.py`: Processes raw CSV data from the `data/raw` directory
-2. `dataproc/palettes.py`: Defines color schemes for different threat categories
-3. `dataproc/process.py`: Transforms processed data into the hierarchical structure needed for the sunburst visualization
+### Backend
+- Python >= 3.8
+- Flask 3.0.2
+- Flask-CORS 4.0.0
+- Pandas 2.2.3
+- Requests 2.3.0
 
-## Setup and Installation
+## Setup
 
-1. Clone the repository:
+### Frontend Setup
 ```bash
-git clone <repository-url>
-cd ad-security-dashboard
-```
-
-2. Install backend dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-3. Start the API server:
-```bash
-python -m uvicorn api.api:app --reload
-```
-
-4. Install frontend dependencies:
-```bash
+# Install dependencies
 cd frontend
 npm install
-```
 
-5. Start the frontend development server:
-```bash
+# Start development server
 npm run serve
 ```
 
-## API Endpoints
+### Backend Setup
+```bash
+# Install Python requirements
+pip install -r requirements.txt
 
-### GET /api/data
-Returns the processed sunburst chart data
+# Start Flask server
+python api.py
+```
 
-Response format:
+The backend will run on http://localhost:5001
+
+## Data Format
+
+The sunburst chart expects hierarchical JSON data stored in `sunburst_data.json`. Example structure:
+
 ```json
 {
-  "name": "root",
-  "value": number,
+  "name": "Root",
+  "value": 100,
   "children": [
     {
-      "name": string,
-      "value": number,
-      "itemStyle": {
-        "color": string
-      },
-      "children": [...]
+      "name": "Branch 1",
+      "value": 60,
+      "children": [
+        { "name": "Leaf 1", "value": 30 },
+        { "name": "Leaf 2", "value": 30 }
+      ]
+    },
+    {
+      "name": "Branch 2",
+      "value": 40
     }
   ]
 }
 ```
 
-## Frontend Components
+## Available Scripts
 
-### SunburstChart.vue
-
-The main visualization component uses ECharts to render the sunburst diagram:
-
-```vue
-<template>
-  <div ref="chartContainer" class="chart-container"></div>
-</template>
-
-<script>
-import * as echarts from 'echarts'
-
-export default {
-  name: 'SunburstChart',
-  // ... component implementation
-}
-</script>
+### Frontend
+```bash
+npm run serve   # Start development server
+npm run build   # Build for production
+npm run lint    # Lint and fix files
 ```
 
-## Data Categories
-
-The visualization includes the following main threat categories:
-- Suspicious Activities (Multiple indicators matching known incidents)
-- Phishing
-- Impression Fraud
-- Out-of-browser Redirect
-- Compromised Content
-- Fake Anti-virus
-- Software Install Prompt
-- Technical Support Scams
-
-Each category is color-coded and can be drilled down to show:
-- DSP sources
-- Ad platforms
-- Specific threat types
-- Incident counts
+### Backend
+```bash
+python api.py   # Start Flask server
+```
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork this repository
+2. Create a new feature branch
+3. Commit your changes
+4. Open a pull request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- ECharts for providing the visualization library
-- Vue.js team for the reactive framework
-- FastAPI team for the efficient backend framework
+This project is licensed under the ISC License. See `LICENSE` for more information.
