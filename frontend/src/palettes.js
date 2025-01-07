@@ -9,7 +9,8 @@ export const PALETTES = {
     gentleSunset: ['#ffb4a2', '#ffcdb2', '#ffe5d9', '#fae1dd', '#f8edeb', '#d8e2dc', '#b7d8d6', '#a1c9c9', '#9eb8b3', '#a1aab7'],
     moodyTwilight: ['#1b1d36', '#2c2f48', '#4b536e', '#68788b', '#8ea4bd', '#a6c4d3', '#91d8d8', '#69aab7', '#3f687e', '#2c485c'],
     mutedNocturne: ['#343a40', '#495057', '#868e96', '#adb5bd', '#dee2e6', '#212529', '#40494f', '#3b5a68', '#486f7d', '#548a9e'],
-    coolNightGlow: ['#2e3440', '#3b4252', '#434c5e', '#4c566a', '#d8dee9', '#e5e9f0', '#eceff4', '#88c0d0', '#81a1c1', '#5e81ac']
+    coolNightGlow: ['#2e3440', '#3b4252', '#434c5e', '#4c566a', '#d8dee9', '#e5e9f0', '#eceff4', '#88c0d0', '#81a1c1', '#5e81ac'],
+    DaisyDIsk: ['#affc62','#5894f8','#eb51a4','#7943f5','#7c3b8a']
 };
 
 
