@@ -1,23 +1,7 @@
 <template>
   <div id="app">
-    <!-- Modal -->
-    <div class="modal fade" role="dialog" tabindex="-1" id="mdl-load">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Load Data File</h4>
-            <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <p>The content of your modal.</p>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
-            <button class="btn btn-primary" type="button">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- File Loader Modal -->
+    <FileLoaderModal @file-selected="handleFileSelected" />
 
     <!-- Main Page -->
     <div id="div-main-page">
@@ -81,15 +65,17 @@
 
 <script>
 import SunburstChart from './components/SunburstChart.vue';
+import FileLoaderModal from './components/FileLoaderModal.vue';
 
 export default {
   name: 'App',
   components: {
     SunburstChart,
+    FileLoaderModal,
   },
   data() {
     return {
-      data: null,
+      data: {}, // Initialize as empty object instead of null
       currentPalette: 'ocean',
       childData: [
         'Malware Type 1: 245',
@@ -108,7 +94,23 @@ export default {
       this.data = await response.json();
     } catch (error) {
       console.error('Error fetching chart data:', error);
-      this.data = {};
+      this.data = {}; // Fallback to empty object
+    }
+  },
+  methods: {
+    async handleFileSelected(file) {
+      try {
+        const text = await file.text();
+        // Parse CSV and process data as needed
+        // You might want to use a CSV parsing library here
+        console.log('File loaded:', text);
+
+        // For now, we'll just set a dummy data object
+        this.data = { /* your data structure */ };
+      } catch (error) {
+        console.error('Error processing file:', error);
+        this.data = {};
+      }
     }
   },
 };

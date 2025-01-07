@@ -1,13 +1,26 @@
 <template>
-  <div class="chart-wrapper">
-    <div class="palette-selector">
-      <select v-model="selectedPalette" @change="handlePaletteChange">
-        <option v-for="name in paletteNames" :key="name" :value="name">
-          {{ name }}
-        </option>
-      </select>
+  <div class="chart-section">
+    <!-- Palette Selector Row -->
+    <div class="row g-0 mb-2">
+      <div class="col-12">
+        <div class="d-flex justify-content-end">
+          <select v-model="selectedPalette"
+                  @change="handlePaletteChange"
+                  class="form-select form-select-sm w-auto">
+            <option v-for="name in paletteNames" :key="name" :value="name">
+              {{ name }}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div ref="chartContainer" style="width: 100%; height: calc(100% - 40px);"></div>
+
+    <!-- Chart Container -->
+    <div class="row g-0">
+      <div class="col-12">
+        <div ref="chartContainer" style="width: 100%; height: 500px;"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -103,7 +116,7 @@ export default {
         series: {
           type: 'sunburst',
           data: [applyColorsToData(this.currentData)],
-          radius: ['10%', '100%'],
+          radius: ['0%', '100%'],
           center: ['50%', '50%'],
           label: {
             show: false,
@@ -147,24 +160,14 @@ export default {
 </script>
 
 <style scoped>
-.chart-wrapper {
+/* Only keeping minimal required custom styles */
+.chart-section {
   width: 100%;
-  height: 100%;
-  position: relative;
 }
 
-.palette-selector {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 100;
-}
-
-.palette-selector select {
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: white;
-  font-size: 14px;
+.form-select-sm {
+  font-size: 0.875rem;  /* 14px */
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 </style>
