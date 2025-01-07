@@ -43,13 +43,30 @@ export default {
       if (!this.selectedFile) return
 
       try {
-        // Emit the file to parent component
-        this.$emit('file-selected', this.selectedFile)
+        // Create FormData object to send file
+        const formData = new FormData()
+        formData.append('file', this.selectedFile)
+
+        // Send file to backend
+        const response = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+        })
+
+        if (!response.ok) {
+          throw new Error('Upload failed')
+        }
+
+        const result = await response.json()
+
+        // Emit the saved file path to parent component
+        this.$emit('file-selected', result.filePath)
 
         // Reset selection
         this.selectedFile = null
       } catch (error) {
         console.error('Error loading file:', error)
+        // You might want to show an error message to the user here
       }
     }
   }

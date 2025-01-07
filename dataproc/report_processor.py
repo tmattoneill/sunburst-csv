@@ -52,7 +52,7 @@ class ReportProcessor:
             base_path: Base path for data files
         """
         self.base_path = Path(base_path)
-        self.raw_data_path = self.base_path / "raw/raw_data_7_days.csv"
+        self.raw_data_path = self.base_path / "raw/raw_data.csv"
         self.processed_data_path = self.base_path / "dataset.csv"
         self.sunburst_data_path = self.base_path / "sunburst_data.json"
 
