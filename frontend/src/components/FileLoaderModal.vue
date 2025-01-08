@@ -28,47 +28,42 @@
 </template>
 
 <script>
-export default {
+  export default {
   name: 'FileLoaderModal',
   data() {
-    return {
-      selectedFile: null
-    }
-  },
+  return {
+  selectedFile: null
+}
+},
   methods: {
-    handleFileSelect(event) {
-      this.selectedFile = event.target.files[0]
-    },
-    async loadFile() {
-      if (!this.selectedFile) return
+  handleFileSelect(event) {
+  this.selectedFile = event.target.files[0]
+},
+  async loadFile() {
+  if (!this.selectedFile) return
 
-      try {
-        // Create FormData object to send file
-        const formData = new FormData()
-        formData.append('file', this.selectedFile)
+  try {
+  const formData = new FormData()
+  formData.append('file', this.selectedFile)
 
-        // Send file to backend
-        const response = await fetch('/api/upload', {
-          method: 'POST',
-          body: formData
-        })
+  // Update URL to match your Flask server
+  const response = await fetch('http://localhost:5001/upload', {
+  method: 'POST',
+  body: formData
+})
 
-        if (!response.ok) {
-          throw new Error('Upload failed')
-        }
+  if (!response.ok) {
+  throw new Error('Upload failed')
+}
 
-        const result = await response.json()
-
-        // Emit the saved file path to parent component
-        this.$emit('file-selected', result.filePath)
-
-        // Reset selection
-        this.selectedFile = null
-      } catch (error) {
-        console.error('Error loading file:', error)
-        // You might want to show an error message to the user here
-      }
-    }
-  }
+  const result = await response.json()
+  this.$emit('file-selected', result.filePath)
+  this.selectedFile = null
+} catch (error) {
+  console.error('Error loading file:', error)
+  // You might want to show an error message to the user here
+}
+}
+}
 }
 </script>
