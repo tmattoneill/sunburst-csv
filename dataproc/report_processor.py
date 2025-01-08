@@ -7,86 +7,85 @@ from pathlib import Path
 
 
 class TreeNode(TypedDict):
-    """
-    Represents a structure for a tree node with attributes for hierarchical data
-    representation and nested child nodes.
-
-    :ivar name: The name or label associated with the tree node.
-    :type name: str
-    :ivar value: The numeric value related to the node.
-    :type value: float
-    :ivar children: A list of child nodes, allowing the representation of nested
-        tree structures.
-    :type children: List['TreeNode']
-    """
+    """Tree node with name, value and children."""
     name: str
     value: float
     children: List['TreeNode']
 
 
 class TreeRoot(TypedDict):
-    """
-    Represents the root of a tree structure with a name, a value,
-    and a list of child nodes.
-
-    :ivar name: The name of the tree root.
-    :ivar value: The numeric value associated with the tree root.
-    :ivar children: A list of child nodes connected to the tree root.
-    """
+    """Root node of tree."""
     name: str
     value: float
     children: List[TreeNode]
 
 
+class ReportMetadata(TypedDict):
+    """Metadata for the report including report type and data tree."""
+    report_type: str
+    data: TreeRoot
+
+
 class ReportProcessor:
-    """
-    A class to handle security data processing and hierarchical data structure creation.
-    Processes raw data and generates a tree structure suitable for visualization.
-    """
-
-    def __init__(self, base_path: str = "../data"):
-        """
-        Initialize the processor with paths.
-
-        Args:
-            base_path: Base path for data files
-        """
+    def __init__(self, input_file: str, base_path: str = "../data"):
         self.base_path = Path(base_path)
-        self.raw_data_path = self.base_path / "raw/raw_data.csv"
+        self.raw_data_path = self.base_path / "raw" / input_file
         self.processed_data_path = self.base_path / "dataset.csv"
         self.sunburst_data_path = self.base_path / "sunburst_data.json"
-
-        # Initialize the tree structure
         self.tree: Union[TreeRoot, Dict] = {}
+        self.report_type: str = ""
 
-    @staticmethod
-    def _set_csv_field_limit() -> None:
-        """Set up CSV field size limit to handle large fields."""
-        max_int = sys.maxsize
-        while True:
-            try:
-                csv.field_size_limit(max_int)
-                break
-            except OverflowError:
-                max_int = int(max_int/10)
+    def _extract_report_type(self) -> str:
+        """Extract report type from the CSV file, skipping header rows."""
+        try:
+            with open(self.raw_data_path, 'r', encoding='utf-8') as f:
+                # Skip initial blank rows if any
+                report_type_line = ""
+                for _ in range(4):  # Read first 4 lines to find report type
+                    line = f.readline().strip()
+                    if line and not line.startswith(','):  # Find first non-empty line that doesn't start with comma
+                        report_type_line = line
+                        break
+
+                if report_type_line:
+                    # Split and get first non-empty cell
+                    cells = [cell.strip() for cell in report_type_line.split(',')]
+                    report_type = next((cell for cell in cells if cell), "Unknown Report Type")
+                    return report_type
+                return "Unknown Report Type"
+        except Exception as e:
+            print(f"Error extracting report type: {str(e)}")
+            return "Unknown Report Type"
 
     def process_raw_data(self) -> pd.DataFrame:
-        """
-        Process raw security data from CSV and create grouped dataset.
-
-        Returns:
-            DataFrame containing processed data
-        """
+        """Process raw security data from CSV and create grouped dataset."""
         try:
-            # Read the input CSV file
-            df = pd.read_csv(self.raw_data_path)
+            print(f"Attempting to read: {self.raw_data_path}")
+            print(f"File exists: {self.raw_data_path.exists()}")
+
+            # First read the metadata rows
+            with open(self.raw_data_path, 'r', encoding='utf-8') as f:
+                rows = []
+                for _ in range(4):
+                    rows.append(f.readline().strip())
+
+                # Extract report type from first row, first cell
+                self.report_type = rows[0].split(',')[0]
+                print(f"Extracted report type: {self.report_type}")
+
+            # Now read the actual data, skipping the first 3 rows (keep the header row)
+            df = pd.read_csv(self.raw_data_path, skiprows=3)
+
+            # Convert column names to lowercase and replace spaces with underscores
+            df.columns = df.columns.str.lower().str.replace(' ', '_')
+            print("\nActual columns after processing:", df.columns.tolist())
 
             # Group by the requested columns and count occurrences
             grouped_data = df.groupby([
-                'Expected Behavior',
-                'Provider Account',
-                'Publisher Name',
-                'Malware Condition'
+                'expected_behavior',
+                'provider_account',
+                'publisher_name',
+                'malware_condition'
             ]).size().reset_index(name='Count')
 
             # Sort by count in descending order
@@ -94,7 +93,7 @@ class ReportProcessor:
 
             # Save to CSV file
             grouped_data.to_csv(self.processed_data_path, index=False)
-            print(f"Processing complete. Data saved to '{self.processed_data_path}'")
+            print(f"\nProcessing complete. Data saved to '{self.processed_data_path}'")
 
             return grouped_data
 
@@ -107,25 +106,13 @@ class ReportProcessor:
 
     @staticmethod
     def _process_row(row: list) -> Tuple[Optional[str], Optional[List[str]], Optional[float]]:
-        """
-        Process a single CSV row for the tree structure.
-
-        Args:
-            row: A list of values from the CSV
-
-        Returns:
-            tuple containing:
-                - key: The top level parent (first non-empty value)
-                - path: List of node names leading to the value
-                - value: The numeric value for this path
-        """
+        """Process a single CSV row for the tree structure."""
         # Clean the row - remove empty strings and whitespace
         cleaned_row = [str(item).strip() for item in row if item and str(item).strip()]
 
         if not cleaned_row:
             return None, None, None
 
-        # Find the first non-empty value for key and collect path until we hit a number
         path: List[str] = []
         value = None
         key = None
@@ -153,13 +140,7 @@ class ReportProcessor:
         return key, path, value
 
     def _update_json_tree(self, path: List[str], value: float) -> None:
-        """
-        Update the JSON tree with a new path and value.
-
-        Args:
-            path: List of node names leading to value
-            value: Value to add at the leaf
-        """
+        """Update the JSON tree with a new path and value."""
         # Initialize if this is the first entry
         if not self.tree:
             self.tree = TreeRoot(
@@ -211,16 +192,8 @@ class ReportProcessor:
 
             current = next_node
 
-    def create_sunburst_data(self, skip_header: bool = False) -> TreeRoot:
-        """
-        Create hierarchical data structure from processed CSV.
-
-        Args:
-            skip_header: Whether to skip the first row of the CSV
-
-        Returns:
-            Dictionary containing the hierarchical data structure
-        """
+    def create_sunburst_data(self) -> ReportMetadata:
+        """Create hierarchical data structure from processed CSV."""
         try:
             # Reset the tree
             self.tree = {}
@@ -228,8 +201,7 @@ class ReportProcessor:
             # Process the CSV one row at a time
             with open(self.processed_data_path, 'r', encoding='utf-8') as f:
                 reader = csv.reader(f)
-                if skip_header:
-                    next(reader)
+                next(reader)  # Skip header
 
                 for row in reader:
                     try:
@@ -240,28 +212,29 @@ class ReportProcessor:
                         print(f"Warning: Error processing row {row}: {str(e)}")
                         continue
 
+            # Create the metadata object
+            metadata = ReportMetadata(
+                report_type=self.report_type,
+                data=self.tree
+            )
+
             # Save the result
             with open(self.sunburst_data_path, 'w', encoding='utf-8') as f:
-                json.dump(self.tree, f, indent=2, ensure_ascii=False)
+                json.dump(metadata, f, indent=2, ensure_ascii=False)
 
             print(f"Data created and saved to {self.sunburst_data_path}")
-            return self.tree
+            return metadata
 
         except Exception as e:
             print(f"Error creating data structure: {str(e)}")
             raise
 
-    def process_all(self) -> TreeRoot:
-        """
-        Run the complete processing pipeline: raw data → processed CSV → hierarchical JSON.
-
-        Returns:
-            Dictionary containing the hierarchical data structure
-        """
+    def process_all(self) -> ReportMetadata:
+        """Run the complete processing pipeline."""
         self.process_raw_data()
         return self.create_sunburst_data()
 
 
 if __name__ == "__main__":
-    processor = ReportProcessor()
+    processor = ReportProcessor("30 Day Violation - zMaticoo- Security Incidents by Tag.csv")
     processor.process_all()

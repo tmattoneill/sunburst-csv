@@ -1,4 +1,4 @@
-Expected Behavior,Provider Account,Publisher Name,Malware Condition,Count
+expected_behavior,provider_account,publisher_name,malware_condition,Count
 Phishing,Inspiritum_dsp,fyberdisplay,Phishing Domain,378
 Impression Fraud,bidswitch_dsp,fyberdisplay,Ad Fraud,371
 Phishing,Inspiritum_dsp,fyber,Phishing Domain,296
