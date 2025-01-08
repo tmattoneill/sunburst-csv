@@ -20,9 +20,13 @@ class TreeRoot(TypedDict):
     children: List[TreeNode]
 
 
+from datetime import datetime
+
 class ReportMetadata(TypedDict):
-    """Metadata for the report including report type and data tree."""
+    """Metadata for the report including report type, dates, and data tree."""
     report_type: str
+    date_start: str
+    date_end: str
     data: TreeRoot
 
 
@@ -34,6 +38,8 @@ class ReportProcessor:
         self.sunburst_data_path = self.base_path / "sunburst_data.json"
         self.tree: Union[TreeRoot, Dict] = {}
         self.report_type: str = ""
+        self.date_start: str = ""
+        self.date_end: str = ""
 
     def _extract_report_type(self) -> str:
         """Extract report type from the CSV file, skipping header rows."""
@@ -72,6 +78,22 @@ class ReportProcessor:
                 # Extract report type from first row, first cell
                 self.report_type = rows[0].split(',')[0]
                 print(f"Extracted report type: {self.report_type}")
+
+                # Extract and parse date span from second row
+                date_span = rows[1].split(',')[0]  # Get first cell of second row
+                if ' - ' in date_span:
+                    start_str, end_str = date_span.split(' - ')
+                    # Parse dates and format them consistently
+                    try:
+                        start_date = datetime.strptime(start_str.strip(), '%m/%d/%Y %H:%M')
+                        end_date = datetime.strptime(end_str.strip(), '%m/%d/%Y %H:%M')
+                        self.date_start = start_date.strftime('%Y-%m-%d %H:%M:00')
+                        self.date_end = end_date.strftime('%Y-%m-%d %H:%M:00')
+                        print(f"Extracted date span: {self.date_start} to {self.date_end}")
+                    except ValueError as e:
+                        print(f"Error parsing dates: {e}")
+                        self.date_start = start_str.strip()
+                        self.date_end = end_str.strip()
 
             # Now read the actual data, skipping the first 3 rows (keep the header row)
             df = pd.read_csv(self.raw_data_path, skiprows=3)
@@ -215,6 +237,8 @@ class ReportProcessor:
             # Create the metadata object
             metadata = ReportMetadata(
                 report_type=self.report_type,
+                date_start=self.date_start,
+                date_end=self.date_end,
                 data=self.tree
             )
 
