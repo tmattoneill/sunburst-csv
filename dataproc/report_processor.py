@@ -31,11 +31,21 @@ class ReportMetadata(TypedDict):
 
 
 class ReportProcessor:
-    def __init__(self, input_file: str, base_path: str = "../data"):
-        self.base_path = Path(base_path)
-        self.raw_data_path = self.base_path / "raw" / input_file
-        self.processed_data_path = self.base_path / "dataset.csv"
-        self.sunburst_data_path = self.base_path / "sunburst_data.json"
+    def __init__(self,
+                 client_name: str = 'Client',
+                 input_file: str = "sample_data.csv",
+                 tree_order: List[str] = None,
+                 data_path: str = "../data"):
+        self.data_path = Path(data_path)
+        self.raw_data_path = self.data_path / "raw" / input_file
+        self.processed_data_path = self.data_path / "dataset.csv"
+        self.sunburst_data_path = self.data_path / "sunburst_data.json"
+        self.tree_order = tree_order or ['hit_type',
+                                         'expected_behavior',
+                                         'malware_condition',
+                                         'provider_account',
+                                         'incident']
+        self.client_name = client_name
         self.tree: Union[TreeRoot, Dict] = {}
         self.report_type: str = ""
         self.date_start: str = ""
@@ -76,24 +86,27 @@ class ReportProcessor:
                     rows.append(f.readline().strip())
 
                 # Extract report type from first row, first cell
-                self.report_type = rows[0].split(',')[0]
+                self.report_type = rows[0].split(',')[0].strip('"')
                 print(f"Extracted report type: {self.report_type}")
 
                 # Extract and parse date span from second row
-                date_span = rows[1].split(',')[0]  # Get first cell of second row
+                date_span = rows[1].split(',')[0].strip('"')  # Get first cell of second row and remove quotes
                 if ' - ' in date_span:
                     start_str, end_str = date_span.split(' - ')
+                    # Clean up any remaining quotes and whitespace
+                    start_str = start_str.strip().strip('"')
+                    end_str = end_str.strip().strip('"')
                     # Parse dates and format them consistently
                     try:
-                        start_date = datetime.strptime(start_str.strip(), '%m/%d/%Y %H:%M')
-                        end_date = datetime.strptime(end_str.strip(), '%m/%d/%Y %H:%M')
+                        start_date = datetime.strptime(start_str, '%m/%d/%Y %H:%M')
+                        end_date = datetime.strptime(end_str, '%m/%d/%Y %H:%M')
                         self.date_start = start_date.strftime('%Y-%m-%d %H:%M:00')
                         self.date_end = end_date.strftime('%Y-%m-%d %H:%M:00')
                         print(f"Extracted date span: {self.date_start} to {self.date_end}")
                     except ValueError as e:
                         print(f"Error parsing dates: {e}")
-                        self.date_start = start_str.strip()
-                        self.date_end = end_str.strip()
+                        self.date_start = start_str
+                        self.date_end = end_str
 
             # Now read the actual data, skipping the first 3 rows (keep the header row)
             df = pd.read_csv(self.raw_data_path, skiprows=3)
@@ -103,12 +116,7 @@ class ReportProcessor:
             print("\nActual columns after processing:", df.columns.tolist())
 
             # Group by the requested columns and count occurrences
-            grouped_data = df.groupby([
-                'expected_behavior',
-                'provider_account',
-                'publisher_name',
-                'malware_condition'
-            ]).size().reset_index(name='Count')
+            grouped_data = df.groupby(self.tree_order).size().reset_index(name='Count')
 
             # Sort by count in descending order
             grouped_data = grouped_data.sort_values('Count', ascending=False)
@@ -166,7 +174,7 @@ class ReportProcessor:
         # Initialize if this is the first entry
         if not self.tree:
             self.tree = TreeRoot(
-                name='zMaticoo',
+                name=self.client_name,
                 value=0,
                 children=[]
             )
@@ -260,5 +268,5 @@ class ReportProcessor:
 
 
 if __name__ == "__main__":
-    processor = ReportProcessor("30 Day Violation - zMaticoo- Security Incidents by Tag.csv")
+    processor = ReportProcessor("Criteo", "criteo 30 day - malware- Security Incidents by Tag (1).csv")
     processor.process_all()

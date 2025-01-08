@@ -1,839 +1,452 @@
-expected_behavior,provider_account,publisher_name,malware_condition,Count
-Phishing,Inspiritum_dsp,fyberdisplay,Phishing Domain,378
-Impression Fraud,bidswitch_dsp,fyberdisplay,Ad Fraud,371
-Phishing,Inspiritum_dsp,fyber,Phishing Domain,296
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,applovinalx,Heuristic Flag,260
-Impression Fraud,bidswitch_dsp,fyber,Ad Fraud,252
-Phishing,bidswitch_dsp,fyberdisplay,Phishing Domain,212
-Impression Fraud,bidswitch_dsp,unityads,Ad Fraud,186
-Impression Fraud,pubnative,applovinalx,Ad Fraud,182
-Phishing,Inspiritum_dsp,unityads,Phishing Domain,170
-Phishing,shareit_dsp,applovinalx,Scam,156
-Phishing,startio_dsp,mvungle,Scam,153
-Phishing,bidswitch_dsp,vungle,Phishing Domain,134
-Impression Fraud,bidswitch_dsp,unity,Ad Fraud,130
-Phishing,bidswitch_dsp,unityads,Phishing Domain,129
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyberdisplay,Heuristic Flag,119
-Phishing,opera_dsp,applovinalx,Scam,117
-Impression Fraud,shareit_dsp,fyberdisplay,Ad Fraud,112
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,fyberdisplay,Heuristic Flag,110
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyber,Heuristic Flag,103
-Phishing,playdigo_dsp,fyberdisplay,Phishing Domain,103
-Out-of-browser Redirect,bidswitch_dsp,fyberdisplay,App Store Redirect iOS,98
-Out-of-browser Redirect,opera_dsp,applovinalx,App Store Redirect Android,96
-Phishing,vlionmobi_dsp,fyberdisplay,GhostCat - 3PC,93
-Out-of-browser Redirect,bidswitch_dsp,unityads,App Store Redirect iOS,89
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adsyield_dsp,fyber,Heuristic Flag,88
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,fyber,Heuristic Flag,80
-Phishing,startio_dsp,unity,Scam,77
-Phishing,Inspiritum_dsp,bidmachine,Phishing Domain,75
-Out-of-browser Redirect,magnite_dsp,applovinalx,App Store Redirect iOS,72
-Out-of-browser Redirect,magnite_dsp,applovinalx,App Store Redirect Android,70
-Phishing,Adsolut Media_dsp,unityads,GhostCat - 3PC,69
-Impression Fraud,nasmedia_dsp,bidmachine,Ad Fraud,68
-Out-of-browser Redirect,bidswitch_dsp,fyber,App Store Redirect Android,65
-Compromised Content,vk_dsp,rixengine,Compromised Domain,64
-Out-of-browser Redirect,bidswitch_dsp,fyberdisplay,App Store Redirect Android,62
-Out-of-browser Redirect,bidswitch_dsp,mvungle,App Store Redirect iOS,60
-Phishing,bidswitch_dsp,unity,Phishing Domain,58
-Impression Fraud,bidswitch_dsp,vungle,Ad Fraud,58
-Out-of-browser Redirect,bidswitch_dsp,unity,App Store Redirect iOS,55
-Impression Fraud,bidswitch_dsp,mvungle,Ad Fraud,54
-Out-of-browser Redirect,bidswitch_dsp,fyber,App Store Redirect iOS,54
-Phishing,startio_dsp,vungle,Scam,53
-Out-of-browser Redirect,bidswitch_dsp,vungle,App Store Redirect iOS,51
-Out-of-browser Redirect,pubnative,applovinalx,App Store Redirect Android,51
-Compromised Content,vk_dsp,bidmachine,Compromised Domain,50
-Phishing,betweenx_dsp,isx,GhostCat - 3PC,50
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,unityads,Heuristic Flag,50
-Phishing,adwmg_dsp,mvungle,Scam,49
-Impression Fraud,aceexchange_dsp,prebid,Ad Fraud,47
-Out-of-browser Redirect,bidswitch_dsp,unityads,App Store Redirect Android,47
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,mvungle,Heuristic Flag,46
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,vungle,Heuristic Flag,45
-Impression Fraud,magnite_dsp,applovinalx,Ad Fraud,44
-Phishing,screencore_dsp,fyberdisplay,GhostCat - 3PC,44
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,unity,Heuristic Flag,43
-Phishing,playdigo_dsp,fyber,Phishing Domain,42
-Phishing,bidswitch_dsp,fyber,Phishing Domain,41
-Impression Fraud,bidswitch_dsp,vungleus,Ad Fraud,41
-Phishing,startio_dsp,unityads,Scam,41
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,mvungle,DNE Domain,41
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,fyberdisplay,Heuristic Flag,41
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,unity,DNE Domain,39
-Impression Fraud,aceexchange_dsp,bidmachine,Ad Fraud,38
-Phishing,Inspiritum_dsp,algorixeu,Phishing Domain,38
-Phishing,bidswitch_dsp,mvungle,Phishing Domain,38
-Impression Fraud,bidswitch_dsp,bidmachine,Ad Fraud,35
-Out-of-browser Redirect,snow_dsp,snow,App Store Redirect iOS,35
-Phishing,Adsolut Media_dsp,fyberdisplay,GhostCat - 3PC,35
-Impression Fraud,aceex_dsp,unity,Ad Fraud,33
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,rixengine,Heuristic Flag,32
-Out-of-browser Redirect,bidswitch_dsp,vungleus,App Store Redirect iOS,32
-Phishing,Inspiritum_dsp,pubnative,Phishing Domain,32
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,applovinalx,Heuristic Flag,32
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adsyield_dsp,fyberdisplay,Heuristic Flag,32
-Phishing,Adsolut Media_dsp,isx,GhostCat - 3PC,31
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,mvungle,Heuristic Flag,31
-Impression Fraud,nasmedia_dsp,unityads,Ad Fraud,31
-Out-of-browser Redirect,magnite_dsp,mvungle,App Store Redirect iOS,30
-Out-of-browser Redirect,pubnative,applovinalx,App Store Redirect iOS,30
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,bidmachine,Heuristic Flag,30
-Compromised Content,opera_dsp,applovinalx,Compromised Domain,29
-Phishing,haxmedia_dsp,applovinalx,GhostCat - 3PC,28
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,vungle,Heuristic Flag,27
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,bidmachine,DNE Domain,27
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,unity,Heuristic Flag,26
-Phishing,playdigo_dsp,bidmachine,Phishing Domain,26
-Phishing,screencore_dsp,unity,GhostCat - 3PC,26
-Impression Fraud,shareit_dsp,bidmachine,Ad Fraud,26
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,applovinalx,DNE Domain,26
-Phishing,haxmedia_dsp,fyberdisplay,GhostCat - 3PC,26
-Impression Fraud,iflytek_dsp,gbwhatsapp2,Ad Fraud,25
-Phishing,Inspiritum_dsp,gbwhatsapp2,Phishing Domain,25
-Phishing,algorix_dsp,fyberdisplay,GhostCat - 3PC,25
-Impression Fraud,opera_dsp,applovinalx,Ad Fraud,25
-Out-of-browser Redirect,bidswitch_dsp,mvungle,App Store Redirect Android,24
-Phishing,bidswitch_dsp,vungleus,Phishing Domain,24
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operaroi_dsp,unity,Heuristic Flag,23
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,bidmachine,Heuristic Flag,23
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,mvungle,Heuristic Flag,22
-Phishing,playdigo_dsp,unity,Phishing Domain,22
-Out-of-browser Redirect,bidswitch_dsp,unity,App Store Redirect Android,22
-Phishing,adsyield_dsp,fyber,Phishing Domain,21
-Phishing,magnite_dsp,applovinalx,Scam,21
-Impression Fraud,magnite_dsp,fyberdisplay,Ad Fraud,21
-Out-of-browser Redirect,magnite_dsp,unity,App Store Redirect iOS,21
-Compromised Content,bidease_dsp,webeye,Compromised Domain,21
-Phishing,smartad_dsp,vungle,Scam,21
-Out-of-browser Redirect,magnite_dsp,fyber,App Store Redirect iOS,20
-Out-of-browser Redirect,magnite_dsp,unityads,App Store Redirect iOS,20
-Impression Fraud,magnite_dsp,mvungle,Ad Fraud,20
-Impression Fraud,magnite_dsp,bidmachine,Ad Fraud,20
-Out-of-browser Redirect,iflytek_dsp,gbwhatsapp2,App Store Redirect iOS,19
-Phishing,aceex_dsp,fyberdisplay,Phishing Domain,19
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,unityads,Heuristic Flag,19
-Compromised Content,startio_dsp,mvungle,SocGholish,19
-Impression Fraud,shareit_dsp,mvungle,Ad Fraud,19
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,vungle,DNE Domain,19
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mezzomedia_dsp,applovinalx,DNE Domain,19
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,mvungle,DNE Domain,18
-Phishing,zzmobi,seedtag,Redirector,18
-Phishing,startio_dsp,fyberdisplay,Scam,18
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,vungle,Heuristic Flag,18
-Impression Fraud,magnite_dsp,unityads,Ad Fraud,18
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,unityads,DNE Domain,18
-Phishing,vlionmobi_dsp,fyberdisplay,Phishing Domain,17
-Phishing,pubnative,applovinalx,Phishing Domain,17
-Phishing,smartad_dsp,vungleus,Scam,17
-Phishing,Inspiritum_dsp,inmobi,Phishing Domain,17
-Impression Fraud,magnite_dsp,unity,Ad Fraud,17
-Phishing,startio_dsp,fyberdisplay,Phishing Domain,17
-Impression Fraud,xiaomi_dsp,unityads,Ad Fraud,16
-Out-of-browser Redirect,nasmedia_dsp,rakuten,App Store Redirect Android,16
-Phishing,almaty_dsp,fyberdisplay,GhostCat - 3PC,16
-Phishing,startio_dsp,unity,Phishing Domain,15
-Phishing,startio_dsp,fyber,Phishing Domain,15
-Compromised Content,startio_dsp,mvungle,Compromised Domain,15
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mezzomedia_dsp,unity,DNE Domain,15
-Out-of-browser Redirect,bidswitch_dsp,vungleus,App Store Redirect Android,15
-Compromised Content,adwmg_dsp,mvungle,Compromised Domain,15
-Phishing,algorix_dsp,fyber,GhostCat - 3PC,15
-Out-of-browser Redirect,startio_dsp,fyberdisplay,App Store Redirect Android,15
-Compromised Content,startio_dsp,mvungle,E-Skimming,15
-Phishing,bidease_dsp,fyberdisplay,Phishing Domain,14
-Phishing,Inspiritum_dsp,maticooads,Phishing Domain,14
-Phishing,duopeak_dsp,fyber,Phishing Domain,14
-Compromised Content,startio_dsp,fyber,SocGholish,14
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,vungleus,Heuristic Flag,14
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,mvungle,DNE Domain,14
-Phishing,startio_dsp,mvungle,Redirector,14
-Out-of-browser Redirect,bidswitch_dsp,vungle,App Store Redirect Android,14
-Out-of-browser Redirect,bidswitch_dsp,bidmachine,App Store Redirect iOS,13
-Impression Fraud,pubnative,applovinalx,Vidlox- 3PC,13
-Out-of-browser Redirect,magnite_dsp,mvungle,App Store Redirect Android,13
-Phishing,pubnative,applovinalx,Scam,13
-Phishing,bidswitch_dsp,pubnative,Phishing Domain,13
-Impression Fraud,betweenx_dsp,fyberdisplay,Ad Fraud,13
-Phishing,almaty_dsp,prebid,GhostCat - 3PC,13
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidence_dsp,unityads,DNE Domain,13
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,fyberdisplay,Heuristic Flag,13
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,mvungle,Heuristic Flag,13
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,fyberdisplay,DNE Domain,12
-Out-of-browser Redirect,magnite_dsp,unityads,App Store Redirect Android,12
-Phishing,Inspiritum_dsp,xiaomi,Phishing Domain,12
-Impression Fraud,bidease_dsp,fyberdisplay,Ad Fraud,12
-Phishing,opera_dsp,applovinalx,Redirector,12
-Phishing,bidswitch_dsp,bidmachine,Phishing Domain,12
-Phishing,mezzomedia_dsp,applovinalx,Scam,12
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyberdisplay,DNE Domain,12
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,rixengine,DNE Domain,12
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,fyber,DNE Domain,12
-Phishing,startio_dsp,vungle,Phishing Domain,12
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operasg_dsp,mvungle,DNE Domain,12
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,xiaomi,DNE Domain,12
-Compromised Content,smartad_dsp,vungleus,Compromised Domain,11
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,mvungle,DNE Domain,11
-Compromised Content,startio_dsp,vungle,SocGholish,11
-Compromised Content,startio_dsp,unity,SocGholish,11
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,bidmachine,DNE Domain,11
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,applovinalx,Heuristic Flag,11
-Phishing,rixengine_dsp,unity,GhostCat - 3PC,11
-Impression Fraud,aceex_dsp,bidmachine,Ad Fraud,11
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,fyberdisplay,Heuristic Flag,11
-Phishing,Inspiritum_dsp,igniteob,Phishing Domain,11
-Phishing,playdigo_dsp,fyber,Scam,11
-Phishing,aceex_dsp,unityads,Phishing Domain,11
-Phishing,betweenx_dsp,fyberdisplay,GhostCat - 3PC,11
-Phishing,bidease_dsp,fyberdisplay,GhostCat - 3PC,11
-Compromised Content,startio_dsp,unity,Compromised Domain,11
-Phishing,startio_dsp,vungle,Redirector,11
-Compromised Content,vk_dsp,fyberdisplay,Compromised Domain,11
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adsyield_dsp,unity,Heuristic Flag,11
-Out-of-browser Redirect,magnite_dsp,fyberdisplay,App Store Redirect iOS,11
-Impression Fraud,magnite_dsp,fyber,Ad Fraud,11
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,unity,Heuristic Flag,10
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,bidmachine,DNE Domain,10
-Phishing,startio_dsp,webeyepremium,Redirector,10
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,applovinalx,Heuristic Flag,10
-Compromised Content,startio_dsp,unity,E-Skimming,10
-Phishing,webeye_dsp,xiaomi,Phishing Domain,10
-Compromised Content,vk_dsp,isx,Compromised Domain,10
-Phishing,aceex_dsp,bidmachine,Phishing Domain,10
-Impression Fraud,Adsolut Media_dsp,unityads,Ad Fraud,10
-Impression Fraud,betweenx_dsp,unityads,Ad Fraud,10
-Phishing,betweenx_dsp,unityads,Phishing Domain,10
-Impression Fraud,aceexchange_dsp,fyber,Ad Fraud,10
-Impression Fraud,nasmedia_dsp,fyber,Ad Fraud,10
-Out-of-browser Redirect,startio_dsp,vungleus,App Store Redirect Android,10
-Impression Fraud,nasmedia_dsp,prebid,Ad Fraud,10
-Out-of-browser Redirect,startio_dsp,bidmachine,App Store Redirect Android,10
-Impression Fraud,smartad_dsp,fyberdisplay,Ad Fraud,10
-Impression Fraud,startio_dsp,fyberdisplay,Ad Fraud,10
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,isx,DNE Domain,10
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),tpmn_dsp,unityads,DNE Domain,10
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),webeye_dsp,xiaomi,Heuristic Flag,9
-Impression Fraud,webeye_dsp,unity,Ad Fraud,9
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,bidmachine,DNE Domain,9
-Compromised Content,startio_dsp,vungle,E-Skimming,9
-Software Install Prompt,bidswitch_dsp,unityads,PUP,9
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),haxmedia_dsp,fyberdisplay,Heuristic Flag,9
-Out-of-browser Redirect,iflytek_dsp,gbwhatsapp2,App Store Redirect Android,9
-Impression Fraud,snow_dsp,unityads,Ad Fraud,9
-Impression Fraud,snow_dsp,vungle,Ad Fraud,9
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),betweenx_dsp,fyberdisplay,Heuristic Flag,9
-Phishing,adwmg_dsp,vungleus,Scam,9
-Phishing,betweenx_dsp,fyber,Phishing Domain,9
-Impression Fraud,nasmedia_dsp,rakuten,Ad Fraud,9
-Phishing,Inspiritum_dsp,rixengine,Phishing Domain,9
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),snow_dsp,unity,Heuristic Flag,9
-Impression Fraud,algorix_dsp,unity,Ad Fraud,9
-Impression Fraud,almaty_dsp,snow,Ad Fraud,9
-Phishing,outbrain,seedtag,Scam,9
-Phishing,snow_dsp,fyberdisplay,GhostCat - 3PC,9
-Phishing,startio_dsp,fyberdisplay,Redirector,9
-Phishing,startio_dsp,unityads,Phishing Domain,9
-Impression Fraud,smartad_dsp,vungleus,Ad Fraud,8
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,unityads,Heuristic Flag,8
-Compromised Content,smartad_dsp,vungle,E-Skimming,8
-Impression Fraud,snow_dsp,snow,Ad Fraud,8
-Phishing,startio_dsp,vungleus,Phishing Domain,8
-Phishing,startio_dsp,unity,Redirector,8
-Phishing,startio_dsp,vungleus,Scam,8
-Phishing,startio_dsp,mvungle,Phishing Domain,8
-Out-of-browser Redirect,startio_dsp,mvungle,App Store Redirect Android,8
-Compromised Content,startio_dsp,fyber,Compromised Domain,8
-Compromised Content,startio_dsp,fyber,E-Skimming,8
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,fyberdisplay,DNE Domain,8
-Out-of-browser Redirect,magnite_dsp,bidmachine,App Store Redirect iOS,8
-Phishing,bidswitch_dsp,pubnativesdk,Phishing Domain,8
-Phishing,betweenx_dsp,fyberdisplay,Phishing Domain,8
-Impression Fraud,adsyield_dsp,fyberdisplay,Ad Fraud,8
-Impression Fraud,duopeak_dsp,bidmachine,Ad Fraud,8
-Out-of-browser Redirect,loopme_dsp,snow,App Store Redirect iOS,7
-Compromised Content,smartad_dsp,vungle,Compromised Domain,7
-Out-of-browser Redirect,magnite_dsp,bidmachine,App Store Redirect Android,7
-Phishing,zzmobi,seedtag,Scam,7
-Impression Fraud,rixengine_dsp,unityads,Ad Fraud,7
-Phishing,startio_dsp,unityads,Redirector,7
-Impression Fraud,nasmedia_dsp,unity,Ad Fraud,7
-Phishing,pubnative,applovinalx,StormMaize-3PC,7
-Out-of-browser Redirect,startio_dsp,fyber,App Store Redirect Android,7
-Phishing,adwmg_dsp,unity,GhostCat - 3PC,7
-Impression Fraud,adsyield_dsp,fyber,Ad Fraud,7
-Phishing,algorix_dsp,fyberdisplay,Phishing Domain,7
-Phishing,algorix_dsp,fyber,Phishing Domain,7
-Phishing,bidease_dsp,bidmachine,Phishing Domain,7
-Impression Fraud,bidease_dsp,applovinalx,Ad Fraud,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),betweenx_dsp,fyber,Heuristic Flag,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceex_dsp,bidmachine,Heuristic Flag,7
-Out-of-browser Redirect,snow_dsp,snow,App Store Redirect Android,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mezzomedia_dsp,unityads,DNE Domain,7
-Compromised Content,startio_dsp,fyberdisplay,SocGholish,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),evolution_dsp,mvungle,DNE Domain,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),nasmedia_dsp,bidmachine,DNE Domain,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungle,DNE Domain,7
-Out-of-browser Redirect,bidswitch_dsp,bidmachine,App Store Redirect Android,7
-Impression Fraud,xiaomi_dsp,prebid,Ad Fraud,7
-Out-of-browser Redirect,magnite_dsp,fyberdisplay,App Store Redirect Android,7
-Impression Fraud,startio_dsp,fyber,Ad Fraud,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,bidmachine,DNE Domain,7
-Phishing,bidease_dsp,unityads,Redirector,7
-Phishing,duopeak_dsp,fyberdisplay,Phishing Domain,7
-Phishing,duopeak_dsp,applovinalx,GhostCat - 3PC,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,vungleus,DNE Domain,7
-Phishing,betweenx_dsp,unityads,GhostCat - 3PC,7
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),tpmn_dsp,unity,DNE Domain,7
-Compromised Content,startio_dsp,unityads,Compromised Domain,6
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,xiaomi,Heuristic Flag,6
-Out-of-browser Redirect,nasmedia_dsp,bidmachine,App Store Redirect Android,6
-Compromised Content,startio_dsp,unityads,SocGholish,6
-Phishing,betweenx_dsp,fyber,GhostCat - 3PC,6
-Phishing,pubnative,applovinalx,GhostCat - 3PC,6
-Phishing,rixengine_dsp,mvungle,Scam,6
-Phishing,betweenx_dsp,unity,GhostCat - 3PC,6
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,isx,Heuristic Flag,6
-Phishing,aceex_dsp,gbwhatsapp2,Phishing Domain,6
-Impression Fraud,bidease_dsp,isx,Ad Fraud,6
-Phishing,aceex_dsp,fyberdisplay,GhostCat - 3PC,6
-Phishing,webeye_dsp,xiaomi,Redirector,6
-Out-of-browser Redirect,startio_dsp,fyberdisplay,App Store Redirect iOS,6
-Out-of-browser Redirect,xiaomi_dsp,unityads,App Store Redirect Android,6
-Phishing,startio_dsp,fyberdisplay,GhostCat - 3PC,6
-Phishing,Adsolut Media_dsp,isx,Redirector,6
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,unityads,Heuristic Flag,6
-Phishing,bidease_dsp,applovinalx,Phishing Domain,6
-Phishing,bidease_dsp,unityads,Phishing Domain,6
-Compromised Content,startio_dsp,vungle,Compromised Domain,6
-Impression Fraud,pubmatic_dsp,fyberdisplay,Ad Fraud,6
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),snow_dsp,snow,Heuristic Flag,6
-Compromised Content,smartad_dsp,mvungle,SocGholish,6
-Out-of-browser Redirect,magnite_dsp,fyber,App Store Redirect Android,6
-Phishing,smartad_dsp,mvungle,Scam,6
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungleus,DNE Domain,6
-Compromised Content,startio_dsp,vungleus,SocGholish,6
-Out-of-browser Redirect,evolution_dsp,vungleus,App Store Redirect Android,5
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),webeye_dsp,unity,Heuristic Flag,5
-Impression Fraud,webeye_dsp,bidmachine,Ad Fraud,5
-Compromised Content,smartad_dsp,unity,Compromised Domain,5
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungleus,Heuristic Flag,5
-Phishing,evolution_dsp,unity,Scam,5
-Phishing,opera_dsp,unityads,Scam,5
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceex_dsp,fyberdisplay,Heuristic Flag,5
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),betweenx_dsp,unityads,Heuristic Flag,5
-Compromised Content,startio_dsp,fyberdisplay,E-Skimming,5
-Out-of-browser Redirect,pubmatic_dsp,applovinalx,App Store Redirect Android,5
-Compromised Content,startio_dsp,unityads,E-Skimming,5
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),betweenx_dsp,unity,Heuristic Flag,5
-Phishing,smartad_dsp,isx,Scam,5
-Phishing,magnite_dsp,bidmachine,Scam,5
-Fake Anti-virus,aceex_dsp,fyberdisplay,StringRipper - 3PC,5
-Phishing,startio_dsp,fyber,Scam,5
-Phishing,startio_dsp,bidmachine,Scam,5
-Phishing,vlionmobi_dsp,fyberdisplay,StormMaize-3PC,5
-Out-of-browser Redirect,startio_dsp,unity,App Store Redirect Android,5
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,unity,DNE Domain,5
-Compromised Content,startio_dsp,fyberdisplay,Compromised Domain,5
-Impression Fraud,playdigo_dsp,fyber,Ad Fraud,5
-Phishing,snow_dsp,fyber,GhostCat - 3PC,5
-Phishing,duopeak_dsp,applovinalx,Phishing Domain,4
-Phishing,evolution_dsp,vungleus,Scam,4
-Impression Fraud,aceex_dsp,algorixeu,Ad Fraud,4
-Phishing,loopme_dsp,snow,Phishing Domain,4
-Impression Fraud,algorix_dsp,unityads,Ad Fraud,4
-Phishing,mezzomedia_dsp,applovinalx,Redirector,4
-Phishing,magnite_dsp,mvungle,Scam,4
-Phishing,rixengine_dsp,unityads,Phishing Domain,4
-Impression Fraud,loopme_dsp,snow,Ad Fraud,4
-Impression Fraud,bidease_dsp,unityads,Ad Fraud,4
-Phishing,smartad_dsp,vungleus,Phishing Domain,4
-Phishing,smartad_dsp,vungle,Phishing Domain,4
-Impression Fraud,algorix_dsp,fyberdisplay,Ad Fraud,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,mvungle,Heuristic Flag,4
-Impression Fraud,smartad_dsp,mvungle,Ad Fraud,4
-Compromised Content,smartad_dsp,vungleus,E-Skimming,4
-Compromised Content,smartad_dsp,prebid,Compromised Domain,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,prebid,DNE Domain,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubnative,applovinalx,DNE Domain,4
-Compromised Content,startio_dsp,bidmachine,SocGholish,4
-Impression Fraud,snow_dsp,mvungle,Ad Fraud,4
-Impression Fraud,pubmatic_dsp,applovinalx,Ad Fraud,4
-Out-of-browser Redirect,nasmedia_dsp,unityads,App Store Redirect Android,4
-Compromised Content,startio_dsp,vungleus,Compromised Domain,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),ignite2_dsp,bidmachine,DNE Domain,4
-Compromised Content,smartad_dsp,vungleus,SocGholish,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceexchange_dsp,unity,DNE Domain,4
-Compromised Content,adwmg_dsp,vungleus,Compromised Domain,4
-Impression Fraud,Adsolut Media_dsp,fyberdisplay,Ad Fraud,4
-Phishing,Inspiritum_dsp,toponmintegral,Phishing Domain,4
-Impression Fraud,escalax_dsp,fyber,Ad Fraud,4
-Phishing,webeye_dsp,xiaomi,Scam,4
-Phishing,adsyield_dsp,fyberdisplay,Phishing Domain,4
-Phishing,startio_dsp,vungleus,Redirector,4
-Out-of-browser Redirect,startio_dsp,fyber,App Store Redirect iOS,4
-Impression Fraud,rixengine_dsp,mvungle,Ad Fraud,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,bidmachine,Heuristic Flag,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,unityads,DNE Domain,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),ignite2_dsp,fyberdisplay,Heuristic Flag,4
-"Scam: ""Call Technical Support""",zzmobi,seedtag,Dolos-3PC,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,applovinalx,DNE Domain,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,unity,Heuristic Flag,4
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,unityads,Heuristic Flag,4
-Compromised Content,smartad_dsp,mvungle,Compromised Domain,3
-Compromised Content,magnite_dsp,mvungle,SocGholish,3
-Out-of-browser Redirect,vlionmobi_dsp,fyberdisplay,App Store Redirect Android,3
-Out-of-browser Redirect,rixengine_dsp,unity,App Store Redirect iOS,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adwmg_dsp,bidmachine,DNE Domain,3
-Compromised Content,startio_dsp,vungleus,E-Skimming,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,startio,Heuristic Flag,3
-Out-of-browser Redirect,haxmedia_dsp,fyberdisplay,App Store Redirect iOS,3
-"Scam: ""Call Technical Support""",outbrain,unityads,Dolos-3PC,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adwmg_dsp,mvungle,Heuristic Flag,3
-Impression Fraud,smartad_dsp,vungle,Ad Fraud,3
-Compromised Content,smartad_dsp,isx,Compromised Domain,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),nasmedia_dsp,unityads,DNE Domain,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mezzomedia_dsp,fyber,DNE Domain,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,unityads,Heuristic Flag,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,fyberdisplay,Heuristic Flag,3
-Out-of-browser Redirect,bidswitch_dsp,pubnative,App Store Redirect Android,3
-Impression Fraud,pubmatic_dsp,fyber,Ad Fraud,3
-Out-of-browser Redirect,bidease_dsp,fyberdisplay,App Store Redirect Android,3
-Impression Fraud,startio_dsp,unity,Ad Fraud,3
-Compromised Content,smartad_dsp,mvungle,E-Skimming,3
-Compromised Content,smartad_dsp,prebid,E-Skimming,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operasg_dsp,vungle,DNE Domain,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,fyberdisplay,Heuristic Flag,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,bidmachine,Heuristic Flag,3
-Phishing,xiaomi_dsp,vungle,Scam,3
-Impression Fraud,pubnative,unity,Ad Fraud,3
-Impression Fraud,rixengine_dsp,unity,Ad Fraud,3
-Phishing,smartad_dsp,unity,Phishing Domain,3
-Impression Fraud,mobshark_dsp,prebid,Ad Fraud,3
-Out-of-browser Redirect,playdigo_dsp,fyberdisplay,App Store Redirect Android,3
-Out-of-browser Redirect,startio_dsp,unityads,App Store Redirect Android,3
-Phishing,9dots_dsp,unityads,Scam,3
-Phishing,9dots_dsp,unity,Scam,3
-Phishing,aceex_dsp,bidmachine,GhostCat - 3PC,3
-Impression Fraud,magnite_dsp,isx,Ad Fraud,3
-Phishing,smartad_dsp,unity,Scam,3
-Phishing,rixengine_dsp,fyber,GhostCat - 3PC,3
-Impression Fraud,escalax_dsp,fyberdisplay,Ad Fraud,3
-Phishing,startio_dsp,bidmachine,Redirector,3
-Impression Fraud,operasg_dsp,unity,Ad Fraud,3
-Impression Fraud,operasg_dsp,fyberdisplay,Ad Fraud,3
-Phishing,snow_dsp,snow,Phishing Domain,3
-Fake Anti-virus,startio_dsp,unity,Scareware Creative,3
-Phishing,playdigo_dsp,fyber,GhostCat - 3PC,3
-Phishing,operasg_dsp,mvungle,Phishing Domain,3
-Phishing,opera_dsp,bidmachine,Phishing Domain,3
-Phishing,algorix_dsp,vungleus,Phishing Creative,3
-Phishing,algorix_dsp,fyberdisplay,Phishing Creative,3
-Phishing,adwmg_dsp,unity,Redirector,3
-Impression Fraud,bidease_dsp,bidmachine,Ad Fraud,3
-Phishing,algorix_dsp,vungleus,Phishing Domain,3
-Phishing,bidease_dsp,isx,Phishing Domain,3
-Phishing,azure_dsp,fyberdisplay,Phishing Domain,3
-Phishing,mobfox_dsp,vungle,Redirector,3
-Phishing,betweenx_dsp,isx,Phishing Domain,3
-Impression Fraud,betweenx_dsp,fyber,Ad Fraud,3
-Phishing,haxmedia_dsp,fyberdisplay,Phishing Domain,3
-Phishing,haxmedia_dsp,snow,GhostCat - 3PC,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,webeyepremium,Heuristic Flag,3
-Phishing,betweenx_dsp,unity,Phishing Domain,3
-Compromised Content,adwmg_dsp,mvungle,E-Skimming,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,vungleus,Heuristic Flag,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),spinx_dsp,bidmachine,Heuristic Flag,3
-Compromised Content,operasg_dsp,vungle,Compromised Domain,3
-Compromised Content,operasg_dsp,mvungle,Compromised Domain,3
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,vungle,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,fyberdisplay,Heuristic Flag,2
-Compromised Content,magnite_dsp,applovinalx,Compromised Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vk_dsp,inmobi,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,fyberctr,Heuristic Flag,2
-Phishing,bidswitch_dsp,fyberdisplay,Redirector,2
-Phishing,bidswitch_dsp,gbwhatsapp2,Phishing Domain,2
-Phishing,bidswitch_dsp,inmobi,Phishing Domain,2
-Impression Fraud,bidswitch_dsp,pubnative,Ad Fraud,2
-Compromised Content,opera_dsp,applovinalx,MimicManager - 3PC,2
-Out-of-browser Redirect,adsyield_dsp,fyber,App Store Redirect Android,2
-Out-of-browser Redirect,algorix_dsp,fyberdisplay,App Store Redirect iOS,2
-Impression Fraud,vlionmobi_dsp,fyberdisplay,Ad Fraud,2
-Impression Fraud,webeye_dsp,mvungle,Ad Fraud,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,unity,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),outbrain,isx,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),outbrain,seedtag,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),outbrain,unityads,Heuristic Flag,2
-Out-of-browser Redirect,bidswitch_dsp,pubnativesdk,App Store Redirect Android,2
-Out-of-browser Redirect,evolution_dsp,fyberdisplay,App Store Redirect Android,2
-Impression Fraud,playdigo_dsp,fyberdisplay,Ad Fraud,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operaroi_dsp,unity,DNE Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),ignite2_dsp,unity,DNE Domain,2
-Phishing,evolution_dsp,fyberdisplay,Scam,2
-Phishing,duopeak_dsp,unity,Redirector,2
-Phishing,bidswitch_dsp,fyber,Redirector,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),ignite2_dsp,xiaomi,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,fyberdisplay,DNE Domain,2
-Compromised Content,startio_dsp,mvungle,MudOrange-3PC,2
-Compromised Content,smartad_dsp,isx,E-Skimming,2
-Impression Fraud,startio_dsp,bidmachine,Ad Fraud,2
-Out-of-browser Redirect,revx_dsp,applovinalx,App Store Redirect Android,2
-Out-of-browser Redirect,rixengine_dsp,unity,App Store Redirect Android,2
-Out-of-browser Redirect,magnite_dsp,unity,App Store Redirect Android,2
-Out-of-browser Redirect,magnitesdk_dsp,bidmachine,App Store Redirect Android,2
-Out-of-browser Redirect,nasmedia_dsp,fyber,App Store Redirect iOS,2
-Out-of-browser Redirect,nasmedia_dsp,prebid,App Store Redirect iOS,2
-Out-of-browser Redirect,playdigo_dsp,fyber,App Store Redirect Android,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,fyberctr,DNE Domain,2
-Phishing,bidease_dsp,unity,Phishing Domain,2
-Phishing,almaty_dsp,igniteob,GhostCat - 3PC,2
-Impression Fraud,adsyield_dsp,vungleus,Ad Fraud,2
-Phishing,bidswitch_dsp,unity,Redirector,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,fyberctr,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,vungleus,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),evolution_dsp,unityads,DNE Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),evolution_dsp,vungle,DNE Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceexchange_dsp,bidmachine,DNE Domain,2
-Out-of-browser Redirect,smartad_dsp,isx,App Store Redirect Android,2
-Out-of-browser Redirect,smartad_dsp,vungleus,App Store Redirect Android,2
-Out-of-browser Redirect,smartad_dsp,vungleus,App Store Redirect iOS,2
-Out-of-browser Redirect,opera_dsp,fyberdisplay,App Store Redirect Android,2
-Phishing,magnite_dsp,mvungle,Redirector,2
-Phishing,algorix_dsp,applovinalx,Redirector,2
-Phishing,evolution_dsp,unityads,Scam,2
-Impression Fraud,betweenx_dsp,isx,Ad Fraud,2
-Impression Fraud,betweenx_dsp,unity,Ad Fraud,2
-Compromised Content,startio_dsp,vungleus,MudOrange-3PC,2
-Compromised Content,spinx_dsp,fyber,Compromised Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,applovinalx,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Adsolut Media_dsp,fyberdisplay,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Adsolut Media_dsp,isx,Heuristic Flag,2
-Phishing,vlionmobi_dsp,fyberdisplay,Redirector,2
-Out-of-browser Redirect,vlionmobi_dsp,fyberdisplay,App Store Redirect iOS,2
-Impression Fraud,screencore_dsp,snow,Ad Fraud,2
-"Scam: ""Call Technical Support""",outbrain,seedtag,Dolos-3PC,2
-Phishing,tpmn_dsp,unity,Redirector,2
-Phishing,opera_dsp,seedtag,Scam,2
-Phishing,playdigo_dsp,bidmachine,GhostCat - 3PC,2
-Phishing,playdigo_dsp,fyber,Redirector,2
-Phishing,magnite_dsp,applovinalx,Redirector,2
-Phishing,startio_dsp,fyber,GhostCat - 3PC,2
-Phishing,snow_dsp,bidmachine,Phishing Domain,2
-Impression Fraud,sape_dsp,vungle,Ad Fraud,2
-Fake Anti-virus,duopeak_dsp,fyberdisplay,StringRipper - 3PC,2
-Phishing,snow_dsp,fyberdisplay,Phishing Domain,2
-Phishing,snow_dsp,isx,GhostCat - 3PC,2
-Phishing,Inspiritum_dsp,webeyemintegral,Phishing Domain,2
-Impression Fraud,escalax_dsp,unity,Ad Fraud,2
-Impression Fraud,escalax_dsp,vungleus,Ad Fraud,2
-Phishing,spinx_dsp,unity,Scam,2
-Phishing,startio_dsp,bidmachine,Phishing Domain,2
-Phishing,smartad_dsp,bidmachine,Phishing Domain,2
-Phishing,smartad_dsp,isx,Phishing Domain,2
-Phishing,smartad_dsp,prebid,Scam,2
-Phishing,rixengine_dsp,mvungle,GhostCat - 3PC,2
-Phishing,rixengine_dsp,mvungle,Phishing Domain,2
-Phishing,playdigo_dsp,fyberdisplay,GhostCat - 3PC,2
-Phishing,Inspiritum_dsp,slivermob,Phishing Domain,2
-Phishing,aceex_dsp,bidmachine,Scam,2
-Impression Fraud,haxmedia_dsp,fyberdisplay,Ad Fraud,2
-Impression Fraud,bidease_dsp,unity,Ad Fraud,2
-Phishing,aceex_dsp,pubnative,Phishing Domain,2
-Phishing,algorix_dsp,vungleus,GhostCat - 3PC,2
-Phishing,pubmatic_dsp,applovinalx,Phishing Domain,2
-Phishing,rixengine_dsp,unity,Phishing Domain,2
-Phishing,shareit_dsp,bidmachine,Redirector,2
-Phishing,Adsolut Media_dsp,unity,Redirector,2
-Phishing,adsyield_dsp,unity,Phishing Domain,2
-Phishing,adsyield_dsp,vungleus,Phishing Domain,2
-Impression Fraud,playdigo_dsp,bidmachine,Ad Fraud,2
-Impression Fraud,aceex_dsp,fyberdisplay,Ad Fraud,2
-Impression Fraud,aceexchange_dsp,snow,Ad Fraud,2
-Compromised Content,vk_dsp,mvungle,Compromised Domain,2
-Out-of-browser Redirect,Adsolut Media_dsp,fyberdisplay,App Store Redirect iOS,2
-Out-of-browser Redirect,Adsolut Media_dsp,isx,App Store Redirect iOS,2
-Out-of-browser Redirect,Adsolut Media_dsp,unityads,App Store Redirect iOS,2
-Compromised Content,playdigo_dsp,fyber,Compromised Domain,2
-Compromised Content,pubnative,applovinalx,MudOrange-3PC,2
-Compromised Content,bidease_dsp,bidmachine,Compromised Domain,2
-Compromised Content,bidease_dsp,duopeakmintegral,Compromised Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),vlionmobi_dsp,fyberdisplay,Heuristic Flag,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),webeye_dsp,bidmachine,DNE Domain,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),webeye_dsp,unity,DNE Domain,2
-Compromised Content,playdigo_dsp,fyberdisplay,Compromised Domain,2
-Impression Fraud,smartad_dsp,bidmachine,Ad Fraud,2
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),spinx_dsp,unityads,Heuristic Flag,1
-Compromised Content,9dots_dsp,unity,E-Skimming,1
-Compromised Content,adwmg_dsp,vungleus,E-Skimming,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),snow_dsp,unityads,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),rixengine_dsp,xiaomi,Heuristic Flag,1
-Compromised Content,smartad_dsp,vungle,SocGholish,1
-Compromised Content,magnite_dsp,mvungle,E-Skimming,1
-Phishing,bidswitch_dsp,mvungle,Redirector,1
-Phishing,bidswitch_dsp,slivermob,Phishing Domain,1
-Phishing,betweenx_dsp,fyber,Redirector,1
-Phishing,betweenx_dsp,prebid,StormMaize-3PC,1
-Impression Fraud,bidswitch_dsp,pubnativesdk,Ad Fraud,1
-Impression Fraud,duopeak_dsp,unity,Ad Fraud,1
-Compromised Content,evolution_dsp,mvungle,SocGholish,1
-Compromised Content,evolution_dsp,unity,Compromised Domain,1
-Compromised Content,evolution_dsp,unity,SocGholish,1
-Compromised Content,evolution_dsp,unityads,Compromised Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),rixengine_dsp,mvungle,DNE Domain,1
-Compromised Content,evolution_dsp,vungleus,Compromised Domain,1
-Out-of-browser Redirect,aceexchange_dsp,applovinalx,App Store Redirect Android,1
-Phishing,smartad_dsp,vungleus,Phishing Creative,1
-Phishing,playdigo_dsp,fyberdisplay,Redirector,1
-Impression Fraud,haxmedia_dsp,snow,Ad Fraud,1
-Impression Fraud,loopme_dsp,isx,Ad Fraud,1
-Phishing,aceex_dsp,unity,Phishing Domain,1
-Phishing,evolution_dsp,fyberdisplay,Phishing Domain,1
-Phishing,playdigo_dsp,unity,Scam,1
-Phishing,mobshark_dsp,slivermob,Phishing Domain,1
-Phishing,nexxen_dsp,prebid,Misha-3PC,1
-Phishing,sape_dsp,unity,Phishing Domain,1
-Phishing,sape_dsp,vungle,Phishing Domain,1
-Impression Fraud,opera_dsp,vungle,Ad Fraud,1
-Impression Fraud,duopeak_dsp,unityads,Ad Fraud,1
-Impression Fraud,aceex_dsp,inmobi,Ad Fraud,1
-Impression Fraud,aceex_dsp,xiaomi,Ad Fraud,1
-Compromised Content,vk_dsp,ignitemintegral,Compromised Domain,1
-Out-of-browser Redirect,webeye_dsp,mvungle,App Store Redirect Android,1
-Out-of-browser Redirect,xiaomi_dsp,applovinalx,App Store Redirect Android,1
-Phishing,9dots_dsp,applovinalx,Scam,1
-Phishing,9dots_dsp,fyberdisplay,Redirector,1
-Phishing,shareit_dsp,mvungle,Phishing Domain,1
-Phishing,snow_dsp,vungle,Phishing Domain,1
-Phishing,startio_dsp,applovinalx,Scam,1
-Phishing,sharethrough_dsp,applovinalx,Redirector,1
-Phishing,sharethrough_dsp,unity,Scam,1
-Phishing,smartad_dsp,prebid,Redirector,1
-Phishing,smartad_dsp,prebid,StormMaize-3PC,1
-Fake Anti-virus,algorix_dsp,fyberdisplay,StringRipper - 3PC,1
-Fake Anti-virus,bidease_dsp,unityads,StringRipper - 3PC,1
-Phishing,aceexchange_dsp,unity,Redirector,1
-Phishing,playdigo_dsp,fyberdisplay,Scam,1
-Phishing,smartad_dsp,vungleus,GhostCat - 3PC,1
-Phishing,magnite_dsp,fyberdisplay,Redirector,1
-Phishing,vk_dsp,mvungle,Scam,1
-Phishing,startio_dsp,fyber,Redirector,1
-Phishing,snow_dsp,fyber,Phishing Domain,1
-Out-of-browser Redirect,smartad_dsp,fyberdisplay,App Store Redirect iOS,1
-Out-of-browser Redirect,startio_dsp,bidmachine,App Store Redirect iOS,1
-Impression Fraud,pubmatic_dsp,vungleus,Ad Fraud,1
-Impression Fraud,sape_dsp,mvungle,Ad Fraud,1
-Fake Anti-virus,duopeak_dsp,fyber,StringRipper - 3PC,1
-Fake Anti-virus,duopeak_dsp,unityads,StringRipper - 3PC,1
-Fake Anti-virus,opera_dsp,applovinalx,Scareware Creative,1
-Fake Anti-virus,rixengine_dsp,mvungle,StringRipper - 3PC,1
-Fake Anti-virus,startio_dsp,bidmachine,Scareware Creative,1
-Fake Anti-virus,startio_dsp,mvungle,Scareware Creative,1
-Phishing,snow_dsp,isx,Redirector,1
-Phishing,aceex_dsp,algorixeu,Phishing Domain,1
-Phishing,9dots_dsp,unityads,Phishing Domain,1
-Phishing,9dots_dsp,vungle,Scam,1
-Phishing,Adsolut Media_dsp,fyberdisplay,Redirector,1
-Phishing,snow_dsp,unity,Phishing Domain,1
-Phishing,vk_dsp,mvungle,Phishing Domain,1
-Phishing,operaroi_dsp,unity,Phishing Domain,1
-Phishing,operasg_dsp,igniteru,Phishing Domain,1
-Phishing,operasg_dsp,unity,Redirector,1
-Phishing,operasg_dsp,vungle,Phishing Domain,1
-Phishing,operasg_dsp,vungle,Redirector,1
-Phishing,outbrain,seedtag,Redirector,1
-Phishing,sharethrough_dsp,applovinalx,Misha-3PC,1
-Phishing,outbrain,unity,Scam,1
-Phishing,loopme_dsp,isx,GhostCat - 3PC,1
-Phishing,magnite_dsp,bidmachine,Redirector,1
-Phishing,magnite_dsp,fyber,Spoofing,1
-Out-of-browser Redirect,tradplusother_dsp,vungle,App Store Redirect Android,1
-Out-of-browser Redirect,webeye_dsp,bidmachine,App Store Redirect iOS,1
-Impression Fraud,mobfox_dsp,fyberdisplay,Ad Fraud,1
-Impression Fraud,mobfox_dsp,vungle,Ad Fraud,1
-Fake Anti-virus,aceex_dsp,gbwhatsapp2,StringRipper - 3PC,1
-Phishing,webeye_dsp,vungle,Scam,1
-Phishing,xiaomi_dsp,applovinalx,Scam,1
-Phishing,xiaomi_dsp,fyber,Scam,1
-Phishing,xiaomi_dsp,mvungle,Scam,1
-Phishing,startio_dsp,webeyepremium,Scam,1
-Phishing,tpmn_dsp,unity,Scam,1
-Phishing,tpmn_dsp,unityads,Scam,1
-Software Install Prompt,xiaomi_dsp,vungle,PUP,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),9dots_dsp,applovinalx,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),9dots_dsp,bidmachine,Heuristic Flag,1
-Phishing,9dots_dsp,fyberdisplay,Scam,1
-Software Install Prompt,bidswitch_dsp,unity,PUP,1
-Software Install Prompt,outbrain,xiaomi,PUP,1
-Compromised Content,spinx_dsp,unity,Compromised Domain,1
-Compromised Content,spinx_dsp,unity,E-Skimming,1
-Compromised Content,startio_dsp,bidmachine,Compromised Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceexchange_dsp,applovinalx,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),9dots_dsp,fyberdisplay,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),9dots_dsp,vungle,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),9dots_dsp,xiaomi,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),9dots_dsp,xiaomi,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Adsolut Media_dsp,unityads,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),HyperAd_dsp,applovinalx,Heuristic Flag,1
-Phishing,webeye_dsp,fyberdisplay,Phishing Domain,1
-Phishing,webeye_dsp,isx,Phishing Domain,1
-Out-of-browser Redirect,startio_dsp,vungle,App Store Redirect Android,1
-Out-of-browser Redirect,tradplusother_dsp,mvungle,App Store Redirect Android,1
-Out-of-browser Redirect,screencore_dsp,snow,App Store Redirect iOS,1
-Out-of-browser Redirect,shareit_dsp,fyberdisplay,App Store Redirect Android,1
-Out-of-browser Redirect,sharethrough_dsp,applovinalx,App Store Redirect Android,1
-Out-of-browser Redirect,smartad_dsp,fyberdisplay,App Store Redirect Android,1
-Phishing,mezzomedia_dsp,unity,Redirector,1
-Phishing,mezzomedia_dsp,unity,Scam,1
-Phishing,mezzomedia_dsp,unityads,Scam,1
-Phishing,adsyield_dsp,fyber,GhostCat - 3PC,1
-Phishing,betweenx_dsp,fyberdisplay,StormMaize-3PC,1
-Phishing,adwmg_dsp,vungleus,GhostCat - 3PC,1
-Phishing,algorix_dsp,applovinalx,Phishing Domain,1
-Phishing,algorix_dsp,fyber,Phishing Creative,1
-Impression Fraud,algorix_dsp,vungleus,Ad Fraud,1
-Fake Anti-virus,startio_dsp,unityads,Scareware Creative,1
-Fake Anti-virus,webeye_dsp,applovinalx,Scareware Creative,1
-Phishing,webeye_dsp,prebid,GhostCat - 3PC,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),betweenx_dsp,bidmachine,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),greengrey_dsp,fyberctr,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),greengrey_dsp,isx,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceexchange_dsp,bidmachine,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),aceexchange_dsp,fyber,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adelement_dsp,unityads,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),adwmg_dsp,vungleus,DNE Domain,1
-Out-of-browser Redirect,smartad_dsp,mvungle,App Store Redirect Android,1
-Out-of-browser Redirect,snow_dsp,mvungle,App Store Redirect Android,1
-Out-of-browser Redirect,snow_dsp,unityads,App Store Redirect iOS,1
-Out-of-browser Redirect,opera_dsp,applovinalx,App Store Redirect iOS,1
-Out-of-browser Redirect,opera_dsp,bidmachine,App Store Redirect Android,1
-Out-of-browser Redirect,opera_dsp,bidmachine,App Store Redirect iOS,1
-Out-of-browser Redirect,opera_dsp,fyberdisplay,App Store Redirect iOS,1
-Out-of-browser Redirect,webeye_dsp,fyberdisplay,App Store Redirect iOS,1
-Out-of-browser Redirect,rixengine_dsp,unityads,App Store Redirect Android,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,pubnative,Heuristic Flag,1
-Phishing,bidease_dsp,isx,GhostCat - 3PC,1
-Phishing,bidease_dsp,pubnativesdk,Phishing Domain,1
-Phishing,bidease_dsp,unity,Redirector,1
-Phishing,almaty_dsp,fyberdisplay,Phishing Domain,1
-Phishing,almaty_dsp,pubnative,GhostCat - 3PC,1
-Phishing,baidu_dsp,xiaomi,Phishing Delivery,1
-Phishing,betweenx_dsp,bidmachine,Phishing Domain,1
-Phishing,betweenx_dsp,bidmachine,Redirector,1
-Impression Fraud,adsyield_dsp,mvungle,Ad Fraud,1
-Impression Fraud,adsyield_dsp,unity,Ad Fraud,1
-Impression Fraud,adwmg_dsp,vungleus,Ad Fraud,1
-Phishing,greengrey_dsp,isx,Phishing Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),algorix_dsp,unityads,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),almaty_dsp,fyberdisplay,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),betweenx_dsp,applovinalx,Heuristic Flag,1
-Impression Fraud,snow_dsp,fyberdisplay,Ad Fraud,1
-Impression Fraud,snow_dsp,isx,Ad Fraud,1
-Impression Fraud,snow_dsp,unity,Ad Fraud,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),ignite2_dsp,fyberdisplay,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,bidmachine,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,ignitemintegral,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,prebid,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,webeye,DNE Domain,1
-Out-of-browser Redirect,pubnative,fyber,App Store Redirect iOS,1
-Out-of-browser Redirect,rixengine_dsp,fyber,App Store Redirect iOS,1
-Out-of-browser Redirect,magnite_dsp,isx,App Store Redirect iOS,1
-Out-of-browser Redirect,mobshark_dsp,prebid,App Store Redirect Android,1
-Out-of-browser Redirect,nasmedia_dsp,prebid,App Store Redirect Android,1
-Out-of-browser Redirect,opera_dsp,unity,App Store Redirect iOS,1
-Out-of-browser Redirect,opera_dsp,vungle,App Store Redirect Android,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,mvungle,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,unity,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mezzomedia_dsp,unity,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),mobfox_dsp,unity,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidswitch_dsp,unityads,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),playdigo_dsp,fyberdisplay,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),playdigo_dsp,fyberdisplay,Heuristic Flag,1
-Out-of-browser Redirect,haxmedia_dsp,applovinalx,App Store Redirect Android,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),bidease_dsp,xiaomi,DNE Domain,1
-Compromised Content,startio_dsp,bidmachine,E-Skimming,1
-Compromised Content,shareit_dsp,fyberdisplay,Compromised Domain,1
-Compromised Content,smartad_dsp,bidmachine,E-Skimming,1
-Compromised Content,smartad_dsp,isx,SocGholish,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),evolution_dsp,mvungle,Heuristic Flag,1
-Out-of-browser Redirect,evolution_dsp,mvungle,App Store Redirect Android,1
-Out-of-browser Redirect,ignite2_dsp,unity,App Store Redirect iOS,1
-Impression Fraud,smartad_dsp,prebid,Ad Fraud,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operasg_dsp,unity,DNE Domain,1
-Phishing,haxmedia_dsp,pubnative,Phishing Creative,1
-Phishing,haxmedia_dsp,snow,Phishing Creative,1
-Phishing,ignite2_dsp,unity,Redirector,1
-Phishing,ignite2_dsp,unity,Scam,1
-Phishing,loopme_dsp,bidmachine,Phishing Domain,1
-Phishing,loopme_dsp,fyber,Phishing Domain,1
-Phishing,bidswitch_dsp,unityads,Redirector,1
-Phishing,bidswitch_dsp,vungle,Redirector,1
-Phishing,duopeak_dsp,fyberdisplay,GhostCat - 3PC,1
-Phishing,duopeak_dsp,unityads,Phishing Domain,1
-Phishing,duopeak_dsp,vungleus,Phishing Domain,1
-Phishing,escalax_dsp,vungleus,GhostCat - 3PC,1
-Phishing,bidence_dsp,unityads,Redirector,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,fyber,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),magnite_dsp,mvungle,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubmatic_dsp,applovinalx,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubmatic_dsp,isx,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubmatic_dsp,mvungle,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),pubmatic_dsp,vungleus,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),nasmedia_dsp,fyber,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),nasmedia_dsp,unity,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,fyberdisplay,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,unity,DNE Domain,1
-Impression Fraud,webeye_dsp,prebid,Ad Fraud,1
-Out-of-browser Redirect,loopme_dsp,isx,App Store Redirect iOS,1
-Out-of-browser Redirect,loopme_dsp,snow,App Store Redirect Android,1
-Out-of-browser Redirect,bidswitch_dsp,pubnative,App Store Redirect iOS,1
-Out-of-browser Redirect,escalax_dsp,fyberdisplay,App Store Redirect iOS,1
-Out-of-browser Redirect,escalax_dsp,unity,App Store Redirect iOS,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),evolution_dsp,unity,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),operasg_dsp,fyberdisplay,Heuristic Flag,1
-Out-of-browser Redirect,adsyield_dsp,fyberdisplay,App Store Redirect iOS,1
-Out-of-browser Redirect,algorix_dsp,fyber,App Store Redirect Android,1
-Out-of-browser Redirect,algorix_dsp,vungleus,App Store Redirect Android,1
-Out-of-browser Redirect,bidease_dsp,bidmachine,App Store Redirect iOS,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),opera_dsp,vungle,Heuristic Flag,1
-Compromised Content,magnite_dsp,unityads,E-Skimming,1
-Compromised Content,mezzomedia_dsp,applovinalx,E-Skimming,1
-Compromised Content,mezzomedia_dsp,unityads,E-Skimming,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,isx,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sape_dsp,xiaomi,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),screencore_dsp,fyberdisplay,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),shareit_dsp,applovinalx,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),shareit_dsp,fyberdisplay,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),shareit_dsp,fyberdisplay,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),playdigo_dsp,fyber,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),playdigo_dsp,fyber,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),snow_dsp,vungle,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),shareit_dsp,mvungle,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,fyber,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),sharethrough_dsp,mvungle,Heuristic Flag,1
-Phishing,duopeak_dsp,unity,GhostCat - 3PC,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),xiaomi_dsp,applovinalx,DNE Domain,1
-Compromised Content,magnite_dsp,bidmachine,E-Skimming,1
-Compromised Content,magnite_dsp,fyber,SocGholish,1
-Compromised Content,magnite_dsp,mvungle,Compromised Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),tradplusother_dsp,unity,DNE Domain,1
-Compromised Content,adsyield_dsp,fyber,Compromised Domain,1
-Phishing,bidease_dsp,inmobibrand,Phishing Domain,1
-Phishing,duopeak_dsp,mvungle,Phishing Domain,1
-Compromised Content,nasmedia_dsp,bidmachine,E-Skimming,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),rixengine_dsp,prebid,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),rixengine_dsp,unity,DNE Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,prebid,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),smartad_dsp,vungle,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),spinx_dsp,isx,DNE Domain,1
-Impression Fraud,webeye_dsp,xiaomi,Ad Fraud,1
-Out-of-browser Redirect,Adsolut Media_dsp,unityads,App Store Redirect Android,1
-Out-of-browser Redirect,aceex_dsp,pubnative,App Store Redirect Android,1
-Compromised Content,operasg_dsp,igniteru,E-Skimming,1
-Compromised Content,playdigo_dsp,fyberdisplay,E-Skimming,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),startio_dsp,rixengine,Heuristic Flag,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),spinx_dsp,fyber,Heuristic Flag,1
-Compromised Content,evolution_dsp,vungleus,E-Skimming,1
-Compromised Content,9dots_dsp,isx,Compromised Domain,1
-Compromised Content,bidease_dsp,ignitemintegral,Compromised Domain,1
-Compromised Content,bidease_dsp,isx,Compromised Domain,1
-Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),webeye_dsp,mvungle,Heuristic Flag,1
-Compromised Content,playdigo_dsp,fyber,E-Skimming,1
+hit_type,expected_behavior,malware_condition,provider_account,incident,Count
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/16,TMT-20240625-TAM,392
+Resolved,Impression Fraud,Ad Fraud,7/417,TMT-20241223-KXF,351
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/379,TMT-20240625-TAM,290
+Scam/Fraud,Impression Fraud,Ad Fraud,7/176,TMT-20240429-OMT,112
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/4,TMT-20241106-JLO,96
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/165,TMT-20240625-TAM,91
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241115-GQP,88
+Malicious,Phishing,Redirector,7/379,TMT-20241224-SIY,65
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241229-MSH,58
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20240722-QGC,57
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/480,TMT-20240625-TAM,56
+Malicious,Software Install Prompt,PUP,7/165,TMT-20221202-CDO,44
+Malicious,Phishing,Redirector,7/16,TMT-20241224-SIY,43
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20231014-QEF,39
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241127-VIE,37
+Scam/Fraud,Phishing,Scam,7/165,TMT-20221024-IUT,35
+Malicious - Indirect Evidence,Software Install Prompt,PUP,7/165,TMT-20240924-VWG,35
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-RPU,33
+Malicious,Software Install Prompt,PUP,7/165,TMT-20230705-AKT,30
+Malicious,Phishing,Phishing Domain,7/165,TMT-20230105-IJY,30
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/308,TMT-20231122-BCO,27
+Malicious,Phishing,Redirector,7/93,TMT-20241224-SIY,26
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20240324-SKU,25
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240415-AHQ,24
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241029-RBK,23
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240416-JSP,21
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20231014-QEF,20
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240416-ZPR,20
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241124-BFN,19
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/44,TMT-20240625-TAM,19
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241115-EVT,18
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241222-MRK,18
+Scam/Fraud,Impression Fraud,Ad Fraud,7/473,TMT-20241218-LNW,18
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/308,TMT-20230609-VMQ,17
+Scam/Fraud,Impression Fraud,Ad Fraud,7/176,TMT-20240430-OWY,17
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241018-LJU,16
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20230526-YBL,16
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240629-MJU,15
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240125-XGW,15
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241210-PQJ,14
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241115-FXV,14
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240603-LCP,14
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/465,TMT-20240625-TAM,14
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241108-ZIF,14
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241117-YPV,14
+Malicious,Compromised Content,Compromised Domain,7/16,TMT-20241225-DMK,13
+Malicious,Compromised Content,E-Skimming,7/379,TMT-20240929-AJP,13
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240416-OVU,13
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230825-YKS,13
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241119-QTG,12
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240713-CZL,11
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241128-TQW,11
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/473,TMT-20240312-OFU,11
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/176,TMT-20240625-TAM,11
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241115-VJF,10
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/76,TMT-20240625-TAM,10
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/4,TMT-20241204-CMA,9
+Malicious,Phishing,Phishing Domain,7/417,TMT-20240726-NZE,9
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-XML,9
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/480,TMT-20240501-FED,9
+Scam/Fraud,Phishing,Scam,7/165,TMT-20240825-FUC,9
+Scam/Fraud,Phishing,Scam,7/165,TMT-20220331-TWD,9
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241107-NYR,9
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241222-KEM,8
+Malicious,Phishing,Phishing Domain,7/417,TMT-20240530-VZT,8
+Scam/Fraud,Phishing,Scam,7/379,TMT-20230922-XTE,8
+Malicious,Phishing,Phishing Domain,7/417,TMT-20240703-YMJ,8
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240927-WRM,8
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241117-YWE,8
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240920-WYG,8
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240904-ZSO,8
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230910-EWN,8
+Malicious,Phishing,Redirector,7/76,TMT-20241224-SIY,8
+Scam/Fraud,Phishing,Scam,7/379,TMT-20241005-LOC,7
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/308,TMT-20240503-MWB,7
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241114-GLN,7
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240516-IJF,7
+Scam/Fraud,Impression Fraud,Ad Fraud,7/176,TMT-20240430-CTU,7
+Resolved,Compromised Content,Compromised Domain,7/93,TMT-20241209-JDB,7
+Malicious,Compromised Content,E-Skimming,7/16,TMT-20240929-AJP,7
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20231127-RWS,7
+Scam/Fraud,Phishing,Scam,7/46,TMT-20230922-XTE,7
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241015-QNL,7
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241115-FSI,6
+Scam/Fraud,Phishing,Scam,7/480,TMT-20241121-TGE,6
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20240822-ABO,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241108-KTG,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230827-OUR,6
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241016-LGC,6
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240414-JMX,6
+Malicious,Phishing,Phishing Domain,7/165,TMT-20210827-VAJ,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/308,TMT-20230609-OEC,6
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240727-KCN,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/473,TMT-20240625-TAM,6
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240911-DZA,6
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/417,TMT-20240315-JDO,5
+Scam/Fraud,Phishing,Scam,7/165,TMT-20240328-XRQ,5
+Malicious,Phishing,Redirector,7/473,TMT-20241224-SIY,5
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/473,TMT-20240310-IEB,5
+Resolved,Compromised Content,SocGholish,7/480,TMT-20241216-WSD,5
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241223-BPF,5
+Resolved,Compromised Content,SocGholish,7/480,TMT-20241210-FGM,5
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240614-LER,5
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20231102-VOG,5
+Malicious - Indirect Evidence,Software Install Prompt,PUP,7/165,TMT-20241231-NVX,5
+Scam/Fraud,Phishing,Scam,7/44,TMT-20231111-FYP,5
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20240919-JQM,5
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241015-AKG,5
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/176,TMT-20240424-UAH,5
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241210-DIB,5
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240417-FIP,4
+Malicious,Compromised Content,E-Skimming,7/44,TMT-20241114-IUT,4
+Malicious,Compromised Content,E-Skimming,7/16,TMT-20241031-TQS,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/473,TMT-20240306-PZB,4
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241015-SDN,4
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241015-BFE,4
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20240910-EOQ,4
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241022-GQN,4
+Malicious,Phishing,Phishing Domain,7/165,TMT-20240621-EZH,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241209-XSG,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241130-JZU,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241201-YEG,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/473,TMT-20241004-RWE,4
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241016-JSQ,4
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241011-PAU,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241002-FQP,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/80,TMT-20240625-TAM,4
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241126-OKW,4
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241126-THU,4
+Scam/Fraud,Phishing,Scam,7/379,TMT-20241116-RGI,4
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241120-REX,3
+Scam/Fraud,Impression Fraud,Ad Fraud,7/176,TMT-20240102-VWR,3
+Malicious,Compromised Content,Compromised Domain,7/165,TMT-20241225-DMK,3
+Malicious,Compromised Content,Compromised Domain,7/44,TMT-20241203-CFQ,3
+Scam/Fraud,Phishing,Scam,7/379,TMT-20200905-KNH,3
+Scam/Fraud,Phishing,Scam,7/379,TMT-20201111-UVB,3
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-ZWK,3
+Malicious,Compromised Content,SocGholish,7/44,TMT-20241114-WMX,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/473,TMT-20240415-AHQ,3
+Scam/Fraud,Impression Fraud,Ad Fraud,7/176,TMT-20230817-WAB,3
+Resolved,Compromised Content,Compromised Domain,7/465,TMT-20241209-SOX,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/473,TMT-20240513-SQG,3
+Scam/Fraud,Impression Fraud,Ad Fraud,7/16,TMT-20241224-XHA,3
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20200109-HIR,3
+Malicious,Compromised Content,SocGholish,7/44,TMT-20241211-OSG,3
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240125-EUI,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241030-WAZ,3
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241130-SPK,3
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241211-YIP,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240224-DRP,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241104-SIF,3
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241211-FMP,3
+Malicious,Phishing,Redirector,7/494,TMT-20241224-SIY,3
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241015-SVQ,3
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241011-TXM,3
+Malicious,Phishing,Spoofing,7/165,TMT-20241018-PCU,3
+Malicious,Phishing,Spoofing,7/16,TMT-20231216-ZFN,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230831-TAS,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230825-OKI,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20231209-AYU,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20250106-IWG,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/95,TMT-20240625-TAM,3
+Malicious,Phishing,Phishing Domain,7/165,TMT-20240713-QRE,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240715-EUZ,3
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240514-YQB,3
+Scam/Fraud,Phishing,Scam,7/480,TMT-20241117-WJB,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20250106-IWG,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20231121-GUM,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/165,TMT-20230620-UTG,2
+Malicious,Compromised Content,SocGholish,7/480,TMT-20241119-XHQ,2
+Scam/Fraud,Phishing,Scam,7/379,TMT-20220331-TWD,2
+Malicious,Compromised Content,Compromised Domain,7/44,TMT-20241201-BKC,2
+Malicious,Compromised Content,Compromised Domain,7/165,TMT-20241226-SFE,2
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241122-REC,2
+Scam/Fraud,Phishing,Scam,7/379,TMT-20210312-BJL,2
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241223-UVK,2
+Scam/Fraud,Phishing,Scam,7/165,TMT-20221123-EGM,2
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241208-XUI,2
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-HGW,2
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241130-OYH,2
+Malicious,Compromised Content,SocGholish,7/16,TMT-20241210-VKR,2
+Resolved,Compromised Content,E-Skimming,7/44,TMT-20240823-UIT,2
+Resolved,Compromised Content,E-Skimming,7/44,TMT-20241125-TJQ,2
+Malicious,Phishing,Phishing Delivery,7/165,TMT-20240127-OPF,2
+Malicious,Compromised Content,SocGholish,7/379,TMT-20241210-VKR,2
+Malicious,Compromised Content,SocGholish,7/379,TMT-20241124-AFB,2
+Malicious,Phishing,Redirector,7/165,TMT-20241210-SXQ,2
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241201-GAU,2
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241128-GLM,2
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241127-NRS,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/176,TMT-20240225-ACY,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241223-ZOH,2
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/473,TMT-20241106-JLO,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/417,TMT-20240625-TAM,2
+Malicious,Phishing,Spoofing,7/480,TMT-20241125-GNZ,2
+Malicious,Phishing,Phishing Domain,7/165,TMT-20210101-FOH,2
+Malicious,Phishing,Scam,7/95,TMT-20230127-AFB,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/269,TMT-20240625-TAM,2
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241119-CGQ,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241203-MGJ,2
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241201-REN,2
+Malicious,Phishing,Phishing Domain,7/379,TMT-20170429-TC,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241206-DLO,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/16,TMT-20231209-ZNH,2
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241119-ZFN,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/379,TMT-20230609-OEC,2
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20240927-CTS,2
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240117-WPG,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240714-KLO,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240927-EFB,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240813-KPA,2
+Malicious,Phishing,Redirector,7/379,TMT-20240119-HSK,2
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240611-GLU,2
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240216-YWO,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241220-JKZ,2
+Malicious,Compromised Content,Compromised Domain,7/165,TMT-20240822-OZX,2
+Scam/Fraud,Phishing,Scam,7/46,TMT-20241116-RGI,2
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240621-NRZ,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241121-JWB,2
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240814-KQO,2
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240819-OHK,2
+Malicious,Compromised Content,Compromised Domain,7/480,TMT-20241111-GYO,2
+Scam/Fraud,Phishing,Scam,7/379,TMT-20240125-EUI,2
+Scam/Fraud,Phishing,Scam,7/379,TMT-20240930-JMO,2
+Scam/Fraud,Phishing,Scam,7/4,TMT-20221125-THV,2
+Scam/Fraud,Phishing,Scam,7/417,TMT-20240221-PRO,2
+Scam/Fraud,Phishing,Scam,7/46,TMT-20210309-KCP,2
+Malicious,Automatic Download: APK,APK,7/176,TMT-20240208-TQC,1
+Malicious,Compromised Content,Compromised Domain,7/16,TMT-20241214-CUM,1
+Scam/Fraud,Phishing,Scam,7/46,TMT-20200110-UEQ,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20240917-GOW,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20240824-EBX,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20240722-IYH,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20240531-NBF,1
+Scam/Fraud,Phishing,Scam,7/46,TMT-20240125-EUI,1
+Scam/Fraud,Phishing,Scam,7/46,TMT-20230710-YDP,1
+Malicious,Compromised Content,Compromised Domain,7/480,TMT-20241122-SCI,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20230630-TZL,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20230214-GHS,1
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240911-IEB,1
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240907-TWX,1
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240531-JXW,1
+Scam/Fraud,Phishing,Scam,7/480,TMT-20240411-DPL,1
+Scam/Fraud,Phishing,Scam,7/46,TMT-20241005-LOC,1
+Scam/Fraud,Phishing,Scam,7/46,TMT-20240824-EBX,1
+Malicious,Compromised Content,Compromised Domain,7/165,TMT-20241203-MEG,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241216-TZP,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241216-CAI,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241201-EGA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241125-QZJ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241105-PZE,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241101-PSV,1
+Malicious,Phishing,Redirector,7/200,TMT-20241224-SIY,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20231002-NQG,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20230618-ANE,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20180226-IVA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241020-ECO,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241016-PRS,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/480,TMT-20241128-QED,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/480,TMT-20240224-DRP,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/480,TMT-20230919-GMW,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/379,TMT-20241212-ASR,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/379,TMT-20231122-BCO,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/379,TMT-20230609-VMQ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20250107-ZPV,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20250103-JBV,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20250101-TOL,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241231-ZSM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241231-BHS,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241017-HJC,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241017-AZW,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241016-SBA,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241015-XMG,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20240927-HLC,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20240711-QUI,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20230803-PIL,1
+Malicious Landing Location,Software Install Prompt,PUP,7/16,TMT-20241211-YIP,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/480,TMT-20241206-NWF,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/480,TMT-20241204-FWP,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241109-EIQ,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241031-JBC,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20240925-YMG,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/16,TMT-20240324-SKU,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240816-GUR,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240803-URZ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240618-RFI,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240618-OVC,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240606-WKD,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240606-QAX,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240511-YTL,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20240125-IOF,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241228-UXN,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20241223-IEM,1
+Malicious Landing Location,Software Install Prompt,PUP,7/379,TMT-20240927-HLC,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241225-RXL,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241209-UDF,1
+Malicious,Phishing,Spoofing,7/480,TMT-20241112-RFX,1
+Malicious,Phishing,Spoofing,7/417,TMT-20241017-BIM,1
+Malicious,Phishing,Spoofing,7/379,TMT-20231216-ZFN,1
+Malicious,Phishing,Spoofing,7/16,TMT-20241216-GJR,1
+Malicious,Phishing,Redirector,7/465,TMT-20241224-SIY,1
+Malicious,Phishing,Redirector,7/44,TMT-20241003-EDM,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241016-YDN,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241010-KUT,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20231209-ZNH,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20231010-WUN,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20231008-PNV,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230908-EZH,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230831-PZI,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230830-LUF,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230830-BIU,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20221113-LUX,1
+Malicious Landing Location,Software Install Prompt,PUP,7/165,TMT-20241017-HOQ,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241106-BNW,1
+Out Of Browser Redirect,Impression Fraud,Ad Fraud,7/176,TMT-20231121-CNO,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20250104-CNB,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241201-DOU,1
+Malicious Landing Location,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241124-KLB,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241224-QMU,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241209-XSG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241206-OMP,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241130-JZU,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241104-SIF,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241102-LSG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241222-XEG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241217-IGA,1
+Malicious,Compromised Content,SocGholish,7/269,TMT-20240907-JHY,1
+Malicious,Phishing,Redirector,7/165,TMT-20250103-HZT,1
+Malicious,Phishing,Redirector,7/165,TMT-20241014-CQO,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241228-VCT,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241219-SZG,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241209-ZSK,1
+Malicious,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230901-AOR,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/93,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/491,TMT-20241031-BMA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/46,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/379,TMT-20241004-RWE,1
+Malicious,"Scam: ""Call Technical Support""",Dolos-3PC,7/480,TMT-20241125-MTI,1
+Malicious,"Scam: ""Call Technical Support""",Dolos-3PC,7/480,TMT-20241115-ETR,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241101-XVS,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20241023-ZKS,1
+Malicious,Phishing,Phishing Domain,7/165,TMT-20241223-YUF,1
+Malicious,Phishing,Phishing Domain,7/165,TMT-20241213-GIZ,1
+Malicious,Phishing,Phishing Domain,7/165,TMT-20230803-OJX,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241204-USC,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20240513-SQG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20231212-GTC,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/16,TMT-20241225-ZJC,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,7/417,TMT-20220923-HGA,1
+Resolved,Compromised Content,Compromised Domain,7/44,TMT-20241203-DYJ,1
+Resolved,Compromised Content,Compromised Domain,7/44,TMT-20241202-OYF,1
+Resolved,Compromised Content,Compromised Domain,7/44,TMT-20241105-KRF,1
+Resolved,Compromised Content,Compromised Domain,7/44,TMT-20240726-CZX,1
+Resolved,Compromised Content,Compromised Domain,7/417,TMT-20240726-CZX,1
+Resolved,Compromised Content,Compromised Domain,7/165,TMT-20241217-HCM,1
+Resolved,Compromised Content,Compromised Domain,7/165,TMT-20241124-XTI,1
+Resolved,Compromised Content,Compromised Domain,7/165,TMT-20241012-OTJ,1
+Resolved,Compromised Content,Compromised Domain,7/165,TMT-20231219-FNV,1
+Resolved,Compromised Content,Compromised Domain,7/16,TMT-20241124-QYE,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/417,TMT-20250105-ELZ,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/417,TMT-20241107-KSY,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,7/176,TMT-20241023-WFN,1
+Resolved,Compromised Content,SocGholish,7/480,TMT-20241128-KST,1
+Resolved,Compromised Content,SocGholish,7/465,TMT-20241204-VUL,1
+Resolved,Compromised Content,SocGholish,7/44,TMT-20241209-SMX,1
+Resolved,Compromised Content,SocGholish,7/44,TMT-20241123-BRC,1
+Resolved,Compromised Content,SocGholish,7/379,TMT-20241119-TZD,1
+Resolved,Compromised Content,MimicManager - 3PC,7/165,TMT-20220818-SLR,1
+Resolved,Compromised Content,E-Skimming,7/473,TMT-20241120-YLH,1
+Resolved,Compromised Content,E-Skimming,7/165,TMT-20241125-TJQ,1
+Resolved,Compromised Content,E-Skimming,7/165,TMT-20240119-RAH,1
+Resolved,Compromised Content,Compromised Domain,7/93,TMT-20241214-QEH,1
+Resolved,Compromised Content,Compromised Domain,7/44,TMT-20241205-YAF,1
+Resolved,Compromised Content,Compromised Domain,7/44,TMT-20241203-VDH,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20240829-NJP,1
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,7/165,TMT-20230928-XWP,1
+Resolved,Phishing,Scam,7/379,TMT-20200829-NIC,1
+Resolved,Phishing,Scam,7/165,TMT-20200807-DMP,1
+Resolved,Impression Fraud,Ad Fraud,7/469,TMT-20190916-TRL,1
+Malicious,Compromised Content,Compromised Domain,7/480,TMT-20241224-TDX,1
+Malicious,Phishing,Phishing Domain,7/165,TMT-20190604-PVH,1
+Malicious,Phishing,Fizzcore,7/269,TMT-20241209-ODY,1
+Malicious,Out-of-browser Redirect,App Store Redirect Android,7/379,TMT-20241031-WXM,1
+Malicious,Out-of-browser Redirect,App Store Redirect Android,7/16,TMT-20241031-WXM,1
+Malicious,Compromised Content,SocGholish,7/494,TMT-20241221-SGQ,1
+Malicious,Compromised Content,SocGholish,7/480,TMT-20241006-PWO,1
+Malicious,Compromised Content,SocGholish,7/473,TMT-20241209-HMG,1
+Malicious,Compromised Content,SocGholish,7/46,TMT-20241124-AFB,1
+Malicious,Compromised Content,SocGholish,7/44,TMT-20241227-YHQ,1
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241008-QIT,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/165,TMT-20240521-BVQ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/165,TMT-20201011-AOV,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/16,TMT-20241004-RWE,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/16,TMT-20231115-NVK,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,7/151,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Software Install Prompt,PUP,7/165,TMT-20241113-GJS,1
+Malicious - Indirect Evidence,Software Install Prompt,PUP,7/165,TMT-20240723-HAC,1
+Malicious - Indirect Evidence,Software Install Prompt,PUP,7/165,TMT-20240305-SFO,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240822-XGN,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20240816-JPZ,1
+Malicious,Software Install Prompt,PUP,7/176,TMT-20241125-WKX,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20250105-VOD,1
+Malicious,Software Install Prompt,PUP,7/165,TMT-20250103-YCQ,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241222-EIV,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241221-PEC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241221-BEN,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-UYN,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-QTU,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-LHD,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241220-EWP,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241208-YQB,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241021-PCB,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20230203-XEM,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20220726-SYT,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20211229-DCH,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20211117-QBZ,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20210625-ENX,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20210518-DLN,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20200509-THN,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20200106-FOU,1
+Scam/Fraud,Impression Fraud,Ad Fraud,7/417,TMT-20241222-UPR,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20210805-GJI,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20200110-UEQ,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20241031-VNJ,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20240722-IYH,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20240312-UCN,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20240220-KMX,1
+Malicious,Compromised Content,Compromised Domain,7/480,TMT-20241025-XYV,1
+Malicious,Compromised Content,Compromised Domain,7/480,TMT-20241012-PVK,1
+Malicious,Compromised Content,Compromised Domain,7/44,TMT-20241202-TRZ,1
+Malicious,Compromised Content,Compromised Domain,7/44,TMT-20241201-LSM,1
+Malicious,Compromised Content,Compromised Domain,7/44,TMT-20241118-TUB,1
+Malicious,Compromised Content,Compromised Domain,7/379,TMT-20240716-ZUD,1
+Malicious,Compromised Content,Compromised Domain,7/269,TMT-20241101-GLH,1
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241207-HQL,1
+Malicious,Software Install Prompt,PhonyFetcher-3PC,7/165,TMT-20241015-HFA,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20231127-KZO,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20230921-HIT,1
+Scam/Fraud,Phishing,Scam,7/379,TMT-20230710-YDP,1
+Malicious,Compromised Content,SocGholish,7/165,TMT-20241225-TRL,1
+Malicious,Compromised Content,SocGholish,7/165,TMT-20241021-WCK,1
+Malicious,Compromised Content,SocGholish,7/16,TMT-20240915-TUM,1
+Malicious,Compromised Content,E-Skimming,7/46,TMT-20240929-AJP,1
+Malicious,Compromised Content,E-Skimming,7/379,TMT-20241116-ZYX,1
+Malicious,Compromised Content,E-Skimming,7/379,TMT-20241031-TQS,1
+Malicious,Compromised Content,E-Skimming,7/379,TMT-20240708-BFD,1
+Malicious,Compromised Content,E-Skimming,7/165,TMT-20241213-JUP,1
+Malicious,Compromised Content,E-Skimming,7/165,TMT-20240228-TEF,1
+Malicious,Compromised Content,E-Skimming,7/165,TMT-20231127-LZE,1
+Scam/Fraud,Phishing,Scam,7/165,TMT-20230710-PKZ,1
+Malicious,Compromised Content,Compromised Domain,7/165,TMT-20240222-BWI,1
