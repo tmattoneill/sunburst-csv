@@ -4,6 +4,7 @@ node_modules
 Library/
 Cache/
 bdesign/
+.npm/
 
 # local env files
 .env.local
