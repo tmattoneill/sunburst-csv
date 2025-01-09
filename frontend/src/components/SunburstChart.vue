@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount, defineProps, defineEmits } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount, defineProps, defineEmits } from 'vue'
 import * as echarts from 'echarts'
 import { PALETTES } from '@/palettes'
 
@@ -17,24 +17,41 @@ const props = defineProps({
 })
 
 // Emits
-const emit = defineEmits(['update:paletteName', 'node-click'])
+const emit = defineEmits(['update:paletteName', 'node-click', 'node-hover'])
 
 // Refs
 const chart = ref(null)
 const currentData = ref(null)
 const selectedPalette = ref(props.paletteName)
 const chartContainer = ref(null)
-const colors = ref(PALETTES[props.paletteName] || PALETTES.ocean)
+const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
+
+watch(() => props.paletteName, (newPalette) => {
+  colors.value = PALETTES[newPalette] || PALETTES.Ocean;
+  if (chart.value) {
+    updateChart();
+  }
+}, { immediate: true });
 
 // Computed
-const paletteNames = computed(() => Object.keys(PALETTES))
+// const paletteNames = computed(() => Object.keys(PALETTES))
+//
+// // Methods
+// const handlePaletteChange = () => {
+//   colors.value = PALETTES[selectedPalette.value]
+//   emit('update:paletteName', selectedPalette.value)
+//   updateChart()
+// }
 
-// Methods
-const handlePaletteChange = () => {
-  colors.value = PALETTES[selectedPalette.value]
-  emit('update:paletteName', selectedPalette.value)
-  updateChart()
+const handleChartHover = (params) => {
+  if (params.data) {
+    emit('node-hover', params.data)
+  }
 }
+
+const handleChartMouseOut = () => {
+  emit('node-hover', null); // Emit null when the mouse leaves the chart
+};
 
 const getChildrenColors = (data, index) => {
   if (!data || !data.children) {
@@ -82,20 +99,29 @@ const renderChart = () => {
       data: [applyColorsToData(currentData.value)],
       radius: ['0%', '100%'],
       center: ['50%', '50%'],
-      label: {
-        show: false,
-        rotate: 'tangential',
-        overflow: 'truncate',
-        ellipsis: '...',
-        fontSize: '11',
-        formatter: (params) => {
-          return params.data.name + (params.data.value ? `: ${params.data.value}` : "")
-        }
-      },
-      emphasis: {
-        focus: 'ancestor',
+      levels: [{
+        // Configure only the center/root level
+        r0: '0%',
+        r: '15%',
+        itemStyle: {
+          color: 'none',  // Make the center transparent
+          borderWidth: 0  // Remove the border
+        },
         label: {
           show: true,
+          position: 'center',
+          fontSize: 14,
+          formatter: (params) => {
+            return params.treePathInfo.length === 1 ? params.data.name : ''
+          }
+        }
+      }],
+      label: {
+        show: false
+      },
+      emphasis: {
+        label: {
+          show: false
         }
       }
     },
@@ -103,6 +129,8 @@ const renderChart = () => {
 
   chart.value.setOption(option)
   chart.value.on('click', handleChartClick)
+  chart.value.on('mouseover', handleChartHover)
+  chart.value.on('mouseout', handleChartMouseOut);
 }
 
 const updateChart = () => {
@@ -119,7 +147,7 @@ watch(() => props.chartData, () => {
 
 watch(() => props.paletteName, (newPalette) => {
   selectedPalette.value = newPalette
-  colors.value = PALETTES[newPalette] || PALETTES.ocean
+  colors.value = PALETTES[newPalette] || PALETTES.Ocean
   if (chart.value) {
     updateChart()
   }
@@ -141,19 +169,19 @@ onBeforeUnmount(() => {
 <template>
   <div class="chart-section">
     <!-- Palette Selector Row -->
-    <div class="row g-0 mb-2">
-      <div class="col-12">
-        <div class="d-flex justify-content-end">
-          <select v-model="selectedPalette"
-                  @change="handlePaletteChange"
-                  class="form-select form-select-sm w-auto">
-            <option v-for="name in paletteNames" :key="name" :value="name">
-              {{ name }}
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
+<!--    <div class="row g-0 mb-2">-->
+<!--      <div class="col-12">-->
+<!--        <div class="d-flex justify-content-end">-->
+<!--          <select v-model="selectedPalette"-->
+<!--                  @change="handlePaletteChange"-->
+<!--                  class="form-select form-select-sm w-auto">-->
+<!--            <option v-for="name in paletteNames" :key="name" :value="name">-->
+<!--              {{ name }}-->
+<!--            </option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <!-- Chart Container -->
     <div class="row g-0">

@@ -6,7 +6,7 @@ import DataPane from './components/DataPane.vue'
 import PageHeader from './components/PageHeader.vue'
 
 const chartData = ref({})
-const currentPalette = ref('ocean')
+const currentPalette = ref('Ocean')
 const reportType = ref('')
 const dateStart = ref('')
 const dateEnd = ref('')
@@ -16,11 +16,17 @@ const selectedNode = ref(null)
 const rootName = computed(() => selectedNode.value?.name ?? chartData.value?.name ?? '')
 const rootValue = computed(() => selectedNode.value?.value ?? chartData.value?.value ?? 0)
 const topChildren = computed(() => selectedNode.value?.children ?? chartData.value?.children ?? [])
+const chartName = computed(() => chartData.value?.name ?? '')
 
 // Add handler for node selection
 const handleNodeClick = (node) => {
   selectedNode.value = node
 }
+
+const handleNodeHover = (node) => {
+  selectedNode.value = node || chartData.value; // Reset to root data if no node is hovered
+};
+
 
 const handleFileSelected = async (file) => {
   try {
@@ -65,9 +71,11 @@ onMounted(async () => {
   <div id="app" class="container py-4">
     <PageHeader
         :reportType="reportType"
-        :chartName="chartData.name"
+        :chartName="chartName"
         :dateStart="dateStart"
         :dateEnd="dateEnd"
+        :paletteName="currentPalette"
+        @update:paletteName="(name) => currentPalette = name"
     />
 
     <div class="row">
@@ -82,6 +90,7 @@ onMounted(async () => {
                 :chart-data="chartData"
                 v-model:palette-name="currentPalette"
                 @node-click="handleNodeClick"
+                @node-hover="handleNodeHover"
             />
           </div>
           <div

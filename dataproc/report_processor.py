@@ -268,5 +268,5 @@ class ReportProcessor:
 
 
 if __name__ == "__main__":
-    processor = ReportProcessor("Criteo", "criteo 30 day - malware- Security Incidents by Tag (1).csv")
+    processor = ReportProcessor("zMaticoo", "30 Day Violation - zMaticoo- Security Incidents by Tag.csv")
     processor.process_all()
