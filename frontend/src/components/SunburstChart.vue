@@ -1,136 +1,141 @@
-<script>
-import * as echarts from 'echarts';
-import { PALETTES } from '@/palettes';
+<script setup>
+import { ref, computed, watch, onMounted, onBeforeUnmount, defineProps, defineEmits } from 'vue'
+import * as echarts from 'echarts'
+import { PALETTES } from '@/palettes'
 
-export default {
-  props: {
-    chartData: {
-      type: Object,
-      required: true,
-    },
-    paletteName: {
-      type: String,
-      default: 'ocean'
-    }
+
+// Props
+const props = defineProps({
+  chartData: {
+    type: Object,
+    required: true,
   },
-  data() {
+  paletteName: {
+    type: String,
+    default: 'ocean'
+  }
+})
+
+// Emits
+const emit = defineEmits(['update:paletteName', 'node-click'])
+
+// Refs
+const chart = ref(null)
+const currentData = ref(null)
+const selectedPalette = ref(props.paletteName)
+const chartContainer = ref(null)
+const colors = ref(PALETTES[props.paletteName] || PALETTES.ocean)
+
+// Computed
+const paletteNames = computed(() => Object.keys(PALETTES))
+
+// Methods
+const handlePaletteChange = () => {
+  colors.value = PALETTES[selectedPalette.value]
+  emit('update:paletteName', selectedPalette.value)
+  updateChart()
+}
+
+const getChildrenColors = (data, index) => {
+  if (!data || !data.children) {
+    return []
+  }
+
+  return data.children.map((child, childIndex) => {
+    const newIndex = (index + childIndex) % colors.value.length
     return {
-      chart: null,
-      currentData: null,
-      selectedPalette: this.paletteName,
-      colors: PALETTES[this.paletteName] || PALETTES.ocean
-    };
-  },
-  computed: {
-    paletteNames() {
-      return Object.keys(PALETTES);
+      ...child,
+      itemStyle: { color: colors.value[newIndex] },
+      children: getChildrenColors(child, newIndex)
     }
-  },
-  watch: {
-    chartData: {
-      handler: 'updateChart',
-      deep: true,
-    },
-    paletteName: {
-      immediate: true,
-      handler(newPalette) {
-        this.selectedPalette = newPalette;
-        this.colors = PALETTES[newPalette] || PALETTES.ocean;
-        if (this.chart) {
-          this.updateChart();
+  })
+}
+
+const applyColorsToData = (data) => {
+  if (data) {
+    return {
+      ...data,
+      children: getChildrenColors(data, 0)
+    }
+  }
+  return data
+}
+
+const handleChartClick = (params) => {
+  if (params.data) {
+    emit('node-click', params.data)  // Emit the clicked node data
+    if (params.data.children) {
+      currentData.value = params.data
+      renderChart()
+    }
+  }
+}
+
+const renderChart = () => {
+  if (!chartContainer.value) return
+
+  chart.value = echarts.init(chartContainer.value)
+
+  const option = {
+    series: {
+      type: 'sunburst',
+      data: [applyColorsToData(currentData.value)],
+      radius: ['0%', '100%'],
+      center: ['50%', '50%'],
+      label: {
+        show: false,
+        rotate: 'tangential',
+        overflow: 'truncate',
+        ellipsis: '...',
+        fontSize: '11',
+        formatter: (params) => {
+          return params.data.name + (params.data.value ? `: ${params.data.value}` : "")
+        }
+      },
+      emphasis: {
+        focus: 'ancestor',
+        label: {
+          show: true,
         }
       }
-    }
-  },
-  mounted() {
-    this.currentData = this.chartData;
-    this.renderChart();
-  },
-  beforeUnmount() {
-    if (this.chart) {
-      this.chart.dispose();
-    }
-  },
-  methods: {
-    handlePaletteChange() {
-      this.colors = PALETTES[this.selectedPalette];
-      this.$emit('update:paletteName', this.selectedPalette);
-      this.updateChart();
     },
-    renderChart() {
-      const chartDom = this.$refs.chartContainer;
-      this.chart = echarts.init(chartDom);
+  }
 
-      const getChildrenColors = (data, index) => {
-        if (!data || !data.children) {
-          return [];
-        }
+  chart.value.setOption(option)
+  chart.value.on('click', handleChartClick)
+}
 
-        return data.children.map((child, childIndex) => {
-          const newIndex = (index + childIndex) % this.colors.length;
-          return {
-            ...child,
-            itemStyle: { color: this.colors[newIndex] },
-            children: getChildrenColors(child, newIndex)
-          }
-        })
-      }
+const updateChart = () => {
+  if (chart.value) {
+    currentData.value = props.chartData
+    renderChart()
+  }
+}
 
-      const applyColorsToData = (data) => {
-        if (data) {
-          return {
-            ...data,
-            children: getChildrenColors(data, 0)
-          }
-        }
-        return data
-      }
+// Watchers
+watch(() => props.chartData, () => {
+  updateChart()
+}, { deep: true })
 
-      const option = {
-        series: {
-          type: 'sunburst',
-          data: [applyColorsToData(this.currentData)],
-          radius: ['0%', '100%'],
-          center: ['50%', '50%'],
-          label: {
-            show: false,
-            rotate: 'tangential',
-            overflow: 'truncate',
-            ellipsis: '...',
-            fontSize: '11',
-            formatter: (params) => {
-              return params.data.name + (params.data.value ? `: ${params.data.value}` : "");
-            }
-          },
-          emphasis: {
-            focus: 'ancestor',
-            label: {
-              show: true,
-            }
-          }
-        },
-      };
+watch(() => props.paletteName, (newPalette) => {
+  selectedPalette.value = newPalette
+  colors.value = PALETTES[newPalette] || PALETTES.ocean
+  if (chart.value) {
+    updateChart()
+  }
+}, { immediate: true })
 
-      this.chart.setOption(option);
+// Lifecycle hooks
+onMounted(() => {
+  currentData.value = props.chartData
+  renderChart()
+})
 
-      this.chart.on('click', (params) => {
-        this.handleChartClick(params);
-      });
-    },
-    updateChart() {
-      if (this.chart) {
-        this.currentData = this.chartData;
-        this.renderChart();
-      }
-    },
-    handleChartClick(params) {
-      if (params.data && params.data.children) {
-        this.currentData = params.data;
-        this.renderChart();
-      }
-    },
-  },
-};
+onBeforeUnmount(() => {
+  if (chart.value) {
+    chart.value.dispose()
+  }
+})
 </script>
 
 <template>

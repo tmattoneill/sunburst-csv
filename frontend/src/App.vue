@@ -1,4 +1,3 @@
-<!-- App.vue -->
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import SunburstChart from './components/SunburstChart.vue'
@@ -11,11 +10,17 @@ const currentPalette = ref('ocean')
 const reportType = ref('')
 const dateStart = ref('')
 const dateEnd = ref('')
+const selectedNode = ref(null)
 
 // Computed properties for DataPane
-const rootName = computed(() => chartData.value?.name ?? '')
-const rootValue = computed(() => chartData.value?.value ?? 0)
-const topChildren = computed(() => chartData.value?.children ?? [])
+const rootName = computed(() => selectedNode.value?.name ?? chartData.value?.name ?? '')
+const rootValue = computed(() => selectedNode.value?.value ?? chartData.value?.value ?? 0)
+const topChildren = computed(() => selectedNode.value?.children ?? chartData.value?.children ?? [])
+
+// Add handler for node selection
+const handleNodeClick = (node) => {
+  selectedNode.value = node
+}
 
 const handleFileSelected = async (file) => {
   try {
@@ -41,15 +46,18 @@ onMounted(async () => {
     dateStart.value = responseData.date_start
     dateEnd.value = responseData.date_end
     chartData.value = responseData.data
+    selectedNode.value = responseData.data  // Initialize with root data
   } catch (error) {
     console.error('Error fetching chart data:', error)
     reportType.value = ''
     dateStart.value = ''
     dateEnd.value = ''
     chartData.value = {}
+    selectedNode.value = null
   }
 })
 </script>
+<!-- App.vue -->
 
 <template>
   <FileLoaderModal @file-selected="handleFileSelected"/>
@@ -73,6 +81,7 @@ onMounted(async () => {
             <SunburstChart
                 :chart-data="chartData"
                 v-model:palette-name="currentPalette"
+                @node-click="handleNodeClick"
             />
           </div>
           <div
