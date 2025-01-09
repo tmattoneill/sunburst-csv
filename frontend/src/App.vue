@@ -2,6 +2,7 @@
 import SunburstChart from './components/SunburstChart.vue';
 import FileLoaderModal from './components/FileLoaderModal.vue';
 import DataPane from './components/DataPane.vue';
+import PageHeader from './components/PageHeader.vue';
 
 export default {
   name: 'App',
@@ -9,11 +10,15 @@ export default {
     SunburstChart,
     FileLoaderModal,
     DataPane,
+    PageHeader,
   },
   data() {
     return {
-      data: {}, // Initialize as empty object instead of null
+      chartData: {}, // Initialize as empty object instead of null
       currentPalette: 'ocean',
+      reportType: '',
+      dateStart: '',
+      dateEnd: '',
     };
   },
   async mounted() {
@@ -22,10 +27,21 @@ export default {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      this.data = await response.json();
+      const responseData = await response.json();
+
+      // Destructure the response to get all fields
+      this.reportType = responseData.report_type;
+      this.dateStart = responseData.date_start;
+      this.dateEnd = responseData.date_end;
+      this.chartData = responseData.data;  // Store just the nested data object
+
     } catch (error) {
       console.error('Error fetching chart data:', error);
-      this.data = {}; // Fallback to empty object
+      // Reset all fields on error
+      this.reportType = '';
+      this.dateStart = '';
+      this.dateEnd = '';
+      this.chartData = {};
     }
   },
   methods: {
@@ -36,7 +52,7 @@ export default {
         console.log('File loaded:', text);
 
         // For now, we'll just set a dummy data object
-        this.data = { /* your data structure */ };
+        this.data = { /* your data structure */};
       } catch (error) {
         console.error('Error processing file:', error);
         this.data = {};
@@ -49,31 +65,25 @@ export default {
 <template>
   <div id="app" class="container py-4">
     <!-- File Loader Modal -->
-    <FileLoaderModal @file-selected="handleFileSelected" />
+    <FileLoaderModal @file-selected="handleFileSelected"/>
 
     <!-- Main Page -->
-    <div class="row mb-4">
-      <div class="col-12">
-        <button
-            class="btn btn-primary px-4"
-            id="mdl-btn-load"
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#mdl-load"
-        >
-          Load Data
-        </button>
-      </div>
-    </div>
+    <PageHeader
+        :reportType="reportType"
+        :chartName="chartData.name"
+        :dateStart="dateStart"
+        :dateEnd="dateEnd"
+    />
 
     <div class="row">
       <!-- Sunburst Chart Section -->
       <div class="col-md-6 mb-4 mb-md-0">
         <div class="h-100">
-          <div v-if="data && Object.keys(data).length" class="d-flex justify-content-center align-items-center"
+          <div v-if="chartData && Object.keys(chartData).length"
+               class="d-flex justify-content-center align-items-center"
                style="height: 500px;">
             <SunburstChart
-                :chart-data="data"
+                :chart-data="chartData"
                 v-model:palette-name="currentPalette"
             />
           </div>
@@ -87,7 +97,7 @@ export default {
       <!-- Data View Section -->
       <div class="col-md-6">
         <div class="bg-white rounded shadow-sm p-4 h-100">
-          <DataPane />
+          <DataPane/>
         </div>
       </div>
     </div>

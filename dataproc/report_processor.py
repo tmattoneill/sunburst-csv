@@ -100,8 +100,8 @@ class ReportProcessor:
                     try:
                         start_date = datetime.strptime(start_str, '%m/%d/%Y %H:%M')
                         end_date = datetime.strptime(end_str, '%m/%d/%Y %H:%M')
-                        self.date_start = start_date.strftime('%Y-%m-%d %H:%M:00')
-                        self.date_end = end_date.strftime('%Y-%m-%d %H:%M:00')
+                        self.date_start = start_date.strftime('%b. %-d, %Y')
+                        self.date_end = end_date.strftime('%b. %-d, %Y')
                         print(f"Extracted date span: {self.date_start} to {self.date_end}")
                     except ValueError as e:
                         print(f"Error parsing dates: {e}")

@@ -1,7 +1,7 @@
 {
   "report_type": "Tag Summary Report",
-  "date_start": "2024-12-09 00:00:00",
-  "date_end": "2025-01-08 00:00:00",
+  "date_start": "Dec. 9, 2024",
+  "date_end": "Jan. 8, 2025",
   "data": {
     "name": "Criteo",
     "value": 3462.0,

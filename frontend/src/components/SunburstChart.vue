@@ -1,29 +1,3 @@
-<template>
-  <div class="chart-section">
-    <!-- Palette Selector Row -->
-    <div class="row g-0 mb-2">
-      <div class="col-12">
-        <div class="d-flex justify-content-end">
-          <select v-model="selectedPalette"
-                  @change="handlePaletteChange"
-                  class="form-select form-select-sm w-auto">
-            <option v-for="name in paletteNames" :key="name" :value="name">
-              {{ name }}
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chart Container -->
-    <div class="row g-0">
-      <div class="col-12">
-        <div ref="chartContainer" style="width: 100%; height: 500px;"></div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import * as echarts from 'echarts';
 import { PALETTES } from '@/palettes';
@@ -158,6 +132,34 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="chart-section">
+    <!-- Palette Selector Row -->
+    <div class="row g-0 mb-2">
+      <div class="col-12">
+        <div class="d-flex justify-content-end">
+          <select v-model="selectedPalette"
+                  @change="handlePaletteChange"
+                  class="form-select form-select-sm w-auto">
+            <option v-for="name in paletteNames" :key="name" :value="name">
+              {{ name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart Container -->
+    <div class="row g-0">
+      <div class="col-12">
+        <div ref="chartContainer" style="width: 100%; height: 500px;"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
 
 <style scoped>
 /* Only keeping minimal required custom styles */
