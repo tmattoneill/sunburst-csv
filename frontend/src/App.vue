@@ -62,6 +62,10 @@ onMounted(async () => {
     selectedNode.value = null
   }
 })
+
+const refreshPage = () => {
+  location.reload()  // This should work without window.
+}
 </script>
 <!-- App.vue -->
 
@@ -69,6 +73,7 @@ onMounted(async () => {
   <FileLoaderModal @file-selected="handleFileSelected"/>
 
   <div id="app" class="container py-4">
+    <!-- Header -->
     <PageHeader
         :reportType="reportType"
         :chartName="chartName"
@@ -80,7 +85,8 @@ onMounted(async () => {
 
     <div class="row">
       <div class="col-md-6 mb-4 mb-md-0">
-        <div class="h-100">
+        <!-- Chart Pane -->
+        <div class="h-100 position-relative">
           <div
               v-if="chartData && Object.keys(chartData).length"
               class="d-flex justify-content-center align-items-center"
@@ -92,6 +98,14 @@ onMounted(async () => {
                 @node-click="handleNodeClick"
                 @node-hover="handleNodeHover"
             />
+            <button
+                class="btn btn-secondary position-absolute"
+                style="bottom: 10px; right: 10px;"
+                @click="refreshPage"
+                title="Refresh Data"
+            >
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
           </div>
           <div
               v-else
@@ -102,9 +116,9 @@ onMounted(async () => {
           </div>
         </div>
       </div>
-
       <div class="col-md-6">
-        <div class="bg-white rounded shadow-sm p-4 h-100">
+        <!-- Data Pane -->
+        <div class="bg-black rounded shadow-sm p-4 h-100">
           <DataPane
               :rootName="rootName"
               :rootValue="rootValue"
@@ -116,7 +130,7 @@ onMounted(async () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 #app {
   max-width: 1200px;
   background: #f8f9fa;
@@ -127,5 +141,9 @@ onMounted(async () => {
   .chart-height {
     height: 400px;
   }
+}
+
+.btn {
+  z-index: 10;
 }
 </style>
