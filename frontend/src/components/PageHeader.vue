@@ -40,10 +40,10 @@ const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
 // Computed palette names for the dropdown
 const paletteNames = computed(() => Object.keys(PALETTES))
 
-// Format path segments to include values
+// Format path segments
 const formattedPathSegments = computed(() => {
   return props.currentPath.map(segment => ({
-    name: `${segment.name} (${segment.value.toLocaleString()})`,
+    name: segment.name,
     path: '#'
   }))
 })

@@ -36,19 +36,11 @@ watch(() => props.paletteName, (newPalette) => {
 const handleChartHover = (params) => {
   if (params.data) {
     emit('node-hover', params.data)
-    // Extract path from treePathInfo
-    const path = params.treePathInfo.map(node => ({
-      name: node.name,
-      value: node.value
-    }))
-    emit('path-change', path)
   }
 }
 
 const handleChartMouseOut = () => {
   emit('node-hover', null);
-  // Reset path to root when no node is hovered
-  emit('path-change', [{ name: props.chartData.name, value: props.chartData.value }]);
 }
 
 const getChildrenColors = (data, index) => {
