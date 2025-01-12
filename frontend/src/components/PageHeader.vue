@@ -42,6 +42,7 @@ const paletteNames = computed(() => Object.keys(PALETTES))
 
 // Format path segments
 const formattedPathSegments = computed(() => {
+  console.log('Current path in PageHeader:', props.currentPath);
   return props.currentPath.map(segment => ({
     name: segment.name,
     path: '#'

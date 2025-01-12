@@ -30,7 +30,8 @@ const handleNodeHover = (node) => {
 }
 
 const handlePathChange = (path) => {
-  currentPath.value = path
+  console.log('Path change in App:', path);
+  currentPath.value = path;
 }
 
 const handleFileSelected = async (file) => {

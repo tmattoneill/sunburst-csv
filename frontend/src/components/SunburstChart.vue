@@ -70,31 +70,40 @@ const applyColorsToData = (data) => {
 
 const handleChartClick = (params) => {
   if (params.data) {
-    emit('node-click', params.data)
-    // Extract path from treePathInfo, filtering out any null or undefined names
-    const path = params.treePathInfo
-      .filter(node => node && node.name)
-      .map(node => ({
-        name: node.name,
-        value: node.value
-    }))
+    emit('node-click', params.data);
 
-    // Ensure we have at least the root node
-    if (path.length === 0) {
-      path.push({ name: props.chartData.name, value: props.chartData.value })
-    }
+    console.log('Click params:', params);
+    console.log('Full treePathInfo:', params.treePathInfo);
 
-    emit('path-change', path)
+    // Extract full path from the root to current node
+    const path = [];
+
+    // Start with the root
+    path.push({ name: props.chartData.name });
+
+    // Add all nodes in the path to clicked node
+    params.treePathInfo.forEach(node => {
+      if (node.name !== props.chartData.name) {  // Skip root if already added
+        path.push({ name: node.name });
+      }
+    });
+
+    console.log('Emitting full path:', path);
+    emit('path-change', path);
 
     if (params.data.children) {
-      currentData.value = params.data
-      renderChart()
+      currentData.value = params.data;
+      renderChart();
     }
   }
 }
 
 const renderChart = () => {
   if (!chartContainer.value) return
+
+  if (chart.value) {
+    chart.value.dispose();  // Clean up existing chart
+  }
 
   chart.value = echarts.init(chartContainer.value)
 
@@ -146,9 +155,10 @@ const updateChart = () => {
 
 // Watchers
 watch(() => props.chartData, () => {
-  updateChart()
-  // Emit initial path with root node
-  emit('path-change', [{ name: props.chartData.name, value: props.chartData.value }]);
+  currentData.value = props.chartData;
+  updateChart();
+  // Emit initial path
+  emit('path-change', [{ name: props.chartData.name }]);
 }, { deep: true })
 
 watch(() => props.paletteName, (newPalette) => {
@@ -163,8 +173,8 @@ watch(() => props.paletteName, (newPalette) => {
 onMounted(() => {
   currentData.value = props.chartData
   renderChart()
-  // Emit initial path with root node
-  emit('path-change', [{ name: props.chartData.name, value: props.chartData.value }]);
+  // Initialize with root path
+  emit('path-change', [{ name: props.chartData.name }])
 })
 
 onBeforeUnmount(() => {
