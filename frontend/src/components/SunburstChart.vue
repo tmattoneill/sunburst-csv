@@ -68,28 +68,37 @@ const applyColorsToData = (data) => {
   return data
 }
 
+// Add fullPath ref to track complete path
+const fullPath = ref([{ name: props.chartData.name }]);
+
 const handleChartClick = (params) => {
   if (params.data) {
     emit('node-click', params.data);
 
     console.log('Click params:', params);
     console.log('Full treePathInfo:', params.treePathInfo);
+    console.log('TreePathInfo names:', params.treePathInfo.map(node => node.name));
 
-    // Extract full path from the root to current node
-    const path = [];
+    // Get new nodes from current click (skip empty names)
+    const newNodes = params.treePathInfo
+      .filter(node => node.name)
+      .map(node => ({
+        name: node.name
+      }));
 
-    // Start with the root
-    path.push({ name: props.chartData.name });
-
-    // Add all nodes in the path to clicked node
-    params.treePathInfo.forEach(node => {
-      if (node.name !== props.chartData.name) {  // Skip root if already added
-        path.push({ name: node.name });
+    // If clicking deeper in the tree, add to path
+    if (newNodes.length > 0) {
+      const clickedNodeName = params.data.name;
+      // Only add the clicked node if it's not already the last item in our path
+      if (fullPath.value[fullPath.value.length - 1]?.name !== clickedNodeName) {
+        fullPath.value.push({ name: clickedNodeName });
       }
-    });
+    }
 
-    console.log('Emitting full path:', path);
-    emit('path-change', path);
+    console.log('Full path being emitted:', fullPath.value);
+    console.log('Path names:', fullPath.value.map(node => node.name));
+
+    emit('path-change', fullPath.value);
 
     if (params.data.children) {
       currentData.value = params.data;
@@ -156,9 +165,10 @@ const updateChart = () => {
 // Watchers
 watch(() => props.chartData, () => {
   currentData.value = props.chartData;
+  // Reset path to just root node when chart data changes
+  fullPath.value = [{ name: props.chartData.name }];
   updateChart();
-  // Emit initial path
-  emit('path-change', [{ name: props.chartData.name }]);
+  emit('path-change', fullPath.value);
 }, { deep: true })
 
 watch(() => props.paletteName, (newPalette) => {
