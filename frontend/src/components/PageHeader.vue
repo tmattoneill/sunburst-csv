@@ -1,3 +1,4 @@
+<!-- PageHeader.vue -->
 <script setup>
 import { defineEmits, defineProps, ref, computed } from 'vue'
 import { PALETTES } from '@/palettes'
@@ -24,6 +25,10 @@ const props = defineProps({
   dateEnd: {
     type: String,
     required: true
+  },
+  currentPath: {
+    type: Array,
+    default: () => []
   }
 })
 
@@ -35,18 +40,19 @@ const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
 // Computed palette names for the dropdown
 const paletteNames = computed(() => Object.keys(PALETTES))
 
+// Format path segments to include values
+const formattedPathSegments = computed(() => {
+  return props.currentPath.map(segment => ({
+    name: `${segment.name} (${segment.value.toLocaleString()})`,
+    path: '#'
+  }))
+})
+
 // Handle palette changes
 const handlePaletteChange = () => {
   colors.value = PALETTES[selectedPalette.value]
   emit('update:paletteName', selectedPalette.value)
 }
-
-// Static breadcrumb for initial testing
-const testPathSegments = ref([
-  { name: 'Root', path: '#' },
-  { name: 'Child Node', path: '#' },
-  { name: 'Sub-Child', path: '#' }
-])
 </script>
 
 <template>
@@ -65,7 +71,7 @@ const testPathSegments = ref([
       </div>
 
       <!-- PathBar -->
-      <PathBar :pathSegments="testPathSegments" />
+      <PathBar :pathSegments="formattedPathSegments" :activeIndex="formattedPathSegments.length - 1" />
 
       <!-- Dates -->
       <div class="mt-3 ps-2 d-flex justify-content-between align-items-end">
@@ -95,6 +101,6 @@ const testPathSegments = ref([
 }
 
 .form-select {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
 }
 </style>

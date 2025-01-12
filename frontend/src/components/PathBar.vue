@@ -1,3 +1,4 @@
+<!-- PathBar.vue -->
 <script setup>
 import { defineProps } from 'vue'
 

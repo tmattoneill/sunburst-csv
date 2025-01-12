@@ -1,8 +1,8 @@
+<!-- SunburstChart.vue -->
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount, defineProps, defineEmits } from 'vue'
 import * as echarts from 'echarts'
 import { PALETTES } from '@/palettes'
-
 
 // Props
 const props = defineProps({
@@ -17,7 +17,7 @@ const props = defineProps({
 })
 
 // Emits
-const emit = defineEmits(['update:paletteName', 'node-click', 'node-hover'])
+const emit = defineEmits(['update:paletteName', 'node-click', 'node-hover', 'path-change'])
 
 // Refs
 const chart = ref(null)
@@ -33,25 +33,23 @@ watch(() => props.paletteName, (newPalette) => {
   }
 }, { immediate: true });
 
-// Computed
-// const paletteNames = computed(() => Object.keys(PALETTES))
-//
-// // Methods
-// const handlePaletteChange = () => {
-//   colors.value = PALETTES[selectedPalette.value]
-//   emit('update:paletteName', selectedPalette.value)
-//   updateChart()
-// }
-
 const handleChartHover = (params) => {
   if (params.data) {
     emit('node-hover', params.data)
+    // Extract path from treePathInfo
+    const path = params.treePathInfo.map(node => ({
+      name: node.name,
+      value: node.value
+    }))
+    emit('path-change', path)
   }
 }
 
 const handleChartMouseOut = () => {
-  emit('node-hover', null); // Emit null when the mouse leaves the chart
-};
+  emit('node-hover', null);
+  // Reset path to root when no node is hovered
+  emit('path-change', [{ name: props.chartData.name, value: props.chartData.value }]);
+}
 
 const getChildrenColors = (data, index) => {
   if (!data || !data.children) {
@@ -80,7 +78,14 @@ const applyColorsToData = (data) => {
 
 const handleChartClick = (params) => {
   if (params.data) {
-    emit('node-click', params.data)  // Emit the clicked node data
+    emit('node-click', params.data)
+    // Extract path from treePathInfo
+    const path = params.treePathInfo.map(node => ({
+      name: node.name,
+      value: node.value
+    }))
+    emit('path-change', path)
+
     if (params.data.children) {
       currentData.value = params.data
       renderChart()
@@ -100,12 +105,11 @@ const renderChart = () => {
       radius: ['0%', '100%'],
       center: ['50%', '50%'],
       levels: [{
-        // Configure only the center/root level
         r0: '0%',
         r: '15%',
         itemStyle: {
-          color: 'none',  // Make the center transparent
-          borderWidth: 0  // Remove the border
+          color: 'none',
+          borderWidth: 0
         },
         label: {
           show: true,
@@ -143,6 +147,8 @@ const updateChart = () => {
 // Watchers
 watch(() => props.chartData, () => {
   updateChart()
+  // Emit initial path with root node
+  emit('path-change', [{ name: props.chartData.name, value: props.chartData.value }]);
 }, { deep: true })
 
 watch(() => props.paletteName, (newPalette) => {
@@ -157,6 +163,8 @@ watch(() => props.paletteName, (newPalette) => {
 onMounted(() => {
   currentData.value = props.chartData
   renderChart()
+  // Emit initial path with root node
+  emit('path-change', [{ name: props.chartData.name, value: props.chartData.value }]);
 })
 
 onBeforeUnmount(() => {
@@ -168,22 +176,6 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="chart-section">
-    <!-- Palette Selector Row -->
-<!--    <div class="row g-0 mb-2">-->
-<!--      <div class="col-12">-->
-<!--        <div class="d-flex justify-content-end">-->
-<!--          <select v-model="selectedPalette"-->
-<!--                  @change="handlePaletteChange"-->
-<!--                  class="form-select form-select-sm w-auto">-->
-<!--            <option v-for="name in paletteNames" :key="name" :value="name">-->
-<!--              {{ name }}-->
-<!--            </option>-->
-<!--          </select>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-    <!-- Chart Container -->
     <div class="row g-0">
       <div class="col-12">
         <div ref="chartContainer" style="width: 100%; height: 500px;"></div>
@@ -192,16 +184,13 @@ onBeforeUnmount(() => {
   </div>
 </template>
 
-
-
 <style scoped>
-/* Only keeping minimal required custom styles */
 .chart-section {
   width: 100%;
 }
 
 .form-select-sm {
-  font-size: 0.875rem;  /* 14px */
+  font-size: 0.875rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }

@@ -1,3 +1,4 @@
+<!-- App.vue -->
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import SunburstChart from './components/SunburstChart.vue'
@@ -11,6 +12,7 @@ const reportType = ref('')
 const dateStart = ref('')
 const dateEnd = ref('')
 const selectedNode = ref(null)
+const currentPath = ref([])
 
 // Computed properties for DataPane
 const rootName = computed(() => selectedNode.value?.name ?? chartData.value?.name ?? '')
@@ -24,9 +26,12 @@ const handleNodeClick = (node) => {
 }
 
 const handleNodeHover = (node) => {
-  selectedNode.value = node || chartData.value; // Reset to root data if no node is hovered
-};
+  selectedNode.value = node || chartData.value;
+}
 
+const handlePathChange = (path) => {
+  currentPath.value = path
+}
 
 const handleFileSelected = async (file) => {
   try {
@@ -52,7 +57,8 @@ onMounted(async () => {
     dateStart.value = responseData.date_start
     dateEnd.value = responseData.date_end
     chartData.value = responseData.data
-    selectedNode.value = responseData.data  // Initialize with root data
+    selectedNode.value = responseData.data
+    currentPath.value = [{ name: responseData.data.name, value: responseData.data.value }]
   } catch (error) {
     console.error('Error fetching chart data:', error)
     reportType.value = ''
@@ -60,14 +66,14 @@ onMounted(async () => {
     dateEnd.value = ''
     chartData.value = {}
     selectedNode.value = null
+    currentPath.value = []
   }
 })
 
 const refreshPage = () => {
-  location.reload()  // This should work without window.
+  location.reload()
 }
 </script>
-<!-- App.vue -->
 
 <template>
   <FileLoaderModal @file-selected="handleFileSelected"/>
@@ -75,12 +81,13 @@ const refreshPage = () => {
   <div id="app" class="container py-4">
     <!-- Header -->
     <PageHeader
-        :reportType="reportType"
-        :chartName="chartName"
-        :dateStart="dateStart"
-        :dateEnd="dateEnd"
-        :paletteName="currentPalette"
-        @update:paletteName="(name) => currentPalette = name"
+      :reportType="reportType"
+      :chartName="chartName"
+      :dateStart="dateStart"
+      :dateEnd="dateEnd"
+      :paletteName="currentPalette"
+      :currentPath="currentPath"
+      @update:paletteName="(name) => currentPalette = name"
     />
 
     <div class="row">
@@ -88,29 +95,30 @@ const refreshPage = () => {
         <!-- Chart Pane -->
         <div class="h-100 position-relative">
           <div
-              v-if="chartData && Object.keys(chartData).length"
-              class="d-flex justify-content-center align-items-center"
-              style="height: 500px;"
+            v-if="chartData && Object.keys(chartData).length"
+            class="d-flex justify-content-center align-items-center"
+            style="height: 500px;"
           >
             <SunburstChart
-                :chart-data="chartData"
-                v-model:palette-name="currentPalette"
-                @node-click="handleNodeClick"
-                @node-hover="handleNodeHover"
+              :chart-data="chartData"
+              v-model:palette-name="currentPalette"
+              @node-click="handleNodeClick"
+              @node-hover="handleNodeHover"
+              @path-change="handlePathChange"
             />
             <button
-                class="btn btn-secondary position-absolute"
-                style="bottom: 10px; right: 10px;"
-                @click="refreshPage"
-                title="Refresh Data"
+              class="btn btn-secondary position-absolute"
+              style="bottom: 10px; right: 10px;"
+              @click="refreshPage"
+              title="Refresh Data"
             >
               <i class="bi bi-arrow-clockwise"></i>
             </button>
           </div>
           <div
-              v-else
-              class="d-flex justify-content-center align-items-center text-secondary fs-5"
-              style="height: 500px;"
+            v-else
+            class="d-flex justify-content-center align-items-center text-secondary fs-5"
+            style="height: 500px;"
           >
             <p class="m-0">Loading chart data...</p>
           </div>
@@ -120,9 +128,9 @@ const refreshPage = () => {
         <!-- Data Pane -->
         <div class="bg-black rounded shadow-sm p-4 h-100">
           <DataPane
-              :rootName="rootName"
-              :rootValue="rootValue"
-              :topChildren="topChildren"
+            :rootName="rootName"
+            :rootValue="rootValue"
+            :topChildren="topChildren"
           />
         </div>
       </div>
