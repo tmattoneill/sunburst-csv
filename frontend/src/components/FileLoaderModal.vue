@@ -1,69 +1,144 @@
 <template>
-  <div class="modal fade" role="dialog" tabindex="-1" id="mdl-load">
-    <div class="modal-dialog" role="document">
+  <div
+    class="modal fade"
+    id="mdl-load"
+    tabindex="-1"
+    aria-labelledby="mdl-load-label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">File Loader</h4>
-          <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" id="mdl-load-label">Upload File</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
-          <input type="file" @change="handleFileSelect" accept=".csv">
-          <p>Select a valid CSV data source.</p>
+          <input
+            type="file"
+            @change="handleFileChange"
+            class="form-control mb-3"
+          />
+          <input
+            type="text"
+            id="mdl-txt-client_name"
+            class="form-control"
+            placeholder="Enter Client Name"
+            v-model="clientName"
+          />
         </div>
         <div class="modal-footer">
-          <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
           <button
-              class="btn btn-primary"
-              type="button"
-              @click="loadFile"
-              :disabled="!selectedFile"
-              data-bs-dismiss="modal"
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
           >
-            Load
+            Close
           </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            @click="uploadFileAndProcess"
+          >
+            Upload
+          </button>
+        </div>
+        <div
+          class="alert mt-3"
+          :class="uploadStatus.includes('successfully') ? 'alert-success' : 'alert-danger'"
+          v-if="uploadStatus"
+        >
+          {{ uploadStatus }}
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-  export default {
-  name: 'FileLoaderModal',
-  data() {
-  return {
-  selectedFile: null
-}
-},
-  methods: {
-  handleFileSelect(event) {
-  this.selectedFile = event.target.files[0]
-},
-  async loadFile() {
-  if (!this.selectedFile) return
+<script setup>
+import { ref } from 'vue';
+
+const selectedFile = ref(null);
+const clientName = ref("");
+const uploadStatus = ref("");
+
+const handleFileChange = (event) => {
+  selectedFile.value = event.target.files[0];
+};
+
+const uploadFileAndProcess = async () => {
+  if (!selectedFile.value) {
+    uploadStatus.value = "No file selected.";
+    return;
+  }
+
+  if (!clientName.value.trim()) {
+    uploadStatus.value = "Client name is required.";
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("file", selectedFile.value);
 
   try {
-  const formData = new FormData()
-  formData.append('file', this.selectedFile)
+    const response = await fetch("http://localhost:5001/upload", {
+      method: "POST",
+      body: formData,
+    });
+    const result = await response.json();
 
-  // Update URL to match your Flask server
-  const response = await fetch('http://localhost:5001/upload', {
-  method: 'POST',
-  body: formData
-})
+    if (response.ok) {
+      uploadStatus.value = "File uploaded successfully! Running report...";
 
-  if (!response.ok) {
-  throw new Error('Upload failed')
-}
+      // Trigger report processor
+      await runReportProcessor(result.filePath, clientName.value);
+    } else {
+      uploadStatus.value = `Error: ${result.error}`;
+    }
+  } catch (error) {
+    console.error("Upload error:", error);
+    uploadStatus.value = "An unexpected error occurred.";
+  }
+};
 
-  const result = await response.json()
-  this.$emit('file-selected', result.filePath)
-  this.selectedFile = null
-} catch (error) {
-  console.error('Error loading file:', error)
-  // You might want to show an error message to the user here
-}
-}
-}
-}
+const runReportProcessor = async (filePath, clientName) => {
+  try {
+    const response = await fetch("http://localhost:5001/process", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        filePath,
+        clientName,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      uploadStatus.value = "Report processed successfully!";
+    } else {
+      uploadStatus.value = `Processing error: ${result.error}`;
+    }
+  } catch (error) {
+    console.error("Processing error:", error);
+    uploadStatus.value = "An error occurred during report processing.";
+  }
+};
 </script>
+
+<style scoped>
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.alert {
+  margin-top: 1rem;
+}
+</style>

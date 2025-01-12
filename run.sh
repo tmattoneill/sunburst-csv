@@ -35,16 +35,69 @@ log() {
   echo "$(date '+%Y-%m-%d %H:%M:%S') - $1"
 }
 
-# Launch the Python API
+# Function to clean up processes
+cleanup() {
+  echo "Stopping processes..."
+  
+  # Send SIGTERM first to allow graceful shutdown
+  if [ ! -z "$API_PID" ]; then
+    kill -TERM $API_PID 2>/dev/null
+    sleep 1
+    # If process still exists, force kill
+    if kill -0 $API_PID 2>/dev/null; then
+      kill -9 $API_PID 2>/dev/null
+    fi
+  fi
+  
+  if [ ! -z "$FRONTEND_PID" ]; then
+    kill -TERM $FRONTEND_PID 2>/dev/null
+    sleep 1
+    if kill -0 $FRONTEND_PID 2>/dev/null; then
+      kill -9 $FRONTEND_PID 2>/dev/null
+    fi
+  fi
+  
+  # Wait for processes to finish
+  wait $API_PID $FRONTEND_PID 2>/dev/null
+  
+  echo "All processes stopped. Returning to home directory."
+  cd "$HOME_DIR" || exit
+  log "Returned to $HOME_DIR"
+}
+
+# Trap SIGINT (CTRL-C), SIGTERM, and EXIT
+trap cleanup SIGINT SIGTERM EXIT
+
+# Launch the Python API with proper shutdown handling
 log "Starting Python API..."
-cd api || exit
-python3 api.py &
+
+# Navigate to the project root directory
+cd "$(dirname "$0")" || exit
+
+# Start the API in the background
+python3 app/main.py &
 API_PID=$!
 log "Python API started with PID $API_PID"
 
+# Function to handle shutdown
+function shutdown() {
+    log "Shutting down Python API with PID $API_PID"
+    kill -SIGTERM "$API_PID"
+    wait "$API_PID"
+    log "Python API stopped"
+    exit 0
+}
+
+# Trap signals and execute shutdown function
+trap shutdown SIGINT SIGTERM
+
+# Wait for the API process to finish
+wait "$API_PID"
+
+
 # Handle Node.js frontend
 log "Switching to Node.js frontend..."
-cd ../frontend || exit
+cd frontend || exit
 
 if [ "$CURRENT_MACHINE_ID" != "$LAST_MACHINE_ID" ]; then
   log "Machine ID has changed. Cleaning and rebuilding the frontend..."
@@ -68,20 +121,5 @@ npm run serve &
 FRONTEND_PID=$!
 log "Frontend server started with PID $FRONTEND_PID"
 
-# Function to clean up processes on exit
-cleanup() {
-  echo "Stopping processes..."
-  kill $API_PID $FRONTEND_PID 2>/dev/null
-  wait $API_PID $FRONTEND_PID 2>/dev/null
-  echo "All processes stopped. Returning to home directory."
-}
-
-# Trap SIGINT (CTRL-C) and EXIT to clean up processes
-trap cleanup SIGINT EXIT
-
 # Wait for the processes to keep running
 wait
-
-# Ensure returning to the original directory after exiting
-cd "$HOME_DIR" || exit
-log "Returned to $HOME_DIR"
