@@ -71,11 +71,19 @@ const applyColorsToData = (data) => {
 const handleChartClick = (params) => {
   if (params.data) {
     emit('node-click', params.data)
-    // Extract path from treePathInfo
-    const path = params.treePathInfo.map(node => ({
-      name: node.name,
-      value: node.value
+    // Extract path from treePathInfo, filtering out any null or undefined names
+    const path = params.treePathInfo
+      .filter(node => node && node.name)
+      .map(node => ({
+        name: node.name,
+        value: node.value
     }))
+
+    // Ensure we have at least the root node
+    if (path.length === 0) {
+      path.push({ name: props.chartData.name, value: props.chartData.value })
+    }
+
     emit('path-change', path)
 
     if (params.data.children) {

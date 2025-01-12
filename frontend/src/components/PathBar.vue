@@ -70,7 +70,7 @@ const handleNavigate = (segment) => {
 }
 
 .path-segment::after {
-  content: ">";
+  content: "";
   margin-left: 8px;
   opacity: 0.5;
 }
