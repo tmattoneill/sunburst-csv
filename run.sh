@@ -71,9 +71,6 @@ trap cleanup SIGINT SIGTERM EXIT
 # Launch the Python API with proper shutdown handling
 log "Starting Python API..."
 
-# Navigate to the project root directory
-cd "$(dirname "$0")" || exit
-
 # Start the API in the background
 python3 app/main.py &
 API_PID=$!

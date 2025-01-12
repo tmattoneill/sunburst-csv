@@ -11,6 +11,10 @@
           </select>
         </div>
       </div>
+
+      <!-- Add PathBar Here -->
+      <PathBar />
+
       <div class="mt-3 ps-2 d-flex justify-content-between align-items-end">
         <div>
           <h5 class="mb-1">From: {{ dateStart }}</h5>
@@ -33,6 +37,7 @@
 <script setup>
 import { defineEmits, defineProps, ref, computed } from 'vue';
 import { PALETTES } from '@/palettes';
+import PathBar from './PathBar.vue';
 
 // Props
 const props = defineProps({

@@ -52,7 +52,7 @@ const displayChildren = computed(() => {
   <div class="card">
     <div class="card-header">
       <h5 class="mb-0">{{ rootName || 'No Data' }}</h5>
-      <p class="mb-0 text-secondary">Total: {{ formatNumber(rootValue) }}</p>
+      <p class="mb-0 text-secondary">Total Incidents: {{ formatNumber(rootValue) }}</p>
     </div>
     <div class="card-body">
       <ul class="list-unstyled mb-0">
