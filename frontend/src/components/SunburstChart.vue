@@ -75,30 +75,15 @@ const handleChartClick = (params) => {
   if (params.data) {
     emit('node-click', params.data);
 
-    console.log('Click params:', params);
-    console.log('Full treePathInfo:', params.treePathInfo);
-    console.log('TreePathInfo names:', params.treePathInfo.map(node => node.name));
-
-    // Get new nodes from current click (skip empty names)
-    const newNodes = params.treePathInfo
-      .filter(node => node.name)
+    // On every click, rebuild the complete path from treePathInfo
+    const path = params.treePathInfo
+      .filter(node => node.name)  // Filter out empty names
       .map(node => ({
         name: node.name
       }));
 
-    // If clicking deeper in the tree, add to path
-    if (newNodes.length > 0) {
-      const clickedNodeName = params.data.name;
-      // Only add the clicked node if it's not already the last item in our path
-      if (fullPath.value[fullPath.value.length - 1]?.name !== clickedNodeName) {
-        fullPath.value.push({ name: clickedNodeName });
-      }
-    }
-
-    console.log('Full path being emitted:', fullPath.value);
-    console.log('Path names:', fullPath.value.map(node => node.name));
-
-    emit('path-change', fullPath.value);
+    console.log('Full path being emitted:', path);
+    emit('path-change', path);
 
     if (params.data.children) {
       currentData.value = params.data;
