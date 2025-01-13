@@ -26,6 +26,43 @@ const selectedPalette = ref(props.paletteName)
 const chartContainer = ref(null)
 const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
 
+// Path tracking
+const nodeMap = ref(new Map())
+const pathMap = ref(new Map())
+let nextId = 1
+
+// Helper to generate unique IDs
+const generateNodeId = () => `node_${nextId++}`
+
+// Helper to build node maps and paths
+const buildNodeMaps = (node, parentPath = []) => {
+  const nodeId = generateNodeId()
+
+  // Store node with its ID
+  nodeMap.value.set(nodeId, {
+    id: nodeId,
+    name: node.name,
+    data: node
+  })
+
+  // Store complete path to this node
+  const currentPath = [...parentPath, { id: nodeId, name: node.name }]
+  pathMap.value.set(nodeId, currentPath)
+
+  // Process children recursively
+  if (node.children) {
+    node.children.forEach(child => {
+      const childInfo = buildNodeMaps(child, currentPath)
+      // Add nodeId to the original data for reference
+      child.nodeId = childInfo.nodeId
+    })
+  }
+
+  // Add nodeId to the original data for reference
+  node.nodeId = nodeId
+  return { nodeId, path: currentPath }
+}
+
 watch(() => props.paletteName, (newPalette) => {
   colors.value = PALETTES[newPalette] || PALETTES.Ocean;
   if (chart.value) {
@@ -68,21 +105,14 @@ const applyColorsToData = (data) => {
   return data
 }
 
-// Add fullPath ref to track complete path
-const fullPath = ref([{ name: props.chartData.name }]);
-
 const handleChartClick = (params) => {
-  if (params.data) {
+  if (params.data && params.data.nodeId) {
     emit('node-click', params.data);
 
-    // On every click, rebuild the complete path from treePathInfo
-    const path = params.treePathInfo
-      .filter(node => node.name)  // Filter out empty names
-      .map(node => ({
-        name: node.name
-      }));
+    // Get complete path from pathMap
+    const path = pathMap.value.get(params.data.nodeId);
+    console.log('Complete path for node:', path);
 
-    console.log('Full path being emitted:', path);
     emit('path-change', path);
 
     if (params.data.children) {
@@ -149,11 +179,16 @@ const updateChart = () => {
 
 // Watchers
 watch(() => props.chartData, () => {
+  // Reset and rebuild maps
+  nodeMap.value = new Map();
+  pathMap.value = new Map();
+  nextId = 1;
+
+  const { path } = buildNodeMaps(props.chartData);
+
   currentData.value = props.chartData;
-  // Reset path to just root node when chart data changes
-  fullPath.value = [{ name: props.chartData.name }];
   updateChart();
-  emit('path-change', fullPath.value);
+  emit('path-change', path);
 }, { deep: true })
 
 watch(() => props.paletteName, (newPalette) => {
@@ -166,10 +201,17 @@ watch(() => props.paletteName, (newPalette) => {
 
 // Lifecycle hooks
 onMounted(() => {
-  currentData.value = props.chartData
-  renderChart()
-  // Initialize with root path
-  emit('path-change', [{ name: props.chartData.name }])
+  // Initialize maps
+  nodeMap.value = new Map();
+  pathMap.value = new Map();
+  nextId = 1;
+
+  // Build initial maps from root data
+  const { path } = buildNodeMaps(props.chartData);
+
+  currentData.value = props.chartData;
+  renderChart();
+  emit('path-change', path);
 })
 
 onBeforeUnmount(() => {
