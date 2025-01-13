@@ -1,21 +1,26 @@
-import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
+import os
 from datetime import datetime
 from werkzeug.utils import secure_filename
 from dataproc.report_processor import ReportProcessor
-
+from dataproc.db_handler import DatabaseHandler
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes and origins
+CORS(app)
 
 # Configure upload settings
 UPLOAD_DIR = "../data/raw"
 ALLOWED_EXTENSIONS = {'csv'}
+DB_PATH = "../data/security.db"
+
+db = DatabaseHandler(DB_PATH)
+
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/data', methods=['GET'])
 def get_data():
@@ -25,6 +30,18 @@ def get_data():
             return jsonify(data), 200
     except FileNotFoundError:
         return jsonify({"error": "Data file not found"}), 404
+
+
+@app.route('/table-data', methods=['GET'])
+def get_table_data():
+    try:
+        page = int(request.args.get('page', 1))
+        items_per_page = int(request.args.get('items_per_page', 20))
+        data = db.get_all_data(page, items_per_page)
+        return jsonify(data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -56,6 +73,7 @@ def upload_file():
 
     return jsonify({"error": "File type not allowed"}), 400
 
+
 @app.route('/process', methods=['POST'])
 def process_file():
     try:
@@ -66,8 +84,16 @@ def process_file():
         if not client_name or not input_file:
             return jsonify({"error": "Missing required parameters"}), 400
 
-        # Initialize and run the report processor
+        # Initialize the report processor
         processor = ReportProcessor(client_name=client_name, input_file=input_file)
+
+        # Get raw data for database before processing for sunburst
+        raw_df = processor.get_raw_dataframe()
+
+        # Initialize database with raw data
+        db.initialize_db_from_dataframe(raw_df)
+
+        # Process data for sunburst visualization
         processor.process_all()
 
         return jsonify({"message": "Report processed successfully"}), 200
@@ -75,6 +101,7 @@ def process_file():
     except Exception as e:
         print(f"Error processing file: {e}")
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

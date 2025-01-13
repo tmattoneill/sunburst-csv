@@ -260,6 +260,25 @@ class ReportProcessor:
             print(f"Error creating data structure: {str(e)}")
             raise
 
+    def get_raw_dataframe(self) -> pd.DataFrame:
+        """Get the raw data from CSV with cleaned column names.
+        This is separate from the Sunburst processing and meant for database storage."""
+        try:
+            print(f"Reading raw data from: {self.raw_data_path}")
+
+            # Read the raw data, skipping metadata rows but keeping headers
+            df = pd.read_csv(self.raw_data_path, skiprows=3)
+
+            # Clean column names - lowercase and underscores
+            df.columns = df.columns.str.lower().str.replace(' ', '_')
+            print("\nColumns in raw data:", df.columns.tolist())
+
+            return df
+
+        except Exception as e:
+            print(f"Error reading raw data: {str(e)}")
+            raise
+
     def process_all(self) -> ReportMetadata:
         """Run the complete processing pipeline."""
         self.process_raw_data()
