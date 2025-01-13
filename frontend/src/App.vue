@@ -5,6 +5,7 @@ import SunburstChart from './components/SunburstChart.vue'
 import FileLoaderModal from './components/FileLoaderModal.vue'
 import DataPane from './components/DataPane.vue'
 import PageHeader from './components/PageHeader.vue'
+import DataTable from "@/components/DataTable.vue";
 
 const chartData = ref({})
 const currentPalette = ref('Ocean')
@@ -134,6 +135,11 @@ const refreshPage = () => {
             :topChildren="topChildren"
           />
         </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <DataTable />
       </div>
     </div>
   </div>
