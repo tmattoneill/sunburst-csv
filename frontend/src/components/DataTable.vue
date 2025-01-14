@@ -77,7 +77,7 @@ const headers = ref([
   'tag_name',
   'hit_type',
   'comment_type',
-  'csid',
+  'country',
   'incident',
   'provider_account',
   'publisher_name'
