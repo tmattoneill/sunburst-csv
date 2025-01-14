@@ -81,7 +81,7 @@ const headers = ref([
   'incident',
   'provider_account',
   'publisher_name'
-])
+])  // (TODO) Note: We will want this array passed around and set programmatically eventually
 
 const currentPage = ref(1)
 const itemsPerPage = ref(20)
@@ -89,6 +89,13 @@ const totalPages = ref(0)
 const totalItems = ref(0)
 const tableData = ref([])
 const loading = ref(true)
+
+const props = defineProps({
+  filters: {
+    type: Object,
+    default: () => ({})
+  }
+})
 
 const formatCellContent = (content) => {
   if (!content) return '';
@@ -109,9 +116,20 @@ const prettyHeader = (header) => {
 const fetchData = async (page) => {
   loading.value = true
   try {
+    // Create URL with filters if they exist
+    const params = new URLSearchParams({
+      page: page.toString(),
+      items_per_page: itemsPerPage.value.toString()
+    })
+
+    if (Object.keys(props.filters).length > 0) {
+      params.append('filters', JSON.stringify(props.filters))
+    }
+
     const response = await fetch(
-      `http://localhost:5001/table-data?page=${page}&items_per_page=${itemsPerPage.value}`
+      `http://localhost:5001/table-data?${params.toString()}`  // (TODO) Note: This seems pretty klugey; maybe store as config (URL)
     )
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
     }
@@ -159,10 +177,15 @@ const handlePageChange = (newPage) => {
 }
 
 // Watch for page changes
-watch(currentPage, (newPage) => {
-  fetchData(newPage)
-})
-
+// Add this watch effect in DataTable.vue
+watch(
+  () => props.filters,
+  () => {
+    currentPage.value = 1  // Reset to first page when filters change
+    fetchData(1)
+  },
+  { deep: true }
+)
 // Initial data fetch
 onMounted(() => {
   fetchData(1)
