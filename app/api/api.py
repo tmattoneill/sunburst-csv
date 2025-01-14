@@ -32,12 +32,21 @@ def get_data():
         return jsonify({"error": "Data file not found"}), 404
 
 
+# In api.py, update the get_table_data route:
+
 @app.route('/table-data', methods=['GET'])
 def get_table_data():
     try:
         page = int(request.args.get('page', 1))
         items_per_page = int(request.args.get('items_per_page', 20))
-        data = db.get_all_data(page, items_per_page)
+        filters = request.args.get('filters', None)  # New parameter
+
+        if filters:
+            filters = json.loads(filters)  # Parse JSON string of filters
+            data = db.get_filtered_data(page, items_per_page, filters)
+        else:
+            data = db.get_all_data(page, items_per_page)
+
         return jsonify(data), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500

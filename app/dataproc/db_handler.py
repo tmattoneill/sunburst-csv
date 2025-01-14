@@ -97,3 +97,56 @@ class DatabaseHandler:
         except Exception as e:
             print(f"Error fetching data: {str(e)}")
             raise
+
+    # In db_handler.py, add this new method:
+
+    def get_filtered_data(self,
+                          page: int = 1,
+                          items_per_page: int = 20,
+                          filters: dict = None) -> Dict[str, Any]:
+        """Get filtered data with pagination."""
+        try:
+            with self.get_connection() as conn:
+                conn.row_factory = sqlite3.Row
+                cursor = conn.cursor()
+
+                # Base query
+                query = "SELECT * FROM security_data"
+                count_query = "SELECT COUNT(*) FROM security_data"
+
+                # Build WHERE clause from filters
+                if filters:
+                    conditions = []
+                    params = []
+
+                    for column, value in filters.items():
+                        conditions.append(f"{column} = ?")
+                        params.append(value)
+
+                    if conditions:
+                        where_clause = " WHERE " + " AND ".join(conditions)
+                        query += where_clause
+                        count_query += where_clause
+
+                # Add pagination
+                query += " LIMIT ? OFFSET ?"
+                params.extend([items_per_page, (page - 1) * items_per_page])
+
+                # Get total count with filters
+                cursor.execute(count_query, params[:-2] if filters else [])
+                total_items = cursor.fetchone()[0]
+
+                # Get paginated data
+                cursor.execute(query, params)
+                data = [dict(row) for row in cursor.fetchall()]
+
+                return {
+                    "data": data,
+                    "total": total_items,
+                    "page": page,
+                    "total_pages": (total_items + items_per_page - 1) // items_per_page
+                }
+
+        except Exception as e:
+            print(f"Error fetching filtered data: {str(e)}")
+            raise
