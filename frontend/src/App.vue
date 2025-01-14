@@ -88,8 +88,7 @@ const handlePathNavigation = ({ segment, index }) => {
   }
 }
 
-
-onMounted(async () => {
+const fetchData = async () => {
   try {
     const response = await fetch('http://localhost:5001/data')
     if (!response.ok) {
@@ -112,15 +111,22 @@ onMounted(async () => {
     selectedNode.value = null
     currentPath.value = []
   }
+}
+
+onMounted(() => {
+  fetchData()
 })
 
 const refreshPage = () => {
-  location.reload()
+  fetchData()
 }
 </script>
 
 <template>
-  <FileLoaderModal @file-selected="handleFileSelected"/>
+  <FileLoaderModal
+    @file-selected="handleFileSelected"
+    @upload-complete="refreshPage"
+  />
 
   <div id="app" class="container py-4">
     <!-- Header -->

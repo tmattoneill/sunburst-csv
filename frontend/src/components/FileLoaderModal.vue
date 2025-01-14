@@ -1,3 +1,4 @@
+<!-- FileLoaderModal.vue: File Loader Modal -->
 <template>
   <div
     class="modal fade"
@@ -29,6 +30,7 @@
             class="form-control"
             placeholder="Enter Client Name"
             v-model="clientName"
+            @keyup.enter="uploadFileAndProcess"
           />
         </div>
         <div class="modal-footer">
@@ -36,6 +38,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
+            @click="handleClose"
           >
             Close
           </button>
@@ -60,14 +63,29 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const selectedFile = ref(null);
 const clientName = ref("");
 const uploadStatus = ref("");
+const emit = defineEmits(['upload-complete']);
 
-const handleFileChange = (event) => {
-  selectedFile.value = event.target.files[0];
+const resetForm = () => {
+  selectedFile.value = null;
+  clientName.value = "";
+  uploadStatus.value = "";
+  // Reset the file input
+  const fileInput = document.querySelector('input[type="file"]');
+  if (fileInput) fileInput.value = '';
+};
+
+// In FileLoaderModal.vue, update the handleClose function:
+const handleClose = () => {
+  const modal = bootstrap.Modal.getInstance(document.getElementById('mdl-load'));
+  if (modal) {
+    modal.hide();
+  }
+  resetForm();
 };
 
 const uploadFileAndProcess = async () => {
@@ -85,6 +103,7 @@ const uploadFileAndProcess = async () => {
   formData.append("file", selectedFile.value);
 
   try {
+    // Upload file
     const response = await fetch("http://localhost:5001/upload", {
       method: "POST",
       body: formData,
@@ -94,8 +113,28 @@ const uploadFileAndProcess = async () => {
     if (response.ok) {
       uploadStatus.value = "File uploaded successfully! Running report...";
 
-      // Trigger report processor
-      await runReportProcessor(result.filePath, clientName.value);
+      // Process report
+      const processResponse = await fetch("http://localhost:5001/process", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          filePath: result.filePath,
+          clientName: clientName.value,
+        }),
+      });
+
+      if (processResponse.ok) {
+        uploadStatus.value = "Report processed successfully!";
+        // Don't reset form here - wait for user to close modal
+
+        // Show success message for 3 seconds before allowing close
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        emit('upload-complete');
+      } else {
+        uploadStatus.value = "Error processing report.";
+      }
     } else {
       uploadStatus.value = `Error: ${result.error}`;
     }
@@ -105,31 +144,22 @@ const uploadFileAndProcess = async () => {
   }
 };
 
-const runReportProcessor = async (filePath, clientName) => {
-  try {
-    const response = await fetch("http://localhost:5001/process", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        filePath,
-        clientName,
-      }),
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      uploadStatus.value = "Report processed successfully!";
-    } else {
-      uploadStatus.value = `Processing error: ${result.error}`;
-    }
-  } catch (error) {
-    console.error("Processing error:", error);
-    uploadStatus.value = "An error occurred during report processing.";
-  }
+const handleFileChange = (event) => {
+  selectedFile.value = event.target.files[0];
 };
+
+// Add mounted hook to handle modal show
+onMounted(() => {
+  const modal = document.getElementById('mdl-load');
+  modal.addEventListener('show.bs.modal', () => {
+    modal.style.display = 'block';
+    modal.removeAttribute('aria-hidden');
+    const firstFocusableElement = modal.querySelector('input[type="file"]');
+    if (firstFocusableElement) {
+      firstFocusableElement.focus();
+    }
+  });
+});
 </script>
 
 <style scoped>
