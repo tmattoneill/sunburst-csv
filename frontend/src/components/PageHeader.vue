@@ -32,7 +32,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:paletteName'])
+const emit = defineEmits(['update:paletteName', 'navigate-to'])
 
 const selectedPalette = ref(props.paletteName)
 const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
@@ -41,13 +41,21 @@ const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
 const paletteNames = computed(() => Object.keys(PALETTES))
 
 // Format path segments
+// In PageHeader.vue
 const formattedPathSegments = computed(() => {
   console.log('Current path in PageHeader:', props.currentPath);
   return props.currentPath.map(segment => ({
     name: segment.name,
-    path: '#'
+    id: segment.id,
+    value: segment.value,
+    nodeId: segment.nodeId // If this exists in your data
   }))
 })
+
+// And add a handler for the PathBar navigation:
+const handlePathNavigation = (event) => {
+  emit('navigate-to', event)
+}
 
 // Handle palette changes
 const handlePaletteChange = () => {
@@ -72,7 +80,11 @@ const handlePaletteChange = () => {
       </div>
 
       <!-- PathBar -->
-      <PathBar :pathSegments="formattedPathSegments" :activeIndex="formattedPathSegments.length - 1" />
+      <PathBar
+          :pathSegments="formattedPathSegments"
+          :activeIndex="formattedPathSegments.length - 1"
+          @navigate-to="handlePathNavigation"
+      />
 
       <!-- Dates -->
       <div class="mt-3 ps-2 d-flex justify-content-between align-items-end">

@@ -15,6 +15,7 @@ const dateEnd = ref('')
 const selectedNode = ref(null)
 const currentPath = ref([])
 const currentFilters = ref({}) // for the data table
+const chartRef = ref(null)
 
 // Computed properties for DataPane
 const rootName = computed(() => selectedNode.value?.name ?? chartData.value?.name ?? '')
@@ -24,7 +25,11 @@ const chartName = computed(() => chartData.value?.name ?? '')
 
 // Add handler for node selection
 const handleNodeClick = (node) => {
-  selectedNode.value = node
+  selectedNode.value = node;
+  if (node.children) {
+    // If the node has children, update the current data in the chart
+    chartRef.value?.updateChart(node);
+  }
 }
 
 const handleNodeHover = (node) => {
@@ -59,6 +64,30 @@ const handleFileSelected = async (file) => {
     chartData.value = {}
   }
 }
+
+const handlePathNavigation = ({ segment, index }) => {
+  // Walk the tree to find the target node
+  let targetNode = chartData.value; // Start at root
+  const path = currentPath.value.slice(0, index + 1);
+
+  // Skip root (index 0) and navigate to the target level
+  for (let i = 1; i <= index; i++) {
+    const segmentId = path[i].id;
+    targetNode = targetNode.children.find(
+      child => child.nodeId === segmentId
+    );
+  }
+
+  // Update the selected node and path
+  selectedNode.value = targetNode;
+  currentPath.value = path;
+
+  // Update the chart by emitting node-click event
+  if (targetNode) {
+    handleNodeClick(targetNode);
+  }
+}
+
 
 onMounted(async () => {
   try {
@@ -95,15 +124,16 @@ const refreshPage = () => {
 
   <div id="app" class="container py-4">
     <!-- Header -->
-    <PageHeader
-      :reportType="reportType"
-      :chartName="chartName"
-      :dateStart="dateStart"
-      :dateEnd="dateEnd"
-      :paletteName="currentPalette"
-      :currentPath="currentPath"
-      @update:paletteName="(name) => currentPalette = name"
-    />
+  <PageHeader
+    :reportType="reportType"
+    :chartName="chartName"
+    :dateStart="dateStart"
+    :dateEnd="dateEnd"
+    :paletteName="currentPalette"
+    :currentPath="currentPath"
+    @update:paletteName="(name) => currentPalette = name"
+    @navigate-to="handlePathNavigation"
+  />
 
     <div class="row">
       <div class="col-md-6 mb-4 mb-md-0">
@@ -115,6 +145,7 @@ const refreshPage = () => {
             style="height: 500px;"
           >
             <SunburstChart
+              ref="chartRef"
               :chart-data="chartData"
               v-model:palette-name="currentPalette"
               @node-click="handleNodeClick"

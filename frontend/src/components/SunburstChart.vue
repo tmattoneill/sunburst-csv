@@ -17,7 +17,11 @@ const props = defineProps({
 })
 
 // Emits
-const emit = defineEmits(['update:paletteName', 'node-click', 'node-hover', 'path-change'])
+const emit = defineEmits([
+  'update:paletteName',
+  'node-click',
+  'node-hover',
+  'path-change'])
 
 // Refs
 const chart = ref(null)
@@ -105,14 +109,30 @@ const applyColorsToData = (data) => {
   return data
 }
 
+// In SunburstChart.vue, update the handleChartClick function:
+
 const handleChartClick = (params) => {
   if (params.data && params.data.nodeId) {
+    // Check if click is on center/root of current view
+    if (params.data.nodeId === currentData.value.nodeId) {
+      // Get current path
+      const currentNodePath = pathMap.value.get(params.data.nodeId);
+      if (currentNodePath && currentNodePath.length > 1) {
+        // Get parent node (second to last in path)
+        const parentNode = nodeMap.value.get(currentNodePath[currentNodePath.length - 2].id);
+        if (parentNode) {
+          currentData.value = parentNode.data;
+          emit('node-click', parentNode.data);
+          emit('path-change', currentNodePath.slice(0, -1));
+          renderChart();
+          return;
+        }
+      }
+    }
+
+    // Existing click handling code
     emit('node-click', params.data);
-
-    // Get complete path from pathMap
     const path = pathMap.value.get(params.data.nodeId);
-    console.log('Complete path for node:', path);
-
     emit('path-change', path);
 
     if (params.data.children) {
@@ -170,10 +190,11 @@ const renderChart = () => {
   chart.value.on('mouseout', handleChartMouseOut);
 }
 
-const updateChart = () => {
+// In SunburstChart.vue
+const updateChart = (newData = null) => {
   if (chart.value) {
-    currentData.value = props.chartData
-    renderChart()
+    currentData.value = newData || props.chartData;
+    renderChart();
   }
 }
 
@@ -218,6 +239,10 @@ onBeforeUnmount(() => {
   if (chart.value) {
     chart.value.dispose()
   }
+})
+
+defineExpose({
+  updateChart
 })
 </script>
 

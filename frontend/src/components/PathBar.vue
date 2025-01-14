@@ -1,9 +1,8 @@
 <!-- PathBar.vue -->
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, defineEmits } from 'vue'
 
-// Props
-defineProps({
+const props = defineProps({
   pathSegments: {
     type: Array,
     required: true,
@@ -11,24 +10,27 @@ defineProps({
   },
   activeIndex: {
     type: Number,
-    default: -1 // No active segment highlighted by default
+    default: -1
   }
 })
 
-// Navigation placeholder interaction (optional)
-const handleNavigate = (segment) => {
-  console.log(`Navigating to: ${segment.name}`)
+const emit = defineEmits(['navigate-to'])
+
+const handleNavigate = (segment, index) => {
+  emit('navigate-to', { segment, index })
+  console.log(segment, index)
 }
 </script>
 
 <template>
+  <!-- Update the span click handler to pass index -->
   <nav class="path-bar" v-if="pathSegments.length">
     <span
       v-for="(segment, index) in pathSegments"
       :key="index"
       class="path-segment"
       :class="{ active: index === activeIndex }"
-      @click="handleNavigate(segment)"
+      @click="handleNavigate(segment, index)"
     >
       {{ segment.name }}
     </span>
