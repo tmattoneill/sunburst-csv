@@ -1,7 +1,17 @@
 <!-- DataTable.vue -->
 <template>
   <div class="container-fluid">
-    <h3>Data Table: {{ totalItems }} rows</h3>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="m-0">Data Table: {{ totalItems }} rows</h3>
+      <button
+        class="btn btn-outline-secondary"
+        @click="downloadCurrentView"
+        :disabled="loading"
+        title="Download current view">
+        <i class="bi bi-download"></i>
+      </button>
+    </div>
+
 
     <!-- Loading State -->
     <div v-if="loading" class="text-center py-4">
@@ -94,6 +104,22 @@ const props = defineProps({
   filters: {
     type: Object,
     default: () => ({})
+  },
+  rootName: {
+    type: String,
+    required: true
+  },
+  dateStart: {
+    type: String,
+    required: true
+  },
+  dateEnd: {
+    type: String,
+    required: true
+  },
+  currentNodeName: {
+    type: String,
+    required: true
   }
 })
 
@@ -144,6 +170,58 @@ const fetchData = async (page) => {
     console.error('Error fetching table data:', error)
   } finally {
     loading.value = false
+  }
+}
+
+const downloadCurrentView = async () => {
+  try {
+    const response = await fetch('http://localhost:5001/table-data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(props.filters)
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const jsonData = await response.json();
+
+    // Convert JSON to CSV
+    const csvRows = [];
+    // Add headers
+    csvRows.push(headers.value.join(','));
+
+    // Add data rows
+    jsonData.data.forEach(item => {
+      const values = headers.value.map(header => {
+        const value = item[header] ?? '';
+        // Escape commas and quotes in values
+        return `"${String(value).replace(/"/g, '""')}"`;
+      });
+      csvRows.push(values.join(','));
+    });
+
+    const csvContent = csvRows.join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = window.URL.createObjectURL(blob);
+
+    // Create filename with format: rootName_dateStart_dateEnd_currentNodeName.csv
+    const filename = `${props.rootName}_${props.dateStart}_${props.dateEnd}_${props.currentNodeName}.csv`
+      .replace(/[^a-zA-Z0-9-_]/g, '_'); // Replace invalid filename characters
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+
+  } catch (error) {
+    console.error('Error downloading data:', error);
   }
 }
 

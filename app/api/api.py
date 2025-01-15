@@ -33,21 +33,29 @@ def get_data():
 
 
 # In api.py, update the get_table_data route:
-
-@app.route('/table-data', methods=['GET'])
+@app.route('/table-data', methods=['GET', 'POST'])
 def get_table_data():
     try:
-        page = int(request.args.get('page', 1))
-        items_per_page = int(request.args.get('items_per_page', 20))
-        filters = request.args.get('filters', None)  # New parameter
+        if request.method == 'GET':
+            # Normal table view with pagination
+            page = int(request.args.get('page', 1))
+            items_per_page = int(request.args.get('items_per_page', 20))
+            filters = request.args.get('filters')
+            if filters:
+                filters = json.loads(filters)
+            result = db.get_filtered_data(page, items_per_page, filters, paginate=True)
+            return jsonify(result), 200
 
-        if filters:
-            filters = json.loads(filters)  # Parse JSON string of filters
-            data = db.get_filtered_data(page, items_per_page, filters)
-        else:
-            data = db.get_all_data(page, items_per_page)
+        elif request.method == 'POST' and request.is_json:
+            # CSV download without pagination
+            filters = request.get_json()
+            result = db.get_filtered_data(filters=filters, paginate=False)
+            headers = {
+                'Content-Type': 'text/csv',
+                'Content-Disposition': f'attachment; filename=export-{datetime.now().strftime("%Y%m%d-%H%M%S")}.csv'
+            }
+            return jsonify(result), 200, headers
 
-        return jsonify(data), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

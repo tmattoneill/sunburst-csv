@@ -1,10 +1,714 @@
 hit_type,expected_behavior,malware_condition,provider_account,incident,Count
-Malicious,Phishing,GhostCat - 3PC,rixengine_dsp,TMT-20241213-LXJ,2
-Malicious,Phishing,GhostCat - 3PC,haxmedia_dsp,TMT-20241213-LXJ,1
-Malicious,Phishing,Redirector,opera_dsp,TMT-20240910-YVR,1
-Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,evolution_dsp,TMT-20240625-TAM,1
-Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20231122-BCO,1
-Scam/Fraud,Impression Fraud,Ad Fraud,aceexchange_dsp,TMT-20241222-ERT,1
-Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20240930-JMO,1
-Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20240106-NYL,1
-Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250101-JXM,1
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20240429-OMT,596
+Malicious,Phishing,Phishing Domain,Inspiritum_dsp,TMT-20240703-YMJ,592
+Malicious,Phishing,Phishing Domain,bidswitch_dsp,TMT-20240703-YMJ,468
+Malicious,Phishing,GhostCat - 3PC,betweenx_dsp,TMT-20241213-LXJ,447
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,startio_dsp,TMT-20240625-TAM,288
+Scam/Fraud,Phishing,Scam,shareit_dsp,TMT-20240113-ZSK,195
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240513-SQG,153
+Malicious,Phishing,GhostCat - 3PC,haxmedia_dsp,TMT-20241213-LXJ,153
+Malicious,Phishing,GhostCat - 3PC,Adsolut Media_dsp,TMT-20241213-LXJ,147
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20250110-RJC,139
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,magnite_dsp,TMT-20240625-TAM,123
+Malicious,Compromised Content,Compromised Domain,vk_dsp,TMT-20240730-XZA,123
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20250109-CHS,116
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20241122-APT,112
+Scam/Fraud,Phishing,Scam,shareit_dsp,TMT-20240209-LRC,108
+Malicious,Phishing,Phishing Domain,playdigo_dsp,TMT-20240703-YMJ,108
+Malicious,Phishing,Redirector,startio_dsp,TMT-20240308-JDO,107
+Malicious,Phishing,GhostCat - 3PC,screencore_dsp,TMT-20241213-LXJ,104
+Scam/Fraud,Impression Fraud,Ad Fraud,aceexchange_dsp,TMT-20241222-ERT,102
+Scam/Fraud,Impression Fraud,Ad Fraud,magnite_dsp,TMT-20240429-OMT,102
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20241217-HMO,101
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20220602-BUX,95
+Malicious,Phishing,Phishing Domain,betweenx_dsp,TMT-20240703-YMJ,93
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240415-AHQ,92
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20241005-LOC,85
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20230922-XTE,78
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20240225-ACY,68
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,mezzomedia_dsp,TMT-20240625-TAM,68
+Scam/Fraud,Impression Fraud,Ad Fraud,xiaomi_dsp,TMT-20250105-VRQ,65
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240414-JMX,64
+Malicious,Phishing,GhostCat - 3PC,rixengine_dsp,TMT-20241213-LXJ,61
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20230711-MWE,61
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20240424-UAH,59
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20240929-AJP,59
+Malicious,Compromised Content,Compromised Domain,opera_dsp,TMT-20240901-GKC,58
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240416-JSP,47
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250101-JXM,47
+Malicious,Phishing,GhostCat - 3PC,algorix_dsp,TMT-20241213-LXJ,46
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240513-SQG,46
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20241207-HDQ,45
+Malicious,Phishing,Phishing Domain,bidease_dsp,TMT-20240703-YMJ,45
+Scam/Fraud,Impression Fraud,Ad Fraud,opera_dsp,TMT-20250110-RJC,44
+Malicious,Phishing,Phishing Domain,startio_dsp,TMT-20170429-TC,44
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240416-ZPR,44
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20230710-YDP,44
+Resolved,Phishing,Redirector,opera_dsp,TMT-20230313-CNL,43
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,vk_dsp,TMT-20240117-HDP,42
+Malicious,Phishing,Redirector,bidswitch_dsp,TMT-20250114-WUE,41
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,smartad_dsp,TMT-20240625-TAM,41
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20240312-OFU,40
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240306-PTG,40
+Scam/Fraud,Impression Fraud,Ad Fraud,aceexchange_dsp,TMT-20241220-IBO,39
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,vk_dsp,TMT-20240625-TAM,38
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20240424-UAH,37
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240822-OZX,36
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240824-EBX,35
+Scam/Fraud,Impression Fraud,Ad Fraud,escalax_dsp,TMT-20250110-RJC,34
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240415-AHQ,34
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,tpmn_dsp,TMT-20240625-TAM,33
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,bidease_dsp,TMT-20240625-TAM,32
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidswitch_dsp,TMT-20231122-BCO,32
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20241030-CBU,30
+Malicious,Phishing,Redirector,opera_dsp,TMT-20230206-UGV,30
+Malicious Landing Location,Fake Anti-virus,Scareware Creative,startio_dsp,TMT-20240923-RBS,30
+Malicious,Compromised Content,Compromised Domain,bidease_dsp,TMT-20240730-XZA,30
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240125-EUI,30
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20220906-JPE,30
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20240102-VWR,29
+Malicious,Phishing,Redirector,startio_dsp,TMT-20241230-QPE,28
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20230919-GMW,27
+Malicious,Phishing,Phishing Domain,smartad_dsp,TMT-20170429-TC,27
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidswitch_dsp,TMT-20240503-MWB,27
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240319-BQH,26
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20241116-RGI,25
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidswitch_dsp,TMT-20230609-VMQ,25
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20220215-TVC,25
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20231127-KZO,25
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20241117-WJB,24
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20240225-ACY,24
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20241217-MEF,24
+Scam/Fraud,Impression Fraud,Ad Fraud,magnite_dsp,TMT-20241217-MEF,23
+Malicious,Phishing,Redirector,Adsolut Media_dsp,TMT-20231210-EPT,23
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240206-JPV,22
+Malicious,Compromised Content,MimicManager - 3PC,opera_dsp,TMT-20230612-RPO,22
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20241222-ERT,22
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20241030-CBU,22
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20240501-GMC,22
+Malicious,Phishing,Redirector,magnite_dsp,TMT-20250114-WUE,21
+Scam/Fraud,Impression Fraud,Ad Fraud,adsyield_dsp,TMT-20250110-RJC,21
+Malicious,Phishing,Redirector,startio_dsp,TMT-20231120-TYJ,21
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,ignite2_dsp,TMT-20240625-TAM,20
+Scam/Fraud,Impression Fraud,Ad Fraud,startio_dsp,TMT-20241217-MEF,20
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20240221-PRO,19
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240727-PLI,19
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,sape_dsp,TMT-20240801-NZR,19
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20240102-KUH,18
+Malicious,Phishing,GhostCat - 3PC,kelmak_dsp,TMT-20241213-LXJ,18
+Malicious,Phishing,Phishing Domain,opera_dsp,TMT-20241222-LFY,18
+Malicious,Phishing,Phishing Domain,startio_dsp,TMT-20240703-YMJ,17
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240704-JMY,16
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20231122-BCO,16
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,evolution_dsp,TMT-20240424-UAH,16
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20220515-ZUP,16
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,Adsolut Media_dsp,TMT-20240513-SQG,16
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240327-YFH,16
+Malicious,Phishing,GhostCat - 3PC,screencore_dsp,TMT-20241226-ORK,16
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidswitch_dsp,TMT-20230609-OEC,16
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20250113-PYK,16
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20240430-CTU,16
+Malicious,Software Install Prompt,PUP,bidswitch_dsp,TMT-20240805-VTQ,16
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20240430-OWY,15
+Malicious,Phishing,GhostCat - 3PC,almaty_dsp,TMT-20241213-LXJ,15
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20230526-YBL,15
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20241005-LOC,15
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20240708-BFD,14
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240917-CFU,14
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20240202-WNB,14
+Resolved,Phishing,Scam,startio_dsp,TMT-20240917-GOW,14
+Malicious,Phishing,Redirector,opera_dsp,TMT-20240910-YVR,14
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,algorix_dsp,TMT-20240513-SQG,14
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidease_dsp,TMT-20240117-HDP,14
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20241221-CEG,14
+Malicious,Phishing,Phishing Domain,aceex_dsp,TMT-20240703-YMJ,14
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240930-JMO,13
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,operasg_dsp,TMT-20240625-TAM,13
+Malicious,Phishing,Redirector,algorix_dsp,TMT-20231210-EPT,13
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,evolution_dsp,TMT-20240312-OFU,13
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,webeye_dsp,TMT-20241221-CEG,13
+Malicious,Phishing,GhostCat - 3PC,escalax_dsp,TMT-20250114-JQY,13
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20201225-NJK,13
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,operaroi_dsp,TMT-20241217-HMO,13
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20241124-KTJ,12
+Scam/Fraud,Impression Fraud,Ad Fraud,aceex_dsp,TMT-20250110-RJC,12
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,rixengine_dsp,TMT-20220923-HGA,12
+Malicious,Phishing,Phishing Domain,algorix_dsp,TMT-20240703-YMJ,12
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidease_dsp,TMT-20240801-NZR,12
+Scam/Fraud,Impression Fraud,Ad Fraud,sape_dsp,TMT-20241112-JUL,12
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20240924-EYU,11
+Scam/Fraud,Impression Fraud,Ad Fraud,algorix_dsp,TMT-20241112-JUL,11
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,nasmedia_dsp,TMT-20240625-TAM,11
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidswitch_dsp,TMT-20240911-FUP,11
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240822-MUP,10
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20240501-GMC,10
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20241023-WFN,10
+Scam/Fraud,Impression Fraud,Ad Fraud,pubmatic_dsp,TMT-20240429-OMT,10
+Scam/Fraud,Impression Fraud,Ad Fraud,screencore_dsp,TMT-20250110-RJC,10
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20230726-MPA,10
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20241124-AFB,10
+Scam/Fraud,Impression Fraud,Ad Fraud,operaroi_dsp,TMT-20250110-RJC,10
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,vk_dsp,TMT-20240801-NZR,10
+Malicious,Phishing,Phishing Domain,duopeak_dsp,TMT-20240703-YMJ,10
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,Adsolut Media_dsp,TMT-20250101-AQJ,10
+Scam/Fraud,Impression Fraud,Ad Fraud,startio_dsp,TMT-20250110-RJC,10
+Malicious,Phishing,GhostCat - 3PC,snow_dsp,TMT-20241213-LXJ,10
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20240113-ZSK,10
+Malicious,Phishing,Redirector,bidswitch_dsp,TMT-20200320-NZC,10
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240531-NBF,10
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240819-QKO,10
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20240106-NYL,9
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20231106-FGI,9
+Malicious,Phishing,Phishing Domain,rise_dsp,TMT-20240703-YMJ,9
+Malicious,Compromised Content,E-Skimming,smartad_dsp,TMT-20240929-AJP,9
+Scam/Fraud,Impression Fraud,Ad Fraud,startio_dsp,TMT-20240429-OMT,9
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20231127-KZO,9
+Resolved,Compromised Content,Compromised Domain,startio_dsp,TMT-20241226-SFE,9
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20241218-GSX,9
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20241220-IBO,9
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,operasg_dsp,TMT-20240801-NZR,9
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20240824-EBX,9
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20231127-RWS,9
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,shareit_dsp,TMT-20240625-TAM,9
+Scam/Fraud,Impression Fraud,Ad Fraud,escalax_dsp,TMT-20250110-IDY,9
+Scam/Fraud,Impression Fraud,Ad Fraud,bidease_dsp,TMT-20240730-RPC,9
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20220331-TWD,8
+Malicious,Phishing,GhostCat - 3PC,duopeak_dsp,TMT-20241213-LXJ,8
+Malicious Landing Location,Phishing,Phishing Creative,algorix_dsp,TMT-20240706-XMS,8
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20231112-PQW,8
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20240125-EUI,8
+Malicious,Phishing,Redirector,startio_dsp,TMT-20240119-HSK,8
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20200110-UEQ,8
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240416-OVU,8
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240416-JSP,8
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20241116-RGI,8
+Malicious,Phishing,GhostCat - 3PC,betweenx_dsp,TMT-20241226-ORK,8
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,bidswitch_dsp,TMT-20240625-TAM,8
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20241222-RDQ,8
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,algorix_dsp,TMT-20250101-AQJ,8
+Malicious,Phishing,GhostCat - 3PC,mobfox_dsp,TMT-20241213-LXJ,8
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250107-LIH,8
+Scam/Fraud,Impression Fraud,Ad Fraud,escalax_dsp,TMT-20250110-NET,7
+Malicious,Phishing,GhostCat - 3PC,loopme_dsp,TMT-20241213-LXJ,7
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250107-PRF,7
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20241023-WFN,7
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240625-ZMV,7
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20231121-FXD,7
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240414-LEU,7
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,adsyield_dsp,TMT-20231122-BCO,7
+Malicious,Phishing,GhostCat - 3PC,escalax_dsp,TMT-20241213-LXJ,7
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,tradplusother_dsp,TMT-20240625-TAM,7
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20210805-GJI,7
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240416-KDI,7
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20230609-VMQ,7
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,webeye_dsp,TMT-20230322-AUK,7
+Malicious,Phishing,GhostCat - 3PC,Adsolut Media_dsp,TMT-20240705-LPW,7
+Malicious,Phishing,GhostCat - 3PC,escalax_dsp,TMT-20250112-BPJ,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,evolution_dsp,TMT-20240625-TAM,6
+Malicious,Phishing,Phishing Domain,sape_dsp,TMT-20240703-YMJ,6
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20241022-WNK,6
+Malicious,Phishing,Redirector,opera_dsp,TMT-20241224-ALJ,6
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,adsyield_dsp,TMT-20240415-AHQ,6
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnite_dsp,TMT-20240312-OFU,6
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20241022-WNK,6
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20241116-ZYX,6
+Malicious,Phishing,GhostCat - 3PC,snow_dsp,TMT-20241226-ORK,6
+Malicious,Phishing,GhostCat - 3PC,vlionmobi_dsp,TMT-20241213-LXJ,6
+Malicious,Compromised Content,E-Skimming,smartad_dsp,TMT-20240708-BFD,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,sape_dsp,TMT-20250101-AQJ,6
+Scam/Fraud,Impression Fraud,Ad Fraud,magnite_dsp,TMT-20240430-CTU,6
+Malicious,Phishing,GhostCat - 3PC,betweenx_dsp,TMT-20250107-YBT,6
+Scam/Fraud,Impression Fraud,Ad Fraud,bidease_dsp,TMT-20241112-JUL,6
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,sharethrough_dsp,TMT-20240625-TAM,6
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20241223-JWH,5
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20241222-ERT,5
+Malicious,Phishing,Phishing Domain,9dots_dsp,TMT-20240703-YMJ,5
+Scam/Fraud,Impression Fraud,Ad Fraud,betweenx_dsp,TMT-20250110-RJC,5
+Scam/Fraud,Impression Fraud,Ad Fraud,betweenx_dsp,TMT-20220324-GQE,5
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20230609-OEC,5
+Scam/Fraud,Impression Fraud,Ad Fraud,algorix_dsp,TMT-20240429-OMT,5
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,adwmg_dsp,TMT-20240625-TAM,5
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240503-MWB,5
+Scam/Fraud,Impression Fraud,Ad Fraud,screencore_dsp,TMT-20240730-RPC,5
+Malicious,Compromised Content,Compromised Domain,smartad_dsp,TMT-20240822-OZX,5
+Malicious,Compromised Content,Compromised Domain,shareit_dsp,TMT-20240825-YTV,5
+Malicious,Phishing,Redirector,startio_dsp,TMT-20240527-ZGH,5
+Malicious Landing Location,Phishing,Phishing Creative,haxmedia_dsp,TMT-20240706-XMS,5
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240416-ZPR,5
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,snow_dsp,TMT-20240819-IYD,5
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20250102-UTG,5
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20240424-UAH,5
+Scam/Fraud,Impression Fraud,Ad Fraud,aceexchange_dsp,TMT-20241222-RDQ,5
+Scam/Fraud,Impression Fraud,Ad Fraud,Adsolut Media_dsp,TMT-20241112-JUL,5
+Scam/Fraud,Phishing,Scam,mezzomedia_dsp,TMT-20240221-PRO,5
+Malicious,Phishing,Phishing Domain,evolution_dsp,TMT-20170429-TC,5
+Malicious,Software Install Prompt,PUP,opera_dsp,TMT-20240901-JES,5
+Malicious,Phishing,GhostCat - 3PC,Adsolut Media_dsp,TMT-20241226-ORK,5
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20241220-WUJ,5
+Malicious,Fake Anti-virus,StringRipper - 3PC,rixengine_dsp,TMT-20240924-XBP,5
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,startio_dsp,TMT-20241004-RWE,5
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20230922-XTE,4
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20230710-YDP,4
+Malicious,Phishing,Phishing Domain,operasg_dsp,TMT-20241215-TXS,4
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20220515-ZUP,4
+Malicious,Phishing,Redirector,ignite2_dsp,TMT-20240527-ZGH,4
+Malicious,Phishing,GhostCat - 3PC,Adsolut Media_dsp,TMT-20250110-LYS,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,aceexchange_dsp,TMT-20240625-TAM,4
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20230817-WAB,4
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20240831-TNI,4
+Malicious,Compromised Content,Compromised Domain,adwmg_dsp,TMT-20240822-OZX,4
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250110-DMI,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,spinx_dsp,TMT-20240501-GMC,4
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20180921-ZLA,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,smartad_dsp,TMT-20240424-UAH,4
+Resolved,Compromised Content,E-Skimming,startio_dsp,TMT-20250104-ETP,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240417-FIP,4
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,escalax_dsp,TMT-20240922-ANE,4
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20241028-ZNT,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,bidence_dsp,TMT-20240625-TAM,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240811-LOE,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240915-OCT,4
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20240429-OMT,4
+Scam/Fraud,Impression Fraud,Ad Fraud,bidswitch_dsp,TMT-20240322-ZYW,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,startio_dsp,TMT-20220815-HVB,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,shareit_dsp,TMT-20240801-NZR,4
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,shareit_dsp,TMT-20250110-MHA,4
+Malicious,Phishing,GhostCat - 3PC,duopeak_dsp,TMT-20241226-ORK,4
+Scam/Fraud,Impression Fraud,Ad Fraud,magnite_dsp,TMT-20240430-OWY,4
+Malicious,Phishing,GhostCat - 3PC,rixengine_dsp,TMT-20241226-ORK,4
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20241121-TGE,4
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240809-XAL,4
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250103-GYJ,3
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20241217-TKR,3
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20250104-AJR,3
+Malicious,Compromised Content,Compromised Domain,spinx_dsp,TMT-20241225-DMK,3
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240507-ALX,3
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240806-LZG,3
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240707-GCV,3
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240705-LWZ,3
+Malicious,Compromised Content,Compromised Domain,operasg_dsp,TMT-20250104-AJR,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,spinx_dsp,TMT-20240312-OFU,3
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20241111-FYG,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,snow_dsp,TMT-20240913-FBQ,3
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20240930-JMO,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,adwmg_dsp,TMT-20241218-GSX,3
+Malicious,Compromised Content,Compromised Domain,operasg_dsp,TMT-20240825-YTV,3
+Malicious,Compromised Content,Compromised Domain,playdigo_dsp,TMT-20240822-OZX,3
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20230526-YBL,3
+Malicious,Phishing,GhostCat - 3PC,rixengine_dsp,TMT-20240705-LPW,3
+Malicious,Compromised Content,Compromised Domain,shareit_dsp,TMT-20250101-VKC,3
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20241220-IBO,3
+Scam/Fraud,Impression Fraud,Ad Fraud,mobfox_dsp,TMT-20220324-GQE,3
+Malicious,Phishing,GhostCat - 3PC,bidease_dsp,TMT-20250107-YBT,3
+Malicious,Compromised Content,E-Skimming,smartad_dsp,TMT-20241124-KTJ,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20240604-CLM,3
+Malicious,Phishing,Redirector,startio_dsp,TMT-20240804-YFM,3
+Scam/Fraud,Phishing,Scam,9dots_dsp,TMT-20241005-LOC,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20240310-IEB,3
+Malicious,Phishing,GhostCat - 3PC,Adsolut Media_dsp,TMT-20250113-JKC,3
+Scam/Fraud,Phishing,Scam,shareit_dsp,TMT-20240202-ITU,3
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20240112-YCP,3
+Scam/Fraud,Impression Fraud,Ad Fraud,webeye_dsp,TMT-20241217-MEF,3
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20240824-EBX,3
+Malicious,Phishing,Phishing Domain,mobfox_dsp,TMT-20240703-YMJ,3
+Malicious,Phishing,Phishing Domain,loopme_dsp,TMT-20240703-YMJ,3
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20241217-MEF,3
+Scam/Fraud,Impression Fraud,Ad Fraud,betweenx_dsp,TMT-20241222-ERT,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,aceex_dsp,TMT-20240225-ACY,3
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20240429-OMT,3
+Malicious,Phishing,GhostCat - 3PC,screencore_dsp,TMT-20250110-LYS,3
+Scam/Fraud,Impression Fraud,Ad Fraud,magnite_dsp,TMT-20240322-ZYW,3
+Malicious,Phishing,Phishing Domain,rixengine_dsp,TMT-20240703-YMJ,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240125-XGW,3
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240319-FTH,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,smartad_dsp,TMT-20241023-WFN,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,opera_dsp,TMT-20241107-KSY,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,opera_dsp,TMT-20241101-TGN,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,algorix_dsp,TMT-20240504-TUN,3
+Malicious,Phishing,Phishing Domain,vlionmobi_dsp,TMT-20240703-YMJ,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,snow_dsp,TMT-20231210-XUL,3
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20240531-NBF,3
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20241005-LOC,3
+Malicious,Compromised Content,E-Skimming,opera_dsp,TMT-20240525-CVP,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidswitch_dsp,TMT-20240822-MUP,3
+Scam/Fraud,Phishing,Scam,spinx_dsp,TMT-20200905-KNH,3
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20250103-NZY,3
+Malicious,Phishing,Redirector,shareit_dsp,TMT-20231210-EPT,3
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20210828-HDL,3
+Scam/Fraud,Phishing,Scam,mezzomedia_dsp,TMT-20240531-NBF,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnitesdk_dsp,TMT-20240225-ACY,3
+Malicious,Compromised Content,E-Skimming,playdigo_dsp,TMT-20241124-KTJ,3
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,smartad_dsp,TMT-20240312-OFU,3
+Malicious Landing Location,Phishing,Phishing Creative,snow_dsp,TMT-20240706-XMS,3
+Malicious,Compromised Content,SocGholish,smartad_dsp,TMT-20241209-HMG,3
+Malicious Landing Location,Phishing,Phishing Creative,rixengine_dsp,TMT-20240706-XMS,3
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250102-PGO,2
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240314-DAZ,2
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240112-YCP,2
+Malicious,Automatic Download: APK,APK,opera_dsp,TMT-20241106-KVD,2
+Malicious,Compromised Content,Compromised Domain,evolution_dsp,TMT-20240822-OZX,2
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240906-JPE,2
+Malicious,Phishing,GhostCat - 3PC,algorix_dsp,TMT-20240913-MBV,2
+Scam/Fraud,Impression Fraud,Ad Fraud,playdigo_dsp,TMT-20240730-RPC,2
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20241128-DFZ,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20250110-RYZ,2
+Scam/Fraud,Impression Fraud,Ad Fraud,screencore_dsp,TMT-20250110-IDY,2
+Malicious,Phishing,GhostCat - 3PC,haxmedia_dsp,TMT-20241226-ORK,2
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20241005-LOC,2
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20240824-EBX,2
+Malicious,Phishing,GhostCat - 3PC,Adsolut Media_dsp,TMT-20240913-MBV,2
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20220515-ZUP,2
+Scam/Fraud,Phishing,Scam,outbrain,TMT-20250110-FIL,2
+Scam/Fraud,Phishing,Scam,outbrain,TMT-20241226-VQE,2
+Malicious,Phishing,GhostCat - 3PC,duopeak_dsp,TMT-20240705-LPW,2
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20241128-DFZ,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,screencore_dsp,TMT-20230908-DXA,2
+Malicious,Phishing,Phishing Domain,bidease_dsp,TMT-20241215-TXS,2
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20241121-ZVO,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,webeye_dsp,TMT-20240625-TAM,2
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20200110-UEQ,2
+Malicious,Fake Software Update,Fake Software Update,outbrain,TMT-20200618-NYL,2
+Malicious,Phishing,Phishing Domain,screencore_dsp,TMT-20240703-YMJ,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20250114-AZF,2
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20241223-MTE,2
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20241222-ERT,2
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20240313-KJV,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20210819-SNQ,2
+Out Of Browser Redirect,Impression Fraud,Ad Fraud,bidease_dsp,TMT-20240820-XQN,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20241104-FIN,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20241217-HMO,2
+Malicious,Phishing,Phishing Domain,adsyield_dsp,TMT-20240703-YMJ,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,aceex_dsp,TMT-20240917-CFU,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,aceex_dsp,TMT-20231122-BCO,2
+Scam/Fraud,Impression Fraud,Ad Fraud,haxmedia_dsp,TMT-20240730-RPC,2
+Scam/Fraud,Impression Fraud,Ad Fraud,magnite_dsp,TMT-20240102-KUH,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20231103-ROL,2
+Malicious,Phishing,GhostCat - 3PC,loopme_dsp,TMT-20250107-YEO,2
+Malicious,Fake Anti-virus,Scareware,startio_dsp,TMT-20241008-YNK,2
+Malicious,Compromised Content,E-Skimming,smartad_dsp,TMT-20241028-ZNT,2
+Malicious,Compromised Content,SocGholish,magnite_dsp,TMT-20241209-HMG,2
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20241125-XSV,2
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20241205-ZEK,2
+Scam/Fraud,Impression Fraud,Ad Fraud,algorix_dsp,TMT-20240102-VWR,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,webeye_dsp,TMT-20250101-AQJ,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,zzmobi,TMT-20250110-HWG,2
+Malicious,Compromised Content,SocGholish,evolution_dsp,TMT-20241207-HDQ,2
+Scam/Fraud,Phishing,Scam,evolution_dsp,TMT-20241005-LOC,2
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20240313-KJV,2
+Malicious,Phishing,GhostCat - 3PC,aceex_dsp,TMT-20241213-LXJ,2
+Malicious,Phishing,GhostCat - 3PC,algorix_dsp,TMT-20240509-QSC,2
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20230710-YDP,2
+Malicious,Phishing,Redirector,webeye_dsp,TMT-20241224-ALJ,2
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20230922-XTE,2
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20241005-LOC,2
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,tpmn_dsp,TMT-20240915-OCT,2
+Scam/Fraud,Impression Fraud,Ad Fraud,webeye_dsp,TMT-20240429-OMT,2
+Malicious,Phishing,Redirector,operasg_dsp,TMT-20241115-TDX,2
+Scam/Fraud,Phishing,Scam,ignite2_dsp,TMT-20240531-NBF,2
+Malicious,Phishing,Redirector,bidence_dsp,TMT-20200423-UGD,2
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20200905-KNH,2
+Scam/Fraud,Phishing,Scam,ignite2_dsp,TMT-20250110-SHC,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,opera_dsp,TMT-20240306-PZB,2
+Scam/Fraud,Phishing,Scam,mezzomedia_dsp,TMT-20240113-ZSK,2
+Resolved,Compromised Content,Compromised Domain,smartad_dsp,TMT-20241226-SFE,2
+Scam/Fraud,Phishing,Scam,mezzomedia_dsp,TMT-20240301-AOV,2
+Malicious,Phishing,Redirector,bidease_dsp,TMT-20190223-OQM,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,algorix_dsp,TMT-20240424-UAH,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,betweenx_dsp,TMT-20220923-HGA,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,pubmatic_dsp,TMT-20240424-UAH,2
+Scam/Fraud,Impression Fraud,Ad Fraud,adsyield_dsp,TMT-20240730-RPC,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,spinx_dsp,TMT-20240424-UAH,2
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20220331-TWD,2
+Malicious,Compromised Content,E-Skimming,tpmn_dsp,TMT-20240929-AJP,2
+Malicious,Compromised Content,E-Skimming,startio_dsp,TMT-20241230-TED,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,ignite2_dsp,TMT-20231207-ANR,2
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20241203-CFQ,2
+Resolved,Phishing,Scam,evolution_dsp,TMT-20240917-GOW,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,rixengine_dsp,TMT-20240225-ACY,2
+Malicious,Phishing,Redirector,outbrain,TMT-20241212-MIL,2
+Malicious,Phishing,Redirector,sape_dsp,TMT-20240918-AEQ,2
+Resolved,Phishing,Scam,adwmg_dsp,TMT-20240917-GOW,2
+Malicious,Phishing,Redirector,mezzomedia_dsp,TMT-20200423-UGD,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20240225-ACY,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20240312-OFU,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,algorix_dsp,TMT-20240415-AHQ,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,webeye_dsp,TMT-20240501-GMC,2
+Malicious,Phishing,Phishing Domain,startio_dsp,TMT-20241215-TXS,2
+Malicious,Phishing,Phishing Domain,shareit_dsp,TMT-20241215-TXS,2
+Malicious,Phishing,Redirector,opera_dsp,TMT-20240308-JDO,2
+Malicious,Phishing,Redirector,mobfox_dsp,TMT-20231210-EPT,2
+Malicious,Phishing,Redirector,magnite_dsp,TMT-20240119-HSK,2
+Scam/Fraud,Phishing,Scam,mezzomedia_dsp,TMT-20201225-NJK,2
+Malicious,Phishing,Redirector,bidease_dsp,TMT-20210520-WEZ,2
+Scam/Fraud,Phishing,Scam,magnite_dsp,TMT-20240301-AOV,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240416-OVU,2
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20240414-JMX,2
+Malicious,Compromised Content,E-Skimming,9dots_dsp,TMT-20241124-KTJ,2
+Malicious,Compromised Content,E-Skimming,adwmg_dsp,TMT-20240708-BFD,2
+Malicious,Compromised Content,E-Skimming,mezzomedia_dsp,TMT-20241116-ZYX,2
+Malicious,Compromised Content,E-Skimming,magnite_dsp,TMT-20241230-TED,2
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20241223-EKC,2
+Scam/Fraud,Phishing,Scam,zzmobi,TMT-20241226-VQE,2
+Scam/Fraud,Phishing,Scam,zzmobi,TMT-20250110-FIL,1
+Malicious,Compromised Content,Compromised Domain,magnite_dsp,TMT-20241225-DMK,1
+Malicious,Compromised Content,Compromised Domain,operaroi_dsp,TMT-20240825-YTV,1
+Malicious,Compromised Content,Compromised Domain,operasg_dsp,TMT-20240103-WKX,1
+Malicious,Compromised Content,Compromised Domain,operasg_dsp,TMT-20240625-GRF,1
+Malicious,Compromised Content,Compromised Domain,shareit_dsp,TMT-20240625-GRF,1
+Malicious,Compromised Content,Compromised Domain,shareit_dsp,TMT-20240808-GRX,1
+Malicious,Compromised Content,E-Skimming,mezzomedia_dsp,TMT-20240929-AJP,1
+Malicious,Compromised Content,E-Skimming,magnite_dsp,TMT-20250102-UTG,1
+Malicious,Compromised Content,E-Skimming,magnite_dsp,TMT-20240929-AJP,1
+Malicious,Compromised Content,E-Skimming,9dots_dsp,TMT-20240929-AJP,1
+Malicious,Compromised Content,Compromised Domain,webeye_dsp,TMT-20250107-QVJ,1
+Malicious,Compromised Content,Compromised Domain,webeye_dsp,TMT-20241224-TQH,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20250105-EDC,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20230802-BMX,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20211011-JFA,1
+Scam/Fraud,Phishing,Scam,spinx_dsp,TMT-20210309-KCP,1
+Scam/Fraud,Phishing,Scam,spinx_dsp,TMT-20201111-UVB,1
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20250109-ABJ,1
+Malicious,Compromised Content,MudOrange-3PC,opera_dsp,TMT-20250114-HMD,1
+Malicious,Compromised Content,E-Skimming,vk_dsp,TMT-20240626-GTF,1
+Malicious,Compromised Content,E-Skimming,spinx_dsp,TMT-20240929-AJP,1
+Malicious,Compromised Content,E-Skimming,smartad_dsp,TMT-20241116-ZYX,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,webeye_dsp,TMT-20240922-ANE,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,webeye_dsp,TMT-20240822-MUP,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,webeye_dsp,TMT-20240415-AHQ,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,startio_dsp,TMT-20241107-KSY,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,startio_dsp,TMT-20241023-WFN,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,startio_dsp,TMT-20231210-XUL,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,snow_dsp,TMT-20240909-WTC,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,snow_dsp,TMT-20240820-DAS,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,smartad_dsp,TMT-20231121-FXD,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,rixengine_dsp,TMT-20240906-NGM,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,rixengine_dsp,TMT-20240822-MUP,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,rixengine_dsp,TMT-20240504-TUN,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,rixengine_dsp,TMT-20220922-RWD,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,pubmatic_dsp,TMT-20241023-WFN,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,opera_dsp,TMT-20241109-VSE,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,opera_dsp,TMT-20240513-SQG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,haxmedia_dsp,TMT-20240424-UAH,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,snow_dsp,TMT-20250114-RKZ,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,snow_dsp,TMT-20241110-HVF,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,snow_dsp,TMT-20240518-KYG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,snow_dsp,TMT-20240224-XHD,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,snow_dsp,TMT-20220923-HGA,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,smartad_dsp,TMT-20241030-CBU,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,smartad_dsp,TMT-20240518-KYG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,rixengine_dsp,TMT-20241209-LVP,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,pubnative,TMT-20241030-CBU,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,pubnative,TMT-20240424-UAH,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,pubnative,TMT-20240306-PZB,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,pubmatic_dsp,TMT-20241022-WNK,1
+Resolved,Phishing,Redirector,startio_dsp,TMT-20230313-CNL,1
+Resolved,Compromised Content,E-Skimming,spinx_dsp,TMT-20250103-YJP,1
+Resolved,Compromised Content,Compromised Domain,webeye_dsp,TMT-20241224-TDX,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,evolution_dsp,TMT-20241030-CBU,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20240501-GMC,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,bidswitch_dsp,TMT-20231128-LKV,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,betweenx_dsp,TMT-20240520-STP,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,algorix_dsp,TMT-20220923-HGA,1
+Scam/Fraud,Impression Fraud,Ad Fraud,adwmg_dsp,TMT-20250110-TGQ,1
+Scam/Fraud,Impression Fraud,Ad Fraud,adsyield_dsp,TMT-20241112-JUL,1
+Scam/Fraud,Impression Fraud,Ad Fraud,aceex_dsp,TMT-20240730-RPC,1
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Parked Domain,startio_dsp,TMT-20241228-URP,1
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240729-ULR,1
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,smartad_dsp,TMT-20231112-PQW,1
+Resolved,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,startio_dsp,TMT-20241222-TBC,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,playdigo_dsp,TMT-20240424-UAH,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,opera_dsp,TMT-20240924-LZV,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnitesdk_dsp,TMT-20240424-UAH,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,magnitesdk_dsp,TMT-20240312-OFU,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20240529-TPL,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20230909-NPL,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20230331-BYR,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20230210-YFK,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20221212-VZC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,algorix_dsp,TMT-20240430-CTU,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20250114-RMJ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20241215-ZJT,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,startio_dsp,TMT-20241102-DGB,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,adsyield_dsp,TMT-20240424-UAH,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,aceex_dsp,TMT-20240924-AEW,1
+Out Of Browser Redirect,Impression Fraud,Ad Fraud,snow_dsp,TMT-20241208-KON,1
+Out Of Browser Redirect,Impression Fraud,Ad Fraud,opera_dsp,TMT-20241208-KON,1
+Out Of Browser Redirect,Impression Fraud,Ad Fraud,haxmedia_dsp,TMT-20241023-QKJ,1
+Malicious Landing Location,Phishing,Phishing Creative,startio_dsp,TMT-20240810-ASN,1
+Malicious Landing Location,Phishing,Phishing Creative,smartad_dsp,TMT-20240711-TIY,1
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20250110-UBA,1
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20250110-TGQ,1
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20250110-OWI,1
+Scam/Fraud,Impression Fraud,Ad Fraud,nasmedia_dsp,TMT-20241222-RDQ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,snow_dsp,TMT-20240919-MUF,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,snow_dsp,TMT-20231122-BCO,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,smartad_dsp,TMT-20240915-OCT,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,sharethrough_dsp,TMT-20241218-GSX,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,shareit_dsp,TMT-20250101-AQJ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,sape_dsp,TMT-20230908-DXA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,rixengine_dsp,TMT-20230908-DXA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,outbrain,TMT-20250110-HWG,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,operasg_dsp,TMT-20231209-ZNH,1
+Scam/Fraud,Impression Fraud,Ad Fraud,loopme_dsp,TMT-20240429-OMT,1
+Scam/Fraud,Impression Fraud,Ad Fraud,haxmedia_dsp,TMT-20250110-RJC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,duopeak_dsp,TMT-20230817-WAB,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20241220-IBO,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20241129-OIY,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20250110-HWG,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20250108-JXB,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20240921-SFG,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20240514-VFM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20240503-MWB,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20240123-KGA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,opera_dsp,TMT-20231122-BCO,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,nasmedia_dsp,TMT-20240915-OCT,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,mobfox_dsp,TMT-20230322-AUK,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20240730-RPC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,pubnative,TMT-20240730-RPC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,playdigo_dsp,TMT-20240429-OMT,1
+Scam/Fraud,Impression Fraud,Ad Fraud,playdigo_dsp,TMT-20230817-WAB,1
+Scam/Fraud,Impression Fraud,Ad Fraud,opera_dsp,TMT-20250110-UBA,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,smartad_dsp,TMT-20241004-RWE,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,ignite2_dsp,TMT-20240921-SFG,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,ignite2_dsp,TMT-20230322-AUK,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,escalax_dsp,TMT-20240808-PXJ,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,bidswitch_dsp,TMT-20230830-WSI,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,algorix_dsp,TMT-20240801-NZR,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,adsyield_dsp,TMT-20240503-MWB,1
+Scam/Fraud,Impression Fraud,Ad Fraud,shareit_dsp,TMT-20250107-YFA,1
+Scam/Fraud,Impression Fraud,Ad Fraud,screencore_dsp,TMT-20250110-NET,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20250111-OAF,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20250110-RJC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20250109-NPW,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20250109-BVZ,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20250107-YFA,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20250104-LIX,1
+Scam/Fraud,Impression Fraud,Ad Fraud,rixengine_dsp,TMT-20241222-ERT,1
+Scam/Fraud,Impression Fraud,Ad Fraud,webeye_dsp,TMT-20250110-RJC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,webeye_dsp,TMT-20241112-JUL,1
+Scam/Fraud,Impression Fraud,Ad Fraud,webeye_dsp,TMT-20240430-OWY,1
+Scam/Fraud,Impression Fraud,Ad Fraud,webeye_dsp,TMT-20240430-CTU,1
+Scam/Fraud,Impression Fraud,Ad Fraud,startio_dsp,TMT-20240730-RPC,1
+Scam/Fraud,Impression Fraud,Ad Fraud,snow_dsp,TMT-20241224-XLO,1
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20250108-EFN,1
+Scam/Fraud,Impression Fraud,Ad Fraud,smartad_dsp,TMT-20240430-OWY,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,shareit_dsp,TMT-20171025-VYD,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,rtbhouse_dsp,TMT-20230113-KQX,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,pubmatic_dsp,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,operaroi_dsp,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,opera_dsp,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,algorix_dsp,TMT-20240625-TAM,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),Heuristic Flag,aceex_dsp,TMT-20240503-MWB,1
+Malicious - Indirect Evidence,Suspicious (Multiple indicators match known overt incidents but no overt actions detected.),DNE Domain,startio_dsp,TMT-20241126-JEQ,1
+Scam/Fraud,Phishing,Scam,betweenx_dsp,TMT-20230710-YDP,1
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20241116-RGI,1
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20240125-EUI,1
+Malicious,Software Install Prompt,PUP,startio_dsp,TMT-20241126-AZQ,1
+Malicious,Software Install Prompt,PUP,snow_dsp,TMT-20250102-YWB,1
+Malicious,"Scam: ""Call Technical Support""",Dolos-3PC,outbrain,TMT-20241001-TPJ,1
+Malicious,Phishing,Redirector,zzmobi,TMT-20241212-MIL,1
+Malicious,Phishing,Redirector,webeye_dsp,TMT-20231210-EPT,1
+Malicious,Phishing,Redirector,tpmn_dsp,TMT-20240119-HSK,1
+Malicious,Phishing,Redirector,startio_dsp,TMT-20241115-TDX,1
+Malicious,Phishing,Redirector,startio_dsp,TMT-20241029-OEH,1
+Malicious,Phishing,Redirector,startio_dsp,TMT-20240918-AEQ,1
+Scam/Fraud,Phishing,Scam,adwmg_dsp,TMT-20220515-ZUP,1
+Scam/Fraud,Phishing,Scam,9dots_dsp,TMT-20241121-TGE,1
+Scam/Fraud,Phishing,Scam,9dots_dsp,TMT-20241116-RGI,1
+Scam/Fraud,Phishing,Scam,9dots_dsp,TMT-20231127-KZO,1
+Malicious,Phishing,Redirector,nasmedia_dsp,TMT-20240119-HSK,1
+Malicious,Phishing,Redirector,nasmedia_dsp,TMT-20200423-UGD,1
+Malicious,Phishing,Redirector,mezzomedia_dsp,TMT-20240119-HSK,1
+Malicious,Phishing,Redirector,startio_dsp,TMT-20240124-LYT,1
+Malicious,Phishing,Redirector,snow_dsp,TMT-20241204-PHN,1
+Malicious,Phishing,Redirector,smartad_dsp,TMT-20240119-HSK,1
+Malicious,Phishing,Redirector,sharethrough_dsp,TMT-20240119-HSK,1
+Malicious,Phishing,Redirector,shareit_dsp,TMT-20241115-TDX,1
+Malicious,Phishing,Redirector,screencore_dsp,TMT-20231210-EPT,1
+Malicious,Phishing,Redirector,playdigo_dsp,TMT-20210313-BOC,1
+Malicious,Phishing,Redirector,opera_dsp,TMT-20241212-MIL,1
+Scam/Fraud,Phishing,Scam,evolution_dsp,TMT-20240125-EUI,1
+Scam/Fraud,Phishing,Scam,evolution_dsp,TMT-20240112-YCP,1
+Scam/Fraud,Phishing,Scam,evolution_dsp,TMT-20231127-KZO,1
+Scam/Fraud,Phishing,Scam,evolution_dsp,TMT-20230922-XTE,1
+Scam/Fraud,Phishing,Scam,evolution_dsp,TMT-20230710-YDP,1
+Malicious,Phishing,Phishing Domain,adwmg_dsp,TMT-20170429-TC,1
+Malicious,Phishing,GhostCat - 3PC,webeye_dsp,TMT-20241213-LXJ,1
+Malicious,Phishing,GhostCat - 3PC,startio_dsp,TMT-20241213-LXJ,1
+Malicious,Phishing,Phishing Domain,playdigo_dsp,TMT-20170429-TC,1
+Malicious,Phishing,Phishing Domain,operasg_dsp,TMT-20240703-YMJ,1
+Malicious,Phishing,Phishing Domain,kelmak_dsp,TMT-20240703-YMJ,1
+Malicious,Phishing,Phishing Domain,haxmedia_dsp,TMT-20240703-YMJ,1
+Scam/Fraud,Phishing,Scam,opera_dsp,TMT-20230710-WBY,1
+Malicious,Phishing,Redirector,algorix_dsp,TMT-20241009-WFD,1
+Malicious,Phishing,Redirector,adwmg_dsp,TMT-20190223-OQM,1
+Malicious,Phishing,Phishing Domain,vk_dsp,TMT-20241215-TXS,1
+Malicious,Phishing,Phishing Domain,spinx_dsp,TMT-20240703-YMJ,1
+Malicious,Phishing,Phishing Domain,snow_dsp,TMT-20240828-UFM,1
+Malicious,Phishing,Phishing Domain,smartad_dsp,TMT-20240703-YMJ,1
+Malicious,Phishing,Redirector,opera_dsp,TMT-20241210-JQZ,1
+Malicious,Phishing,Redirector,opera_dsp,TMT-20231120-TYJ,1
+Malicious,Fake Anti-virus,StringRipper - 3PC,aceex_dsp,TMT-20240924-XBP,1
+Malicious,Phishing,GhostCat - 3PC,escalax_dsp,TMT-20240913-MBV,1
+Malicious,Phishing,GhostCat - 3PC,bidease_dsp,TMT-20241226-ORK,1
+Malicious,Phishing,GhostCat - 3PC,betweenx_dsp,TMT-20241021-AYE,1
+Malicious,Phishing,GhostCat - 3PC,screencore_dsp,TMT-20240509-QSC,1
+Malicious,Phishing,GhostCat - 3PC,rixengine_dsp,TMT-20250108-OMH,1
+Malicious,Phishing,GhostCat - 3PC,kelmak_dsp,TMT-20241226-ORK,1
+Malicious,Phishing,GhostCat - 3PC,haxmedia_dsp,TMT-20240723-XKR,1
+Malicious,Phishing,GhostCat - 3PC,haxmedia_dsp,TMT-20240705-LPW,1
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20240125-EUI,1
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20231127-KZO,1
+Scam/Fraud,Phishing,Scam,playdigo_dsp,TMT-20200110-UEQ,1
+Scam/Fraud,Phishing,Scam,outbrain,TMT-20240411-DPL,1
+Scam/Fraud,Phishing,Scam,operasg_dsp,TMT-20240201-VUZ,1
+Scam/Fraud,Phishing,Scam,operasg_dsp,TMT-20230920-VOZ,1
+Malicious,Phishing,Phishing Domain,betweenx_dsp,TMT-20250103-YXK,1
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20241209-HMG,1
+Malicious,Compromised Content,SocGholish,startio_dsp,TMT-20240918-KGV,1
+Malicious,Compromised Content,SocGholish,smartad_dsp,TMT-20241119-UOZ,1
+Malicious,Compromised Content,SocGholish,smartad_dsp,TMT-20240517-YXS,1
+Malicious,Compromised Content,SocGholish,pubmatic_dsp,TMT-20241209-HMG,1
+Malicious,Compromised Content,SocGholish,magnite_dsp,TMT-20241207-HDQ,1
+Malicious,Compromised Content,MudOrange-3PC,startio_dsp,TMT-20240606-UMA,1
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20240819-QKO,1
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20210805-GJI,1
+Scam/Fraud,Phishing,Scam,smartad_dsp,TMT-20200905-KNH,1
+Scam/Fraud,Phishing,Scam,sharethrough_dsp,TMT-20240824-EBX,1
+Scam/Fraud,Phishing,Scam,shareit_dsp,TMT-20240213-BHF,1
+Malicious,Phishing,GhostCat - 3PC,algorix_dsp,TMT-20240705-LPW,1
+Malicious,Phishing,GhostCat - 3PC,adsyield_dsp,TMT-20241213-LXJ,1
+Malicious,Impression Fraud,Vidlox- 3PC,duopeak_dsp,TMT-20230712-GMH,1
+Malicious,Impression Fraud,Ad Fraud,betweenx_dsp,TMT-20220324-FYR,1
+Malicious,Compromised Content,Compromised Domain,smartad_dsp,TMT-20250107-QVJ,1
+Malicious,Compromised Content,Compromised Domain,9dots_dsp,TMT-20240822-OZX,1
+Scam/Fraud,Phishing,Scam,zzmobi,TMT-20240411-DPL,1
+Scam/Fraud,Phishing,Scam,vlionmobi_dsp,TMT-20230214-XJF,1
+Scam/Fraud,Phishing,Scam,vk_dsp,TMT-20240531-HTL,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240821-NZB,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20240721-ISL,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20231211-VHI,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20250101-VKC,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20241228-JKA,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240825-YTV,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240822-YVW,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240606-ORT,1
+Malicious,Compromised Content,Compromised Domain,startio_dsp,TMT-20240103-WKX,1
+Malicious,Compromised Content,Compromised Domain,smartad_dsp,TMT-20250114-PSU,1
+Malicious,Compromised Content,E-Skimming,sharethrough_dsp,TMT-20240708-BFD,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,nasmedia_dsp,TMT-20220922-RWD,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20241107-KSY,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,xiaomi_dsp,TMT-20220923-HGA,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20241206-KIA,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20241110-HVF,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect Android,startio_dsp,TMT-20241030-CBU,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,magnite_dsp,TMT-20231127-RWS,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,loopme_dsp,TMT-20240415-AHQ,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,haxmedia_dsp,TMT-20240513-SQG,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,bidease_dsp,TMT-20240504-TUN,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,betweenx_dsp,TMT-20240906-NGM,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,betweenx_dsp,TMT-20240827-VTK,1
+Out Of Browser Redirect,Out-of-browser Redirect,App Store Redirect iOS,algorix_dsp,TMT-20240822-MUP,1
+Malicious,Compromised Content,Compromised Domain,algorix_dsp,TMT-20240730-XZA,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250109-ABJ,1
+Scam/Fraud,Phishing,Scam,startio_dsp,TMT-20250102-IAT,1

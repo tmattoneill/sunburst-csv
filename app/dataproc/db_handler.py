@@ -99,54 +99,77 @@ class DatabaseHandler:
             raise
 
     # In db_handler.py, add this new method:
-
     def get_filtered_data(self,
                           page: int = 1,
                           items_per_page: int = 20,
-                          filters: dict = None) -> Dict[str, Any]:
-        """Get filtered data with pagination."""
+                          filters: dict = None,
+                          paginate: bool = True) -> Dict[str, Any]:
         try:
+            print("\n=== Starting get_filtered_data ===")
+            print(f"Received filters: {filters}")
+            print(f"Filter type: {type(filters)}")
+
             with self.get_connection() as conn:
                 conn.row_factory = sqlite3.Row
                 cursor = conn.cursor()
 
+                # First, let's see what columns we actually have in the table
+                cursor.execute("PRAGMA table_info(security_data)")
+                table_columns = [column[1] for column in cursor.fetchall()]
+                print(f"Available columns in table: {table_columns}")
+
                 # Base query
                 query = "SELECT * FROM security_data"
                 count_query = "SELECT COUNT(*) FROM security_data"
+                params = []
 
                 # Build WHERE clause from filters
                 if filters:
                     conditions = []
-                    params = []
-
                     for column, value in filters.items():
-                        conditions.append(f"{column} = ?")
-                        params.append(value)
+                        print(f"Processing filter - Column: {column}, Value: {value}, Value Type: {type(value)}")
+                        if column in table_columns:  # Verify column exists
+                            conditions.append(f"{column} = ?")
+                            params.append(value)
+                        else:
+                            print(f"Warning: Column {column} not found in table")
 
                     if conditions:
                         where_clause = " WHERE " + " AND ".join(conditions)
                         query += where_clause
                         count_query += where_clause
 
-                # Add pagination
-                query += " LIMIT ? OFFSET ?"
-                params.extend([items_per_page, (page - 1) * items_per_page])
+                print(f"Final SQL Query: {query}")
+                print(f"Query Parameters: {params}")
 
                 # Get total count with filters
-                cursor.execute(count_query, params[:-2] if filters else [])
+                cursor.execute(count_query, params)
                 total_items = cursor.fetchone()[0]
+                print(f"Total matching rows: {total_items}")
 
-                # Get paginated data
-                cursor.execute(query, params)
+                # Only add pagination if requested
+                if paginate:
+                    query += " LIMIT ? OFFSET ?"
+                    pagination_params = [items_per_page, (page - 1) * items_per_page]
+                    cursor.execute(query, params + pagination_params)
+                else:
+                    cursor.execute(query, params)
+
                 data = [dict(row) for row in cursor.fetchall()]
+                print(f"Actually returned rows: {len(data)}")
+                if data:
+                    print("Sample row:")
+                    print(data[0])
+
+                print("=== Finished get_filtered_data ===\n")
 
                 return {
                     "data": data,
                     "total": total_items,
                     "page": page,
-                    "total_pages": (total_items + items_per_page - 1) // items_per_page
+                    "total_pages": (total_items + items_per_page - 1) // items_per_page if paginate else 1
                 }
 
         except Exception as e:
-            print(f"Error fetching filtered data: {str(e)}")
+            print(f"Error in get_filtered_data: {str(e)}")
             raise

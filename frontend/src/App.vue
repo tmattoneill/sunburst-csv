@@ -191,7 +191,12 @@ const refreshPage = () => {
       <div class="col-12">
         <!-- DataTable Component - Updates Dynamically -->
         <DataTable
-        :filters="currentFilters"/>
+          :filters="currentFilters"
+          :rootName="chartName"
+          :dateStart="dateStart"
+          :dateEnd="dateEnd"
+          :currentNodeName="rootName"
+        />
       </div>
     </div>
   </div>
