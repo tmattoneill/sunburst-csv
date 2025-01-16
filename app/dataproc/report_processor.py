@@ -1,3 +1,4 @@
+import pandas
 import pandas as pd
 import csv
 import json
@@ -47,6 +48,12 @@ class ReportProcessor:
         self.report_type: str = ""
         self.date_start: str = ""
         self.date_end: str = ""
+        self.required_columns = {
+            'basic': ['incident', 'tag_name', 'hit_type'],
+            'enhanced': ['incident', 'tag_name', 'hit_type', 'threat_behavior'],
+            'detailed': ['incident', 'tag_name', 'hit_type', 'publisher_name', 'country'],
+            'full': ['incident', 'tag_name', 'hit_type', 'publisher_name', 'country', 'report_period_hit_count', 'tag_status']
+        }
 
         # Initialize handlers
         self.db_handler = DatabaseHandler(str(self.data_path / "security.db"))  # Use persistent DB
@@ -55,27 +62,48 @@ class ReportProcessor:
         # We'll set tree_order after processing the data
         self.tree_order: List[str] = tree_order or []
 
-    def _extract_report_type(self) -> str:
-        """Extract report type from the CSV file, skipping header rows."""
-        try:
-            with open(self.raw_data_path, 'r', encoding='utf-8') as f:
-                # Skip initial blank rows if any
-                report_type_line = ""
-                for _ in range(4):  # Read first 4 lines to find report type
-                    line = f.readline().strip()
-                    if line and not line.startswith(','):  # Find first non-empty line that doesn't start with comma
-                        report_type_line = line
-                        break
+    def validate_file_structure(self, df: pd.DataFrame) -> Tuple[bool, str]:
+        """
+        Validate the dataframe structure and content.
+        Returns (is_valid, error_message).
+        """
+        if df is None or df.empty:
+            return False, "File is empty or could not be read"
 
-                if report_type_line:
-                    # Split and get first non-empty cell
-                    cells = [cell.strip() for cell in report_type_line.split(',')]
-                    report_type = next((cell for cell in cells if cell), "Unknown Report Type")
-                    return report_type
-                return "Unknown Report Type"
-        except Exception as e:
-            print(f"Error extracting report type: {str(e)}")
-            return "Unknown Report Type"
+        # Check for minimum row count (excluding headers)
+        if len(df) < 1:
+            return False, "File contains no data rows"
+
+        # Normalize column names for comparison
+        df_columns = set(col.lower().strip().replace(' ', '_') for col in df.columns)
+
+        # Try to match against our known report types
+        valid_structure = False
+        missing_columns = []
+
+        for report_type, required_cols in self.required_columns.items():
+            normalized_required = set(col.lower().strip().replace(' ', '_')
+                                      for col in required_cols)
+            if normalized_required.issubset(df_columns):
+                valid_structure = True
+                break
+            else:
+                missing = normalized_required - df_columns
+                if len(missing) < len(missing_columns) or not missing_columns:
+                    missing_columns = missing
+
+        if not valid_structure:
+            return False, f"Missing required columns: {', '.join(missing_columns)}"
+
+        # Validate that numeric columns contain valid data
+        numeric_columns = ['value', 'count']  # Add other numeric columns as needed
+        for col in numeric_columns:
+            if col in df_columns:
+                non_numeric = df[col].apply(lambda x: not pd.api.types.is_numeric_dtype(type(x)))
+                if non_numeric.any():
+                    return False, f"Column '{col}' contains non-numeric values"
+
+        return True, "Valid file structure"
 
     def process_raw_data(self) -> pd.DataFrame:
         """Process raw security data from CSV and create grouped dataset."""
@@ -83,33 +111,7 @@ class ReportProcessor:
             print(f"Attempting to read: {self.raw_data_path}")
             print(f"File exists: {self.raw_data_path.exists()}")
 
-            # First read the metadata rows
-            with open(self.raw_data_path, 'r', encoding='utf-8') as f:
-                rows = []
-                for _ in range(4):
-                    rows.append(f.readline().strip())
-
-                # Extract report type from first row, first cell
-                self.report_type = rows[0].split(',')[0].strip('"')
-                print(f"Extracted report type: {self.report_type}")
-
-                # Extract and parse date span from second row
-                date_span = rows[1].split(',')[0].strip('"')
-                if ' - ' in date_span:
-                    start_str, end_str = date_span.split(' - ')
-                    start_str = start_str.strip().strip('"')
-                    end_str = end_str.strip().strip('"')
-                    try:
-                        start_date = datetime.strptime(start_str, '%m/%d/%Y %H:%M')
-                        end_date = datetime.strptime(end_str, '%m/%d/%Y %H:%M')
-                        self.date_start = start_date.strftime('%b. %-d, %Y')
-                        self.date_end = end_date.strftime('%b. %-d, %Y')
-                    except ValueError as e:
-                        print(f"Error parsing dates: {e}")
-                        self.date_start = start_str
-                        self.date_end = end_str
-
-            # Get raw data and initialize database
+            # Get raw data with validation and metadata extraction
             raw_df = self.get_raw_dataframe()
             self.db_handler.initialize_db_from_dataframe(raw_df)
 
@@ -273,18 +275,61 @@ class ReportProcessor:
             raise
 
     def get_raw_dataframe(self) -> pd.DataFrame:
-        """Get the raw data from CSV with cleaned column names.
-        This is separate from the Sunburst processing and meant for database storage."""
+        """Get the raw data from CSV with improved header detection and validation."""
         try:
             print(f"Reading raw data from: {self.raw_data_path}")
 
-            # Read the raw data, skipping metadata rows but keeping headers
-            df = pd.read_csv(self.raw_data_path, skiprows=3)
+            # First read the metadata rows
+            with open(self.raw_data_path, 'r', encoding='utf-8') as f:
+                rows = []
+                for _ in range(4):
+                    rows.append(f.readline().strip())
 
-            # Clean column names - lowercase and underscores
+                # Extract report type from first row, first cell
+                self.report_type = rows[0].split(',')[0].strip('"')
+                print(f"Extracted report type: {self.report_type}")
+
+                # Extract and parse date span from second row
+                date_span = rows[1].split(',')[0].strip('"')
+                if ' - ' in date_span:
+                    start_str, end_str = date_span.split(' - ')
+                    start_str = start_str.strip().strip('"')
+                    end_str = end_str.strip().strip('"')
+                    try:
+                        start_date = datetime.strptime(start_str, '%m/%d/%Y %H:%M')
+                        end_date = datetime.strptime(end_str, '%m/%d/%Y %H:%M')
+                        self.date_start = start_date.strftime('%b. %-d, %Y')
+                        self.date_end = end_date.strftime('%b. %-d, %Y')
+                    except ValueError as e:
+                        print(f"Error parsing dates: {e}")
+                        self.date_start = start_str
+                        self.date_end = end_str
+
+            # Now detect the actual data header row, starting after metadata
+            header_row = 3  # Start checking after metadata rows
+            with open(self.raw_data_path, 'r', encoding='utf-8') as f:
+                for i, line in enumerate(f):
+                    if i < header_row:
+                        continue
+                    # Look for a line containing common header terms
+                    if any(term in line.lower() for term in ['incident', 'tag_name', 'hit_type']):
+                        header_row = i
+                        break
+                    if i >= header_row + 7:  # Limit the search to 7 rows after metadata
+                        break
+
+            # Read the CSV with the detected header row
+            df = pd.read_csv(self.raw_data_path, skiprows=header_row)
+
+            # Clean column names
             df.columns = df.columns.str.lower().str.replace(' ', '_')
-            print("\nColumns in raw data:", df.columns.tolist())
 
+            # Validate the structure
+            is_valid, error_message = self.validate_file_structure(df)
+            if not is_valid:
+                raise ValueError(error_message)
+
+            print("\nColumns in raw data:", df.columns.tolist())
             return df
 
         except Exception as e:
@@ -295,7 +340,6 @@ class ReportProcessor:
         """Run the complete processing pipeline."""
         self.process_raw_data()
         return self.create_sunburst_data()
-
 
 if __name__ == "__main__":
     processor = ReportProcessor("Criteo", "criteo_30_day_-_malware-_Security_Incidents_by_Tag_1-20250110-092635.csv")

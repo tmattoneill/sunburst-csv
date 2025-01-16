@@ -138,15 +138,15 @@ class SecurityDataHandler:
         Only returns fields that actually have data in the database.
         """
         base_fields = {
-            'basic': ["scan_type", "hit_type", "incident", "tag_name"],
+            'basic': ["scan_type", "hit_type", "incident"],
             'enhanced': ["hit_type", "threat_behavior", "malware_condition",
-                         "incident", "tag_name"],
+                         "incident"],
             'detailed': ["publisher_name", "website_name", "provider_name",
                          "country", "hit_type", "named_threat", "threat_behavior",
-                         "malware_condition", "incident", "tag_name"],
+                         "malware_condition", "incident"],
             'full': ["publisher_name", "website_name", "provider_name",
                      "country", "hit_type", "named_threat", "threat_behavior",
-                     "malware_condition", "incident", "tag_name"]
+                     "malware_condition", "incident"]
         }
 
         if report_type not in base_fields:
