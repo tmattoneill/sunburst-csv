@@ -98,25 +98,25 @@ def process_file():
         client_name = data.get("clientName")
         input_file = data.get("filePath")
 
+        print(f"Processing request with client_name: {client_name}, file: {input_file}")  # Debug log
+
         if not client_name or not input_file:
             return jsonify({"error": "Missing required parameters"}), 400
 
         # Initialize the report processor
         processor = ReportProcessor(client_name=client_name, input_file=input_file)
 
-        # Get raw data for database before processing for sunburst
-        raw_df = processor.get_raw_dataframe()
-
-        # Initialize database with raw data
-        db.initialize_db_from_dataframe(raw_df)
-
-        # Process data for sunburst visualization
-        processor.process_all()
+        try:
+            # Process data for sunburst visualization
+            processor.process_all()
+        except Exception as proc_error:
+            print(f"Detailed processing error: {str(proc_error)}")  # Debug log
+            return jsonify({"error": f"Processing failed: {str(proc_error)}"}), 500
 
         return jsonify({"message": "Report processed successfully"}), 200
 
     except Exception as e:
-        print(f"Error processing file: {e}")
+        print(f"Error processing file: {str(e)}")  # Debug log
         return jsonify({"error": str(e)}), 500
 
 

@@ -16,6 +16,7 @@ const selectedNode = ref(null)
 const currentPath = ref([])
 const currentFilters = ref({}) // for the data table
 const chartRef = ref(null)
+const filterOrder = ref([])
 
 // Computed properties for DataPane
 const rootName = computed(() => selectedNode.value?.name ?? chartData.value?.name ?? '')
@@ -42,11 +43,10 @@ const handlePathChange = (path) => {
 
   // Build filters from path
   const filters = {};
-  const filterOrder = ['hit_type', 'expected_behavior', 'malware_condition', 'provider_account', 'incident'];  // Note: we will want to make this dynamic and passed in programmatically eventually
 
   path.forEach((node, index) => {
     if (index > 0) { // Skip root node
-      filters[filterOrder[index - 1]] = node.name;
+      filters[filterOrder.value[index - 1]] = node.name;
     }
   });
 
@@ -100,6 +100,7 @@ const fetchData = async () => {
     dateStart.value = responseData.date_start
     dateEnd.value = responseData.date_end
     chartData.value = responseData.data
+    filterOrder.value = responseData.tree_order
     selectedNode.value = responseData.data
     currentPath.value = [{ name: responseData.data.name, value: responseData.data.value }]
   } catch (error) {

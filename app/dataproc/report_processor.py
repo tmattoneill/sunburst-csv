@@ -4,6 +4,8 @@ import json
 from typing import Dict, Optional, Tuple, List, TypedDict, Union
 from pathlib import Path
 
+from .db_handler import DatabaseHandler
+from .security_data_handler import SecurityDataHandler
 
 class TreeNode(TypedDict):
     """Tree node with name, value and children."""
@@ -27,6 +29,7 @@ class ReportMetadata(TypedDict):
     date_start: str
     date_end: str
     data: TreeRoot
+    tree_order: List[str]
 
 
 class ReportProcessor:
@@ -39,16 +42,18 @@ class ReportProcessor:
         self.raw_data_path = self.data_path / "raw" / input_file
         self.processed_data_path = self.data_path / "dataset.csv"
         self.sunburst_data_path = self.data_path / "sunburst_data.json"
-        self.tree_order = tree_order or ['hit_type',
-                                         'expected_behavior',
-                                         'malware_condition',
-                                         'provider_account',
-                                         'incident']
         self.client_name = client_name
         self.tree: Union[TreeRoot, Dict] = {}
         self.report_type: str = ""
         self.date_start: str = ""
         self.date_end: str = ""
+
+        # Initialize handlers
+        self.db_handler = DatabaseHandler(str(self.data_path / "security.db"))  # Use persistent DB
+        self.security_handler = SecurityDataHandler(str(self.data_path / "security.db"))  # Pass same path
+
+        # We'll set tree_order after processing the data
+        self.tree_order: List[str] = tree_order or []
 
     def _extract_report_type(self) -> str:
         """Extract report type from the CSV file, skipping header rows."""
@@ -89,33 +94,39 @@ class ReportProcessor:
                 print(f"Extracted report type: {self.report_type}")
 
                 # Extract and parse date span from second row
-                date_span = rows[1].split(',')[0].strip('"')  # Get first cell of second row and remove quotes
+                date_span = rows[1].split(',')[0].strip('"')
                 if ' - ' in date_span:
                     start_str, end_str = date_span.split(' - ')
-                    # Clean up any remaining quotes and whitespace
                     start_str = start_str.strip().strip('"')
                     end_str = end_str.strip().strip('"')
-                    # Parse dates and format them consistently
                     try:
                         start_date = datetime.strptime(start_str, '%m/%d/%Y %H:%M')
                         end_date = datetime.strptime(end_str, '%m/%d/%Y %H:%M')
                         self.date_start = start_date.strftime('%b. %-d, %Y')
                         self.date_end = end_date.strftime('%b. %-d, %Y')
-                        print(f"Extracted date span: {self.date_start} to {self.date_end}")
                     except ValueError as e:
                         print(f"Error parsing dates: {e}")
                         self.date_start = start_str
                         self.date_end = end_str
 
-            # Now read the actual data, skipping the first 3 rows (keep the header row)
-            df = pd.read_csv(self.raw_data_path, skiprows=3)
+            # Get raw data and initialize database
+            raw_df = self.get_raw_dataframe()
+            self.db_handler.initialize_db_from_dataframe(raw_df)
 
-            # Convert column names to lowercase and replace spaces with underscores
-            df.columns = df.columns.str.lower().str.replace(' ', '_')
-            print("\nActual columns after processing:", df.columns.tolist())
+            # Detect report type and set tree order if not provided
+            if not self.tree_order:
+                detected_types = self.security_handler.detect_report_type()
+                if detected_types:
+                    # Use most detailed report type available
+                    report_type = detected_types[-1]
+                    self.tree_order = self.security_handler.get_chart_fields(report_type)
+                    print(f"Using most detailed report type available: {report_type}")
+                    print(f"Tree order set to: {self.tree_order}")
+                else:
+                    raise ValueError("No valid report type detected")
 
-            # Group by the requested columns and count occurrences
-            grouped_data = df.groupby(self.tree_order).size().reset_index(name='Count')
+            # Group by the tree order and count occurrences
+            grouped_data = raw_df.groupby(self.tree_order).size().reset_index(name='Count')
 
             # Sort by count in descending order
             grouped_data = grouped_data.sort_values('Count', ascending=False)
@@ -246,7 +257,8 @@ class ReportProcessor:
                 report_type=self.report_type,
                 date_start=self.date_start,
                 date_end=self.date_end,
-                data=self.tree
+                data=self.tree,
+                tree_order=self.tree_order
             )
 
             # Save the result
