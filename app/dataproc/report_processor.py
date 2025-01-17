@@ -4,7 +4,7 @@ import csv
 import json
 from typing import Dict, Optional, Tuple, List, TypedDict, Union
 from pathlib import Path
-
+import os
 from .db_handler import DatabaseHandler
 from .security_data_handler import SecurityDataHandler
 
@@ -39,7 +39,7 @@ class ReportProcessor:
                  input_file: str = "sample_data.csv",
                  tree_order: List[str] = None,
                  data_path: str = "../data"):
-        self.data_path = Path(data_path)
+        self.data_path = Path(os.getenv('DATA_PATH', "../data"))
         self.raw_data_path = self.data_path / "raw" / input_file
         self.processed_data_path = self.data_path / "dataset.csv"
         self.sunburst_data_path = self.data_path / "sunburst_data.json"
@@ -342,5 +342,5 @@ class ReportProcessor:
         return self.create_sunburst_data()
 
 if __name__ == "__main__":
-    processor = ReportProcessor("Criteo", "criteo_30_day_-_malware-_Security_Incidents_by_Tag_1-20250110-092635.csv")
+    processor = ReportProcessor("Sample", "sample_data.csv")
     processor.process_all()

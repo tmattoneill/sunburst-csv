@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from dotenv import load_dotenv
 import json
 import os
 from datetime import datetime
@@ -7,13 +8,16 @@ from werkzeug.utils import secure_filename
 from dataproc.report_processor import ReportProcessor
 from dataproc.db_handler import DatabaseHandler
 
+load_dotenv()
+
 app = Flask(__name__)
 CORS(app)
 
-# Configure upload settings
-UPLOAD_DIR = "../data/raw"
+# Configure application settings
+app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
+UPLOAD_DIR = os.getenv('UPLOAD_DIR', "../data/raw")
+DB_PATH = os.getenv('DATABASE_URL', "../data/security.db")
 ALLOWED_EXTENSIONS = {'csv'}
-DB_PATH = "../data/security.db"
 
 db = DatabaseHandler(DB_PATH)
 
@@ -121,4 +125,4 @@ def process_file():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=False, port=int(os.getenv('FLASK_PORT', 5001)))

@@ -3,11 +3,12 @@ from contextlib import contextmanager
 import pandas as pd
 from typing import Dict, Any
 from pathlib import Path
-
+import os
 
 class DatabaseHandler:
-    def __init__(self, db_path: str = ":memory:"):
-        self.db_path = db_path
+    def __init__(self, db_path: str = None):
+        self.db_path = db_path or os.getenv('DATABASE_URL', ":memory:")
+
 
     @contextmanager
     def get_connection(self):

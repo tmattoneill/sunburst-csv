@@ -3,11 +3,11 @@ from contextlib import contextmanager
 from typing import Dict, FrozenSet, List, Set
 import logging
 from pathlib import Path
-
+import os
 
 class SecurityDataHandler:
-    def __init__(self, db_path: str = "../../data/security.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: str = None):
+        self.db_path = db_path or os.getenv('DATABASE_URL', "../data/security.db")
         # Keep the same report type definitions but with normalized field names
         self.report_types = self._initialize_report_types()
 

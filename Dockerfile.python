@@ -1,18 +1,26 @@
+# Use a lightweight Python image
 FROM python:3.9-slim
 
-# Create a working directory
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    FLASK_ENV=production \
+    PYTHONDONTWRITEBYTECODE=1
+
+# Set the working directory
 WORKDIR /app
 
-# Copy application and data files
-COPY ./app /app/app
-COPY ./data /app/data
-
-# Copy requirements file and install dependencies
-COPY requirements.txt /app
+# Install dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the backend port
+# Create the data directory and set permissions
+RUN mkdir -p /data/raw && chown -R 1000:1000 /data
+
+# Copy the application code
+COPY . /app /app
+
+# Expose the port Gunicorn will listen on
 EXPOSE 5001
 
-# Command to run the app using Gunicorn
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5001", "api.api:app"]
+# Start the app using Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:5001", "api.api:app"]

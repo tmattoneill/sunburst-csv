@@ -5,12 +5,11 @@ services:
       dockerfile: Dockerfile.python
     container_name: python-backend
     ports:
-      - "5001:5001" # Map backend to host
+      - "${FLASK_PORT}:${FLASK_PORT}"
     volumes:
-      - ./app:/app
-      - ./data:/app/data # Mount data for flexibility
-    environment:
-      - PYTHONUNBUFFERED=1
+      - ./data:/data  # Mount the local `data` directory to `/data` in the container
+    env_file:
+      - .env
     restart: unless-stopped
 
   frontend:
@@ -19,5 +18,5 @@ services:
       dockerfile: Dockerfile.vue
     container_name: vue-frontend
     ports:
-      - "3000:80" # Map nginx serving Vue to port 3000
+      - "${VUE_PORT}:80"
     restart: unless-stopped
