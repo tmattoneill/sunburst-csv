@@ -6,6 +6,8 @@ ENV PYTHONUNBUFFERED=1 \
     FLASK_ENV=production \
     PYTHONDONTWRITEBYTECODE=1
 
+ENV PYTHONPATH=/app
+
 # Set the working directory
 WORKDIR /app
 
@@ -17,10 +19,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN mkdir -p /data/raw && chown -R 1000:1000 /data
 
 # Copy the application code
-COPY . /app /app
+COPY ./app /app
 
 # Expose the port Gunicorn will listen on
-EXPOSE 5001
+EXPOSE ${FLASK_PORT}
 
-# Start the app using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5001", "api.api:app"]
+# Create a non-root user and switch to it
+RUN adduser --disabled-password sunburst
+USER sunburst
+
+# Start the Gunicorn server
+CMD gunicorn --bind 0.0.0.0:${FLASK_PORT} api.api:app

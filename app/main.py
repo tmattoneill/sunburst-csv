@@ -3,4 +3,4 @@ import os
 
 if __name__ == '__main__':
     port = int(os.getenv('BACKEND_PORT', 5001))
-    app.run(debug=True, port=port)
+    app.run(debug=False, port=port)

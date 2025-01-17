@@ -7,7 +7,8 @@ services:
     ports:
       - "${FLASK_PORT}:${FLASK_PORT}"
     volumes:
-      - ./data:/data  # Mount the local `data` directory to `/data` in the container
+      - ./data:/data
+      - ./app:/app
     env_file:
       - .env
     restart: unless-stopped
