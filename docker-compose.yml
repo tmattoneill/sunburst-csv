@@ -1,0 +1,23 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    container_name: python-backend
+    ports:
+      - "5001:5001" # Map backend to host
+    volumes:
+      - ./app:/app
+      - ./data:/app/data # Mount data for flexibility
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.vue
+    container_name: vue-frontend
+    ports:
+      - "3000:80" # Map nginx serving Vue to port 3000
+    restart: unless-stopped

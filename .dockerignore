@@ -1,0 +1,5 @@
+**/node_modules
+**/Library
+**/.git
+**/.DS_Store
+**/bdesign
