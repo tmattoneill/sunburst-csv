@@ -1,6 +1,14 @@
-from api.api import app
+from api import create_app
 import os
 
+app = create_app()
+
 if __name__ == '__main__':
-    port = int(os.getenv('BACKEND_PORT', 5001))
-    app.run(debug=False, port=port)
+    # Get environment and port from environment variables
+    flask_env = os.getenv('FLASK_ENV', 'production')
+    port = int(os.getenv('FLASK_PORT', 5001))
+
+    # Enable debug mode if in development
+    debug_mode = (flask_env == 'development')
+
+    app.run(debug=debug_mode, port=port)

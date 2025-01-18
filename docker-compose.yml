@@ -1,3 +1,6 @@
+# docker-compose.yml - Development
+name: dataviz-dev
+
 services:
   backend:
     build:
@@ -8,16 +11,65 @@ services:
       - "${FLASK_PORT}:${FLASK_PORT}"
     volumes:
       - ./data:/data
-      - ./app:/app
+      - ./app:/app  # Keep for development hot-reloading
     env_file:
-      - .env
+      - .env.dev
+    environment:
+      - FLASK_ENV=development
+      - API_BASE_URL=  # Empty in dev mode as per __init__.py
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${FLASK_PORT}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.75'
+    user: ${APP_USERNAME:-sunburst}
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - app-network
     restart: unless-stopped
 
   frontend:
     build:
       context: .
       dockerfile: Dockerfile.vue
+      args:
+        - NODE_ENV=development
+        - VUE_APP_API_BASE_URL=${VUE_APP_API_BASE_URL}
     container_name: vue-frontend
     ports:
       - "${VUE_PORT}:80"
-    restart: unless-stopped
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules  # Keep for development dependencies
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+    networks:
+      - app-network
+    env_file:
+      - .env.dev
+    environment:
+      - NODE_ENV=development
+    command: npm run serve
+    depends_on:
+      backend:
+        condition: service_healthy
+
+networks:
+  app-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1450

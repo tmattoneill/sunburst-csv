@@ -1,6 +1,5 @@
 from flask import Blueprint, Flask, jsonify, request
 from flask_cors import CORS
-from dotenv import load_dotenv
 import json
 import os
 from datetime import datetime
@@ -8,12 +7,9 @@ from werkzeug.utils import secure_filename
 from dataproc.report_processor import ReportProcessor
 from dataproc.db_handler import DatabaseHandler
 
-load_dotenv()
-
 bp = Blueprint('api', __name__)
 
 # Configure application settings
-app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
 UPLOAD_DIR = os.getenv('UPLOAD_DIR', "/data/raw")
 DB_PATH = os.getenv('DATABASE_URL', "/data/security.db")
 ALLOWED_EXTENSIONS = {'csv'}

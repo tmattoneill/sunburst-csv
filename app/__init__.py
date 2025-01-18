@@ -1,8 +1,6 @@
 # Backend API and File Processing
-from dotenv import load_dotenv
 import os
 
-load_dotenv()  # Load .env file
-
+# No need for load_dotenv in Docker as env vars are set via docker-compose
 app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
 app.config['DATABASE_URL'] = os.getenv('DATABASE_URL', 'sqlite:///data/security.db')
