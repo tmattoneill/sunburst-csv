@@ -29,3 +29,5 @@ pnpm-debug.log*
 __pycache__/
 *.pyc
 *.log
+
+*.tar.gz
