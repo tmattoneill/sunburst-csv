@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Blueprint, Flask, jsonify, request
 from flask_cors import CORS
 from dotenv import load_dotenv
 import json
@@ -10,13 +10,12 @@ from dataproc.db_handler import DatabaseHandler
 
 load_dotenv()
 
-app = Flask(__name__)
-CORS(app)
+bp = Blueprint('api', __name__)
 
 # Configure application settings
 app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
-UPLOAD_DIR = os.getenv('UPLOAD_DIR', "../data/raw")
-DB_PATH = os.getenv('DATABASE_URL', "../data/security.db")
+UPLOAD_DIR = os.getenv('UPLOAD_DIR', "/data/raw")
+DB_PATH = os.getenv('DATABASE_URL', "/data/security.db")
 ALLOWED_EXTENSIONS = {'csv'}
 
 db = DatabaseHandler(DB_PATH)
@@ -26,7 +25,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/data', methods=['GET'])
+@bp.route('/data', methods=['GET'])
 def get_data():
     try:
         with open('../data/sunburst_data.json', 'r') as f:
@@ -37,7 +36,7 @@ def get_data():
 
 
 # In api.py, update the get_table_data route:
-@app.route('/table-data', methods=['GET', 'POST'])
+@bp.route('/table-data', methods=['GET', 'POST'])
 def get_table_data():
     try:
         if request.method == 'GET':
@@ -64,7 +63,7 @@ def get_table_data():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route('/upload', methods=['POST'])
+@bp.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
@@ -95,7 +94,7 @@ def upload_file():
     return jsonify({"error": "File type not allowed"}), 400
 
 
-@app.route('/process', methods=['POST'])
+@bp.route('/process', methods=['POST'])
 def process_file():
     try:
         data = request.json
