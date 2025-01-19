@@ -1,17 +1,19 @@
-# Dockerfile.python
 # Use a lightweight Python image
 FROM python:3.9-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
-    FLASK_ENV=production \
-    PYTHONDONTWRITEBYTECODE=1
-
-ENV PYTHONPATH=/app
-ENV DATA_DIR=/data
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app \
+    DATA_DIR=/data
 
 # Set the working directory
 WORKDIR /app
+
+# Install necessary system dependencies including curl
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl && \
+    rm -rf /var/lib/apt/lists/*
 
 # Create a user and group
 RUN groupadd -g 1000 sunburst && \
@@ -22,20 +24,19 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Create the data directory and set permissions
-# Update permissions for the data directory
 RUN mkdir -p /data/raw && \
     chown -R sunburst:sunburst /data && \
     chmod -R 755 /data
 
 # Copy the application code
 COPY ./app /app
+RUN chown -R sunburst:sunburst /app
 
 # Expose the port Gunicorn will listen on
 EXPOSE ${FLASK_PORT}
 
-# Create a non-root user and switch to it
-# RUN adduser --disabled-password sunburst
+# Switch to non-root user
 USER sunburst
 
 # Start the Gunicorn server with the app factory
-CMD gunicorn --bind 0.0.0.0:5001 "api:create_app()"
+CMD gunicorn --bind 0.0.0.0:${FLASK_PORT} "api:create_app()"

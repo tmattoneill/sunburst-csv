@@ -1,6 +1,6 @@
 <!-- PageHeader.vue -->
 <script setup>
-import { defineEmits, defineProps, ref, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { PALETTES } from '@/palettes'
 import PathBar from './PathBar.vue'
 

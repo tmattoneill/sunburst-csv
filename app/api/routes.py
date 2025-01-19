@@ -20,6 +20,9 @@ db = DatabaseHandler(DB_PATH)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@bp.route('/health')
+def health_check():
+    return {'status': 'healthy'}, 200
 
 @bp.route('/data', methods=['GET'])
 def get_data():

@@ -1,6 +1,6 @@
 <!-- DataPane.vue -->
 <script setup>
-import { computed } from 'vue'  // Added defineProps here
+import { computed } from 'vue'
 
 const props = defineProps({
   rootName: {

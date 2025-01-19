@@ -8,6 +8,8 @@ ARG NODE_ENV=production
 # Set working directory
 WORKDIR /app
 
+RUN apk --no-cache add curl
+
 # Copy package files from frontend directory
 COPY frontend/package*.json ./
 
@@ -32,11 +34,31 @@ RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 777 /etc/nginx /usr/share/nginx/html
 
 # Expose the HTTP port
-EXPOSE 80
+EXPOSE 8080
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
 
 # For development, use the builder stage directly
+# Development stage modifications
 FROM builder AS development
-CMD ["npm", "run", "serve"]
+ENV HOST=0.0.0.0
+ENV PORT=${VUE_PORT}
+EXPOSE ${VUE_PORT}
+
+# Install curl for healthcheck
+RUN apk --no-cache add curl
+
+# Create vue.config.js to ensure proper dev server configuration
+RUN echo 'module.exports = { \
+  devServer: { \
+    host: "0.0.0.0", \
+    port: 8080, \
+    allowedHosts: "all", \
+    client: { \
+      webSocketURL: "auto://0.0.0.0:0/ws" \
+    } \
+  } \
+}' > vue.config.js
+
+CMD npm run serve -- --port ${VUE_PORT}

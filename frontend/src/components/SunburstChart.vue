@@ -1,6 +1,6 @@
 <!-- SunburstChart.vue -->
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount, defineProps, defineEmits } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import * as echarts from 'echarts'
 import { PALETTES } from '@/palettes'
 
