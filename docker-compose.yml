@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.python
+      args:
+        - NODE_ENV=development
     container_name: python-backend
     ports:
       - "${FLASK_PORT}:${FLASK_PORT}"

@@ -5,12 +5,13 @@
   "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --verbose",
     "lint": "vue-cli-service lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "index.js",
   "dependencies": {
+    "@vue/cli-service": "^5.0.0",
     "@refinitiv-ui/elements": "^7.14.1",
     "@refinitiv-ui/halo-theme": "^7.6.0",
     "core-js": "^3.8.3",
@@ -50,7 +51,6 @@
   "license": "ISC",
   "readme": "ERROR: No README data found!",
   "devDependencies": {
-    "@vue/cli-service": "^5.0.8",
     "postcss": "^8.5.0",
     "vue-loader": "^17.4.2"
   }

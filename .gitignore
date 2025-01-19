@@ -31,5 +31,4 @@ __pycache__/
 *.log
 
 *.tar.gz
-.env.prod
 *.sh

@@ -3,24 +3,34 @@
 FROM node:18-alpine AS builder
 
 # Build args
-ARG NODE_ENV=production
+ARG NODE_ENV
+ENV NODE_ENV=${NODE_ENV}
+ARG VUE_APP_API_BASE_URL
+ENV VUE_APP_API_BASE_URL=${VUE_APP_API_BASE_URL}
 
 # Set working directory
 WORKDIR /app
 
-RUN apk --no-cache add curl
+RUN apk --no-cache add curl bash
 
 # Copy package files from frontend directory
 COPY frontend/package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies including Vue CLI globally
+RUN npm install --no-cache --verbose && \
+    npm install -g @vue/cli @vue/cli-service
 
 # Copy frontend source code
 COPY frontend/ .
 
-# Build the application (only for production)
-RUN if [ "$NODE_ENV" = "production" ]; then npm run build; fi
+# Build the application (only for production) with debug output
+SHELL ["/bin/bash", "-c"]
+RUN echo "Building with NODE_ENV=$NODE_ENV" && \
+    if [[ "$NODE_ENV" = "production" ]]; then \
+        echo "Starting production build..." && \
+        npm run build || (echo "Build failed with exit code $?" && exit 1) \
+    fi
+
 
 # For production, use nginx to serve the built files
 FROM nginx:alpine AS production
