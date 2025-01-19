@@ -17,7 +17,7 @@ services:
     volumes:
       - ./data:/data
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${FLASK_PORT}/dataviz/api/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:${FLASK_PORT}${API_BASE_URL}/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -42,7 +42,7 @@ services:
     ports:
       - "80:80"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      test: ["CMD", "curl", "-f", "http://localhost:${VUE_PORT}"]
       interval: 30s
       timeout: 10s
       retries: 3

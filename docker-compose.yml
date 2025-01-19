@@ -31,7 +31,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - app-network
+      - default
     restart: unless-stopped
 
   frontend:
@@ -58,7 +58,7 @@ services:
           memory: 512M
           cpus: '0.5'
     networks:
-      - app-network
+      - default
     env_file:
       - .env.dev
     environment:
@@ -70,7 +70,7 @@ services:
         condition: service_healthy
 
 networks:
-  app-network:
+  default:
     driver: bridge
     driver_opts:
       com.docker.network.driver.mtu: 1450
