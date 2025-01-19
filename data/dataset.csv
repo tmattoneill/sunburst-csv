@@ -1,323 +1,324 @@
 hit_type,threat_behavior,malware_condition,incident,Count
-Malicious,Phishing,Phishing Domain,TMT-20240703-YMJ,1879
-Malicious,Phishing,GhostCat - 3PC,TMT-20241213-LXJ,1061
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240429-OMT,714
-Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20240625-TAM,689
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-RJC,367
+Malicious,Phishing,Phishing Domain,TMT-20240703-YMJ,2533
+Malicious,Phishing,GhostCat - 3PC,TMT-20241213-LXJ,1134
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240429-OMT,691
+Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20240625-TAM,648
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-RJC,397
 Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240513-SQG,202
-Scam/Fraud,Scams,Scam,TMT-20241005-LOC,157
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241222-ERT,142
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240415-AHQ,127
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240424-UAH,122
-Scam/Fraud,Scams,Scam,TMT-20240113-ZSK,121
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241122-APT,113
-Scam/Fraud,Scams,Scam,TMT-20250109-CHS,111
-Scam/Fraud,Scams,Scam,TMT-20240209-LRC,109
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240225-ACY,91
-Malicious,Phishing,Redirector,TMT-20250114-WUE,87
-Malicious,E-skimming,E-Skimming,TMT-20240929-AJP,83
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241217-HMO,82
-Malicious,Backdoor,Compromised Domain,TMT-20240730-XZA,81
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20231122-BCO,79
-Malicious,Phishing,Phishing Domain,TMT-20170429-TC,75
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241217-MEF,74
-Scam/Fraud,Scams,Scam,TMT-20230922-XTE,71
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241030-CBU,71
-Scam/Fraud,Scams,Scam,TMT-20231127-KZO,68
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250105-VRQ,67
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240312-OFU,64
-Scam/Fraud,Scams,Scam,TMT-20230711-MWE,63
-Malicious,Backdoor,SocGholish,TMT-20241207-HDQ,57
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240801-NZR,56
-Scam/Fraud,Scams,Scam,TMT-20230710-YDP,55
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230322-AUK,54
-Malicious,Backdoor,Compromised Domain,TMT-20240822-OZX,54
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241220-IBO,52
-Malicious,Backdoor,Compromised Domain,TMT-20240901-GKC,51
-Scam/Fraud,Scams,Scam,TMT-20220602-BUX,50
-Scam/Fraud,Scams,Scam,TMT-20240125-EUI,48
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230609-VMQ,47
-Scam/Fraud,Scams,Scam,TMT-20240824-EBX,44
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240414-JMX,44
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250101-AQJ,40
-Resolved,Phishing,Redirector,TMT-20240308-JDO,37
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-JSP,37
-Malicious,Phishing,GhostCat - 3PC,TMT-20241226-ORK,36
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-ZPR,36
-Scam/Fraud,Scams,Scam,TMT-20241116-RGI,35
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240730-RPC,35
-Scam/Fraud,Scams,Scam,TMT-20250101-JXM,34
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241112-JUL,32
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240306-PTG,32
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240501-GMC,31
-Malicious,E-skimming,E-Skimming,TMT-20241124-KTJ,31
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240503-MWB,30
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240102-VWR,30
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240117-HDP,30
-Malicious,Phishing,GhostCat - 3PC,TMT-20250116-FOD,29
-Scam/Fraud,Scams,Scam,TMT-20240930-JMO,28
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230919-GMW,28
-Malicious,Phishing,Redirector,TMT-20231210-EPT,27
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240430-CTU,26
-Scam/Fraud,Scams,Scam,TMT-20220515-ZUP,26
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230609-OEC,26
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20220215-TVC,25
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240430-OWY,24
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241023-WFN,24
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241221-CEG,24
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240206-JPV,24
-Malicious Landing Location,Phishing,Phishing Creative,TMT-20240706-XMS,22
-Scam/Fraud,Scams,Scam,TMT-20200110-UEQ,22
+Scam/Fraud,Scams,Scam,TMT-20241005-LOC,188
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241222-ERT,180
+Scam/Fraud,Scams,Scam,TMT-20240113-ZSK,133
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240415-AHQ,133
+Malicious,Phishing,Redirector,TMT-20250114-WUE,132
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240424-UAH,126
+Malicious,E-skimming,E-Skimming,TMT-20240929-AJP,114
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241217-HMO,112
+Scam/Fraud,Scams,Scam,TMT-20231127-KZO,110
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20231122-BCO,107
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240225-ACY,97
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241122-APT,96
+Malicious,Phishing,Phishing Domain,TMT-20170429-TC,95
+Malicious,Backdoor,Compromised Domain,TMT-20240822-OZX,89
+Scam/Fraud,Scams,Scam,TMT-20240209-LRC,87
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241217-MEF,81
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241030-CBU,80
+Scam/Fraud,Scams,Scam,TMT-20241116-RGI,79
+Scam/Fraud,Scams,Scam,TMT-20220515-ZUP,76
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230609-VMQ,73
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240312-OFU,67
+Scam/Fraud,Scams,Scam,TMT-20230922-XTE,65
+Scam/Fraud,Scams,Scam,TMT-20250109-CHS,63
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241220-IBO,62
+Malicious,Backdoor,SocGholish,TMT-20241207-HDQ,61
+Scam/Fraud,Scams,Scam,TMT-20240824-EBX,58
+Malicious,Backdoor,Compromised Domain,TMT-20240730-XZA,55
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230322-AUK,55
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240414-JMX,54
+Scam/Fraud,Scams,Scam,TMT-20230710-YDP,53
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240801-NZR,53
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-JSP,51
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-ZPR,46
+Scam/Fraud,Scams,Scam,TMT-20240125-EUI,46
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250105-VRQ,46
+Malicious,Phishing,GhostCat - 3PC,TMT-20250116-FOD,45
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241112-JUL,43
+Scam/Fraud,Scams,Scam,TMT-20240930-JMO,42
+Malicious,Backdoor,Compromised Domain,TMT-20240901-GKC,42
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250101-AQJ,41
+Scam/Fraud,Scams,Scam,TMT-20240819-QKO,39
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240503-MWB,39
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240306-PTG,39
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240730-RPC,38
+Malicious,Phishing,Redirector,TMT-20231210-EPT,36
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241221-CEG,35
+Scam/Fraud,Scams,Scam,TMT-20200110-UEQ,35
+Malicious,Phishing,GhostCat - 3PC,TMT-20241226-ORK,35
+Scam/Fraud,Scams,Scam,TMT-20230711-MWE,33
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240102-VWR,31
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240206-JPV,30
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240117-HDP,29
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230609-OEC,28
+Malicious,E-skimming,E-Skimming,TMT-20241124-KTJ,27
+Scam/Fraud,Scams,Scam,TMT-20220602-BUX,27
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240319-BQH,24
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240430-OWY,23
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240102-KUH,23
+Scam/Fraud,Scams,Scam,TMT-20250101-JXM,23
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240921-SFG,23
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240430-CTU,22
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20220215-TVC,22
+Resolved,Phishing,Redirector,TMT-20240308-JDO,22
+Malicious,Backdoor,StringRipper - 3PC,TMT-20240924-XBP,22
 Malicious,Backdoor,MimicManager - 3PC,TMT-20230612-RPO,22
-Scam/Fraud,Scams,Scam,TMT-20240819-QKO,22
-Scam/Fraud,Scams,Scam,TMT-20240727-PLI,20
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240319-BQH,19
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241222-RDQ,20
+Malicious,E-skimming,E-Skimming,TMT-20240708-BFD,20
 Malicious,Backdoor,SocGholish,TMT-20240924-EYU,19
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240102-KUH,18
-Malicious,Phishing,GhostCat - 3PC,TMT-20240705-LPW,18
-Scam/Fraud,Scams,Scam,TMT-20241117-WJB,18
-Scam/Fraud,Scams,Scam,TMT-20240221-PRO,17
-Malicious,E-skimming,E-Skimming,TMT-20240708-BFD,17
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240917-CFU,16
-Scam/Fraud,Scams,Scam,TMT-20231106-FGI,16
-Scam/Fraud,Scams,Scam,TMT-20240531-NBF,16
+Malicious,Phishing,GhostCat - 3PC,TMT-20240705-LPW,19
+Malicious,Phishing,Redirector,TMT-20230206-UGV,18
+Malicious Landing Location,Phishing,Phishing Creative,TMT-20240706-XMS,18
+Scam/Fraud,Scams,Scam,TMT-20240531-NBF,18
+Malicious,Backdoor,Compromised Domain,TMT-20250115-ZPL,18
+Scam/Fraud,Scams,Scam,TMT-20240221-PRO,18
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240501-GMC,17
+Malicious,E-skimming,E-Skimming,TMT-20250102-UTG,17
+Malicious,Backdoor,SocGholish,TMT-20250116-OFZ,17
 Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250113-PYK,16
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240921-SFG,16
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241222-RDQ,15
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240917-CFU,16
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240327-YFH,15
+Scam/Fraud,Scams,Scam,TMT-20240727-PLI,15
 Malicious,Phishing,GhostCat - 3PC,TMT-20250114-JQY,15
-Resolved,Backdoor,SocGholish,TMT-20241124-AFB,14
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240327-YFH,14
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240202-WNB,14
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20220923-HGA,14
-Malicious,Backdoor,StringRipper - 3PC,TMT-20240924-XBP,14
-Malicious Landing Location,Backdoor,Scareware Creative,TMT-20240923-RBS,14
-Resolved,Backdoor,Dolos-3PC,TMT-20250116-WPR,13
-Malicious,Backdoor,PUP,TMT-20240805-VTQ,13
+Scam/Fraud,Scams,Scam,TMT-20250110-FIL,14
+Scam/Fraud,Scams,Scam,TMT-20250115-SZP,14
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20230526-YBL,14
+Scam/Fraud,Scams,Scam,TMT-20231106-FGI,14
+Scam/Fraud,Scams,Scam,TMT-20220331-TWD,14
+Scam/Fraud,Scams,Scam,TMT-20241117-WJB,14
+Malicious Landing Location,Backdoor,Scareware Creative,TMT-20240923-RBS,13
 Malicious,Phishing,GhostCat - 3PC,TMT-20240913-MBV,13
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241023-WFN,13
+Resolved,Backdoor,Dolos-3PC,TMT-20250116-WPR,13
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230919-GMW,13
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240202-WNB,13
 Malicious,Backdoor,Compromised Domain,TMT-20240825-YTV,12
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240822-MUP,12
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-OVU,12
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240911-FUP,12
-Malicious,E-skimming,E-Skimming,TMT-20250102-UTG,12
-Scam/Fraud,Scams,Scam,TMT-20240106-NYL,12
-Malicious,Phishing,Phishing Domain,TMT-20241215-TXS,12
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-IDY,12
-Scam/Fraud,Scams,Scam,TMT-20250115-SZP,12
-Malicious,Phishing,Redirector,TMT-20241230-QPE,12
-Malicious,Phishing,Redirector,TMT-20231120-TYJ,11
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20220324-GQE,11
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240704-JMY,11
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20230526-YBL,10
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240811-LOE,10
-Scam/Fraud,Scams,Scam,TMT-20250107-PRF,10
-Malicious,Backdoor,Compromised Domain,TMT-20250115-ZPL,10
-Scam/Fraud,Scams,Scam,TMT-20201225-NJK,10
+Resolved,Backdoor,SocGholish,TMT-20241124-AFB,12
+Malicious,Phishing,Redirector,TMT-20231120-TYJ,12
+Malicious,Phishing,Redirector,TMT-20241009-WFD,11
+Scam/Fraud,Scams,Scam,TMT-20250107-PRF,11
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241022-WNK,11
+Malicious,Phishing,Redirector,TMT-20200320-NZC,11
+Malicious,Phishing,Redirector,TMT-20241230-QPE,11
+Malicious,E-skimming,E-Skimming,TMT-20241230-TED,10
 Scam/Fraud,Scams,Scam,TMT-20210805-GJI,10
-Malicious,Backdoor,SocGholish,TMT-20241209-HMG,9
-Malicious,Phishing,Redirector,TMT-20200320-NZC,9
-Malicious,E-skimming,E-Skimming,TMT-20241116-ZYX,9
-Scam/Fraud,Scams,Scam,TMT-20220906-JPE,9
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-NET,9
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241022-WNK,9
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231121-FXD,10
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-OVU,10
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240822-MUP,10
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240919-JQZ,10
+Malicious,Phishing,Redirector,TMT-20241224-ALJ,10
+Malicious,Phishing,Redirector,TMT-20240527-ZGH,10
+Malicious,Backdoor,PUP,TMT-20241217-JKZ,10
+Malicious,E-skimming,E-Skimming,TMT-20241028-ZNT,10
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240810-QEL,10
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230726-FYT,9
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240911-FUP,9
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-IDY,9
+Scam/Fraud,Scams,Scam,TMT-20240625-ZMV,9
+Scam/Fraud,Scams,Scam,TMT-20201225-NJK,9
+Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20241004-RWE,9
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231127-RWS,9
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20220324-GQE,9
 Malicious,Phishing,Redirector,TMT-20240918-AEQ,9
-Malicious,Phishing,Redirector,TMT-20240527-ZGH,9
-Malicious,Phishing,Redirector,TMT-20230206-UGV,9
-Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20241004-RWE,8
-Scam/Fraud,Scams,Scam,TMT-20250110-FIL,8
+Malicious,Backdoor,PUP,TMT-20240805-VTQ,8
 Scam/Fraud,Scams,Scam,TMT-20250107-LIH,8
-Malicious,Phishing,Redirector,TMT-20241224-ALJ,8
-Malicious,Phishing,Redirector,TMT-20240119-HSK,8
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231127-RWS,8
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240504-TUN,8
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-NET,8
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20230817-WAB,8
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241219-TKM,8
 Malicious,Phishing,GhostCat - 3PC,TMT-20250112-BPJ,8
-Malicious,E-skimming,E-Skimming,TMT-20241028-ZNT,8
-Malicious,Backdoor,SocGholish,TMT-20250116-OFZ,8
-Malicious,Phishing,Redirector,TMT-20241009-WFD,7
-Malicious,Phishing,GhostCat - 3PC,TMT-20250110-LYS,7
-Scam/Fraud,Scams,Scam,TMT-20230726-MPA,7
-Scam/Fraud,Scams,Scam,TMT-20240625-ZMV,7
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20230817-WAB,7
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240922-ANE,7
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241218-GSX,7
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230726-FYT,7
-Malicious,Backdoor,Compromised Domain,TMT-20250114-PSU,6
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240919-JQZ,6
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240322-ZYW,6
-Malicious,Phishing,Redirector,TMT-20200423-UGD,6
+Scam/Fraud,Scams,Scam,TMT-20240112-YCP,8
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240504-TUN,8
+Malicious,Backdoor,Compromised Domain,TMT-20250118-TKF,8
+Malicious,Backdoor,Compromised Domain,TMT-20250114-PSU,8
+Malicious,Backdoor,Compromised Domain,TMT-20250103-NZY,7
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20220923-HGA,7
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240811-LOE,7
+Malicious,Backdoor,SocGholish,TMT-20241209-HMG,7
+Scam/Fraud,Scams,Scam,TMT-20240106-NYL,7
+Malicious,Phishing,Redirector,TMT-20200423-UGD,7
+Malicious,Phishing,Phishing Domain,TMT-20241215-TXS,7
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240906-NGM,7
+Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20220815-HVB,7
+Scam/Fraud,Scams,Scam,TMT-20240314-DAZ,7
+Malicious,Phishing,Redirector,TMT-20240119-HSK,6
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240827-VTK,6
+Malicious,Backdoor,SocGholish,TMT-20241205-ZEK,6
+Malicious,Backdoor,APK,TMT-20250117-PHV,6
+Scam/Fraud,Scams,Scam,TMT-20250110-SHC,6
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231121-GUM,6
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240102-UDX,6
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241217-KMA,6
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241110-HVF,6
 Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240915-OCT,6
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241107-KSY,5
-Scam/Fraud,Scams,Scam,TMT-20241121-ZVO,5
-Malicious,Backdoor,Compromised Domain,TMT-20250103-NZY,5
-Scam/Fraud,Scams,Scam,TMT-20241217-TKR,5
-Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20220815-HVB,5
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240704-JMY,5
 Malicious,Backdoor,Compromised Domain,TMT-20250101-VKC,5
-Malicious,Backdoor,Compromised Domain,TMT-20240414-LEU,5
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240819-IYD,5
-Scam/Fraud,Scams,Scam,TMT-20200905-KNH,5
-Scam/Fraud,Scams,Scam,TMT-20240112-YCP,5
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241218-GSX,5
+Scam/Fraud,Scams,Scam,TMT-20241121-ZVO,5
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240924-ADR,5
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240922-ANE,5
+Scam/Fraud,Scams,Scam,TMT-20241217-TKR,5
 Malicious,Backdoor,SocGholish,TMT-20240831-TNI,5
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231121-FXD,5
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250110-HWG,4
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240306-PZB,4
+Scam/Fraud,Scams,Scam,TMT-20230726-MPA,5
+Scam/Fraud,Scams,Scam,TMT-20240301-AOV,5
+Scam/Fraud,Scams,Scam,TMT-20230802-BMX,5
+Malicious,Backdoor,SocGholish,TMT-20241014-TYK,5
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240820-FQP,4
 Scam/Fraud,Scams,Scam,TMT-20250110-DMI,4
-Scam/Fraud,Scams,Scam,TMT-20241223-JWH,4
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241110-HVF,4
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240322-ZYW,4
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250109-NPW,4
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240819-IYD,4
+Malicious,Phishing,Redirector,TMT-20240917-NET,4
 Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240416-KDI,4
-Scam/Fraud,Scams,Scam,TMT-20240507-ALX,4
-Resolved,E-skimming,E-Skimming,TMT-20250104-ETP,4
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241219-TKM,4
-Malicious,Phishing,Redirector,TMT-20241212-MIL,4
+Malicious,Phishing,GhostCat - 3PC,TMT-20250117-TRH,4
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241107-KSY,4
 Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240417-FIP,4
-Scam/Fraud,Scams,Scam,TMT-20220331-TWD,4
-Scam/Fraud,Scams,Scam,TMT-20240301-AOV,4
-Malicious,Backdoor,PUP,TMT-20240901-JES,4
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241101-TGN,4
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241220-WUJ,4
-Malicious,Backdoor,SocGholish,TMT-20241205-ZEK,4
-Scam/Fraud,Scams,Scam,TMT-20240809-XAL,4
-Scam/Fraud,Scams,Scam,TMT-20250110-SHC,3
-Scam/Fraud,Scams,Scam,TMT-20250109-ABJ,3
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250114-AZF,3
-Malicious,Backdoor,Compromised Domain,TMT-20250104-AJR,3
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240924-AEW,4
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240306-PZB,4
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240520-STP,4
+Malicious,Backdoor,Compromised Domain,TMT-20250114-UOW,4
+Scam/Fraud,Scams,Scam,TMT-20240507-ALX,4
+Malicious,Backdoor,Compromised Domain,TMT-20240906-JPE,4
+Scam/Fraud,Scams,Scam,TMT-20241223-JWH,4
+Scam/Fraud,Scams,Scam,TMT-20240404-KZH,4
+Malicious,Backdoor,SocGholish,TMT-20240517-YXS,4
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250116-NKT,3
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241220-WUJ,3
 Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20231103-ROL,3
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240604-CLM,3
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231210-XUL,3
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231121-GUM,3
-Malicious,E-skimming,E-Skimming,TMT-20250115-YUA,3
-Malicious,Phishing,Redirector,TMT-20241210-JQZ,3
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250114-AZF,3
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240917-AVJ,3
+Scam/Fraud,Scams,Scam,TMT-20240809-XAL,3
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240924-LZV,3
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20220922-RWD,3
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241101-TGN,3
 Malicious,Phishing,GhostCat - 3PC,TMT-20250113-JKC,3
-Malicious,Phishing,Fizzcore,TMT-20250115-DNJ,3
-Malicious,E-skimming,E-Skimming,TMT-20241230-TED,3
-Malicious,Phishing,GhostCat - 3PC,TMT-20241224-OLJ,3
-Malicious,Backdoor,SocGholish,TMT-20240517-YXS,3
-Malicious,Backdoor,Compromised Domain,TMT-20250114-UOW,3
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240319-FTH,3
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250110-MHA,3
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20250114-NGY,3
 Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20240313-KJV,3
+Malicious,E-skimming,E-Skimming,TMT-20241114-IUT,3
+Malicious,E-skimming,E-Skimming,TMT-20241116-ZYX,3
+Scam/Fraud,Scams,Scam,TMT-20200905-KNH,3
+Malicious,Backdoor,SocGholish,TMT-20241211-OSG,3
+Malicious,E-skimming,E-Skimming,TMT-20250115-YUA,3
+Malicious,Phishing,Fizzcore,TMT-20250115-DNJ,3
 Malicious,Phishing,GhostCat - 3PC,TMT-20240509-QSC,3
+Malicious,Phishing,GhostCat - 3PC,TMT-20241224-OLJ,3
 Malicious,Backdoor,PUP,TMT-20250102-YWB,3
-Scam/Fraud,Scams,Scam,TMT-20240806-LZG,3
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240906-NGM,3
-Scam/Fraud,Scams,Scam,TMT-20240411-DPL,2
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-TGQ,2
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250107-YFA,2
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240518-KYG,2
-Malicious,Scams,Scam,TMT-20250116-HXP,2
-Malicious,Backdoor,Compromised Domain,TMT-20240705-LWZ,2
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250110-RYZ,2
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240913-FBQ,2
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230908-DXA,2
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20231207-ANR,2
-Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20230113-KQX,2
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-UGE,2
-Malicious,Phishing,Redirector,TMT-20240804-YFM,2
-Malicious,Phishing,Redirector,TMT-20240910-YVR,2
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241223-MTE,2
-Resolved,Backdoor,Compromised Domain,TMT-20241225-DMK,2
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240827-VTK,2
-Malicious,Phishing,Redirector,TMT-20220813-JMX,2
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-UBA,2
-Scam/Fraud,Scams,Scam,TMT-20240314-DAZ,2
-Malicious,Backdoor,Dolos-3PC,TMT-20241001-TPJ,2
-Malicious,Backdoor,Fake Software Update,TMT-20200618-NYL,2
+Scam/Fraud,Scams,Scam,TMT-20250109-ABJ,3
 Malicious,Backdoor,Scareware,TMT-20241008-YNK,2
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250116-NKT,2
-Out Of Browser Redirect,Ad Fraud,Ad Fraud,TMT-20241208-KON,2
-Out Of Browser Redirect,Ad Fraud,Ad Fraud,TMT-20240820-XQN,2
-Scam/Fraud,Scams,Scam,TMT-20250110-TDG,2
 Scam/Fraud,Scams,Scam,TMT-20241226-VQE,2
 Scam/Fraud,Scams,Scam,TMT-20241218-VRL,2
+Resolved,E-skimming,E-Skimming,TMT-20250104-ETP,2
+Malicious,Phishing,Redirector,TMT-20200520-QBZ,2
+Malicious,Phishing,Redirector,TMT-20240627-NGT,2
+Resolved,Backdoor,Compromised Domain,TMT-20241225-DMK,2
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-UGE,2
+Malicious,Phishing,GhostCat - 3PC,TMT-20250116-AYQ,2
+Malicious,Phishing,Redirector,TMT-20240804-YFM,2
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240501-FED,2
+Malicious,Phishing,Redirector,TMT-20241210-JQZ,2
+Malicious,Scams,Scam,TMT-20250116-HXP,2
+Malicious,Phishing,Redirector,TMT-20240910-YVR,2
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250111-FTA,2
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240604-CLM,2
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20231207-ANR,2
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250117-DKN,2
 Malicious,Backdoor,Compromised Domain,TMT-20241205-GKL,2
-Scam/Fraud,Scams,Scam,TMT-20241121-TGE,2
+Scam/Fraud,Scams,Scam,TMT-20250110-TDG,2
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250111-OAF,2
 Malicious,E-skimming,E-Skimming,TMT-20240525-CVP,2
-Scam/Fraud,Scams,Scam,TMT-20230802-BMX,2
 Malicious,Backdoor,StringRipper - 3PC,TMT-20240928-TIM,2
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20220922-RWD,2
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240125-XGW,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240123-KGA,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240514-VFM,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250114-RMJ,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20231128-LKV,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240520-STP,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240706-CES,1
-Malicious Landing Location,Phishing,Fizzcore,TMT-20250115-GHT,1
-Scam/Fraud,Scams,Scam,TMT-20250102-IAT,1
-Malicious,Backdoor,Compromised Domain,TMT-20241228-JKA,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240728-TZW,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240808-PXJ,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241215-ZJT,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230830-WSI,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230909-NPL,1
-Malicious,Backdoor,Compromised Domain,TMT-20241111-FYG,1
-Malicious,Backdoor,Compromised Domain,TMT-20240606-ORT,1
-Malicious,Backdoor,Compromised Domain,TMT-20240808-GRX,1
-Malicious,Backdoor,Compromised Domain,TMT-20240822-YVW,1
-Malicious,Backdoor,Compromised Domain,TMT-20240103-WKX,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250109-VXO,2
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250107-YFA,2
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241223-MTE,2
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250116-IPJ,2
+Malicious,Backdoor,Dolos-3PC,TMT-20241001-TPJ,2
+Malicious,Phishing,GhostCat - 3PC,TMT-20250110-POX,2
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20231210-XUL,2
+Malicious,Phishing,Redirector,TMT-20220813-JMX,2
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250117-BSF,1
 Malicious Landing Location,Backdoor,Scareware Creative,TMT-20250116-RGO,1
-Malicious Landing Location,Backdoor,Dolos-3PC,TMT-20241001-YBM,1
-Malicious Landing Location,Phishing,Phishing Creative,TMT-20240711-TIY,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20231209-ZNH,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20171025-VYD,1
-Malicious,Phishing,Redirector,TMT-20250116-ADP,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240924-LZV,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240924-AEW,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241224-XLO,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250104-LIX,1
-Malicious,Phishing,GhostCat - 3PC,TMT-20250116-AYQ,1
-Malicious,Phishing,Redirector,TMT-20190223-OQM,1
-Malicious,Phishing,GhostCat - 3PC,TMT-20250107-YBT,1
-Resolved,Backdoor,Compromised Domain,TMT-20241224-TDX,1
-Malicious,Phishing,Redirector,TMT-20210520-WEZ,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241129-OIY,1
-Malicious,Phishing,Redirector,TMT-20210313-BOC,1
-Resolved,Scams,Scam,TMT-20240917-GOW,1
-Malicious,Phishing,Redirector,TMT-20241115-TDX,1
-Malicious,Phishing,Redirector,TMT-20241204-PHN,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241002-ULJ,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241206-KIA,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230331-BYR,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20221212-VZC,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20250114-NGY,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20250114-RKZ,1
-Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230210-YFK,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240820-DAS,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240820-FQP,1
-Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240909-WTC,1
-Resolved,E-skimming,E-Skimming,TMT-20250103-YJP,1
-Malicious,Phishing,Redirector,TMT-20240627-NGT,1
-Malicious,Phishing,Redirector,TMT-20240124-LYT,1
-Malicious,Phishing,Redirector,TMT-20241029-OEH,1
-Malicious,Phishing,GhostCat - 3PC,TMT-20240723-XKR,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250109-NPW,1
-Malicious,Backdoor,SocGholish,TMT-20241125-XSV,1
-Malicious,Backdoor,SocGholish,TMT-20241014-TYK,1
-Malicious,Backdoor,SocGholish,TMT-20240918-KGV,1
-Scam/Fraud,Scams,Scam,TMT-20210309-KCP,1
-Scam/Fraud,Scams,Scam,TMT-20210828-HDL,1
-Scam/Fraud,Scams,Scam,TMT-20210503-RZY,1
-Scam/Fraud,Scams,Scam,TMT-20211011-JFA,1
-Scam/Fraud,Scams,Scam,TMT-20230710-WBY,1
-Scam/Fraud,Scams,Scam,TMT-20201111-UVB,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250109-BVZ,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250108-EFN,1
-Malicious,Phishing,GhostCat - 3PC,TMT-20241021-AYE,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-OWI,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-XWU,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250111-OAF,1
-Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250114-DXL,1
-Malicious,Phishing,GhostCat - 3PC,TMT-20240619-UYS,1
-Malicious,Backdoor,MudOrange-3PC,TMT-20240606-UMA,1
-Scam/Fraud,Scams,Scam,TMT-20240325-IGS,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250117-ENT,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250117-GKQ,1
 Malicious,Backdoor,Compromised Domain,TMT-20250107-QVJ,1
-Scam/Fraud,Scams,Scam,TMT-20231211-VHI,1
-Malicious,E-skimming,E-Skimming,TMT-20240626-GTF,1
-Scam/Fraud,Scams,Scam,TMT-20240201-VUZ,1
-Scam/Fraud,Scams,Scam,TMT-20240202-ITU,1
-Malicious,Backdoor,Scareware,TMT-20250116-EAV,1
-Malicious,Backdoor,MudOrange-3PC,TMT-20250114-HMD,1
-Malicious,Backdoor,PUP,TMT-20241126-AZQ,1
-Malicious,Backdoor,PUP,TMT-20241217-JKZ,1
+Scam/Fraud,Scams,Scam,TMT-20250117-ABO,1
+Malicious,Ad Fraud,Ad Fraud,TMT-20220324-FYR,1
+Scam/Fraud,Scams,Scam,TMT-20240821-NZB,1
 Scam/Fraud,Scams,Scam,TMT-20240707-GCV,1
 Scam/Fraud,Scams,Scam,TMT-20240531-HTL,1
-Scam/Fraud,Scams,Scam,TMT-20240821-NZB,1
 Malicious,Ad Fraud,Vidlox- 3PC,TMT-20230712-GMH,1
+Malicious,Backdoor,Dolos-3PC,TMT-20231126-DFX,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241216-VNA,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20241105-RGI,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230830-WSI,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250114-RMJ,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250110-MHA,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240123-KGA,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240319-FTH,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240420-JBF,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240514-VFM,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240808-PXJ,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20240728-TZW,1
+Malicious Landing Location,Phishing,Phishing Creative,TMT-20240711-TIY,1
+Malicious,Phishing,Redirector,TMT-20241212-MIL,1
+Out Of Browser Redirect,Ad Fraud,Ad Fraud,TMT-20240820-XQN,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20231128-LKV,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20250118-SPE,1
+Malicious Landing Location,Backdoor,Dolos-3PC,TMT-20241001-YBM,1
+Malicious Landing Location,Backdoor,Scareware Creative,TMT-20241116-WBS,1
+Malicious,Phishing,Redirector,TMT-20240124-LYT,1
+Malicious,Phishing,Redirector,TMT-20210520-WEZ,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241129-OIY,1
+Malicious,Phishing,Redirector,TMT-20250116-ADP,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,DNE Domain,TMT-20230113-KQX,1
+Malicious - Indirect Evidence,Generic Malware/Suspicious,Heuristic Flag,TMT-20230511-UMP,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20241206-KIA,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240820-DAS,1
+Malicious Landing Location,Phishing,Fizzcore,TMT-20250115-GHT,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20250114-RKZ,1
+Malicious Landing Location,Backdoor,Scareware Creative,TMT-20250117-DIO,1
+Malicious,Phishing,Redirector,TMT-20241204-PHN,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect Android,TMT-20240706-CES,1
+Resolved,Backdoor,Compromised Domain,TMT-20241224-TDX,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241015-KUD,1
+Malicious,Phishing,Redirector,TMT-20210313-BOC,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20241002-ULJ,1
+Malicious,Phishing,Redirector,TMT-20190223-OQM,1
+Malicious,Phishing,Redirector,TMT-20241029-OEH,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-OWI,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-TGQ,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-UBA,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250110-XWU,1
+Malicious,Phishing,GhostCat - 3PC,TMT-20250117-CMY,1
+Malicious,Phishing,Phishing Domain,TMT-20240205-CBM,1
+Out Of Browser Redirect,Ad Fraud,App Store Redirect iOS,TMT-20240909-WTC,1
+Scam/Fraud,Scams,Scam,TMT-20211011-JFA,1
+Malicious,Phishing,GhostCat - 3PC,TMT-20240619-UYS,1
+Malicious,Phishing,GhostCat - 3PC,TMT-20240723-XKR,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20241224-XLO,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250108-EFN,1
+Malicious,Phishing,GhostCat - 3PC,TMT-20241021-AYE,1
+Malicious,Phishing,GhostCat - 3PC,TMT-20230904-NZG,1
+Scam/Fraud,Scams,Scam,TMT-20201111-UVB,1
+Malicious,Backdoor,Dolos-3PC,TMT-20250116-DNI,1
+Malicious,Backdoor,SocGholish,TMT-20250115-MDV,1
+Malicious,E-skimming,E-Skimming,TMT-20240626-GTF,1
+Scam/Fraud,Scams,Scam,TMT-20220928-AHO,1
+Scam/Fraud,Scams,Scam,TMT-20220906-JPE,1
+Scam/Fraud,Scams,Scam,TMT-20210503-RZY,1
+Scam/Fraud,Ad Fraud,Ad Fraud,TMT-20250114-DXL,1
+Scam/Fraud,Scams,Scam,TMT-20240202-ITU,1
+Scam/Fraud,Scams,Scam,TMT-20231211-VHI,1
+Malicious,Backdoor,SocGholish,TMT-20240918-KGV,1
+Malicious,Backdoor,SocGholish,TMT-20241125-XSV,1
+Scam/Fraud,Scams,Scam,TMT-20240325-IGS,1
+Malicious,Backdoor,PUP,TMT-20241126-AZQ,1
+Malicious,Backdoor,APK,TMT-20241106-KVD,1
+Malicious,Backdoor,MudOrange-3PC,TMT-20250114-HMD,1
+Malicious,Backdoor,Scareware,TMT-20250116-EAV,1
+Malicious,Backdoor,Compromised Domain,TMT-20240103-WKX,1

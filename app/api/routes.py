@@ -1,5 +1,5 @@
-from flask import Blueprint, Flask, jsonify, request
-from flask_cors import CORS
+# app/api/routes.py
+from flask import Blueprint, jsonify, request
 import json
 import os
 from datetime import datetime

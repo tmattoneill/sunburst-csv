@@ -26,7 +26,7 @@ COPY frontend/ .
 # Build the application (only for production) with debug output
 SHELL ["/bin/bash", "-c"]
 RUN echo "Building with NODE_ENV=$NODE_ENV" && \
-    if [[ "$NODE_ENV" = "production" ]]; then \
+    if [[ "$NODE_ENV" = "prod" ]]; then \
         echo "Starting production build..." && \
         npm run build || (echo "Build failed with exit code $?" && exit 1) \
     fi
@@ -37,6 +37,7 @@ FROM nginx:alpine AS production
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.${NODE_ENV}.conf /etc/nginx/nginx.conf
 
 # Create required directories and set permissions
 RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \
@@ -44,7 +45,7 @@ RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 777 /etc/nginx /usr/share/nginx/html
 
 # Expose the HTTP port
-EXPOSE 8080
+EXPOSE ${VUE_PORT}
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
@@ -63,7 +64,7 @@ RUN apk --no-cache add curl
 RUN echo 'module.exports = { \
   devServer: { \
     host: "0.0.0.0", \
-    port: 8080, \
+    port: parseInt(process.env.VUE_PORT || "8080"), \
     allowedHosts: "all", \
     client: { \
       webSocketURL: "auto://0.0.0.0:0/ws" \

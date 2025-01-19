@@ -3,20 +3,17 @@ from flask import Flask
 from flask_cors import CORS
 import os
 
+
 def create_app():
     app = Flask(__name__)
-    CORS(app)  # This applies CORS to all routes
+    CORS(app)
 
     app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
 
-    # Configure API base URL based on environment
-    if os.environ.get('FLASK_ENV') == 'production':
-        app.config['BASE_URL'] = '/dataviz/api'
-    else:
-        app.config['BASE_URL'] = ''
+    # Use a simple path prefix for development
+    app.config['BASE_URL'] = os.getenv('API_BASE_URL', '/api')
 
-    # Register routes
-    from .routes import bp  # Update this line
+    from .routes import bp
     app.register_blueprint(bp, url_prefix=app.config['BASE_URL'])
 
     return app
