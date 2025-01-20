@@ -20,7 +20,7 @@ services:
 #      - FLASK_ENV=development
 #      - API_BASE_URL=  # Empty in dev mode as per __init__.py
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${FLASK_PORT}${API_BASE_URL}/health"]
+      test: ["CMD", "curl", "-f", "${VUE_APP_API_BASE_URL}${API_BASE_URL}/health"]
       interval: 5s
       timeout: 10s
       retries: 3
@@ -33,7 +33,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - default
+      - app-network
     restart: unless-stopped
 
   frontend:
@@ -60,7 +60,7 @@ services:
           memory: 512M
           cpus: '0.5'
     networks:
-      - default
+      - app-network
     env_file:
       - .env.dev
     environment:
@@ -71,7 +71,7 @@ services:
         condition: service_healthy
 
 networks:
-  default:
+  app-network:
     driver: bridge
     driver_opts:
       com.docker.network.driver.mtu: 1450

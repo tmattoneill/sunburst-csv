@@ -8,6 +8,8 @@ ENV NODE_ENV=${NODE_ENV}
 ARG VUE_APP_API_BASE_URL
 ENV VUE_APP_API_BASE_URL=${VUE_APP_API_BASE_URL}
 
+RUN echo "Debug: NODE_ENV=${NODE_ENV}"
+
 # Set working directory
 WORKDIR /app
 
@@ -25,6 +27,7 @@ COPY frontend/ .
 
 # Build the application (only for production) with debug output
 SHELL ["/bin/bash", "-c"]
+
 RUN echo "Building with NODE_ENV=$NODE_ENV" && \
     if [[ "$NODE_ENV" = "prod" ]]; then \
         echo "Starting production build..." && \
