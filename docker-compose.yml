@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.python
-#      args:
-#        - NODE_ENV=development
+      args:
+        NODE_ENV: "${NODE_ENV}"
     container_name: python-backend-dev
     ports:
       - "${FLASK_PORT}:${FLASK_PORT}"
@@ -16,9 +16,6 @@ services:
       - ./app:/app  # Keep for development hot-reloading
     env_file:
       - .env.dev
-#    environment:
-#      - FLASK_ENV=development
-#      - API_BASE_URL=  # Empty in dev mode as per __init__.py
     healthcheck:
       test: ["CMD", "curl", "-f", "${VUE_APP_API_BASE_URL}${API_BASE_URL}/health"]
       interval: 5s
@@ -40,9 +37,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.vue
-#      args:
-#        - NODE_ENV=development
-#        - VUE_APP_API_BASE_URL=${VUE_APP_API_BASE_URL}
+      args:
+        NODE_ENV: "${NODE_ENV}"
     container_name: vue-frontend-dev
     ports:
       - "${VUE_PORT}:${VUE_PORT}"
