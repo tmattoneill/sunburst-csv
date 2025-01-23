@@ -1,42 +1,47 @@
 # Use a lightweight Python image
 FROM python:3.9-slim
 
-# Set environment variables
+# Imported from docker-compose file (!must match)
+ARG APP_USERNAME
+ARG DATA_PATH
+ARG APP_PATH
+ARG UPLOAD_DIR
+
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONPATH=/app \
-    DATA_DIR=/data
+    PYTHONPATH=${APP_PATH} \
+    DATA_DIR=${DATA_PATH}
 
 # Set the working directory
-WORKDIR /app
+WORKDIR ${APP_PATH}
 
 # Install necessary system dependencies including curl
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl && \
+    apt-get install -y --no-install-recommends bash curl && \
     rm -rf /var/lib/apt/lists/*
 
 # Create a user and group
-RUN groupadd -g 1000 sunburst && \
-    useradd -m -u 1000 -g sunburst -s /bin/bash sunburst
+RUN groupadd -g 1000 ${APP_USERNAME} && \
+    useradd -m -u 1000 -g ${APP_USERNAME} -s /bin/bash ${APP_USERNAME}
 
 # Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Create the data directory and set permissions
-RUN mkdir -p /data/raw && \
-    chown -R sunburst:sunburst /data && \
-    chmod -R 755 /data
+RUN mkdir -p ${UPLOAD_DIR} && \
+    chown -R ${APP_USERNAME}:${APP_USERNAME} ${DATA_DIR} && \
+    chmod -R 755 ${DATA_PATH}
 
 # Copy the application code
-COPY ./app /app
-RUN chown -R sunburst:sunburst /app
+COPY ./app ${APP_PATH}
+RUN chown -R ${APP_USERNAME}:${APP_USERNAME} ${APP_PATH}
 
 # Expose the port Gunicorn will listen on
 EXPOSE ${FLASK_PORT}
 
 # Switch to non-root user
-USER sunburst
+USER ${APP_USERNAME}
 
 # Start the Gunicorn server with the app factory
-CMD gunicorn --bind 0.0.0.0:${FLASK_PORT} "api:create_app()"
+CMD gunicorn --bind ${HOST}:${FLASK_PORT} "api:create_app()"

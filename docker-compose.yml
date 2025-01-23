@@ -7,26 +7,29 @@ services:
       context: .
       dockerfile: Dockerfile.python
       args:
-        NODE_ENV: "${NODE_ENV}"
-    container_name: python-backend-dev
+        APP_USERNAME: "${APP_USERNAME}"
+        DATA_PATH: "${DATA_PATH}"
+        APP_PATH: "${APP_PATH}"
+        UPLOAD_DIR: "${UPLOAD_DIR}"
+    container_name: python-backend
     ports:
       - "${FLASK_PORT}:${FLASK_PORT}"
     volumes:
       - ./data:/data
-      - ./app:/app  # Keep for development hot-reloading
+      - ./app:/app  # Keep for development hot-reloading; remove in prod
     env_file:
-      - .env.dev
+      - .env
     healthcheck:
       test: ["CMD", "curl", "-f", "${VUE_APP_API_BASE_URL}${API_BASE_URL}/health"]
-      interval: 5s
-      timeout: 10s
+      interval: 3s
+      timeout: 5s
       retries: 3
     deploy:
       resources:
         limits:
           memory: 1G
           cpus: '0.75'
-    user: ${APP_USERNAME:-sunburst}
+    user: ${APP_USERNAME}:${APP_USERNAME}
     security_opt:
       - no-new-privileges:true
     networks:
@@ -39,7 +42,7 @@ services:
       dockerfile: Dockerfile.vue
       args:
         NODE_ENV: "${NODE_ENV}"
-    container_name: vue-frontend-dev
+    container_name: vue-frontend
     ports:
       - "${VUE_PORT}:${VUE_PORT}"
     volumes:
@@ -47,8 +50,8 @@ services:
       - /app/node_modules  # Keep for development dependencies
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:${VUE_PORT}"]
-      interval: 30s
-      timeout: 10s
+      interval: 3s
+      timeout: 5s
       retries: 3
     deploy:
       resources:
@@ -58,7 +61,7 @@ services:
     networks:
       - app-network
     env_file:
-      - .env.dev
+      - .env
     environment:
       - HOST=0.0.0.0
     command: npm run serve
