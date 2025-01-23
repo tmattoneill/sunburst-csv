@@ -104,7 +104,7 @@ const uploadFileAndProcess = async () => {
 
   try {
     // Upload file
-    const response = await fetch("http://localhost:5001/api/upload", {
+    const response = await fetch("http://localhost:6500/api/upload", {
       method: "POST",
       body: formData,
     });
@@ -114,7 +114,7 @@ const uploadFileAndProcess = async () => {
       uploadStatus.value = "File uploaded successfully! Running report...";
 
       // Process report
-      const processResponse = await fetch("http://localhost:5001/api/process", {
+      const processResponse = await fetch("http://localhost:6500/api/process", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

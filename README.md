@@ -75,7 +75,7 @@ pip install -r requirements.txt
 python api.py
 ```
 
-The backend will run on http://localhost:5001
+The backend will run on http://localhost:6500/api
 
 ## Data Format
 

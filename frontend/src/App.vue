@@ -90,7 +90,7 @@ const handlePathNavigation = ({ segment, index }) => {
 
 const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:5001/api/data')
+    const response = await fetch('http://localhost:6500/api/data')
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
     }

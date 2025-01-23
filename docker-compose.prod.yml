@@ -48,8 +48,6 @@ services:
     container_name: vue-frontend.bd
     ports:
       - "${VUE_PORT}:8080"
-#    volumes:
-#      - ./frontend:/app
     healthcheck:
       test: ["CMD", "curl", "-f", "${VUE_APP_BASE_URL}:{VUE_PORT}"]
       interval: 3s

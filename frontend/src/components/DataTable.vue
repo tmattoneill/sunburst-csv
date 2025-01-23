@@ -153,7 +153,7 @@ const fetchData = async (page) => {
     }
 
     const response = await fetch(
-      `http://localhost:5001/api/table-data?${params.toString()}`  // (TODO) Note: This seems pretty klugey; maybe store as config (URL)
+      `http://localhost:6500/api/table-data?${params.toString()}`
     )
 
     if (!response.ok) {
@@ -175,7 +175,7 @@ const fetchData = async (page) => {
 
 const downloadCurrentView = async () => {
   try {
-    const response = await fetch('http://localhost:5001/api/table-data', {
+    const response = await fetch('http://localhost:6500/api/table-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

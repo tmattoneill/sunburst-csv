@@ -6,6 +6,9 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 from dataproc.report_processor import ReportProcessor
 from dataproc.db_handler import DatabaseHandler
+from dotenv import load_dotenv
+
+load_dotenv()
 
 bp = Blueprint('api', __name__)
 
@@ -123,4 +126,4 @@ def process_file():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=int(os.getenv('FLASK_PORT', 5001)))
+    app.run(debug=False, port=int(os.getenv('FLASK_PORT', 6500)))
