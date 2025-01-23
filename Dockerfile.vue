@@ -11,6 +11,8 @@ ARG VUE_PORT
 
 RUN echo "Build Mode: [NODE_ENV=${NODE_ENV}]"
 
+ENV APP_PATH=${APP_PATH}
+RUN echo "DEBUG: Adding WORKDIR ${APP_PATH}"
 WORKDIR ${APP_PATH}
 
 RUN apk --no-cache add curl bash
@@ -47,13 +49,3 @@ EXPOSE ${VUE_PORT}
 CMD ["nginx", "-g", "daemon off;"]
 
 ### -- END STAGE - PRODUCTION -- ###
-
-### STAGE 4: DEVELOPMENT STAGE
-FROM builder AS development
-
-EXPOSE ${VUE_PORT}
-
-# Install curl for healthcheck
-RUN apk --no-cache add curl
-
-CMD npm run build -- host ${HOST} --port ${VUE_PORT}

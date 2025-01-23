@@ -42,13 +42,16 @@ services:
       args:
         NODE_ENV: "${NODE_ENV}"
         HOST: "${HOST}"
+        BASE_URL: "${VUE_APP_BASE_URL}"
+        VUE_PORT: "${VUE_PORT}"
+        APP_PATH: "${APP_PATH}"
     container_name: vue-frontend.bd
     ports:
-      - "${VUE_PORT}:${VUE_PORT}"
-    volumes:
-      - ./frontend:/app
+      - "${VUE_PORT}:8080"
+#    volumes:
+#      - ./frontend:/app
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${VUE_PORT}"]
+      test: ["CMD", "curl", "-f", "${VUE_APP_BASE_URL}:{VUE_PORT}"]
       interval: 3s
       timeout: 5s
       retries: 3
