@@ -1,4 +1,4 @@
-# docker-compose.yml - Development
+# docker-compose.yml - Development (Serve)
 name: dataviz-dev
 
 services:
