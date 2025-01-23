@@ -1,31 +1,26 @@
 # Dockerfile.vue
-# Build stage
+
+### STAGE 1: BASE NODE BUILD ENVIRONMENT
 FROM node:18-alpine AS builder
 
-# Build args
 ARG NODE_ENV
-ENV NODE_ENV=${NODE_ENV}
+ARG APP_PATH
 ARG VUE_APP_API_BASE_URL
-ENV VUE_APP_API_BASE_URL=${VUE_APP_API_BASE_URL}
+ARG HOST
+ARG PORT
 
-RUN echo "Debug: NODE_ENV=${NODE_ENV}"
+RUN echo "Build Mode: [NODE_ENV=${NODE_ENV}]"
 
-# Set working directory
-WORKDIR /app
+WORKDIR ${APP_PATH}
 
 RUN apk --no-cache add curl bash
-
-# Copy package files from frontend directory
 COPY frontend/package*.json ./
-
-# Install dependencies including Vue CLI globally
 RUN npm install --no-cache --verbose && \
     npm install -g @vue/cli @vue/cli-service
 
-# Copy frontend source code
 COPY frontend/ .
 
-# Build the application (only for production) with debug output
+### STAGE 2: PRODUCTION STAGE
 SHELL ["/bin/bash", "-c"]
 
 RUN echo "Building with NODE_ENV=$NODE_ENV" && \
@@ -34,8 +29,7 @@ RUN echo "Building with NODE_ENV=$NODE_ENV" && \
         npm run build || (echo "Build failed with exit code $?" && exit 1) \
     fi
 
-
-# For production, use nginx to serve the built files
+### STAGE 3: PRODUCTION SERVED BY NGINX
 FROM nginx:alpine AS production
 
 # Copy built files from builder stage
@@ -53,10 +47,11 @@ EXPOSE ${VUE_PORT}
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
 
-# For development, use the builder stage directly
-# Development stage modifications
+### -- END STAGE - PRODUCTION -- ###
+
+### STAGE 4: DEVELOPMENT STAGE
 FROM builder AS development
-ENV HOST=0.0.0.0
+ENV HOST=${HOST}
 ENV PORT=${VUE_PORT}
 EXPOSE ${VUE_PORT}
 
@@ -66,11 +61,11 @@ RUN apk --no-cache add curl
 # Create vue.config.js to ensure proper dev server configuration
 RUN echo 'module.exports = { \
   devServer: { \
-    host: "0.0.0.0", \
-    port: parseInt(process.env.VUE_PORT || "8080"), \
+    host: "'${HOST:-0.0.0.0}'", \
+    port: parseInt(process.env.VUE_PORT || "'${PORT:-8080}'"), \
     allowedHosts: "all", \
     client: { \
-      webSocketURL: "auto://0.0.0.0:0/ws" \
+      webSocketURL: "auto://'${HOST:-0.0.0.0}':0/ws" \
     } \
   } \
 }' > vue.config.js

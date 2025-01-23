@@ -32,3 +32,5 @@ __pycache__/
 
 *.tar.gz
 *.sh
+
+*.csv

@@ -42,6 +42,7 @@ services:
       dockerfile: Dockerfile.vue
       args:
         NODE_ENV: "${NODE_ENV}"
+        HOST: "${HOST}"
     container_name: vue-frontend
     ports:
       - "${VUE_PORT}:${VUE_PORT}"
@@ -63,7 +64,7 @@ services:
     env_file:
       - .env
     environment:
-      - HOST=0.0.0.0
+      - HOST=${HOST}
     command: npm run serve
     depends_on:
       backend:
