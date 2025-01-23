@@ -58,7 +58,7 @@ fi
 # 2. Copy configuration files
 echo "Copying configuration files..."
 if [ "$DRY_RUN" = false ]; then
-    scp deploy.tar.gz docker-compose.yml docker-compose.prod.yml .env.prod nginx.prod.conf "$PROD_USER@$PROD_SERVER:$PROD_DIR/" || { echo "Failed to copy files"; exit 1; }
+    scp deploy.tar.gz docker-compose.yml docker-compose.* .env "$PROD_USER@$PROD_SERVER:$PROD_DIR/" || { echo "Failed to copy files"; exit 1; }
 else
     echo "[DRY RUN] Would copy files to $PROD_USER@$PROD_SERVER:$PROD_DIR/:"
     echo "  - deploy.tar.gz"
