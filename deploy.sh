@@ -29,7 +29,6 @@ check_branch() {
         log "ERROR: Not on $DEPLOY_BRANCH branch"
         exit 1
     fi
-    execute git pull origin $DEPLOY_BRANCH
 }
 
 create_deployment_package() {
@@ -45,7 +44,6 @@ copy_files() {
 tag_version() {
     VERSION=$(date +"%Y.%m.%d-%H%M")
     execute git tag "deploy-${VERSION}"
-    execute git push origin "deploy-${VERSION}"
 }
 
 cleanup() {
@@ -63,6 +61,7 @@ deploy_to_server() {
 
         # Backup with rotation
         MAX_BACKUPS=5
+        mkdir -p "${BACKUP_DIR}"
         backup_file="${BACKUP_DIR}/data-backup-$(date +%Y%m%d_%H%M%S).tar.xz"
         if [ -d "data" ]; then
             tar -cJf "${backup_file}" data/ || {
@@ -75,7 +74,7 @@ deploy_to_server() {
 
         # Load environment
         set -a
-        source .env.prod
+        source .env
         set +a
 
         # Extract and setup
@@ -85,9 +84,9 @@ deploy_to_server() {
 
         # Docker operations
         export BUILD_DATE=$(date +%Y%m%d_%H%M%S)
-        docker compose -f docker-compose.yml -f docker-compose.prod.yml down || true
-        docker compose -f docker-compose.yml -f docker-compose.prod.yml build --no-cache
-        docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+        docker compose -f docker-compose.yml down || true
+        docker compose -f docker-compose.yml build --no-cache
+        docker compose -f docker-compose.yml  up -d
 
         # Health check with timeout
         TIMEOUT=60
