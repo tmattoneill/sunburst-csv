@@ -1,12 +1,11 @@
 # Dockerfile.vue
+# Production use only; No conditional builds
 
 ### STAGE 1: BASE NODE BUILD ENVIRONMENT
 FROM node:18-alpine AS builder
 
 ARG NODE_ENV
 ARG APP_PATH
-ARG VUE_APP_API_BASE_URL
-ARG HOST
 ARG VUE_PORT
 
 RUN echo "Build Mode: [NODE_ENV=${NODE_ENV}]"

@@ -31,7 +31,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Create the data directory and set permissions
 RUN mkdir -p ${UPLOAD_DIR} && \
     chown -R ${APP_USERNAME}:${APP_USERNAME} ${DATA_DIR} && \
-    chmod -R 755 ${DATA_PATH}
+    chmod -R 755 ${DATA_DIR}
 
 # Copy the application code
 COPY ./app ${APP_PATH}

@@ -1,5 +1,5 @@
-# docker-compose.yml - Development (Serve)
-name: dataviz-dev
+# docker-compose.yml - Production (Build)
+name: dataviz-prod
 
 services:
   backend:
@@ -7,20 +7,23 @@ services:
       context: .
       dockerfile: Dockerfile.python
       args:
+        # Dockerfile Imports
         APP_USERNAME: "${APP_USERNAME}"
         DATA_PATH: "${DATA_PATH}"
         APP_PATH: "${APP_PATH}"
         UPLOAD_DIR: "${UPLOAD_DIR}"
-    container_name: python-backend
+        # Local variables for build
+        NETWORK_NAME: "${NETWORK_NAME}"
+        HEALTH_CHECK: "${HEALTH_CHECK}"
+    container_name: python-backend.bd
     ports:
       - "${FLASK_PORT}:${FLASK_PORT}"
     volumes:
-      - ./data:/data
-      - ./app:/app  # Keep for development hot-reloading; remove in prod
+      - ./data:${DATA_PATH}
     env_file:
       - .env
     healthcheck:
-      test: ["CMD", "curl", "-f", "${VUE_APP_API_BASE_URL}${API_BASE_URL}/health"]
+      test: ["CMD", "curl", "-f", "${VUE_APP_BASE_URL}:${FLASK_PORT}${API_BASE_URL}${HEALTH_CHECK}"]
       interval: 3s
       timeout: 5s
       retries: 3
@@ -33,7 +36,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - app-network
+      - ${NETWORK_NAME}
     restart: unless-stopped
 
   frontend:
@@ -41,16 +44,19 @@ services:
       context: .
       dockerfile: Dockerfile.vue
       args:
+        # Dockerfile imports
         NODE_ENV: "${NODE_ENV}"
+        APP_PATH: "${APP_PATH}"
         HOST: "${HOST}"
-    container_name: vue-frontend
+        VUE_PORT: "${VUE_PORT}"
+        # Local use for healthcheck
+        BASE_URL: "${VUE_APP_BASE_URL}"
+        NETWORK_NAME: "${NETWORK_NAME}"
+    container_name: vue-frontend.bd
     ports:
-      - "${VUE_PORT}:${VUE_PORT}"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules  # Keep for development dependencies
+      - "${VUE_PORT}:8080"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${VUE_PORT}"]
+      test: ["CMD", "curl", "-f", "${VUE_APP_BASE_URL}:${VUE_PORT}"]
       interval: 3s
       timeout: 5s
       retries: 3
@@ -60,12 +66,11 @@ services:
           memory: 512M
           cpus: '0.5'
     networks:
-      - app-network
+      - ${NETWORK_NAME}
     env_file:
       - .env
     environment:
       - HOST=${HOST}
-    command: npm run serve
     depends_on:
       backend:
         condition: service_healthy
