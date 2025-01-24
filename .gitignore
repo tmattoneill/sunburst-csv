@@ -34,4 +34,8 @@ __pycache__/
 *.tar.gz
 #*.sh
 
+# App Data Files
 *.csv
+data/dataset.csv
+data/security.db
+data/sunburst_data.json

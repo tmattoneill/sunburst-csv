@@ -1,55 +1,40 @@
 {
   "report_type": "Tag Summary Report",
-  "date_start": "Jan. 17, 2025",
-  "date_end": "Jan. 24, 2025",
+  "date_start": "Jan. 11, 2025",
+  "date_end": "Jan. 18, 2025",
   "data": {
-    "name": "werrwe",
-    "value": 11236.0,
+    "name": "zMaticoo",
+    "value": 10411.0,
     "children": [
       {
         "name": "Malicious",
-        "value": 4797.0,
+        "value": 4558.0,
         "children": [
           {
             "name": "Phishing",
-            "value": 4111.0,
+            "value": 3894.0,
             "children": [
               {
                 "name": "Phishing Domain",
-                "value": 3009.0,
+                "value": 2370.0,
                 "children": [
                   {
                     "name": "TMT-20240703-YMJ",
-                    "value": 2903.0,
+                    "value": 2276.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20170429-TC",
-                    "value": 92.0,
+                    "value": 86.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20241215-TXS",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240917-IKR",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241210-UNK",
-                    "value": 2.0,
+                    "value": 7.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240205-CBM",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241003-IMT",
                     "value": 1.0,
                     "children": []
                   }
@@ -57,46 +42,41 @@
               },
               {
                 "name": "GhostCat - 3PC",
-                "value": 838.0,
+                "value": 1283.0,
                 "children": [
                   {
                     "name": "TMT-20241213-LXJ",
-                    "value": 624.0,
+                    "value": 1124.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250120-MPV",
-                    "value": 73.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250118-DOG",
+                    "name": "TMT-20250116-FOD",
                     "value": 45.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20241226-ORK",
-                    "value": 24.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250120-BFJ",
-                    "value": 16.0,
+                    "value": 37.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240705-LPW",
+                    "value": 19.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-JQY",
                     "value": 15.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250116-FOD",
-                    "value": 8.0,
+                    "name": "TMT-20240913-MBV",
+                    "value": 13.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250120-GPJ",
-                    "value": 7.0,
+                    "name": "TMT-20250112-BPJ",
+                    "value": 8.0,
                     "children": []
                   },
                   {
@@ -105,8 +85,8 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20240509-QSC",
-                    "value": 4.0,
+                    "name": "TMT-20250113-JKC",
+                    "value": 3.0,
                     "children": []
                   },
                   {
@@ -115,27 +95,12 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20250113-JKC",
+                    "name": "TMT-20240509-QSC",
                     "value": 3.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240902-WCF",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230904-NZG",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-POX",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240913-MBV",
+                    "name": "TMT-20250116-AYQ",
                     "value": 2.0,
                     "children": []
                   },
@@ -145,7 +110,7 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20250117-XEG",
+                    "name": "TMT-20250110-POX",
                     "value": 1.0,
                     "children": []
                   },
@@ -155,7 +120,22 @@
                     "children": []
                   },
                   {
+                    "name": "TMT-20241021-AYE",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
                     "name": "TMT-20240723-XKR",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230904-NZG",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240619-UYS",
                     "value": 1.0,
                     "children": []
                   }
@@ -163,115 +143,130 @@
               },
               {
                 "name": "Redirector",
-                "value": 254.0,
+                "value": 238.0,
                 "children": [
                   {
                     "name": "TMT-20250114-WUE",
-                    "value": 65.0,
+                    "value": 93.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20231210-EPT",
-                    "value": 35.0,
+                    "value": 26.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20230206-UGV",
-                    "value": 29.0,
+                    "value": 14.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241009-WFD",
-                    "value": 20.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231120-TYJ",
+                    "name": "TMT-20241230-QPE",
                     "value": 13.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240917-NET",
-                    "value": 11.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240527-ZGH",
+                    "name": "TMT-20231120-TYJ",
                     "value": 11.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20200320-NZC",
-                    "value": 9.0,
+                    "value": 10.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240119-HSK",
-                    "value": 8.0,
+                    "name": "TMT-20240527-ZGH",
+                    "value": 10.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240918-AEQ",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20200423-UGD",
-                    "value": 6.0,
+                    "value": 9.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20241224-ALJ",
-                    "value": 5.0,
+                    "value": 8.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20210520-WEZ",
-                    "value": 5.0,
+                    "name": "TMT-20241009-WFD",
+                    "value": 8.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20190223-OQM",
-                    "value": 5.0,
+                    "name": "TMT-20200423-UGD",
+                    "value": 7.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241115-TDX",
+                    "name": "TMT-20240119-HSK",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240917-NET",
                     "value": 4.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20200520-QBZ",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241230-QPE",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240627-NGT",
+                    "name": "TMT-20241210-JQZ",
                     "value": 3.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241014-CQO",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240731-SRZ",
+                    "name": "TMT-20240910-YVR",
                     "value": 2.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250122-ACG",
+                    "name": "TMT-20240804-YFM",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220813-JMX",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20190223-OQM",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250122-REU",
+                    "name": "TMT-20200520-QBZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210313-BOC",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210520-WEZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240124-LYT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240627-NGT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241029-OEH",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241204-PHN",
                     "value": 1.0,
                     "children": []
                   },
@@ -281,17 +276,7 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20241014-CMS",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240910-YVR",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240804-YFM",
+                    "name": "TMT-20250116-ADP",
                     "value": 1.0,
                     "children": []
                   }
@@ -299,43 +284,77 @@
               },
               {
                 "name": "Fizzcore",
-                "value": 5.0,
+                "value": 3.0,
                 "children": [
                   {
                     "name": "TMT-20250115-DNJ",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "E-skimming",
+            "value": 189.0,
+            "children": [
+              {
+                "name": "E-Skimming",
+                "value": 189.0,
+                "children": [
+                  {
+                    "name": "TMT-20240929-AJP",
+                    "value": 94.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241124-KTJ",
+                    "value": 30.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240708-BFD",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250102-UTG",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241028-ZNT",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241230-TED",
                     "value": 5.0,
                     "children": []
-                  }
-                ]
-              },
-              {
-                "name": "Spoofing",
-                "value": 2.0,
-                "children": [
+                  },
                   {
-                    "name": "TMT-20250122-MRQ",
+                    "name": "TMT-20241116-ZYX",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241114-IUT",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-YUA",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240525-CVP",
                     "value": 2.0,
                     "children": []
-                  }
-                ]
-              },
-              {
-                "name": "CelebCore",
-                "value": 2.0,
-                "children": [
+                  },
                   {
-                    "name": "TMT-20250123-MXO",
-                    "value": 2.0,
-                    "children": []
-                  }
-                ]
-              },
-              {
-                "name": "StormMaize-3PC",
-                "value": 1.0,
-                "children": [
-                  {
-                    "name": "TMT-20240525-CIO",
+                    "name": "TMT-20240626-GTF",
                     "value": 1.0,
                     "children": []
                   }
@@ -345,40 +364,45 @@
           },
           {
             "name": "Backdoor",
-            "value": 405.0,
+            "value": 471.0,
             "children": [
               {
                 "name": "Compromised Domain",
-                "value": 214.0,
+                "value": 259.0,
                 "children": [
                   {
+                    "name": "TMT-20240730-XZA",
+                    "value": 81.0,
+                    "children": []
+                  },
+                  {
                     "name": "TMT-20240822-OZX",
-                    "value": 164.0,
+                    "value": 71.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240901-GKC",
+                    "value": 50.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20250115-ZPL",
-                    "value": 10.0,
+                    "value": 14.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240825-YTV",
+                    "value": 12.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-PSU",
+                    "value": 7.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20250103-NZY",
-                    "value": 9.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240906-JPE",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250101-VKC",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240730-XZA",
-                    "value": 4.0,
+                    "value": 6.0,
                     "children": []
                   },
                   {
@@ -387,42 +411,42 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20240901-GKC",
+                    "name": "TMT-20240414-LEU",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250104-AJR",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241205-GKL",
                     "value": 2.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250122-OLA",
+                    "name": "TMT-20250101-VKC",
                     "value": 2.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250120-JKN",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240625-GRF",
+                    "name": "TMT-20240103-WKX",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20230523-KRE",
+                    "name": "TMT-20240606-ORT",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240825-YTV",
+                    "name": "TMT-20240705-LWZ",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240628-KAL",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241223-NPI",
+                    "name": "TMT-20240808-GRX",
                     "value": 1.0,
                     "children": []
                   },
@@ -430,137 +454,123 @@
                     "name": "TMT-20250107-QVJ",
                     "value": 1.0,
                     "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SocGholish",
+                "value": 129.0,
+                "children": [
+                  {
+                    "name": "TMT-20241207-HDQ",
+                    "value": 62.0,
+                    "children": []
                   },
                   {
-                    "name": "TMT-20250121-QVE",
+                    "name": "TMT-20240924-EYU",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-OFZ",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241209-HMG",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241205-ZEK",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240831-TNI",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240517-YXS",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241014-TYK",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241211-OSG",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240918-KGV",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250118-AQK",
+                    "name": "TMT-20241125-XSV",
                     "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-MDV",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "MimicManager - 3PC",
+                "value": 22.0,
+                "children": [
+                  {
+                    "name": "TMT-20230612-RPO",
+                    "value": 22.0,
                     "children": []
                   }
                 ]
               },
               {
                 "name": "StringRipper - 3PC",
-                "value": 41.0,
+                "value": 23.0,
                 "children": [
                   {
                     "name": "TMT-20240924-XBP",
-                    "value": 37.0,
+                    "value": 21.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240928-TIM",
-                    "value": 4.0,
-                    "children": []
-                  }
-                ]
-              },
-              {
-                "name": "SocGholish",
-                "value": 96.0,
-                "children": [
-                  {
-                    "name": "TMT-20241207-HDQ",
-                    "value": 32.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250116-OFZ",
-                    "value": 10.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250123-FXH",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240517-YXS",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240831-TNI",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250120-PWV",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240924-EYU",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241014-TYK",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250114-PSU",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241030-ZCK",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241125-XSV",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241209-HMG",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241205-ZEK",
                     "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250119-LNJ",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241119-UOZ",
-                    "value": 1.0,
                     "children": []
                   }
                 ]
               },
               {
                 "name": "PUP",
-                "value": 31.0,
+                "value": 26.0,
                 "children": [
                   {
-                    "name": "TMT-20241217-JKZ",
-                    "value": 18.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20210614-UXG",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
                     "name": "TMT-20240805-VTQ",
-                    "value": 2.0,
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-JKZ",
+                    "value": 7.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20250102-YWB",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240901-JES",
                     "value": 2.0,
                     "children": []
                   },
@@ -572,110 +582,49 @@
                 ]
               },
               {
-                "name": "Dolos-3PC",
-                "value": 12.0,
-                "children": [
-                  {
-                    "name": "TMT-20241001-TPJ",
-                    "value": 10.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250116-DNI",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231126-DFX",
-                    "value": 1.0,
-                    "children": []
-                  }
-                ]
-              },
-              {
                 "name": "APK",
-                "value": 10.0,
+                "value": 6.0,
                 "children": [
                   {
                     "name": "TMT-20250117-PHV",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241106-KVD",
-                    "value": 5.0,
+                    "value": 6.0,
                     "children": []
                   }
                 ]
               },
               {
-                "name": "Scareware Creative",
-                "value": 1.0,
+                "name": "Scareware",
+                "value": 3.0,
                 "children": [
                   {
-                    "name": "TMT-20250120-RBW",
+                    "name": "TMT-20241008-YNK",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-EAV",
                     "value": 1.0,
                     "children": []
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "name": "E-skimming",
-            "value": 242.0,
-            "children": [
+              },
               {
-                "name": "E-Skimming",
-                "value": 242.0,
+                "name": "Dolos-3PC",
+                "value": 2.0,
                 "children": [
                   {
-                    "name": "TMT-20240929-AJP",
-                    "value": 136.0,
+                    "name": "TMT-20241001-TPJ",
+                    "value": 2.0,
                     "children": []
-                  },
+                  }
+                ]
+              },
+              {
+                "name": "MudOrange-3PC",
+                "value": 1.0,
+                "children": [
                   {
-                    "name": "TMT-20241124-KTJ",
-                    "value": 43.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241028-ZNT",
-                    "value": 19.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240708-BFD",
-                    "value": 15.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241230-TED",
-                    "value": 14.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250102-UTG",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241116-ZYX",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250115-YUA",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240904-VCG",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240525-CVP",
+                    "name": "TMT-20250114-HMD",
                     "value": 1.0,
                     "children": []
                   }
@@ -685,20 +634,15 @@
           },
           {
             "name": "Scams",
-            "value": 34.0,
+            "value": 2.0,
             "children": [
               {
                 "name": "Scam",
-                "value": 34.0,
+                "value": 2.0,
                 "children": [
                   {
                     "name": "TMT-20250116-HXP",
-                    "value": 33.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220324-XJY",
-                    "value": 1.0,
+                    "value": 2.0,
                     "children": []
                   }
                 ]
@@ -707,19 +651,8 @@
           },
           {
             "name": "Ad Fraud",
-            "value": 5.0,
+            "value": 2.0,
             "children": [
-              {
-                "name": "Vidlox- 3PC",
-                "value": 4.0,
-                "children": [
-                  {
-                    "name": "TMT-20230712-GMH",
-                    "value": 4.0,
-                    "children": []
-                  }
-                ]
-              },
               {
                 "name": "Ad Fraud",
                 "value": 1.0,
@@ -730,457 +663,13 @@
                     "children": []
                   }
                 ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Scam/Fraud",
-        "value": 3156.0,
-        "children": [
-          {
-            "name": "Ad Fraud",
-            "value": 1548.0,
-            "children": [
+              },
               {
-                "name": "Ad Fraud",
-                "value": 1548.0,
+                "name": "Vidlox- 3PC",
+                "value": 1.0,
                 "children": [
                   {
-                    "name": "TMT-20240429-OMT",
-                    "value": 610.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-RJC",
-                    "value": 378.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230526-YBL",
-                    "value": 100.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241217-MEF",
-                    "value": 98.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241222-ERT",
-                    "value": 83.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240730-RPC",
-                    "value": 45.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240102-VWR",
-                    "value": 44.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240430-OWY",
-                    "value": 27.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240430-CTU",
-                    "value": 26.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241220-IBO",
-                    "value": 24.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240102-KUH",
-                    "value": 22.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241112-JUL",
-                    "value": 19.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250116-IPJ",
-                    "value": 9.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240102-UDX",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250111-OAF",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230817-WAB",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-IDY",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250109-NPW",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241222-RDQ",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240322-ZYW",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250109-DCH",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241219-TKM",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250109-BVZ",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250109-VXO",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250109-ESG",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250105-VRQ",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-NET",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20210319-FVM",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241021-PCB",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250111-HYR",
-                    "value": 1.0,
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Scams",
-            "value": 1608.0,
-            "children": [
-              {
-                "name": "Scam",
-                "value": 1608.0,
-                "children": [
-                  {
-                    "name": "TMT-20241005-LOC",
-                    "value": 252.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240113-ZSK",
-                    "value": 162.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241116-RGI",
-                    "value": 141.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231127-KZO",
-                    "value": 109.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220515-ZUP",
-                    "value": 90.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230710-YDP",
-                    "value": 78.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230922-XTE",
-                    "value": 78.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240621-NRZ",
-                    "value": 73.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20200110-UEQ",
-                    "value": 62.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240125-EUI",
-                    "value": 61.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240824-EBX",
-                    "value": 54.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240930-JMO",
-                    "value": 50.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240819-QKO",
-                    "value": 47.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220331-TWD",
-                    "value": 36.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220602-BUX",
-                    "value": 29.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240221-PRO",
-                    "value": 28.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240314-DAZ",
-                    "value": 22.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20210805-GJI",
-                    "value": 21.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-FIL",
-                    "value": 20.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241121-ZVO",
-                    "value": 20.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240202-ITU",
-                    "value": 18.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240319-NIB",
-                    "value": 16.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240531-NBF",
-                    "value": 14.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240106-NYL",
-                    "value": 10.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250115-SZP",
-                    "value": 10.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20201225-NJK",
-                    "value": 10.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240727-PLI",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241026-YUT",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250101-JXM",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-SHC",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230802-BMX",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240209-LRC",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240112-YCP",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241117-WJB",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240625-ZMV",
-                    "value": 5.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230604-XID",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250116-HWZ",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240404-KZH",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231106-FGI",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240207-NZR",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240507-ALX",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240301-AOV",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241226-VQE",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250107-PRF",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241223-EKC",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241001-ERS",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241027-PLU",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250110-TDG",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20210704-HOY",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220928-AHO",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230222-IMJ",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240620-FUP",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240731-HZK",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240925-XSU",
-                    "value": 1.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250122-QGL",
+                    "name": "TMT-20230712-GMH",
                     "value": 1.0,
                     "children": []
                   }
@@ -1192,299 +681,249 @@
       },
       {
         "name": "Malicious - Indirect Evidence",
-        "value": 1738.0,
+        "value": 1536.0,
         "children": [
           {
             "name": "Generic Malware/Suspicious",
-            "value": 1733.0,
+            "value": 1536.0,
             "children": [
               {
                 "name": "DNE Domain",
-                "value": 625.0,
+                "value": 712.0,
                 "children": [
                   {
                     "name": "TMT-20240625-TAM",
-                    "value": 600.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250123-UDR",
-                    "value": 13.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220815-HVB",
-                    "value": 9.0,
+                    "value": 696.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20241004-RWE",
-                    "value": 3.0,
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220815-HVB",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230113-KQX",
+                    "value": 2.0,
                     "children": []
                   }
                 ]
               },
               {
                 "name": "Heuristic Flag",
-                "value": 1108.0,
+                "value": 824.0,
                 "children": [
                   {
-                    "name": "TMT-20231122-BCO",
-                    "value": 231.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230609-VMQ",
-                    "value": 127.0,
+                    "name": "TMT-20241122-APT",
+                    "value": 108.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20241217-HMO",
-                    "value": 125.0,
+                    "value": 99.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250119-SMH",
-                    "value": 80.0,
+                    "name": "TMT-20231122-BCO",
+                    "value": 94.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240801-NZR",
-                    "value": 66.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240503-MWB",
-                    "value": 52.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230609-OEC",
-                    "value": 51.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240924-ADR",
-                    "value": 37.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230919-GMW",
-                    "value": 30.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250101-AQJ",
-                    "value": 30.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220215-TVC",
-                    "value": 25.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220823-ZHM",
-                    "value": 25.0,
+                    "name": "TMT-20230609-VMQ",
+                    "value": 57.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20230322-AUK",
-                    "value": 24.0,
+                    "value": 55.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240801-NZR",
+                    "value": 53.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240503-MWB",
+                    "value": 34.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250101-AQJ",
+                    "value": 31.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240117-HDP",
+                    "value": 30.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20241221-CEG",
-                    "value": 24.0,
+                    "value": 29.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220215-TVC",
+                    "value": 26.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230609-OEC",
+                    "value": 23.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240921-SFG",
-                    "value": 22.0,
+                    "value": 18.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250117-TRN",
-                    "value": 15.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240911-FUP",
-                    "value": 13.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240327-YFH",
-                    "value": 13.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240810-QEL",
-                    "value": 11.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240915-OCT",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241217-KMA",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240811-LOE",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250111-FTA",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250119-BGF",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231209-ZNH",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240917-AVJ",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230810-IBR",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241017-ALM",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230511-UMP",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231119-POK",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250118-SPE",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250117-DKN",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240919-JQZ",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230726-FYT",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241216-VNA",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240905-QXJ",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20230723-TXD",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240808-PXJ",
-                    "value": 2.0,
+                    "name": "TMT-20230919-GMW",
+                    "value": 17.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240917-CFU",
-                    "value": 2.0,
+                    "value": 16.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241204-KGU",
-                    "value": 2.0,
+                    "name": "TMT-20250113-PYK",
+                    "value": 16.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250117-ENT",
-                    "value": 2.0,
+                    "name": "TMT-20240327-YFH",
+                    "value": 15.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250117-BSF",
-                    "value": 2.0,
+                    "name": "TMT-20240704-JMY",
+                    "value": 9.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20231127-HME",
-                    "value": 1.0,
+                    "name": "TMT-20240911-FUP",
+                    "value": 9.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250119-NLF",
-                    "value": 1.0,
+                    "name": "TMT-20230726-FYT",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240919-JQZ",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240915-OCT",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240811-LOE",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241218-GSX",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-HWG",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240810-QEL",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231103-ROL",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241220-WUJ",
+                    "value": 3.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20250116-NKT",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-AZF",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-MHA",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-ADR",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240913-FBQ",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230909-NPL",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20250123-XBU",
+                    "name": "TMT-20230210-YFK",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20220204-YTC",
+                    "name": "TMT-20230511-UMP",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241105-RGI",
+                    "name": "TMT-20230830-WSI",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240919-MUF",
+                    "name": "TMT-20230908-DXA",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20231223-QXT",
+                    "name": "TMT-20240123-KGA",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20231210-EWU",
+                    "name": "TMT-20240125-XGW",
                     "value": 1.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240514-VFM",
+                    "name": "TMT-20241216-VNA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240319-FTH",
                     "value": 1.0,
                     "children": []
                   },
@@ -1494,7 +933,265 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20230908-DXA",
+                    "name": "TMT-20240514-VFM",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240728-TZW",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240808-PXJ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241215-ZJT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-KMA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250111-FTA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-RMJ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-BSF",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-DKN",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-ENT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-GKQ",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scam/Fraud",
+        "value": 3106.0,
+        "children": [
+          {
+            "name": "Ad Fraud",
+            "value": 1703.0,
+            "children": [
+              {
+                "name": "Ad Fraud",
+                "value": 1703.0,
+                "children": [
+                  {
+                    "name": "TMT-20240429-OMT",
+                    "value": 687.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-RJC",
+                    "value": 364.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241222-ERT",
+                    "value": 177.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-MEF",
+                    "value": 80.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241220-IBO",
+                    "value": 61.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250105-VRQ",
+                    "value": 58.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241112-JUL",
+                    "value": 37.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240730-RPC",
+                    "value": 33.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240102-VWR",
+                    "value": 29.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240430-CTU",
+                    "value": 25.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240102-KUH",
+                    "value": 23.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240430-OWY",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241222-RDQ",
+                    "value": 18.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230526-YBL",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220324-GQE",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-NET",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-IDY",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230817-WAB",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241219-TKM",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240322-ZYW",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240102-UDX",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-NPW",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240313-KJV",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-TGQ",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-YFA",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-UBA",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241223-MTE",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-UGE",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-OWI",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-DXL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-IPJ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-XWU",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250111-OAF",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-VXO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-BVZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241129-OIY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241224-XLO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250108-EFN",
                     "value": 1.0,
                     "children": []
                   }
@@ -1503,16 +1200,331 @@
             ]
           },
           {
-            "name": "Backdoor",
-            "value": 5.0,
+            "name": "Scams",
+            "value": 1403.0,
             "children": [
               {
-                "name": "APK",
-                "value": 5.0,
+                "name": "Scam",
+                "value": 1403.0,
                 "children": [
                   {
-                    "name": "TMT-20250123-YMC",
+                    "name": "TMT-20241005-LOC",
+                    "value": 162.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240113-ZSK",
+                    "value": 137.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240209-LRC",
+                    "value": 103.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-CHS",
+                    "value": 97.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231127-KZO",
+                    "value": 83.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230922-XTE",
+                    "value": 75.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220515-ZUP",
+                    "value": 71.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230710-YDP",
+                    "value": 57.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240824-EBX",
+                    "value": 55.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240125-EUI",
+                    "value": 54.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230711-MWE",
+                    "value": 52.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241116-RGI",
+                    "value": 44.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220602-BUX",
+                    "value": 33.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240819-QKO",
+                    "value": 32.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240930-JMO",
+                    "value": 28.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250101-JXM",
+                    "value": 27.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200110-UEQ",
+                    "value": 24.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231106-FGI",
+                    "value": 18.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240531-NBF",
+                    "value": 17.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241117-WJB",
+                    "value": 17.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240221-PRO",
+                    "value": 16.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240727-PLI",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-SZP",
+                    "value": 14.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-FIL",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-PRF",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210805-GJI",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240106-NYL",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220331-TWD",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20201225-NJK",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240625-ZMV",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240112-YCP",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-LIH",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230726-MPA",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-SHC",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-TKR",
                     "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241121-ZVO",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240301-AOV",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240314-DAZ",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200905-KNH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240404-KZH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-DMI",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240809-XAL",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240507-ALX",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241223-JWH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-ABJ",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230802-BMX",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-TDG",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241226-VQE",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241218-VRL",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231211-VHI",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230710-WBY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220928-AHO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220906-JPE",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20211011-JFA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210503-RZY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210828-HDL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240821-NZB",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240531-HTL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240202-ITU",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20201111-UVB",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240325-IGS",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240707-GCV",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240806-LZG",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-ABO",
+                    "value": 1.0,
                     "children": []
                   }
                 ]
@@ -1523,79 +1535,54 @@
       },
       {
         "name": "Out Of Browser Redirect",
-        "value": 1495.0,
+        "value": 1105.0,
         "children": [
           {
             "name": "Ad Fraud",
-            "value": 1495.0,
+            "value": 1105.0,
             "children": [
               {
                 "name": "App Store Redirect iOS",
-                "value": 922.0,
+                "value": 653.0,
                 "children": [
                   {
                     "name": "TMT-20240513-SQG",
-                    "value": 265.0,
+                    "value": 197.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240415-AHQ",
-                    "value": 168.0,
+                    "value": 117.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240414-JMX",
-                    "value": 66.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240416-ZPR",
-                    "value": 57.0,
+                    "value": 51.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240416-JSP",
-                    "value": 55.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20220922-RWD",
                     "value": 47.0,
                     "children": []
                   },
                   {
+                    "name": "TMT-20240416-ZPR",
+                    "value": 46.0,
+                    "children": []
+                  },
+                  {
                     "name": "TMT-20240306-PTG",
-                    "value": 38.0,
+                    "value": 36.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240206-JPV",
-                    "value": 33.0,
+                    "value": 27.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240319-BQH",
-                    "value": 32.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240501-FED",
-                    "value": 29.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240504-TUN",
-                    "value": 17.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20231127-RWS",
-                    "value": 14.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240416-OVU",
-                    "value": 14.0,
+                    "value": 22.0,
                     "children": []
                   },
                   {
@@ -1604,37 +1591,62 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20240822-MUP",
-                    "value": 13.0,
+                    "name": "TMT-20240416-OVU",
+                    "value": 12.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20231121-GUM",
+                    "name": "TMT-20231127-RWS",
                     "value": 10.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240416-KDI",
+                    "name": "TMT-20240822-MUP",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240504-TUN",
                     "value": 8.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20231121-FXD",
-                    "value": 7.0,
+                    "name": "TMT-20240922-ANE",
+                    "value": 6.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240906-NGM",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240820-DAS",
+                    "name": "TMT-20240819-IYD",
                     "value": 5.0,
                     "children": []
                   },
                   {
+                    "name": "TMT-20240906-NGM",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231121-FXD",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220922-RWD",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
                     "name": "TMT-20240417-FIP",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241107-KSY",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240416-KDI",
                     "value": 4.0,
                     "children": []
                   },
@@ -1649,27 +1661,37 @@
                     "children": []
                   },
                   {
-                    "name": "TMT-20231210-XUL",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240819-IYD",
+                    "name": "TMT-20231121-GUM",
                     "value": 3.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241107-KSY",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
                     "name": "TMT-20241101-TGN",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231210-XUL",
                     "value": 2.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241015-KUD",
+                    "name": "TMT-20240501-FED",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240820-DAS",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240909-WTC",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241002-ULJ",
                     "value": 1.0,
                     "children": []
                   }
@@ -1677,90 +1699,110 @@
               },
               {
                 "name": "App Store Redirect Android",
-                "value": 572.0,
+                "value": 449.0,
                 "children": [
                   {
                     "name": "TMT-20240424-UAH",
-                    "value": 255.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241030-CBU",
-                    "value": 102.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240312-OFU",
-                    "value": 78.0,
+                    "value": 124.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240225-ACY",
-                    "value": 66.0,
+                    "value": 93.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241022-WNK",
-                    "value": 17.0,
+                    "name": "TMT-20241030-CBU",
+                    "value": 76.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240202-WNB",
-                    "value": 9.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240924-LZV",
-                    "value": 7.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240924-AEW",
-                    "value": 6.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250114-NGY",
-                    "value": 5.0,
+                    "name": "TMT-20240312-OFU",
+                    "value": 68.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240501-GMC",
-                    "value": 5.0,
+                    "value": 23.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20240604-CLM",
-                    "value": 4.0,
+                    "name": "TMT-20240202-WNB",
+                    "value": 14.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20241110-HVF",
-                    "value": 4.0,
+                    "name": "TMT-20241022-WNK",
+                    "value": 11.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20220923-HGA",
-                    "value": 4.0,
+                    "value": 11.0,
                     "children": []
                   },
                   {
-                    "name": "TMT-20231128-LKV",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240520-STP",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240310-IEB",
-                    "value": 3.0,
+                    "name": "TMT-20241110-HVF",
+                    "value": 6.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20240306-PZB",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-NGY",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240604-CLM",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231207-ANR",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240518-KYG",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-AEW",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-LZV",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231128-LKV",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240520-STP",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240706-CES",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241206-KIA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-RKZ",
                     "value": 1.0,
                     "children": []
                   }
@@ -1768,10 +1810,104 @@
               },
               {
                 "name": "Ad Fraud",
-                "value": 1.0,
+                "value": 3.0,
                 "children": [
                   {
                     "name": "TMT-20240820-XQN",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241208-KON",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Resolved",
+        "value": 65.0,
+        "children": [
+          {
+            "name": "Phishing",
+            "value": 30.0,
+            "children": [
+              {
+                "name": "Redirector",
+                "value": 30.0,
+                "children": [
+                  {
+                    "name": "TMT-20240308-JDO",
+                    "value": 30.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Backdoor",
+            "value": 30.0,
+            "children": [
+              {
+                "name": "SocGholish",
+                "value": 14.0,
+                "children": [
+                  {
+                    "name": "TMT-20241124-AFB",
+                    "value": 14.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Dolos-3PC",
+                "value": 13.0,
+                "children": [
+                  {
+                    "name": "TMT-20250116-WPR",
+                    "value": 13.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Compromised Domain",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "TMT-20241225-DMK",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241224-TDX",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "E-skimming",
+            "value": 5.0,
+            "children": [
+              {
+                "name": "E-Skimming",
+                "value": 5.0,
+                "children": [
+                  {
+                    "name": "TMT-20250104-ETP",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250103-YJP",
                     "value": 1.0,
                     "children": []
                   }
@@ -1783,29 +1919,19 @@
       },
       {
         "name": "Malicious Landing Location",
-        "value": 28.0,
+        "value": 41.0,
         "children": [
           {
             "name": "Phishing",
-            "value": 18.0,
+            "value": 23.0,
             "children": [
               {
                 "name": "Phishing Creative",
-                "value": 17.0,
+                "value": 22.0,
                 "children": [
                   {
                     "name": "TMT-20240706-XMS",
-                    "value": 14.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240711-TIY",
-                    "value": 2.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20200131-FOL",
-                    "value": 1.0,
+                    "value": 22.0,
                     "children": []
                   }
                 ]
@@ -1825,24 +1951,24 @@
           },
           {
             "name": "Backdoor",
-            "value": 10.0,
+            "value": 18.0,
             "children": [
               {
                 "name": "Scareware Creative",
-                "value": 8.0,
+                "value": 17.0,
                 "children": [
                   {
                     "name": "TMT-20240923-RBS",
-                    "value": 4.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241116-WBS",
-                    "value": 3.0,
+                    "value": 15.0,
                     "children": []
                   },
                   {
                     "name": "TMT-20250117-DIO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-RGO",
                     "value": 1.0,
                     "children": []
                   }
@@ -1850,98 +1976,10 @@
               },
               {
                 "name": "Dolos-3PC",
-                "value": 2.0,
-                "children": [
-                  {
-                    "name": "TMT-20241001-YBM",
-                    "value": 2.0,
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Resolved",
-        "value": 22.0,
-        "children": [
-          {
-            "name": "Backdoor",
-            "value": 16.0,
-            "children": [
-              {
-                "name": "Compromised Domain",
-                "value": 9.0,
-                "children": [
-                  {
-                    "name": "TMT-20250118-TKF",
-                    "value": 8.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20240620-FMU",
-                    "value": 1.0,
-                    "children": []
-                  }
-                ]
-              },
-              {
-                "name": "SocGholish",
-                "value": 7.0,
-                "children": [
-                  {
-                    "name": "TMT-20250115-MDV",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241211-OSG",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20250120-VUQ",
-                    "value": 1.0,
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "E-skimming",
-            "value": 5.0,
-            "children": [
-              {
-                "name": "E-Skimming",
-                "value": 5.0,
-                "children": [
-                  {
-                    "name": "TMT-20241114-IUT",
-                    "value": 3.0,
-                    "children": []
-                  },
-                  {
-                    "name": "TMT-20241023-ABC",
-                    "value": 2.0,
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Phishing",
-            "value": 1.0,
-            "children": [
-              {
-                "name": "StormMaize-3PC",
                 "value": 1.0,
                 "children": [
                   {
-                    "name": "TMT-20240319-QAN",
+                    "name": "TMT-20241001-YBM",
                     "value": 1.0,
                     "children": []
                   }
