@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 # Set environment file
-ENV_FILE=".env.prod"
-COMPOSE_FILES="-f docker-compose.yml -f docker-compose.prod.yml"
+ENV_FILE=".env"
+COMPOSE_FILES="-f docker-compose.yml"
 COMPOSE_CMD="docker compose --env-file $ENV_FILE $COMPOSE_FILES"
+COMPOSE_OPTIONS="--build -d"
 
 # Function to check if the environment file exists
 check_env_file() {
@@ -47,7 +48,7 @@ start_containers() {
             echo "Error: Docker build failed!"
             exit 1
         fi
-        $COMPOSE_CMD up --remove-orphans -d
+        $COMPOSE_CMD up "$COMPOSE_OPTIONS"
         echo "Production containers started successfully."
     fi
 }

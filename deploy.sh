@@ -5,8 +5,113 @@ set -eo pipefail
 PROD_SERVER="moneill.net"
 PROD_USER="ubuntu"
 PROD_DIR="/home/ubuntu/docker/dataviz"
-BACKUP_DIR="${PROD_DIR}/backups"
+DEPLOY_BRANCH="remote-prod"
+LOG_FILE="deploy.log"
 DRY_RUN=false
+
+# Function definitions
+log() {
+    echo "[$(date +'%Y-%m-%d %H:%M:%S')] $*" | tee -a $LOG_FILE
+}
+
+execute() {
+    if [ "$DRY_RUN" = true ]; then
+        log "[DRY RUN] Would execute: $*"
+        return 0
+    else
+        "$@"
+    fi
+}
+
+check_branch() {
+    local current_branch=$(execute git branch --show-current)
+    if [ "$current_branch" != "$DEPLOY_BRANCH" ]; then
+        log "ERROR: Not on $DEPLOY_BRANCH branch"
+        exit 1
+    fi
+    execute git pull origin $DEPLOY_BRANCH
+}
+
+create_deployment_package() {
+    log "Creating deployment package..."
+    execute git archive --format=tar.gz -o deploy.tar.gz HEAD
+}
+
+copy_files() {
+    log "Copying configuration files..."
+    execute scp deploy.tar.gz docker-compose.yml docker-compose.* .env "$PROD_USER@$PROD_SERVER:$PROD_DIR/"
+}
+
+tag_version() {
+    VERSION=$(date +"%Y.%m.%d-%H%M")
+    execute git tag "deploy-${VERSION}"
+    execute git push origin "deploy-${VERSION}"
+}
+
+cleanup() {
+    log "Cleaning up local files..."
+    execute rm -f deploy.tar.gz
+}
+
+deploy_to_server() {
+    log "Deploying to server..."
+    execute ssh $PROD_USER@$PROD_SERVER bash << 'EOF'
+        PROD_DIR="/home/ubuntu/docker/dataviz"
+        BACKUP_DIR="${PROD_DIR}/backups"
+        set -eo pipefail
+        cd "${PROD_DIR}"
+
+        # Backup with rotation
+        MAX_BACKUPS=5
+        backup_file="${BACKUP_DIR}/data-backup-$(date +%Y%m%d_%H%M%S).tar.xz"
+        if [ -d "data" ]; then
+            tar -cJf "${backup_file}" data/ || {
+                echo "Backup failed"
+                exit 1
+            }
+            # Rotate old backups
+            ls -t "${BACKUP_DIR}"/data-backup-*.tar.xz 2>/dev/null | tail -n +$((MAX_BACKUPS + 1)) | xargs -r rm
+        fi
+
+        # Load environment
+        set -a
+        source .env.prod
+        set +a
+
+        # Extract and setup
+        tar xzf deploy.tar.gz
+        sudo chown -R ubuntu:ubuntu data/
+        sudo chmod -R 755 data/
+
+        # Docker operations
+        export BUILD_DATE=$(date +%Y%m%d_%H%M%S)
+        docker compose -f docker-compose.yml -f docker-compose.prod.yml down || true
+        docker compose -f docker-compose.yml -f docker-compose.prod.yml build --no-cache
+        docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+        # Health check with timeout
+        TIMEOUT=60
+        end=$((SECONDS + TIMEOUT))
+        healthy=false
+        while [ $SECONDS -lt $end ]; do
+            if docker compose ps | grep -q "healthy"; then
+                healthy=true
+                break
+            fi
+            sleep 5
+        done
+
+        if [ "$healthy" = false ]; then
+            echo "Services failed health check after ${TIMEOUT} seconds"
+            docker compose logs
+            # Consider rolling back here
+            exit 1
+        fi
+
+        rm -f deploy.tar.gz
+EOF
+}
+
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
@@ -24,133 +129,15 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-# Function to handle errors
-cleanup() {
-    local exit_code=$?
-    echo "Cleaning up local files..."
-    [ "$DRY_RUN" = false ] && rm -f deploy.tar.gz
-    exit $exit_code
-}
+# Main execution
+log "Starting deployment to ${PROD_SERVER}..."
+[ "$DRY_RUN" = true ] && log "DRY RUN MODE - No changes will be made"
 
-trap cleanup EXIT
+check_branch
+create_deployment_package
+copy_files
+tag_version
+deploy_to_server
+cleanup
 
-# Function to execute or simulate commands
-execute() {
-    if [ "$DRY_RUN" = true ]; then
-        echo "[DRY RUN] Would execute: $*"
-        return 0
-    else
-        "$@"
-    fi
-}
-
-echo "Starting deployment to ${PROD_SERVER}..."
-[ "$DRY_RUN" = true ] && echo "DRY RUN MODE - No changes will be made"
-
-# 1. Create deployment package
-echo "Creating deployment package..."
-if [ "$DRY_RUN" = false ]; then
-    git archive --format=tar.gz -o deploy.tar.gz HEAD || { echo "Failed to create deployment package"; exit 1; }
-else
-    echo "[DRY RUN] Would create git archive: deploy.tar.gz"
-fi
-
-# 2. Copy configuration files
-echo "Copying configuration files..."
-if [ "$DRY_RUN" = false ]; then
-    scp deploy.tar.gz docker-compose.yml docker-compose.* .env "$PROD_USER@$PROD_SERVER:$PROD_DIR/" || { echo "Failed to copy files"; exit 1; }
-else
-    echo "[DRY RUN] Would copy files to $PROD_USER@$PROD_SERVER:$PROD_DIR/:"
-    echo "  - deploy.tar.gz"
-    echo "  - docker-compose.yml"
-    echo "  - docker-compose.prod.yml"
-    echo "  - .env.prod"
-    echo "  - nginx.conf"
-fi
-
-# 3. SSH into server and deploy
-if [ "$DRY_RUN" = false ]; then
-    ssh $PROD_USER@$PROD_SERVER bash << EOF
-        set -eo pipefail
-        cd "${PROD_DIR}"
-
-        # Create backup directory if it doesn't exist
-        mkdir -p "${BACKUP_DIR}"
-
-        # Explicitly load environment variables
-        set -a  # automatically export all variables
-        source .env.prod
-        set +a
-
-        # Verify environment variables are loaded
-        echo "Checking environment variables:"
-        echo "NODE_ENV: \${NODE_ENV}"
-        echo "API_BASE_URL: \${API_BASE_URL}"
-        echo "FLASK_PORT: \${FLASK_PORT}"
-        echo "VUE_PORT: \${VUE_PORT}"
-        sleep 30
-
-        # Backup existing data
-        if [ -d "data" ]; then
-            echo "Backing up existing data..."
-            backup_file="${BACKUP_DIR}/data-backup-\$(date +%Y%m%d_%H%M%S).tar.gz"
-            tar -czf "\${backup_file}" data/ || { echo "Backup failed"; exit 1; }
-
-            # Verify backup
-            if [ ! -f "\${backup_file}" ]; then
-                echo "Backup verification failed"
-                exit 1
-            fi
-        fi
-
-        # Extract new code
-        echo "Extracting deployment package..."
-        tar xzf deploy.tar.gz || { echo "Failed to extract deployment package"; exit 1; }
-
-        # Set correct permissions
-        echo "Setting permissions..."
-        sudo chown -R ubuntu:ubuntu data/
-        sudo chmod -R 755 data/
-
-        # Stop existing containers
-        echo "Stopping existing containers..."
-
-        # Add build date to force cache invalidation
-        export COMPOSE_ENVFILE=.env.prod
-        export BUILD_DATE=$(date +%Y%m%d_%H%M%S)
-
-        docker compose -f docker-compose.yml -f docker-compose.prod.yml down || true
-
-        # Build and start new containers
-        echo "Building and starting containers..."
-        docker compose  -f docker-compose.yml -f docker-compose.prod.yml build --no-cache
-        docker compose  -f docker-compose.yml -f docker-compose.prod.yml up -d
-
-        # Wait for health checks
-        echo "Waiting for services to be healthy..."
-        sleep 10
-        if ! docker compose -f docker-compose.yml -f docker-compose.prod.yml ps | grep -q "healthy"; then
-            echo "Services failed health check"
-            docker compose -f docker-compose.yml -f docker-compose.prod.yml logs
-            exit 1
-        fi
-
-        # Clean up
-        echo "Cleaning up..."
-        rm -f deploy.tar.gz
-
-        echo "Deployment successful!"
-EOF
-else
-    echo "[DRY RUN] Would execute on remote server:"
-    echo "  - Create backup directory: $BACKUP_DIR"
-    echo "  - Backup existing data to ${BACKUP_DIR}/data-backup-<timestamp>.tar.gz"
-    echo "  - Extract deployment package"
-    echo "  - Set permissions (owner: sunburst, mode: 755)"
-    echo "  - Stop existing Docker containers"
-    echo "  - Build and start new containers"
-    echo "  - Verify service health"
-    echo "  - Clean up temporary files"
-fi
-
-echo "Deployment $([ "$DRY_RUN" = true ] && echo "simulation ")complete!"
+log "Deployment $([ "$DRY_RUN" = true ] && echo "simulation ")complete!"
