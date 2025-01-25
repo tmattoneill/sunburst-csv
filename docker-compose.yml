@@ -23,7 +23,7 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: ["CMD", "curl", "-f", "${VUE_APP_BASE_URL}:${FLASK_PORT}${API_BASE_URL}${HEALTH_CHECK}"]
+      test: ["CMD", "curl", "-f", "${VUE_APP_API_BASE_URL}:${FLASK_PORT}${VUE_APP_API_ROOT_PATH}${HEALTH_CHECK}"]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -50,7 +50,7 @@ services:
         HOST: "${HOST}"
         VUE_PORT: "${VUE_PORT}"
         # Local use for healthcheck
-        BASE_URL: "${VUE_APP_BASE_URL}"
+        BASE_URL: "${VUE_APP_API_BASE_URL}"
         NETWORK_NAME: "${NETWORK_NAME}"
     container_name: vue-frontend.bd
     ports:

@@ -11,7 +11,7 @@ def create_app():
     app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
 
     # Use a simple path prefix for development
-    app.config['BASE_URL'] = os.getenv('API_BASE_URL', '/api')
+    app.config['BASE_URL'] = os.getenv('VUE_APP_API_ROOT_PATH', '/api')
 
     from .routes import bp
     app.register_blueprint(bp, url_prefix=app.config['BASE_URL'])

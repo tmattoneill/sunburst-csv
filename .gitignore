@@ -9,7 +9,6 @@ bdesign/
 # local env files
 #.env.local
 #.env.*.local
-.env
 
 # Log files
 npm-debug.log*
@@ -32,7 +31,6 @@ __pycache__/
 *.log
 
 *.tar.gz
-#*.sh
 
 # App Data Files
 *.csv

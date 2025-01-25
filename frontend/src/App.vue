@@ -8,9 +8,6 @@ import PageHeader from './components/PageHeader.vue'
 import DataTable from "@/components/DataTable.vue";
 import { buildApiUrl, API_ENDPOINTS } from '@/services/api'
 
-// const API_URL = import.meta.env.VITE_APP_BASE_URL
-// const API_PATH = import.meta.env.VITE_API_BASE_URL
-
 const chartData = ref({})
 const currentPalette = ref('Ocean')
 const reportType = ref('')

@@ -1,2407 +1,677 @@
 {
   "report_type": "Tag Summary Report",
-  "date_start": "Dec. 9, 2024",
-  "date_end": "Jan. 8, 2025",
+  "date_start": "Jan. 11, 2025",
+  "date_end": "Jan. 18, 2025",
   "data": {
-    "name": "Test Client",
-    "value": 362.0,
+    "name": "Supoer Tst",
+    "value": 10411.0,
     "children": [
       {
-        "name": "7/4",
-        "value": 105.0,
+        "name": "Malicious",
+        "value": 4558.0,
         "children": [
           {
-            "name": "USA",
-            "value": 105.0,
+            "name": "Phishing",
+            "value": 3894.0,
             "children": [
               {
-                "name": "Malicious",
-                "value": 105.0,
+                "name": "Phishing Domain",
+                "value": 2370.0,
                 "children": [
                   {
-                    "name": "PhonyFetcher-3PC",
-                    "value": 105.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 105.0,
-                        "children": [
-                          {
-                            "name": "PhonyFetcher-3PC",
-                            "value": 105.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241106-JLO",
-                                "value": 96.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326980&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319314&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319303&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319309&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319300&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326976&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319311&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319312&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326973&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319313&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327103&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1335719&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327104&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1335397&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326769&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319305&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319304&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319306&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319307&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326771&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326770&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326768&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326766&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326765&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326763&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326762&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326761&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326760&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326759&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326758&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326757&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319310&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1319308&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326773&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326772&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326960&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326954&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326955&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1335718&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1335717&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1334090&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1334089&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1334087&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1334086&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1334085&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326966&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326975&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326974&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326972&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326971&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326969&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326968&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326967&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326965&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326979&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326964&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326963&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326962&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326961&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326959&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326957&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326977&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326982&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1334074&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327107&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327121&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327119&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327117&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327116&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327113&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327112&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327108&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327106&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326983&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327105&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326989&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326988&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326987&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326986&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326985&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326984&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241204-CMA",
-                                "value": 9.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326976&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327116&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1327107&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326983&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326968&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326960&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326768&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=4&ci=&cri=507_4_1326761&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "7/44",
-        "value": 9.0,
-        "children": [
-          {
-            "name": "USA",
-            "value": 9.0,
-            "children": [
-              {
-                "name": "Malicious",
-                "value": 7.0,
-                "children": [
+                    "name": "TMT-20240703-YMJ",
+                    "value": 2276.0,
+                    "children": []
+                  },
                   {
-                    "name": "SocGholish",
+                    "name": "TMT-20170429-TC",
+                    "value": 86.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241215-TXS",
                     "value": 7.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 7.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 7.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241211-OSG",
-                                "value": 3.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_47OIN7SGGBFSVLIOQUPTWG_300x600_1&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_47OIN7SGGBFSVLIOQUPTWG_970x250_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241227-YHQ",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_QFBICWRVSFC6TMGH7HUZUO_320x50_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241114-WMX",
-                                "value": 3.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_5ONYEULFQBERTH6Y3MI5AA_336x280_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_5ONYEULFQBERTH6Y3MI5AA_250x250_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_5ONYEULFQBERTH6Y3MI5AA_160x600_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240205-CBM",
+                    "value": 1.0,
+                    "children": []
                   }
                 ]
               },
               {
-                "name": "Resolved",
+                "name": "GhostCat - 3PC",
+                "value": 1283.0,
+                "children": [
+                  {
+                    "name": "TMT-20241213-LXJ",
+                    "value": 1124.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-FOD",
+                    "value": 45.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241226-ORK",
+                    "value": 37.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240705-LPW",
+                    "value": 19.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-JQY",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240913-MBV",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250112-BPJ",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-TRH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250113-JKC",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241224-OLJ",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240509-QSC",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-AYQ",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-CMY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-POX",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-YBT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241021-AYE",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240723-XKR",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230904-NZG",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240619-UYS",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Redirector",
+                "value": 238.0,
+                "children": [
+                  {
+                    "name": "TMT-20250114-WUE",
+                    "value": 93.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231210-EPT",
+                    "value": 26.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230206-UGV",
+                    "value": 14.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241230-QPE",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231120-TYJ",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200320-NZC",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240527-ZGH",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240918-AEQ",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241224-ALJ",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241009-WFD",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200423-UGD",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240119-HSK",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240917-NET",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241210-JQZ",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240910-YVR",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240804-YFM",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220813-JMX",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20190223-OQM",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200520-QBZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210313-BOC",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210520-WEZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240124-LYT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240627-NGT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241029-OEH",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241204-PHN",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241212-MIL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-ADP",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Fizzcore",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "TMT-20250115-DNJ",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "E-skimming",
+            "value": 189.0,
+            "children": [
+              {
+                "name": "E-Skimming",
+                "value": 189.0,
+                "children": [
+                  {
+                    "name": "TMT-20240929-AJP",
+                    "value": 94.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241124-KTJ",
+                    "value": 30.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240708-BFD",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250102-UTG",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241028-ZNT",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241230-TED",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241116-ZYX",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241114-IUT",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-YUA",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240525-CVP",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240626-GTF",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Backdoor",
+            "value": 471.0,
+            "children": [
+              {
+                "name": "Compromised Domain",
+                "value": 259.0,
+                "children": [
+                  {
+                    "name": "TMT-20240730-XZA",
+                    "value": 81.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240822-OZX",
+                    "value": 71.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240901-GKC",
+                    "value": 50.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-ZPL",
+                    "value": 14.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240825-YTV",
+                    "value": 12.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-PSU",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250103-NZY",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-UOW",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240414-LEU",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250104-AJR",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241205-GKL",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250101-VKC",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240103-WKX",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240606-ORT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240705-LWZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240808-GRX",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-QVJ",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SocGholish",
+                "value": 129.0,
+                "children": [
+                  {
+                    "name": "TMT-20241207-HDQ",
+                    "value": 62.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-EYU",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-OFZ",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241209-HMG",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241205-ZEK",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240831-TNI",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240517-YXS",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241014-TYK",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241211-OSG",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240918-KGV",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241125-XSV",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-MDV",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "MimicManager - 3PC",
+                "value": 22.0,
+                "children": [
+                  {
+                    "name": "TMT-20230612-RPO",
+                    "value": 22.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "StringRipper - 3PC",
+                "value": 23.0,
+                "children": [
+                  {
+                    "name": "TMT-20240924-XBP",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240928-TIM",
+                    "value": 2.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "PUP",
+                "value": 26.0,
+                "children": [
+                  {
+                    "name": "TMT-20240805-VTQ",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-JKZ",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250102-YWB",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240901-JES",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241126-AZQ",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "APK",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "TMT-20250117-PHV",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Scareware",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "TMT-20241008-YNK",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-EAV",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Dolos-3PC",
                 "value": 2.0,
                 "children": [
                   {
-                    "name": "SocGholish",
+                    "name": "TMT-20241001-TPJ",
                     "value": 2.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 2.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 2.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241123-BRC",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_A6OFHBREDZHBLLTP3TD67Q_728x90_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241209-SMX",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=44&ci=&cri=497_44_YWOKK53JGFBUHAH7LMIXLM_300x600_1&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "7/165",
-        "value": 217.0,
-        "children": [
-          {
-            "name": "USA",
-            "value": 217.0,
-            "children": [
-              {
-                "name": "Malicious Landing Location",
-                "value": 58.0,
-                "children": [
-                  {
-                    "name": "PhonyFetcher-3PC",
-                    "value": 58.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 58.0,
-                        "children": [
-                          {
-                            "name": "PhonyFetcher-3PC",
-                            "value": 58.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241022-GQN",
-                                "value": 4.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714264443486&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_709812183073&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_709895428201&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241211-FMP",
-                                "value": 3.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716312034860&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198654322&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198628717&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20250104-CNB",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758894405&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241210-DIB",
-                                "value": 5.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725002717658&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724485464158&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723166637714&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_721909504515&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716213185902&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20240324-SKU",
-                                "value": 25.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447884&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725217832030&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447893&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447881&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447752&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447740&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_721295571304&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748552&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748549&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748543&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748540&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748534&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748516&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748528&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748510&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_718403698280&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716312034947&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716229454933&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198628855&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198542980&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198542698&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714895456294&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714895456291&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714895456276&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714895456273&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241015-AKG",
-                                "value": 5.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725420526164&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724421705411&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_721390761821&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712490319997&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575028&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20240925-YMG",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714536593435&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241031-JBC",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046658655&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241109-EIQ",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725818818163&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241201-REN",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725294628611&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724773625149&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241201-GAU",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722923657099&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722421935174&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241201-DOU",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724289786139&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241128-GLM",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447758&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720306748546&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241127-NRS",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447725&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723401410507&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241124-KLB",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714556735360&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241119-ZFN",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725178729024&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724888153185&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "children": []
                   }
                 ]
               },
               {
-                "name": "Malicious",
-                "value": 158.0,
-                "children": [
-                  {
-                    "name": "PhonyFetcher-3PC",
-                    "value": 156.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 156.0,
-                        "children": [
-                          {
-                            "name": "PhonyFetcher-3PC",
-                            "value": 156.0,
-                            "children": [
-                              {
-                                "name": "TMT-20240822-ABO",
-                                "value": 6.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714264443486&at=0&t=1",
-                                    "value": 2.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_709895428078&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_709812183073&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_709895428201&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_709895428213&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20240722-QGC",
-                                "value": 57.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720314705740&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_726938512002&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725031181607&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725031180704&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722417788787&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720751308921&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720751308423&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720310107967&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_715507496616&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720279337176&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720276493815&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720276493638&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720276493596&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198924613&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_716198906598&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_715531430841&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_715531430778&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_715531430769&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714620090777&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575001&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708770268614&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708770268608&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575055&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575052&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575034&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575028&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575016&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214575013&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214574869&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714620090774&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214574866&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214574857&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214574851&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708214574845&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_704602125797&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_704517232012&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708770268626&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708770268629&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_708770268632&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_711680212234&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714620090768&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714620090762&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714620090639&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714537408391&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714537408388&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714537408385&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714537408373&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714536593435&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714536295562&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714504411066&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714503742930&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712490880628&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712490880622&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712490320000&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712490319997&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712490319994&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_712461510651&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241008-QIT",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723289454795&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241015-HFA",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725750118904&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241029-RBK",
-                                "value": 23.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724426153160&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724426152677&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724312469265&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724312465569&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724289785560&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724289785371&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723460123178&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723376691977&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720119178645&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720119178606&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_719971094779&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_719971094629&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_719971094623&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_719971094542&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_719865323644&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_718972344399&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_718972344384&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725155791564&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725155791576&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725155884123&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725155884453&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725972078326&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725972077912&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241124-BFN",
-                                "value": 19.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175245034&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175245256&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175245181&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175244980&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175244977&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175244782&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175244764&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725175244212&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724873772801&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724873772579&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758895107&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758895080&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758894690&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758894453&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758894435&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758894408&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758894405&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724758892242&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724121936630&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241128-TQW",
-                                "value": 11.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722893486311&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722892774462&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722894331963&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722894332935&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722923657099&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722925863449&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723168482309&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722925863728&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722925863707&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722925863692&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_722925863509&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241126-THU",
-                                "value": 4.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725174841090&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725174594292&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725145547610&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724820745325&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241207-HQL",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724036095249&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241119-QTG",
-                                "value": 12.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_721520746259&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724421704745&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724421705411&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_726828969555&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725813879006&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725294628446&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725294628380&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725294628368&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725002721732&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724452502026&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724452499857&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724421706689&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241114-GLN",
-                                "value": 7.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724485695170&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724420579388&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724340172181&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724120158476&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_721037376479&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720959065855&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725011193276&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241107-NYR",
-                                "value": 9.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_725214740620&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724301767194&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046646643&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046646478&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046646454&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_724046447884&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_720250791963&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_718325256874&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_718324985032&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241122-REC",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714556735801&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_714556735360&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241120-REX",
-                                "value": 3.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723569210158&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_723569210071&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_721944859087&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SocGholish",
-                    "value": 2.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 2.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 2.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241225-TRL",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_638066892471&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241021-WCK",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_178587431655&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Resolved",
+                "name": "MudOrange-3PC",
                 "value": 1.0,
                 "children": [
                   {
-                    "name": "MimicManager - 3PC",
+                    "name": "TMT-20250114-HMD",
                     "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "MimicManager - 3PC",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20220818-SLR",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=165&ci=&cri=555_165_719008799695&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "children": []
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "name": "7/379",
-        "value": 5.0,
-        "children": [
+          },
           {
-            "name": "USA",
-            "value": 5.0,
-            "children": [
-              {
-                "name": "Malicious",
-                "value": 4.0,
-                "children": [
-                  {
-                    "name": "SocGholish",
-                    "value": 4.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 4.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 4.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241210-VKR",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=379&ci=&cri=494_379_16_612308648&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=379&ci=&cri=494_379_16_612307746&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241124-AFB",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=379&ci=&cri=494_379_46_11647942&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=379&ci=&cri=494_379_46_11647929&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Resolved",
-                "value": 1.0,
-                "children": [
-                  {
-                    "name": "SocGholish",
-                    "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241119-TZD",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=379&ci=&cri=494_379_f8wcrmpb&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "7/269",
-        "value": 2.0,
-        "children": [
-          {
-            "name": "USA",
+            "name": "Scams",
             "value": 2.0,
             "children": [
               {
-                "name": "Malicious",
+                "name": "Scam",
                 "value": 2.0,
                 "children": [
                   {
-                    "name": "SocGholish",
-                    "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20240907-JHY",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=269&ci=&cri=567_269_2%3a52682%3a170270%3a530169&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Fizzcore",
-                    "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Phishing",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "Fizzcore",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241209-ODY",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=269&ci=&cri=567_269_115%3a23725%3a80616%3a226807&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "7/16",
-        "value": 4.0,
-        "children": [
-          {
-            "name": "USA",
-            "value": 4.0,
-            "children": [
-              {
-                "name": "Malicious",
-                "value": 3.0,
-                "children": [
-                  {
-                    "name": "SocGholish",
-                    "value": 3.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 3.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 3.0,
-                            "children": [
-                              {
-                                "name": "TMT-20240915-TUM",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=16&ci=&cri=556_16_572425359&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241210-VKR",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=16&ci=&cri=556_16_612308648&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=16&ci=&cri=556_16_612311191&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Malicious Landing Location",
-                "value": 1.0,
-                "children": [
-                  {
-                    "name": "PhonyFetcher-3PC",
-                    "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "PhonyFetcher-3PC",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20240324-SKU",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=16&ci=&cri=556_16_616134602&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "7/46",
-        "value": 1.0,
-        "children": [
-          {
-            "name": "USA",
-            "value": 1.0,
-            "children": [
-              {
-                "name": "Malicious",
-                "value": 1.0,
-                "children": [
-                  {
-                    "name": "SocGholish",
-                    "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241124-AFB",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=46&ci=&cri=498_46_11657599&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "7/473",
-        "value": 3.0,
-        "children": [
-          {
-            "name": "USA",
-            "value": 3.0,
-            "children": [
-              {
-                "name": "Malicious",
-                "value": 3.0,
-                "children": [
-                  {
-                    "name": "PhonyFetcher-3PC",
+                    "name": "TMT-20250116-HXP",
                     "value": 2.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 2.0,
-                        "children": [
-                          {
-                            "name": "PhonyFetcher-3PC",
-                            "value": 2.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241106-JLO",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=473&ci=&cri=644_473_300803379091835&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=473&ci=&cri=644_473_906288038091030&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Ad Fraud",
+            "value": 2.0,
+            "children": [
+              {
+                "name": "Ad Fraud",
+                "value": 1.0,
+                "children": [
                   {
-                    "name": "SocGholish",
+                    "name": "TMT-20220324-FYR",
                     "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241209-HMG",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=473&ci=&cri=644_473_5532%3a606611406&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Vidlox- 3PC",
+                "value": 1.0,
+                "children": [
+                  {
+                    "name": "TMT-20230712-GMH",
+                    "value": 1.0,
+                    "children": []
                   }
                 ]
               }
@@ -2410,187 +680,1236 @@
         ]
       },
       {
-        "name": "7/480",
-        "value": 15.0,
+        "name": "Malicious - Indirect Evidence",
+        "value": 1536.0,
         "children": [
           {
-            "name": "USA",
-            "value": 15.0,
+            "name": "Generic Malware/Suspicious",
+            "value": 1536.0,
             "children": [
               {
-                "name": "Resolved",
-                "value": 10.0,
+                "name": "DNE Domain",
+                "value": 712.0,
                 "children": [
                   {
-                    "name": "SocGholish",
-                    "value": 10.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 10.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 10.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241210-FGM",
-                                "value": 5.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_302981965&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_437442717&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_437442709&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_302981936&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_301210008&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241216-WSD",
-                                "value": 5.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_437442713&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_302981971&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_302981940&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_302908720&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_301210008&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "name": "TMT-20240625-TAM",
+                    "value": 696.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241004-RWE",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220815-HVB",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230113-KQX",
+                    "value": 2.0,
+                    "children": []
                   }
                 ]
               },
               {
-                "name": "Malicious",
+                "name": "Heuristic Flag",
+                "value": 824.0,
+                "children": [
+                  {
+                    "name": "TMT-20241122-APT",
+                    "value": 108.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-HMO",
+                    "value": 99.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231122-BCO",
+                    "value": 94.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230609-VMQ",
+                    "value": 57.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230322-AUK",
+                    "value": 55.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240801-NZR",
+                    "value": 53.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240503-MWB",
+                    "value": 34.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250101-AQJ",
+                    "value": 31.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240117-HDP",
+                    "value": 30.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241221-CEG",
+                    "value": 29.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220215-TVC",
+                    "value": 26.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230609-OEC",
+                    "value": 23.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240921-SFG",
+                    "value": 18.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230919-GMW",
+                    "value": 17.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240917-CFU",
+                    "value": 16.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250113-PYK",
+                    "value": 16.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240327-YFH",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240704-JMY",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240911-FUP",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230726-FYT",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240919-JQZ",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240915-OCT",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240811-LOE",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241218-GSX",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-HWG",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240810-QEL",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231103-ROL",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241220-WUJ",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-NKT",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-AZF",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-MHA",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-ADR",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240913-FBQ",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230909-NPL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230210-YFK",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230511-UMP",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230830-WSI",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230908-DXA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240123-KGA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240125-XGW",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241216-VNA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240319-FTH",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240420-JBF",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240514-VFM",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240728-TZW",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240808-PXJ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241215-ZJT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-KMA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250111-FTA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-RMJ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-BSF",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-DKN",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-ENT",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-GKQ",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scam/Fraud",
+        "value": 3106.0,
+        "children": [
+          {
+            "name": "Ad Fraud",
+            "value": 1703.0,
+            "children": [
+              {
+                "name": "Ad Fraud",
+                "value": 1703.0,
+                "children": [
+                  {
+                    "name": "TMT-20240429-OMT",
+                    "value": 687.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-RJC",
+                    "value": 364.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241222-ERT",
+                    "value": 177.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-MEF",
+                    "value": 80.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241220-IBO",
+                    "value": 61.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250105-VRQ",
+                    "value": 58.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241112-JUL",
+                    "value": 37.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240730-RPC",
+                    "value": 33.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240102-VWR",
+                    "value": 29.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240430-CTU",
+                    "value": 25.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240102-KUH",
+                    "value": 23.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240430-OWY",
+                    "value": 21.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241222-RDQ",
+                    "value": 18.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230526-YBL",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220324-GQE",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-NET",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-IDY",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230817-WAB",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241219-TKM",
+                    "value": 7.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240322-ZYW",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240102-UDX",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-NPW",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240313-KJV",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-TGQ",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-YFA",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-UBA",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241223-MTE",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-UGE",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-OWI",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-DXL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-IPJ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-XWU",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250111-OAF",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-VXO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-BVZ",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241129-OIY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241224-XLO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250108-EFN",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Scams",
+            "value": 1403.0,
+            "children": [
+              {
+                "name": "Scam",
+                "value": 1403.0,
+                "children": [
+                  {
+                    "name": "TMT-20241005-LOC",
+                    "value": 162.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240113-ZSK",
+                    "value": 137.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240209-LRC",
+                    "value": 103.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-CHS",
+                    "value": 97.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231127-KZO",
+                    "value": 83.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230922-XTE",
+                    "value": 75.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220515-ZUP",
+                    "value": 71.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230710-YDP",
+                    "value": 57.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240824-EBX",
+                    "value": 55.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240125-EUI",
+                    "value": 54.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230711-MWE",
+                    "value": 52.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241116-RGI",
+                    "value": 44.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220602-BUX",
+                    "value": 33.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240819-QKO",
+                    "value": 32.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240930-JMO",
+                    "value": 28.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250101-JXM",
+                    "value": 27.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200110-UEQ",
+                    "value": 24.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231106-FGI",
+                    "value": 18.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240531-NBF",
+                    "value": 17.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241117-WJB",
+                    "value": 17.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240221-PRO",
+                    "value": 16.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240727-PLI",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250115-SZP",
+                    "value": 14.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-FIL",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-PRF",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210805-GJI",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240106-NYL",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220331-TWD",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20201225-NJK",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240625-ZMV",
+                    "value": 9.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240112-YCP",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250107-LIH",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230726-MPA",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-SHC",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241217-TKR",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241121-ZVO",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240301-AOV",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240314-DAZ",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20200905-KNH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240404-KZH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-DMI",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240809-XAL",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240507-ALX",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241223-JWH",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250109-ABJ",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230802-BMX",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250110-TDG",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241226-VQE",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241218-VRL",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231211-VHI",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20230710-WBY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220928-AHO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220906-JPE",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20211011-JFA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210503-RZY",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20210828-HDL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240821-NZB",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240531-HTL",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240202-ITU",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20201111-UVB",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240325-IGS",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240707-GCV",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240806-LZG",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-ABO",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Out Of Browser Redirect",
+        "value": 1105.0,
+        "children": [
+          {
+            "name": "Ad Fraud",
+            "value": 1105.0,
+            "children": [
+              {
+                "name": "App Store Redirect iOS",
+                "value": 653.0,
+                "children": [
+                  {
+                    "name": "TMT-20240513-SQG",
+                    "value": 197.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240415-AHQ",
+                    "value": 117.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240414-JMX",
+                    "value": 51.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240416-JSP",
+                    "value": 47.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240416-ZPR",
+                    "value": 46.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240306-PTG",
+                    "value": 36.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240206-JPV",
+                    "value": 27.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240319-BQH",
+                    "value": 22.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241023-WFN",
+                    "value": 13.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240416-OVU",
+                    "value": 12.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231127-RWS",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240822-MUP",
+                    "value": 10.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240504-TUN",
+                    "value": 8.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240922-ANE",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240819-IYD",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240906-NGM",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231121-FXD",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220922-RWD",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240417-FIP",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241107-KSY",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240416-KDI",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240827-VTK",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240820-FQP",
+                    "value": 4.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231121-GUM",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241101-TGN",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231210-XUL",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240501-FED",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240820-DAS",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240909-WTC",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241002-ULJ",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "App Store Redirect Android",
+                "value": 449.0,
+                "children": [
+                  {
+                    "name": "TMT-20240424-UAH",
+                    "value": 124.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240225-ACY",
+                    "value": 93.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241030-CBU",
+                    "value": 76.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240312-OFU",
+                    "value": 68.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240501-GMC",
+                    "value": 23.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240202-WNB",
+                    "value": 14.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241022-WNK",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20220923-HGA",
+                    "value": 11.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241110-HVF",
+                    "value": 6.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240306-PZB",
+                    "value": 5.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-NGY",
+                    "value": 3.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240604-CLM",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231207-ANR",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240518-KYG",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-AEW",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240924-LZV",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20231128-LKV",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240520-STP",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20240706-CES",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241206-KIA",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250114-RKZ",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Ad Fraud",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "TMT-20240820-XQN",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241208-KON",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Resolved",
+        "value": 65.0,
+        "children": [
+          {
+            "name": "Phishing",
+            "value": 30.0,
+            "children": [
+              {
+                "name": "Redirector",
+                "value": 30.0,
+                "children": [
+                  {
+                    "name": "TMT-20240308-JDO",
+                    "value": 30.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Backdoor",
+            "value": 30.0,
+            "children": [
+              {
+                "name": "SocGholish",
+                "value": 14.0,
+                "children": [
+                  {
+                    "name": "TMT-20241124-AFB",
+                    "value": 14.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Dolos-3PC",
+                "value": 13.0,
+                "children": [
+                  {
+                    "name": "TMT-20250116-WPR",
+                    "value": 13.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Compromised Domain",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "TMT-20241225-DMK",
+                    "value": 2.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20241224-TDX",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "E-skimming",
+            "value": 5.0,
+            "children": [
+              {
+                "name": "E-Skimming",
                 "value": 5.0,
                 "children": [
                   {
-                    "name": "SocGholish",
-                    "value": 3.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 3.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 3.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241119-XHQ",
-                                "value": 2.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_184986008&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  },
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_184986004&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241006-PWO",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_577310289&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "name": "TMT-20250104-ETP",
+                    "value": 4.0,
+                    "children": []
                   },
                   {
-                    "name": "Dolos-3PC",
-                    "value": 2.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 2.0,
-                        "children": [
-                          {
-                            "name": "Dolos-3PC",
-                            "value": 2.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241125-MTI",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_576390327&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "TMT-20241115-ETR",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=480&ci=&cri=639_480_566143588&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "name": "TMT-20250103-YJP",
+                    "value": 1.0,
+                    "children": []
                   }
                 ]
               }
@@ -2599,45 +1918,70 @@
         ]
       },
       {
-        "name": "7/494",
-        "value": 1.0,
+        "name": "Malicious Landing Location",
+        "value": 41.0,
         "children": [
           {
-            "name": "USA",
-            "value": 1.0,
+            "name": "Phishing",
+            "value": 23.0,
             "children": [
               {
-                "name": "Malicious",
+                "name": "Phishing Creative",
+                "value": 22.0,
+                "children": [
+                  {
+                    "name": "TMT-20240706-XMS",
+                    "value": 22.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Fizzcore",
                 "value": 1.0,
                 "children": [
                   {
-                    "name": "SocGholish",
+                    "name": "TMT-20250115-GHT",
                     "value": 1.0,
-                    "children": [
-                      {
-                        "name": "Backdoor",
-                        "value": 1.0,
-                        "children": [
-                          {
-                            "name": "SocGholish",
-                            "value": 1.0,
-                            "children": [
-                              {
-                                "name": "TMT-20241221-SGQ",
-                                "value": 1.0,
-                                "children": [
-                                  {
-                                    "name": "d=7&s=494&ci=&cri=651_494_960IQ1248188462&at=0&t=1",
-                                    "value": 1.0,
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Backdoor",
+            "value": 18.0,
+            "children": [
+              {
+                "name": "Scareware Creative",
+                "value": 17.0,
+                "children": [
+                  {
+                    "name": "TMT-20240923-RBS",
+                    "value": 15.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250117-DIO",
+                    "value": 1.0,
+                    "children": []
+                  },
+                  {
+                    "name": "TMT-20250116-RGO",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Dolos-3PC",
+                "value": 1.0,
+                "children": [
+                  {
+                    "name": "TMT-20241001-YBM",
+                    "value": 1.0,
+                    "children": []
                   }
                 ]
               }
@@ -2648,13 +1992,9 @@
     ]
   },
   "tree_order": [
-    "provider_account",
-    "country",
     "hit_type",
-    "named_threat",
     "threat_behavior",
     "malware_condition",
-    "incident",
-    "tag_name"
+    "incident"
   ]
 }
