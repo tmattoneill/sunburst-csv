@@ -6,6 +6,10 @@ import FileLoaderModal from './components/FileLoaderModal.vue'
 import DataPane from './components/DataPane.vue'
 import PageHeader from './components/PageHeader.vue'
 import DataTable from "@/components/DataTable.vue";
+import { buildApiUrl, API_ENDPOINTS } from '@/services/api'
+
+// const API_URL = import.meta.env.VITE_APP_BASE_URL
+// const API_PATH = import.meta.env.VITE_API_BASE_URL
 
 const chartData = ref({})
 const currentPalette = ref('Ocean')
@@ -90,7 +94,8 @@ const handlePathNavigation = ({ segment, index }) => {
 
 const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:6500/api/data')
+    const response = await fetch(buildApiUrl(API_ENDPOINTS.DATA))
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
     }

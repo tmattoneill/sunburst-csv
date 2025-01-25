@@ -64,6 +64,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { buildApiUrl, API_ENDPOINTS } from '@/services/api'
 
 const selectedFile = ref(null);
 const clientName = ref("");
@@ -104,7 +105,7 @@ const uploadFileAndProcess = async () => {
 
   try {
     // Upload file
-    const response = await fetch("http://localhost:6500/api/upload", {
+    const response = await fetch(buildApiUrl(API_ENDPOINTS.UPLOAD), {
       method: "POST",
       body: formData,
     });
@@ -114,7 +115,7 @@ const uploadFileAndProcess = async () => {
       uploadStatus.value = "File uploaded successfully! Running report...";
 
       // Process report
-      const processResponse = await fetch("http://localhost:6500/api/process", {
+      const processResponse = await fetch(buildApiUrl(API_ENDPOINTS.PROCESS), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

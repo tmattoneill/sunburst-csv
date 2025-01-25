@@ -82,6 +82,7 @@
 
 <script setup>
 import { ref, onMounted, watch, computed } from 'vue'
+import { buildApiUrl, API_ENDPOINTS } from '@/services/api'
 
 const headers = ref([
   'tag_name',
@@ -153,7 +154,7 @@ const fetchData = async (page) => {
     }
 
     const response = await fetch(
-      `http://localhost:6500/api/table-data?${params.toString()}`
+      `${buildApiUrl(API_ENDPOINTS.TABLE_DATA)}?${params.toString()}`
     )
 
     if (!response.ok) {
@@ -175,7 +176,7 @@ const fetchData = async (page) => {
 
 const downloadCurrentView = async () => {
   try {
-    const response = await fetch('http://localhost:6500/api/table-data', {
+    const response = await fetch(buildApiUrl(API_ENDPOINTS.TABLE_DATA), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
