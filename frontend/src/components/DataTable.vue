@@ -144,7 +144,6 @@ const prettyHeader = (header) => {
 const fetchData = async (page) => {
   loading.value = true
   try {
-    // Create URL with filters if they exist
     const params = new URLSearchParams({
       page: page.toString(),
       items_per_page: itemsPerPage.value.toString()
@@ -154,21 +153,20 @@ const fetchData = async (page) => {
       params.append('filters', JSON.stringify(props.filters))
     }
 
-// Fetch table data
-try {
- const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
-   params: Object.fromEntries(params)
- });
+    const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
+      params: Object.fromEntries(params)
+    });
 
- tableData.value = response.data
- totalItems.value = response.total
- totalPages.value = response.total_pages
- currentPage.value = response.page
+    tableData.value = response.data
+    totalItems.value = response.total
+    totalPages.value = response.total_pages
+    currentPage.value = response.page
 
-} catch (error) {
- console.error('Error fetching table data:', error)
-} finally {
- loading.value = false
+  } catch (error) {
+    console.error('Error fetching table data:', error)
+  } finally {
+    loading.value = false
+  }
 }
 
 const downloadCurrentView = async () => {

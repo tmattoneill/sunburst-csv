@@ -5,7 +5,7 @@
   "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --verbose",
+    "build": "vue-cli-service build --dest dist",
     "lint": "vue-cli-service lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -52,7 +52,8 @@
   "license": "ISC",
   "readme": "ERROR: No README data found!",
   "devDependencies": {
-    "postcss": "^8.5.0",
-    "vue-loader": "^17.4.2"
+    "@vue/compiler-sfc": "^3.5.13",
+    "@babel/core": "^7.23.9",
+    "@babel/eslint-parser": "^7.23.9"
   }
 }

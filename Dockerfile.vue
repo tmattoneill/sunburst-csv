@@ -1,7 +1,3 @@
-# Dockerfile.vue
-# Production use only; No conditional builds
-
-### STAGE 1: BASE NODE BUILD ENVIRONMENT
 FROM node:18-alpine AS builder
 
 ARG NODE_ENV
@@ -9,41 +5,33 @@ ARG APP_PATH
 ARG VUE_PORT
 ARG VUE_APP_API_ROOT_PATH
 
-RUN echo "Build Mode: [NODE_ENV=${NODE_ENV}]"
+ENV NODE_ENV=production
+ENV DEBUG=webpack:*
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 ENV APP_PATH=${APP_PATH}
-RUN echo "DEBUG: Adding WORKDIR ${APP_PATH}"
 WORKDIR ${APP_PATH}
 
 RUN apk --no-cache add curl bash
 
 COPY frontend/package*.json ./
-
 RUN npm install --no-cache && \
     npm install -g @vue/cli @vue/cli-service
 
 COPY frontend/ .
 
-### STAGE 2: PRODUCTION STAGE
-SHELL ["/bin/bash", "-c"]
+RUN echo "Current directory: $PWD" && \
+    ls -la && \
+    echo "Building with NODE_ENV=$NODE_ENV" && \
+    npm run build --verbose
 
-RUN echo "Building with NODE_ENV=$NODE_ENV" && \
-    if [[ "$NODE_ENV" = "build" ]]; then \
-        echo "Starting production build..." && \
-        npm run build || (echo "Build failed with exit code $?" && exit 1) \
-    fi
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.build.conf /etc/nginx/nginx.conf
 
-### STAGE 3: PRODUCTION SERVED BY NGINX
-FROM nginx:alpine AS production
-
-# Set up directories and permissions
 RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 777 /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 777 /etc/nginx /usr/share/nginx/html
 
 EXPOSE ${VUE_PORT}
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
-
-### -- END STAGE - PRODUCTION -- ###

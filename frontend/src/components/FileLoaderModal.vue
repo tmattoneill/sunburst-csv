@@ -103,32 +103,33 @@ const uploadFileAndProcess = async () => {
   const formData = new FormData();
   formData.append("file", selectedFile.value);
 
- try {
-  // Upload file
-  const response = await fetchApi(API_ENDPOINTS.UPLOAD, {
-    method: "POST",
-    data: formData,
-  });
+  try {
+    // Upload file
+    const response = await fetchApi(API_ENDPOINTS.UPLOAD, {
+      method: "POST",
+      data: formData,
+    });
 
-  uploadStatus.value = "File uploaded successfully! Running report...";
+    uploadStatus.value = "File uploaded successfully! Running report...";
 
-  // Process report
-  const processResponse = await fetchApi(API_ENDPOINTS.PROCESS, {
-    method: "POST",
-    data: {
-      filePath: response.filePath,
-      clientName: clientName.value,
-    }
-  });
+    // Process report
+    const processResponse = await fetchApi(API_ENDPOINTS.PROCESS, {
+      method: "POST",
+      data: {
+        filePath: response.filePath,
+        clientName: clientName.value,
+      }
+    });
 
-  uploadStatus.value = "Report processed successfully!";
-  await new Promise(resolve => setTimeout(resolve, 3000));
-  emit('upload-complete');
+    uploadStatus.value = "Report processed successfully!";
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    emit('upload-complete');
 
-} catch (error) {
-  console.error("Upload error:", error);
-  uploadStatus.value = error.response?.data?.error || "An unexpected error occurred.";
-}
+  } catch (error) {
+    console.error("Upload error:", error);
+    uploadStatus.value = error.response?.data?.error || "An unexpected error occurred.";
+  }
+};
 
 const handleFileChange = (event) => {
   selectedFile.value = event.target.files[0];
