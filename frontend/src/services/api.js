@@ -14,8 +14,10 @@ export const buildApiUrl = (endpoint) => {
         ? API_CONFIG.API_PATH.slice(0, -1)
         : API_CONFIG.API_PATH
 
+    const fullUrl = `${API_CONFIG.BASE_URL}:${API_CONFIG.API_PORT}${cleanApiPath}/${cleanEndpoint}`
     // DEBUG: Logging after variables are defined
     console.log({
+        fullUrl,
         raw_endpoint: endpoint,
         cleanEndpoint,
         cleanApiPath,

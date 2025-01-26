@@ -24,11 +24,33 @@ execute() {
 }
 
 check_branch() {
-    local current_branch=$(execute git branch --show-current)
+    local current_branch
+
+    current_branch=$(git branch --show-current)
+
     if [ "$current_branch" != "$DEPLOY_BRANCH" ]; then
         log "ERROR: Not on $DEPLOY_BRANCH branch"
         exit 1
     fi
+}
+
+check_uncommitted() {
+   local changes
+
+   changes=$(git status -s)
+
+   if [[ -n $changes ]]; then
+       echo -e "\nUncommitted changes:\n$changes\n"
+       read -p "Proceed with commit + deploy? [y/N] " proceed
+       if [[ $proceed =~ ^[Yy]$ ]]; then
+           read -p "Commit message: " commit_msg
+           git add .
+           git commit -m "$commit_msg"
+       else
+           log "Deployment cancelled"
+           exit 0
+       fi
+   fi
 }
 
 create_deployment_package() {
@@ -85,7 +107,7 @@ deploy_to_server() {
         # Docker operations
         export BUILD_DATE=$(date +%Y%m%d_%H%M%S)
         docker compose -f docker-compose.yml down || true
-        docker compose -f docker-compose.yml build --no-cache
+        docker compose -f docker-compose.yml build --no-cache --progress=plain
         docker compose -f docker-compose.yml  up -d
 
         # Health check with timeout
@@ -133,6 +155,7 @@ log "Starting deployment to ${PROD_SERVER}..."
 [ "$DRY_RUN" = true ] && log "DRY RUN MODE - No changes will be made"
 
 check_branch
+check_uncommitted
 create_deployment_package
 copy_files
 tag_version
