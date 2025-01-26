@@ -7,9 +7,7 @@ FROM node:18-alpine AS builder
 ARG NODE_ENV
 ARG APP_PATH
 ARG VUE_PORT
-ARG VUE_APP_API_BASE_URL
 ARG VUE_APP_API_ROOT_PATH
-ARG VUE_APP_API_PORT
 
 RUN echo "Build Mode: [NODE_ENV=${NODE_ENV}]"
 
@@ -37,10 +35,6 @@ RUN echo "Building with NODE_ENV=$NODE_ENV" && \
 
 ### STAGE 3: PRODUCTION SERVED BY NGINX
 FROM nginx:alpine AS production
-
-# Copy built files from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.build.conf /etc/nginx/nginx.conf
 
 # Set up directories and permissions
 RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \

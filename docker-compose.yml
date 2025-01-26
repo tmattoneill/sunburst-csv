@@ -15,6 +15,7 @@ services:
         # Local variables for build
         NETWORK_NAME: "${NETWORK_NAME}"
         HEALTH_CHECK: "${HEALTH_CHECK}"
+        FLASK_PORT: "${FLASK_PORT}"
     container_name: python-backend.bd
     ports:
       - "${FLASK_PORT}:${FLASK_PORT}"
@@ -23,7 +24,7 @@ services:
     env_file:
       - .env
     healthcheck:
-      test: ["CMD", "curl", "-f", "${VUE_APP_API_BASE_URL}:${FLASK_PORT}${VUE_APP_API_ROOT_PATH}${HEALTH_CHECK}"]
+      test: ["CMD", "curl", "-f", "http://localhost:${FLASK_PORT}/api${HEALTH_CHECK}"]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -50,11 +51,8 @@ services:
         HOST: "${HOST}"
         VUE_PORT: "${VUE_PORT}"
         # For accessing API within container
-        VUE_APP_API_BASE_URL: "${VUE_APP_API_BASE_URL}"
         VUE_APP_API_ROOT_PATH: "${VUE_APP_API_ROOT_PATH}"
-        VUE_APP_FLASK_PORT: "${FLASK_PORT}"
         # Local use for healthcheck
-        BASE_URL: "${VUE_APP_API_BASE_URL}"
         NETWORK_NAME: "${NETWORK_NAME}"
     container_name: vue-frontend.bd
     ports:
