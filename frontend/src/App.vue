@@ -91,12 +91,7 @@ const handlePathNavigation = ({ segment, index }) => {
 
 const fetchData = async () => {
   try {
-    const response = await fetchApi(API_ENDPOINTS.DATA)
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`)
-    }
-    const responseData = await response.json()
+    const responseData = await fetchApi(API_ENDPOINTS.DATA)
 
     reportType.value = responseData.report_type
     dateStart.value = responseData.date_start
