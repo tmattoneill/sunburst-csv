@@ -1,6 +1,7 @@
 // src/utils/api.js
 export const API_CONFIG = {
-    BASE_URL: process.env.VUE_APP_API_BASE_URL || 'http://localhost:6500',
+    BASE_URL: process.env.VUE_APP_API_BASE_URL || 'http://localhost',
+    API_PORT: process.env.VUE_APP_API_PORT || 6500,
     API_PATH: process.env.VUE_APP_API_ROOT_PATH || '/api'
 }
 
@@ -8,15 +9,22 @@ export const buildApiUrl = (endpoint) => {
     // Remove leading slash from endpoint if present
     const cleanEndpoint = endpoint.startsWith('/') ? endpoint.slice(1) : endpoint
     // Remove trailing slash from API_PATH if present
-    if(!API_CONFIG.API_PATH){
-        console.error("API_PATH is not defined")
-        return
-    }
+
     const cleanApiPath = API_CONFIG.API_PATH.endsWith('/')
         ? API_CONFIG.API_PATH.slice(0, -1)
         : API_CONFIG.API_PATH
-    console.log(cleanApiPath)
-    return `${API_CONFIG.BASE_URL}${cleanApiPath}/${cleanEndpoint}`
+
+    // DEBUG: Logging after variables are defined
+    console.log({
+        raw_endpoint: endpoint,
+        cleanEndpoint,
+        cleanApiPath,
+        BASE_URL: API_CONFIG.BASE_URL,
+        FLASK_PORT: API_CONFIG.API_PORT,
+        API_PATH: API_CONFIG.API_PATH
+    });
+
+    return `${API_CONFIG.BASE_URL}:${API_CONFIG.API_PORT}${cleanApiPath}/${cleanEndpoint}`
 }
 
 export const API_ENDPOINTS = {

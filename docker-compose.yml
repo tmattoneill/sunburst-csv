@@ -49,6 +49,10 @@ services:
         APP_PATH: "${APP_PATH}"
         HOST: "${HOST}"
         VUE_PORT: "${VUE_PORT}"
+        # For accessing API within container
+        VUE_APP_API_BASE_URL: "${VUE_APP_API_BASE_URL}"
+        VUE_APP_API_ROOT_PATH: "${VUE_APP_API_ROOT_PATH}"
+        VUE_APP_FLASK_PORT: "${FLASK_PORT}"
         # Local use for healthcheck
         BASE_URL: "${VUE_APP_API_BASE_URL}"
         NETWORK_NAME: "${NETWORK_NAME}"
