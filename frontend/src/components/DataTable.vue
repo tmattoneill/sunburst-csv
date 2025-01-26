@@ -82,8 +82,9 @@
 
 <script setup>
 import { ref, onMounted, watch, computed } from 'vue'
-import { buildApiUrl, API_ENDPOINTS } from '@/services/api'
+import { fetchApi, API_ENDPOINTS } from '@/services/api'
 
+// (TODO) Note: We will want this array passed around and set programmatically
 const headers = ref([
   'tag_name',
   'hit_type',
@@ -92,7 +93,7 @@ const headers = ref([
   'incident',
   'provider_account',
   'publisher_name'
-])  // (TODO) Note: We will want this array passed around and set programmatically eventually
+])
 
 const currentPage = ref(1)
 const itemsPerPage = ref(20)
@@ -153,77 +154,58 @@ const fetchData = async (page) => {
       params.append('filters', JSON.stringify(props.filters))
     }
 
-    const response = await fetch(
-      `${buildApiUrl(API_ENDPOINTS.TABLE_DATA)}?${params.toString()}`
-    )
+// Fetch table data
+try {
+ const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
+   params: Object.fromEntries(params)
+ });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`)
-    }
-    const data = await response.json()
+ tableData.value = response.data
+ totalItems.value = response.total
+ totalPages.value = response.total_pages
+ currentPage.value = response.page
 
-    // Update component state with API response
-    tableData.value = data.data
-    totalItems.value = data.total
-    totalPages.value = data.total_pages
-    currentPage.value = data.page
-  } catch (error) {
-    console.error('Error fetching table data:', error)
-  } finally {
-    loading.value = false
-  }
+} catch (error) {
+ console.error('Error fetching table data:', error)
+} finally {
+ loading.value = false
 }
 
 const downloadCurrentView = async () => {
-  try {
-    const response = await fetch(buildApiUrl(API_ENDPOINTS.TABLE_DATA), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(props.filters)
-    });
+ try {
+   const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
+     method: 'POST',
+     data: props.filters
+   });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+   const csvRows = [headers.value.join(',')];
 
-    const jsonData = await response.json();
+   response.data.forEach(item => {
+     const values = headers.value.map(header => {
+       const value = item[header] ?? '';
+       return `"${String(value).replace(/"/g, '""')}"`;
+     });
+     csvRows.push(values.join(','));
+   });
 
-    // Convert JSON to CSV
-    const csvRows = [];
-    // Add headers
-    csvRows.push(headers.value.join(','));
+   const csvContent = csvRows.join('\n');
+   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+   const url = window.URL.createObjectURL(blob);
 
-    // Add data rows
-    jsonData.data.forEach(item => {
-      const values = headers.value.map(header => {
-        const value = item[header] ?? '';
-        // Escape commas and quotes in values
-        return `"${String(value).replace(/"/g, '""')}"`;
-      });
-      csvRows.push(values.join(','));
-    });
+   const filename = `${props.rootName}_${props.dateStart}_${props.dateEnd}_${props.currentNodeName}.csv`
+     .replace(/[^a-zA-Z0-9-_]/g, '_');
 
-    const csvContent = csvRows.join('\n');
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = window.URL.createObjectURL(blob);
+   const a = document.createElement('a');
+   a.href = url;
+   a.download = filename;
+   document.body.appendChild(a);
+   a.click();
+   window.URL.revokeObjectURL(url);
+   document.body.removeChild(a);
 
-    // Create filename with format: rootName_dateStart_dateEnd_currentNodeName.csv
-    const filename = `${props.rootName}_${props.dateStart}_${props.dateEnd}_${props.currentNodeName}.csv`
-      .replace(/[^a-zA-Z0-9-_]/g, '_'); // Replace invalid filename characters
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-
-  } catch (error) {
-    console.error('Error downloading data:', error);
-  }
+ } catch (error) {
+   console.error('Error downloading data:', error);
+ }
 }
 
 const getDisplayedPages = (current, total) => {

@@ -64,7 +64,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { buildApiUrl, API_ENDPOINTS } from '@/services/api'
+import { fetchApi, API_ENDPOINTS } from '@/services/api'
 
 const selectedFile = ref(null);
 const clientName = ref("");
@@ -103,47 +103,32 @@ const uploadFileAndProcess = async () => {
   const formData = new FormData();
   formData.append("file", selectedFile.value);
 
-  try {
-    // Upload file
-    const response = await fetch(buildApiUrl(API_ENDPOINTS.UPLOAD), {
-      method: "POST",
-      body: formData,
-    });
-    const result = await response.json();
+ try {
+  // Upload file
+  const response = await fetchApi(API_ENDPOINTS.UPLOAD, {
+    method: "POST",
+    data: formData,
+  });
 
-    if (response.ok) {
-      uploadStatus.value = "File uploaded successfully! Running report...";
+  uploadStatus.value = "File uploaded successfully! Running report...";
 
-      // Process report
-      const processResponse = await fetch(buildApiUrl(API_ENDPOINTS.PROCESS), {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          filePath: result.filePath,
-          clientName: clientName.value,
-        }),
-      });
-
-      if (processResponse.ok) {
-        uploadStatus.value = "Report processed successfully!";
-        // Don't reset form here - wait for user to close modal
-
-        // Show success message for 3 seconds before allowing close
-        await new Promise(resolve => setTimeout(resolve, 3000));
-        emit('upload-complete');
-      } else {
-        uploadStatus.value = "Error processing report.";
-      }
-    } else {
-      uploadStatus.value = `Error: ${result.error}`;
+  // Process report
+  const processResponse = await fetchApi(API_ENDPOINTS.PROCESS, {
+    method: "POST",
+    data: {
+      filePath: response.filePath,
+      clientName: clientName.value,
     }
-  } catch (error) {
-    console.error("Upload error:", error);
-    uploadStatus.value = "An unexpected error occurred.";
-  }
-};
+  });
+
+  uploadStatus.value = "Report processed successfully!";
+  await new Promise(resolve => setTimeout(resolve, 3000));
+  emit('upload-complete');
+
+} catch (error) {
+  console.error("Upload error:", error);
+  uploadStatus.value = error.response?.data?.error || "An unexpected error occurred.";
+}
 
 const handleFileChange = (event) => {
   selectedFile.value = event.target.files[0];

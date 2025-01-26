@@ -1,9 +1,16 @@
 // src/utils/api.js
+import axios from 'axios';
+
 export const API_CONFIG = {
     BASE_URL: process.env.VUE_APP_API_BASE_URL || 'http://localhost',
     API_PORT: process.env.VUE_APP_API_PORT || 6500,
     API_PATH: process.env.VUE_APP_API_ROOT_PATH || '/api'
 }
+
+const apiClient = axios.create({
+    baseURL: `${API_CONFIG.BASE_URL}:${API_CONFIG.API_PORT}${API_CONFIG.API_PATH}`,
+    timeout: 5000
+});
 
 export const buildApiUrl = (endpoint) => {
     // Remove leading slash from endpoint if present
@@ -36,3 +43,15 @@ export const API_ENDPOINTS = {
     HEALTH: 'health',
     TABLE_DATA: 'table-data',
 }
+
+
+export const fetchApi = async (endpoint, options = {}) => {
+    try {
+        const { method = 'get', data, ...rest } = options;
+        const response = await apiClient[method.toLowerCase()](endpoint, data, rest);
+        return response.data;
+    } catch (error) {
+        console.error(`API Error (${endpoint}):`, error);
+        throw error;
+    }
+};

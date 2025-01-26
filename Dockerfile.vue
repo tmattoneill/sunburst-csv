@@ -18,8 +18,10 @@ RUN echo "DEBUG: Adding WORKDIR ${APP_PATH}"
 WORKDIR ${APP_PATH}
 
 RUN apk --no-cache add curl bash
+
 COPY frontend/package*.json ./
-RUN npm install --no-cache --verbose && \
+
+RUN npm install --no-cache && \
     npm install -g @vue/cli @vue/cli-service
 
 COPY frontend/ .
