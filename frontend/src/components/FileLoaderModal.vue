@@ -100,20 +100,22 @@ const uploadFileAndProcess = async () => {
     return;
   }
 
-  const formData = new FormData();
-  formData.append("file", selectedFile.value);
-
   try {
-    // Upload file
+    const formData = new FormData();
+    formData.append("file", selectedFile.value);
+
     const response = await fetchApi(API_ENDPOINTS.UPLOAD, {
       method: "POST",
-      data: formData,
+      data: formData
     });
+
+    if (!response?.filePath) {
+      throw new Error("No file path returned from upload");
+    }
 
     uploadStatus.value = "File uploaded successfully! Running report...";
 
-    // Process report
-    const processResponse = await fetchApi(API_ENDPOINTS.PROCESS, {
+    await fetchApi(API_ENDPOINTS.PROCESS, {
       method: "POST",
       data: {
         filePath: response.filePath,
@@ -122,12 +124,13 @@ const uploadFileAndProcess = async () => {
     });
 
     uploadStatus.value = "Report processed successfully!";
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    handleClose();
     emit('upload-complete');
 
   } catch (error) {
     console.error("Upload error:", error);
-    uploadStatus.value = error.response?.data?.error || "An unexpected error occurred.";
+    uploadStatus.value = error.response?.data?.message || error.message || "Upload failed";
   }
 };
 
