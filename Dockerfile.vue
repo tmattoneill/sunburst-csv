@@ -1,37 +1,31 @@
+# Stage 1: Build
 FROM node:18-alpine AS builder
 
-ARG NODE_ENV
-ARG APP_PATH
-ARG VUE_PORT
-ARG VUE_APP_API_ROOT_PATH
+# Arguments
+ARG APP_PATH="/app"
 
+# Environment Variables
 ENV NODE_ENV=production
 ENV DEBUG=webpack:*
 ENV NODE_OPTIONS="--max-old-space-size=4096"
 
-ENV APP_PATH=${APP_PATH}
+# Set the working directory inside the container
 WORKDIR ${APP_PATH}
 
+# Install dependencies for Alpine
 RUN apk --no-cache add curl bash
 
+# Copy package.json and install dependencies INSIDE the container
 COPY frontend/package*.json ./
-RUN npm install --no-cache && \
-    npm install -g @vue/cli @vue/cli-service
 
+# Ensure dependencies are installed INSIDE the container
+RUN npm install --no-cache && npm install -g @vue/cli @vue/cli-service
+
+# Copy the rest of the frontend source code
 COPY frontend/ .
 
-RUN echo "Current directory: $PWD" && \
-    ls -la && \
-    echo "Building with NODE_ENV=$NODE_ENV" && \
-    npm run build --verbose
+# Expose Vue dev server port
+EXPOSE 8080
 
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.build.conf /etc/nginx/nginx.conf
-
-RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \
-    chmod -R 777 /var/cache/nginx /var/run /var/log/nginx && \
-    chmod -R 777 /etc/nginx /usr/share/nginx/html
-
-EXPOSE ${VUE_PORT}
-CMD ["nginx", "-g", "daemon off;"]
+# Run Vue CLI server (binds to all interfaces)
+CMD ["npm", "run", "serve"]

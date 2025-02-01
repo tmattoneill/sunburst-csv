@@ -37,7 +37,7 @@ A Vue-based application for visualizing hierarchical data as interactive sunburs
 │   │   │   └── SunburstChart.vue
 │   │   ├── main.js
 │   │   └── palettes.js
-│   └── vue.config.js
+│   └── vue.config.js.old
 └── requirements.txt
 ```
 
