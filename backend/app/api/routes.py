@@ -13,8 +13,9 @@ load_dotenv()
 bp = Blueprint('api', __name__)
 
 # Configure application settings
-UPLOAD_DIR = os.getenv('UPLOAD_DIR', "/data/raw")
-DB_PATH = os.getenv('DATABASE_URL', "/data/security.db")
+DATA_DIR = os.getenv('DATA_DIR', "../data")
+UPLOAD_DIR = os.getenv('UPLOAD_DIR', "../data/raw")
+DB_PATH = os.getenv('DATABASE_URL', "../data/security.db")
 ALLOWED_EXTENSIONS = {'csv'}
 
 db = DatabaseHandler(DB_PATH)
@@ -30,7 +31,7 @@ def health_check():
 @bp.route('/data', methods=['GET'])
 def get_data():
     try:
-        with open('../data/sunburst_data.json', 'r') as f:
+        with open( os.path.join(DATA_DIR, 'sunburst_data.json'), 'r') as f:
             data = json.load(f)
             return jsonify(data), 200
     except FileNotFoundError:

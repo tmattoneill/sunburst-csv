@@ -180,78 +180,65 @@ class ReportProcessor:
 
         return key, path, value
 
-    def _update_json_tree(self, path: List[str], value: float) -> None:
-        """Update the JSON tree with a new path and value."""
-        # Initialize if this is the first entry
+    def _update_json_tree(self, path: List[str], tag: str) -> None:
+        """
+        Update the JSON tree: for each node in the given path,
+        add the provided tag (ad tag) to the node's internal set.
+        """
+        # Initialize root if not already done
         if not self.tree:
-            self.tree = TreeRoot(
-                name=self.client_name,
-                value=0,
-                children=[]
-            )
+            self.tree = {"name": self.client_name, "_tags": set(), "children": []}
+        # Add tag to root's set
+        self.tree["_tags"].add(tag)
 
-        # Update root value
-        self.tree['value'] += value
-
-        # Find or create top-level node
-        top_name = path[0]
-        top_node = None
-        for child in self.tree['children']:
-            if child['name'] == top_name:
-                top_node = child
-                break
-
-        if top_node is None:
-            top_node = TreeNode(
-                name=top_name,
-                value=value,
-                children=[]
-            )
-            self.tree['children'].append(top_node)
-        else:
-            top_node['value'] += value
-
-        # Process remaining path elements
-        current: TreeNode = top_node
-        for i, name in enumerate(path[1:], 1):
-            # Look for existing node
-            next_node = None
-            for child in current['children']:
-                if child['name'] == name:
-                    next_node = child
+        current = self.tree
+        for node_name in path:
+            # Look for an existing child node matching node_name
+            found = None
+            for child in current["children"]:
+                if child["name"] == node_name:
+                    found = child
                     break
+            # If not found, create a new node with an empty _tags set
+            if found is None:
+                found = {"name": node_name, "_tags": set(), "children": []}
+                current["children"].append(found)
+            # Add the tag to this node's set
+            found["_tags"].add(tag)
+            # Descend into the tree
+            current = found
 
-            if next_node is None:
-                next_node = TreeNode(
-                    name=name,
-                    value=value,
-                    children=[]
-                )
-                current['children'].append(next_node)
-            else:
-                next_node['value'] += value
-
-            current = next_node
+    def _finalize_tree(self, node: dict) -> None:
+        """
+        Recursively replace each node's _tags set with its count,
+        storing that count in the 'value' key, and remove the temporary _tags.
+        """
+        node["value"] = len(node.get("_tags", set()))
+        node.pop("_tags", None)
+        for child in node.get("children", []):
+            self._finalize_tree(child)
 
     def create_sunburst_data(self) -> ReportMetadata:
-        """Create hierarchical data structure from processed CSV."""
+        """Create hierarchical data structure from raw CSV data using unique tag names."""
         try:
             # Reset the tree
             self.tree = {}
+            # Get the raw DataFrame (which should include the 'tag_name' column)
+            raw_df = self.get_raw_dataframe()
 
-            # Process the CSV one row at a time
-            with open(self.processed_data_path, 'r', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                next(reader)  # Skip header
+            # Iterate over each row to update the tree.
+            # Use self.tree_order to build the path and use the tag_name from the row.
+            for _, row in raw_df.iterrows():
+                # Build the path based on the tree order fields.
+                path = [str(row[field]) for field in self.tree_order if pd.notna(row[field])]
+                # Extract the tag from the row (assuming the column is named 'tag_name')
+                tag = str(row["tag_name"]) if "tag_name" in row else None
+                if path and tag:
+                    self._update_json_tree(path, tag)
 
-                for row in reader:
-                    try:
-                        key, path, value = self._process_row(row)
-                        if key and path and value is not None:
-                            self._update_json_tree(path, value)
-                    except Exception as e:
-                        print(f"Warning: Error processing row {row}: {str(e)}")
-                        continue
+            # Once all rows are processed, finalize the tree so that each node's value
+            # becomes the count of unique tags.
+            self._finalize_tree(self.tree)
 
             # Create the metadata object
             metadata = ReportMetadata(
@@ -262,7 +249,7 @@ class ReportProcessor:
                 tree_order=self.tree_order
             )
 
-            # Save the result
+            # Save the resulting JSON structure
             with open(self.sunburst_data_path, 'w', encoding='utf-8') as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
 
