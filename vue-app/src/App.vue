@@ -68,26 +68,26 @@ const handleFileSelected = async (file) => {
 
 const handlePathNavigation = ({ segment, index }) => {
   // Walk the tree to find the target node
-  let targetNode = chartData.value; // Start at root
+  let targetNode = chartData.value; // Start at the root
   const path = currentPath.value.slice(0, index + 1);
 
-  // Skip root (index 0) and navigate to the target level
+  // Navigate from the root to the target level
   for (let i = 1; i <= index; i++) {
     const segmentId = path[i].id;
-    targetNode = targetNode.children.find(
-      child => child.nodeId === segmentId
-    );
+    targetNode = targetNode.children.find(child => child.nodeId === segmentId);
   }
 
-  // Update the selected node and path
   selectedNode.value = targetNode;
-  currentPath.value = path;
 
-  // Update the chart by emitting node-click event
+  // Update currentPath and recalc filters
+  handlePathChange(path);
+
+  // Optionally update the chart with the target node
   if (targetNode) {
     handleNodeClick(targetNode);
   }
-}
+};
+
 
 const fetchData = async () => {
   try {
