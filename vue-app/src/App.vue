@@ -14,28 +14,33 @@ const reportType = ref('')
 const dateStart = ref('')
 const dateEnd = ref('')
 const selectedNode = ref(null)
+const hoveredNode = ref(null);
 const currentPath = ref([])
 const currentFilters = ref({}) // for the data table
 const chartRef = ref(null)
 const filterOrder = ref([])
 
 // Computed properties for DataPane
-const rootName = computed(() => selectedNode.value?.name ?? chartData.value?.name ?? '')
-const rootValue = computed(() => selectedNode.value?.value ?? chartData.value?.value ?? 0)
-const topChildren = computed(() => selectedNode.value?.children ?? chartData.value?.children ?? [])
+const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
+const rootName = computed(() => dataPaneNode.value?.name || chartData.value?.name || '');
+const rootValue = computed(() => dataPaneNode.value?.value || chartData.value?.value || 0);
+const topChildren = computed(() => dataPaneNode.value?.children || chartData.value?.children || []);
 const chartName = computed(() => chartData.value?.name ?? '')
+
 
 // Add handler for node selection
 const handleNodeClick = (node) => {
   selectedNode.value = node;
+  hoveredNode.value = null; // Clear hover so DataPane sticks to the clicked node when not hovering
   if (node.children) {
-    // If the node has children, update the current data in the chart
     chartRef.value?.updateChart(node);
   }
 }
 
+
 const handleNodeHover = (node) => {
-  selectedNode.value = node || chartData.value;
+  // Simply update hoveredNode on hover; do not affect selectedNode
+  hoveredNode.value = node;
 }
 
 const handlePathChange = (path) => {
