@@ -1,0 +1,12 @@
+[2025-02-01 17:42:04 +0000] [12473] [INFO] Starting gunicorn 23.0.0
+[2025-02-01 17:42:04 +0000] [12473] [ERROR] Connection in use: ('0.0.0.0', 6500)
+[2025-02-01 17:42:04 +0000] [12473] [ERROR] connection to ('0.0.0.0', 6500) failed: [Errno 48] Address already in use
+[2025-02-01 17:42:05 +0000] [12473] [ERROR] Connection in use: ('0.0.0.0', 6500)
+[2025-02-01 17:42:05 +0000] [12473] [ERROR] connection to ('0.0.0.0', 6500) failed: [Errno 48] Address already in use
+[2025-02-01 17:42:06 +0000] [12473] [ERROR] Connection in use: ('0.0.0.0', 6500)
+[2025-02-01 17:42:06 +0000] [12473] [ERROR] connection to ('0.0.0.0', 6500) failed: [Errno 48] Address already in use
+[2025-02-01 17:42:07 +0000] [12473] [ERROR] Connection in use: ('0.0.0.0', 6500)
+[2025-02-01 17:42:07 +0000] [12473] [ERROR] connection to ('0.0.0.0', 6500) failed: [Errno 48] Address already in use
+[2025-02-01 17:42:08 +0000] [12473] [ERROR] Connection in use: ('0.0.0.0', 6500)
+[2025-02-01 17:42:08 +0000] [12473] [ERROR] connection to ('0.0.0.0', 6500) failed: [Errno 48] Address already in use
+[2025-02-01 17:42:09 +0000] [12473] [ERROR] Can't connect to ('0.0.0.0', 6500)

@@ -1,5 +1,9 @@
-**/node_modules
-**/Library
-**/.git
-**/.DS_Store
-**/bdesign
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.env
+.vscode/
+.idea/
+backend.log
+venv/

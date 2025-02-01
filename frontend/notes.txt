@@ -1,1 +1,0 @@
-Use : https://ui.refinitiv.com/start/styling for certain elements (pills; pagenav)
