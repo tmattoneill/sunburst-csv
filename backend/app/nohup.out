@@ -1,0 +1,232 @@
+[2025-02-02 15:17:41 +0000] [82706] [INFO] Starting gunicorn 23.0.0
+[2025-02-02 15:17:41 +0000] [82706] [INFO] Listening at: http://0.0.0.0:6500 (82706)
+[2025-02-02 15:17:41 +0000] [82706] [INFO] Using worker: sync
+[2025-02-02 15:17:41 +0000] [82707] [INFO] Booting worker with pid: 82707
+[2025-02-02 15:17:53 +0000] [82706] [INFO] Handling signal: winch
+[2025-02-02 15:17:55 +0000] [82706] [INFO] Handling signal: winch
+2025-02-02 15:21:29,980 - INFO - Detecting report type from columns: {'start_date', 'scan_type', 'provider_account', 'hit_type', 'end_date', 'provider_name', 'country', 'threat_behavior', 'provider_account_id', 'scan_date', 'malware_condition', 'resolution_reason', 'public_deck', 'example', 'csid', 'tag_name', 'referrer', 'publisher_name', 'provider_id', 'publisher_id', 'incident', 'scan_id', 'ad_tag_id', 'website_id', 'website_name', 'priority', 'comment_type', 'tag_status', 'hash', 'comment_text', 'pause', 'expected_behavior'}
+2025-02-02 15:21:29,980 - INFO - Matching report types: ['basic', 'enhanced']
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'report_period_hit_count', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'city', 'named_threat', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 4046
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20240625-TAM', 'ad_tag_id': 'd=7&s=111&ci=&cri=638_111_2025_01_Bouygues_Telecom_TradePC1_DTS_Kairos_3057_1327911_1_22100&at=0&t=1', 'hash': 'fb3a68734387ba44b24117abd309faee', 'tag_name': 'd=7&s=111&ci=&cri=638_111_2025_01_Bouygues_Telecom_TradePC1_DTS_Kairos_3057_1327911_1_22100&at=0&t=1', 'scan_type': 'Tag', 'hit_type': 'Malicious - Indirect Evidence', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493886361, 'example': 'https://www.themediatrust.com?scsh=125493886361', 'csid': '3UYBHjox2VFv', 'report_period_hit_count': 1, 'tag_status': 'Active', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 'f', 'priority': 3.0, 'publisher_name': None, 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': '7/111', 'country': 'USA', 'referrer': None, 'comment_type': 'DNE Domain', 'comment_text': 'Domain Does Not Exist: The flagged domain is not generating any content and is no longer connecting and executing during scanning. The Media Trust is not able to confirm the legitimacy of this domain. These types of domains often cause malicious redirects as they frequently expire and are associated with malicious content; bad actors take advantage of a domains one-time legitimacy and repurchase them to execute malicious campaigns.\nTo remediate this, please ensure this domain is removed from the delivery process and is no longer being called to and delivered. ', 'threat_behavior': 'Generic Malware/Suspicious', 'expected_behavior': 'Suspicious (Multiple indicators match known overt incidents but no overt actions detected.)', 'malware_condition': 'DNE Domain', 'city': 'Mclean, Virginia', 'named_threat': None, 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'report_period_hit_count', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'city', 'named_threat', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 4046
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20240625-TAM', 'ad_tag_id': 'd=7&s=111&ci=&cri=638_111_2025_01_Bouygues_Telecom_TradePC1_DTS_Kairos_3057_1327911_1_22100&at=0&t=1', 'hash': 'fb3a68734387ba44b24117abd309faee', 'tag_name': 'd=7&s=111&ci=&cri=638_111_2025_01_Bouygues_Telecom_TradePC1_DTS_Kairos_3057_1327911_1_22100&at=0&t=1', 'scan_type': 'Tag', 'hit_type': 'Malicious - Indirect Evidence', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493886361, 'example': 'https://www.themediatrust.com?scsh=125493886361', 'csid': '3UYBHjox2VFv', 'report_period_hit_count': 1, 'tag_status': 'Active', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 'f', 'priority': 3.0, 'publisher_name': None, 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': '7/111', 'country': 'USA', 'referrer': None, 'comment_type': 'DNE Domain', 'comment_text': 'Domain Does Not Exist: The flagged domain is not generating any content and is no longer connecting and executing during scanning. The Media Trust is not able to confirm the legitimacy of this domain. These types of domains often cause malicious redirects as they frequently expire and are associated with malicious content; bad actors take advantage of a domains one-time legitimacy and repurchase them to execute malicious campaigns.\nTo remediate this, please ensure this domain is removed from the delivery process and is no longer being called to and delivered. ', 'threat_behavior': 'Generic Malware/Suspicious', 'expected_behavior': 'Suspicious (Multiple indicators match known overt incidents but no overt actions detected.)', 'malware_condition': 'DNE Domain', 'city': 'Mclean, Virginia', 'named_threat': None, 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+Processing request with client_name: zMaticoo, file: 7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_3-20250202-152129.csv
+Attempting to read: ../data/raw/7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_3-20250202-152129.csv
+File exists: True
+Reading raw data from: ../data/raw/7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_3-20250202-152129.csv
+Extracted report type: Tag Summary Report
+
+Columns in raw data: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Initializing database from DataFrame
+Columns being stored: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Loaded 14138 rows into database
+Using most detailed report type available: enhanced
+Tree order set to: ['hit_type', 'threat_behavior', 'malware_condition', 'incident']
+
+Processing complete. Data saved to '../data/dataset.csv'
+Reading raw data from: ../data/raw/7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_3-20250202-152129.csv
+Extracted report type: Tag Summary Report
+
+Columns in raw data: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Data created and saved to ../data/sunburst_data.json
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 14138
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241213-LXJ', 'ad_tag_id': 1738299048559532807, 'hash': '6f93f93e097dcbf3a0b6f7ec0be21fa7', 'tag_name': 'TMT|banner$$20250131$$mobfox_dsp$$isx$$UURcXg1GQB4MAwoYVUcQXxYCG0RNFAEYUQcACQ1fWBQMC1cACAJaBVtGXkQfCQZTVgReF0wK481MF$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Malicious', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493884024, 'example': 'https://www.themediatrust.com?scsh=125493884024', 'csid': '3UYBHgdQ1wvF', 'tag_status': 'Paused', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 't', 'priority': 3.0, 'publisher_name': 'isx', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'mobfox_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=36ec2489057be11e7859b2303f65abc4', 'comment_type': 'GhostCat - 3PC', 'comment_text': 'GhostCat-3PC: This malicious campaign utilizes advanced obfuscation and delivery patterns to evade signature-based detection. This malware evades conventional blockers in order to hijack users browser sessions for the purpose of delivering popups, redirects, and other phishing content. Publisher visitors who fall victim to this malware may have malicious software installed on their device, including but not limited to Remote Access Trojans and adware.', 'threat_behavior': 'Phishing', 'expected_behavior': 'Phishing', 'malware_condition': 'GhostCat - 3PC', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 14138
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241213-LXJ', 'ad_tag_id': 1738299048559532807, 'hash': '6f93f93e097dcbf3a0b6f7ec0be21fa7', 'tag_name': 'TMT|banner$$20250131$$mobfox_dsp$$isx$$UURcXg1GQB4MAwoYVUcQXxYCG0RNFAEYUQcACQ1fWBQMC1cACAJaBVtGXkQfCQZTVgReF0wK481MF$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Malicious', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493884024, 'example': 'https://www.themediatrust.com?scsh=125493884024', 'csid': '3UYBHgdQ1wvF', 'tag_status': 'Paused', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 't', 'priority': 3.0, 'publisher_name': 'isx', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'mobfox_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=36ec2489057be11e7859b2303f65abc4', 'comment_type': 'GhostCat - 3PC', 'comment_text': 'GhostCat-3PC: This malicious campaign utilizes advanced obfuscation and delivery patterns to evade signature-based detection. This malware evades conventional blockers in order to hijack users browser sessions for the purpose of delivering popups, redirects, and other phishing content. Publisher visitors who fall victim to this malware may have malicious software installed on their device, including but not limited to Remote Access Trojans and adware.', 'threat_behavior': 'Phishing', 'expected_behavior': 'Phishing', 'malware_condition': 'GhostCat - 3PC', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 14138
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241213-LXJ', 'ad_tag_id': 1738299048559532807, 'hash': '6f93f93e097dcbf3a0b6f7ec0be21fa7', 'tag_name': 'TMT|banner$$20250131$$mobfox_dsp$$isx$$UURcXg1GQB4MAwoYVUcQXxYCG0RNFAEYUQcACQ1fWBQMC1cACAJaBVtGXkQfCQZTVgReF0wK481MF$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Malicious', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493884024, 'example': 'https://www.themediatrust.com?scsh=125493884024', 'csid': '3UYBHgdQ1wvF', 'tag_status': 'Paused', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 't', 'priority': 3.0, 'publisher_name': 'isx', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'mobfox_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=36ec2489057be11e7859b2303f65abc4', 'comment_type': 'GhostCat - 3PC', 'comment_text': 'GhostCat-3PC: This malicious campaign utilizes advanced obfuscation and delivery patterns to evade signature-based detection. This malware evades conventional blockers in order to hijack users browser sessions for the purpose of delivering popups, redirects, and other phishing content. Publisher visitors who fall victim to this malware may have malicious software installed on their device, including but not limited to Remote Access Trojans and adware.', 'threat_behavior': 'Phishing', 'expected_behavior': 'Phishing', 'malware_condition': 'GhostCat - 3PC', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 14138
+Actually returned rows: 20
+Sample row:
+2025-02-02 15:22:20,408 - INFO - Detecting report type from columns: {'start_date', 'scan_type', 'provider_account', 'hit_type', 'end_date', 'provider_name', 'country', 'threat_behavior', 'provider_account_id', 'scan_date', 'malware_condition', 'resolution_reason', 'public_deck', 'example', 'csid', 'tag_name', 'referrer', 'publisher_name', 'provider_id', 'publisher_id', 'incident', 'scan_id', 'ad_tag_id', 'website_id', 'website_name', 'priority', 'comment_type', 'tag_status', 'hash', 'comment_text', 'pause', 'expected_behavior'}
+2025-02-02 15:22:20,408 - INFO - Matching report types: ['basic', 'enhanced']
+{'incident': 'TMT-20241213-LXJ', 'ad_tag_id': 1738299048559532807, 'hash': '6f93f93e097dcbf3a0b6f7ec0be21fa7', 'tag_name': 'TMT|banner$$20250131$$mobfox_dsp$$isx$$UURcXg1GQB4MAwoYVUcQXxYCG0RNFAEYUQcACQ1fWBQMC1cACAJaBVtGXkQfCQZTVgReF0wK481MF$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Malicious', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493884024, 'example': 'https://www.themediatrust.com?scsh=125493884024', 'csid': '3UYBHgdQ1wvF', 'tag_status': 'Paused', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 't', 'priority': 3.0, 'publisher_name': 'isx', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'mobfox_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=36ec2489057be11e7859b2303f65abc4', 'comment_type': 'GhostCat - 3PC', 'comment_text': 'GhostCat-3PC: This malicious campaign utilizes advanced obfuscation and delivery patterns to evade signature-based detection. This malware evades conventional blockers in order to hijack users browser sessions for the purpose of delivering popups, redirects, and other phishing content. Publisher visitors who fall victim to this malware may have malicious software installed on their device, including but not limited to Remote Access Trojans and adware.', 'threat_behavior': 'Phishing', 'expected_behavior': 'Phishing', 'malware_condition': 'GhostCat - 3PC', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 14138
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241213-LXJ', 'ad_tag_id': 1738299048559532807, 'hash': '6f93f93e097dcbf3a0b6f7ec0be21fa7', 'tag_name': 'TMT|banner$$20250131$$mobfox_dsp$$isx$$UURcXg1GQB4MAwoYVUcQXxYCG0RNFAEYUQcACQ1fWBQMC1cACAJaBVtGXkQfCQZTVgReF0wK481MF$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Malicious', 'scan_date': '2025-01-31 04:54 +0000', 'scan_id': 125493884024, 'example': 'https://www.themediatrust.com?scsh=125493884024', 'csid': '3UYBHgdQ1wvF', 'tag_status': 'Paused', 'start_date': '2025-01-31', 'end_date': '2025-01-31', 'pause': 't', 'priority': 3.0, 'publisher_name': 'isx', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'mobfox_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=36ec2489057be11e7859b2303f65abc4', 'comment_type': 'GhostCat - 3PC', 'comment_text': 'GhostCat-3PC: This malicious campaign utilizes advanced obfuscation and delivery patterns to evade signature-based detection. This malware evades conventional blockers in order to hijack users browser sessions for the purpose of delivering popups, redirects, and other phishing content. Publisher visitors who fall victim to this malware may have malicious software installed on their device, including but not limited to Remote Access Trojans and adware.', 'threat_behavior': 'Phishing', 'expected_behavior': 'Phishing', 'malware_condition': 'GhostCat - 3PC', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+Processing request with client_name: zMat, file: 7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_1-20250202-152220.csv
+Attempting to read: ../data/raw/7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_1-20250202-152220.csv
+File exists: True
+Reading raw data from: ../data/raw/7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_1-20250202-152220.csv
+Extracted report type: Tag Summary Report
+
+Columns in raw data: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Initializing database from DataFrame
+Columns being stored: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Loaded 12493 rows into database
+Using most detailed report type available: enhanced
+Tree order set to: ['hit_type', 'threat_behavior', 'malware_condition', 'incident']
+
+Processing complete. Data saved to '../data/dataset.csv'
+Reading raw data from: ../data/raw/7_Day_Activity_-_zMaticoo-_Security_Incidents_by_Tag_1-20250202-152220.csv
+Extracted report type: Tag Summary Report
+
+Columns in raw data: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Data created and saved to ../data/sunburst_data.json
+
+=== Starting get_filtered_data ===
+Received filters: None
+Filter type: <class 'NoneType'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Final SQL Query: SELECT * FROM security_data
+Query Parameters: []
+Total matching rows: 12493
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20240703-YMJ', 'ad_tag_id': 1738039728451493053, 'hash': 'ae6ee61d0c6ad28601abf781aeb2abf5', 'tag_name': 'TMT|banner$$20250128$$Inspiritum_dsp$$pubnative$$229903$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Malicious', 'scan_date': '2025-01-28 04:52 +0000', 'scan_id': 125413680160, 'example': 'https://www.themediatrust.com?scsh=125413680160', 'csid': '3UWwH7cE23Cj', 'tag_status': 'Paused', 'start_date': '2025-01-28', 'end_date': '2025-01-28', 'pause': 't', 'priority': 3.0, 'publisher_name': 'pubnative', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'Inspiritum_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=5de6189d26a4c8134434e241c3f108af', 'comment_type': 'Phishing Domain', 'comment_text': 'Phishing Domain: This domain delivers malicious popups and other phishing content such as fake surveys, gift card prizes, and fraudulent offers designed to trick users into disclosing personal information or downloading malware onto their device. These deceptive tactics are designed to exploit unsuspecting individuals, leading to potential financial loss, identity theft, and compromised security.', 'threat_behavior': 'Phishing', 'expected_behavior': 'Phishing', 'malware_condition': 'Phishing Domain', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: {'hit_type': 'Scam/Fraud', 'threat_behavior': 'Ad Fraud'}
+Filter type: <class 'dict'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Processing filter - Column: hit_type, Value: Scam/Fraud, Value Type: <class 'str'>
+Processing filter - Column: threat_behavior, Value: Ad Fraud, Value Type: <class 'str'>
+Final SQL Query: SELECT * FROM security_data WHERE hit_type = ? AND threat_behavior = ?
+Query Parameters: ['Scam/Fraud', 'Ad Fraud']
+Total matching rows: 1838
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241217-MEF', 'ad_tag_id': 1738039659569070080, 'hash': '865779594eb7953ddd02e29eccdba149', 'tag_name': 'TMT|banner$$20250128$$bidswitch_dsp$$topon2$$176_CR51839404$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Scam/Fraud', 'scan_date': '2025-01-28 04:52 +0000', 'scan_id': 125413674551, 'example': 'https://www.themediatrust.com?scsh=125413674551', 'csid': '3UWwH1cW1Mai', 'tag_status': 'Paused', 'start_date': '2025-01-28', 'end_date': '2025-01-28', 'pause': 't', 'priority': 9.0, 'publisher_name': 'topon2', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'bidswitch_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=5f9d219de2c87a2e568eb6a6c5838904', 'comment_type': 'Ad Fraud', 'comment_text': 'The creative delivery method for this creative will piggyback extra content. This extra content gets delivered when the creative is delivered and is acting in a fraudulent manner that includes, but is not limited to, cookie stuffing and impression fraud.\nOften times the fix is as simple as removing the click URL from the 1x1 iframe where an impression URL is typically located.', 'threat_behavior': 'Ad Fraud', 'expected_behavior': 'Impression Fraud', 'malware_condition': 'Ad Fraud', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: {'hit_type': 'Scam/Fraud', 'threat_behavior': 'Ad Fraud', 'malware_condition': 'Ad Fraud', 'incident': 'TMT-20250110-RJC'}
+Filter type: <class 'dict'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Processing filter - Column: hit_type, Value: Scam/Fraud, Value Type: <class 'str'>
+Processing filter - Column: threat_behavior, Value: Ad Fraud, Value Type: <class 'str'>
+Processing filter - Column: malware_condition, Value: Ad Fraud, Value Type: <class 'str'>
+Processing filter - Column: incident, Value: TMT-20250110-RJC, Value Type: <class 'str'>
+Final SQL Query: SELECT * FROM security_data WHERE hit_type = ? AND threat_behavior = ? AND malware_condition = ? AND incident = ?
+Query Parameters: ['Scam/Fraud', 'Ad Fraud', 'Ad Fraud', 'TMT-20250110-RJC']
+Total matching rows: 346
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20250110-RJC', 'ad_tag_id': 1738039181482749468, 'hash': '63b7c9bc9de88140037a499b41ad010c', 'tag_name': 'TMT|banner$$20250128$$opera_dsp$$bidmachine$$94671$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Scam/Fraud', 'scan_date': '2025-01-28 04:43 +0000', 'scan_id': 125413529355, 'example': 'https://www.themediatrust.com?scsh=125413529355', 'csid': '3UWwEQQo1ao8', 'tag_status': 'Paused', 'start_date': '2025-01-28', 'end_date': '2025-01-28', 'pause': 't', 'priority': 99.0, 'publisher_name': 'bidmachine', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'opera_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=103db14053229e7d72ff23865f96ae37', 'comment_type': 'Ad Fraud', 'comment_text': 'The creative delivery method for this creative will piggyback extra content. This extra content gets delivered when the creative is delivered and is acting in a fraudulent manner that includes, but is not limited to, cookie stuffing and impression fraud.\nOften times the fix is as simple as removing the click URL from the 1x1 iframe where an impression URL is typically located.', 'threat_behavior': 'Ad Fraud', 'expected_behavior': 'Impression Fraud', 'malware_condition': 'Ad Fraud', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: {'hit_type': 'Scam/Fraud', 'threat_behavior': 'Ad Fraud', 'malware_condition': 'Ad Fraud'}
+Filter type: <class 'dict'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Processing filter - Column: hit_type, Value: Scam/Fraud, Value Type: <class 'str'>
+Processing filter - Column: threat_behavior, Value: Ad Fraud, Value Type: <class 'str'>
+Processing filter - Column: malware_condition, Value: Ad Fraud, Value Type: <class 'str'>
+Final SQL Query: SELECT * FROM security_data WHERE hit_type = ? AND threat_behavior = ? AND malware_condition = ?
+Query Parameters: ['Scam/Fraud', 'Ad Fraud', 'Ad Fraud']
+Total matching rows: 1838
+Actually returned rows: 20
+Sample row:
+[2025-02-02 15:23:02 +0000] [82706] [INFO] Handling signal: int
+[2025-02-02 15:23:02 +0000] [82707] [INFO] Worker exiting (pid: 82707)
+{'incident': 'TMT-20241217-MEF', 'ad_tag_id': 1738039659569070080, 'hash': '865779594eb7953ddd02e29eccdba149', 'tag_name': 'TMT|banner$$20250128$$bidswitch_dsp$$topon2$$176_CR51839404$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Scam/Fraud', 'scan_date': '2025-01-28 04:52 +0000', 'scan_id': 125413674551, 'example': 'https://www.themediatrust.com?scsh=125413674551', 'csid': '3UWwH1cW1Mai', 'tag_status': 'Paused', 'start_date': '2025-01-28', 'end_date': '2025-01-28', 'pause': 't', 'priority': 9.0, 'publisher_name': 'topon2', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'bidswitch_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=5f9d219de2c87a2e568eb6a6c5838904', 'comment_type': 'Ad Fraud', 'comment_text': 'The creative delivery method for this creative will piggyback extra content. This extra content gets delivered when the creative is delivered and is acting in a fraudulent manner that includes, but is not limited to, cookie stuffing and impression fraud.\nOften times the fix is as simple as removing the click URL from the 1x1 iframe where an impression URL is typically located.', 'threat_behavior': 'Ad Fraud', 'expected_behavior': 'Impression Fraud', 'malware_condition': 'Ad Fraud', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: {'hit_type': 'Scam/Fraud', 'threat_behavior': 'Ad Fraud'}
+Filter type: <class 'dict'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Processing filter - Column: hit_type, Value: Scam/Fraud, Value Type: <class 'str'>
+Processing filter - Column: threat_behavior, Value: Ad Fraud, Value Type: <class 'str'>
+Final SQL Query: SELECT * FROM security_data WHERE hit_type = ? AND threat_behavior = ?
+Query Parameters: ['Scam/Fraud', 'Ad Fraud']
+Total matching rows: 1838
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241217-MEF', 'ad_tag_id': 1738039659569070080, 'hash': '865779594eb7953ddd02e29eccdba149', 'tag_name': 'TMT|banner$$20250128$$bidswitch_dsp$$topon2$$176_CR51839404$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Scam/Fraud', 'scan_date': '2025-01-28 04:52 +0000', 'scan_id': 125413674551, 'example': 'https://www.themediatrust.com?scsh=125413674551', 'csid': '3UWwH1cW1Mai', 'tag_status': 'Paused', 'start_date': '2025-01-28', 'end_date': '2025-01-28', 'pause': 't', 'priority': 9.0, 'publisher_name': 'topon2', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'bidswitch_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=5f9d219de2c87a2e568eb6a6c5838904', 'comment_type': 'Ad Fraud', 'comment_text': 'The creative delivery method for this creative will piggyback extra content. This extra content gets delivered when the creative is delivered and is acting in a fraudulent manner that includes, but is not limited to, cookie stuffing and impression fraud.\nOften times the fix is as simple as removing the click URL from the 1x1 iframe where an impression URL is typically located.', 'threat_behavior': 'Ad Fraud', 'expected_behavior': 'Impression Fraud', 'malware_condition': 'Ad Fraud', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+
+=== Starting get_filtered_data ===
+Received filters: {'hit_type': 'Scam/Fraud'}
+Filter type: <class 'dict'>
+Available columns in table: ['incident', 'ad_tag_id', 'hash', 'tag_name', 'scan_type', 'hit_type', 'scan_date', 'scan_id', 'example', 'csid', 'tag_status', 'start_date', 'end_date', 'pause', 'priority', 'publisher_name', 'publisher_id', 'website_id', 'website_name', 'provider_id', 'provider_name', 'provider_account_id', 'provider_account', 'country', 'referrer', 'public_deck', 'comment_type', 'comment_text', 'threat_behavior', 'expected_behavior', 'malware_condition', 'resolution_reason']
+Processing filter - Column: hit_type, Value: Scam/Fraud, Value Type: <class 'str'>
+Final SQL Query: SELECT * FROM security_data WHERE hit_type = ?
+Query Parameters: ['Scam/Fraud']
+Total matching rows: 3363
+Actually returned rows: 20
+Sample row:
+{'incident': 'TMT-20241217-MEF', 'ad_tag_id': 1738039659569070080, 'hash': '865779594eb7953ddd02e29eccdba149', 'tag_name': 'TMT|banner$$20250128$$bidswitch_dsp$$topon2$$176_CR51839404$$_RTB', 'scan_type': 'Tag', 'hit_type': 'Scam/Fraud', 'scan_date': '2025-01-28 04:52 +0000', 'scan_id': 125413674551, 'example': 'https://www.themediatrust.com?scsh=125413674551', 'csid': '3UWwH1cW1Mai', 'tag_status': 'Paused', 'start_date': '2025-01-28', 'end_date': '2025-01-28', 'pause': 't', 'priority': 9.0, 'publisher_name': 'topon2', 'publisher_id': None, 'website_id': None, 'website_name': None, 'provider_id': None, 'provider_name': None, 'provider_account_id': None, 'provider_account': 'bidswitch_dsp', 'country': None, 'referrer': None, 'public_deck': 'https://www.themediatrust.com/vt.php?controller=v9&tsid=5f9d219de2c87a2e568eb6a6c5838904', 'comment_type': 'Ad Fraud', 'comment_text': 'The creative delivery method for this creative will piggyback extra content. This extra content gets delivered when the creative is delivered and is acting in a fraudulent manner that includes, but is not limited to, cookie stuffing and impression fraud.\nOften times the fix is as simple as removing the click URL from the 1x1 iframe where an impression URL is typically located.', 'threat_behavior': 'Ad Fraud', 'expected_behavior': 'Impression Fraud', 'malware_condition': 'Ad Fraud', 'resolution_reason': None}
+=== Finished get_filtered_data ===
+
+[2025-02-02 15:23:02 +0000] [82706] [INFO] Shutting down: Master

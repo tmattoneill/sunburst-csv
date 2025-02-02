@@ -1,39 +1,52 @@
+# macOS system files
 .DS_Store
-node_modules
-/dist
-Library/
-Cache/
-bdesign/
-.npm/
 
-# local env files
-#.env.local
-#.env.*.local
+# Node.js dependencies
+node_modules/
+.npm/                # Global npm cache if present
+dist/                # Build output directory
 
-# Log files
+# Python virtual environments
+venv/
+.venv/
+**/venv/
+**/.venv/
+
+# Python cache files
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Editor directories and files
-.idea
-.vscode
+# IDE and Editor Configs
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-**__pycache__
-__pycache__/
-*.pyc
-*.log
-
-*.tar.gz
-
 # App Data Files
 *.csv
-**dataset.csv
+**/dataset.csv
 data/security.db
-**sunburst_data.json
+**/sunburst_data.json
+
+# Cache and Library folders
+Library/
+Cache/
+bdesign/
+
+# Environment files
+.env
+.env.*.local
+.env.local
