@@ -202,7 +202,7 @@ const refreshPage = () => {
       @upload-complete="refreshPage"
       @processing-progress="(msg) => loadingMessage = msg"
       @processing-start="() => { isLoadingData = true; loadingMessage = 'Starting...' }"
-      @processing-complete="() => isLoadingData = false"
+      @processing-complete="() => loadingMessage = 'Loading visualization...'"
     />
 
     <div id="app" class="container py-4">
