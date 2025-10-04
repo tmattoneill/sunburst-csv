@@ -41,31 +41,90 @@ def get_data():
         return jsonify({"error": "Data file not found"}), 404
 
 
-# In api.py, update the get_table_data route:
 @bp.route('/table-data', methods=['GET', 'POST'])
 def get_table_data():
+    """
+    Get table data - supports both generic mode (CSV) and legacy mode (security.db)
+    """
     try:
-        if request.method == 'GET':
-            # Normal table view with pagination
-            page = int(request.args.get('page', 1))
-            items_per_page = int(request.args.get('items_per_page', 20))
-            filters = request.args.get('filters')
-            if filters:
-                filters = json.loads(filters)
-            result = db.get_filtered_data(page, items_per_page, filters, paginate=True)
-            return jsonify(result), 200
+        # Check if we're in generic mode by reading metadata
+        metadata_path = Path(DATA_DIR) / 'sunburst_data.json'
+        is_generic_mode = False
+        source_file = None
+        tree_order = []
 
-        elif request.method == 'POST' and request.is_json:
-            # CSV download without pagination
-            filters = request.get_json()
-            result = db.get_filtered_data(filters=filters, paginate=False)
-            headers = {
-                'Content-Type': 'text/csv',
-                'Content-Disposition': f'attachment; filename=export-{datetime.now().strftime("%Y%m%d-%H%M%S")}.csv'
-            }
-            return jsonify(result), 200, headers
+        if metadata_path.exists():
+            with open(metadata_path, 'r') as f:
+                metadata = json.load(f)
+                is_generic_mode = 'chart_name' in metadata
+                source_file = metadata.get('source_file')
+                tree_order = metadata.get('tree_order', [])
+
+        if is_generic_mode and source_file:
+            # Generic mode - read from CSV
+            csv_path = Path(UPLOAD_DIR) / source_file
+
+            if not csv_path.exists():
+                return jsonify({"error": f"Source file not found: {source_file}"}), 404
+
+            # Read CSV
+            df = pd.read_csv(csv_path)
+
+            # Get filters and pagination params
+            page = int(request.args.get('page', 1)) if request.method == 'GET' else 1
+            items_per_page = int(request.args.get('items_per_page', 20)) if request.method == 'GET' else len(df)
+            filters = {}
+
+            if request.method == 'GET':
+                filters_param = request.args.get('filters')
+                if filters_param:
+                    filters = json.loads(filters_param)
+            elif request.method == 'POST' and request.is_json:
+                filters = request.get_json() or {}
+
+            # Apply filters
+            filtered_df = df.copy()
+            for column, value in filters.items():
+                if column in filtered_df.columns and value:
+                    filtered_df = filtered_df[filtered_df[column] == value]
+
+            # Paginate
+            total = len(filtered_df)
+            total_pages = (total + items_per_page - 1) // items_per_page
+            start_idx = (page - 1) * items_per_page
+            end_idx = start_idx + items_per_page
+            paginated_df = filtered_df.iloc[start_idx:end_idx]
+
+            # Convert to records, replacing NaN with empty strings
+            data = paginated_df.fillna('').to_dict('records')
+
+            return jsonify({
+                'data': data,
+                'page': page,
+                'total': total,
+                'total_pages': total_pages
+            }), 200
+
+        else:
+            # Legacy mode - use database
+            if request.method == 'GET':
+                page = int(request.args.get('page', 1))
+                items_per_page = int(request.args.get('items_per_page', 20))
+                filters = request.args.get('filters')
+                if filters:
+                    filters = json.loads(filters)
+                result = db.get_filtered_data(page, items_per_page, filters, paginate=True)
+                return jsonify(result), 200
+
+            elif request.method == 'POST' and request.is_json:
+                filters = request.get_json()
+                result = db.get_filtered_data(filters=filters, paginate=False)
+                return jsonify(result), 200
 
     except Exception as e:
+        print(f"Error in get_table_data: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 

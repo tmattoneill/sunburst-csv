@@ -17,6 +17,11 @@ const props = defineProps({
     type: Array,
     required: true,
     default: () => []
+  },
+  valueColumn: {
+    type: String,
+    required: false,
+    default: ''
   }
 })
 
@@ -25,6 +30,19 @@ const props = defineProps({
 const formatNumber = (num) => {
   return new Intl.NumberFormat().format(num)
 }
+
+// Format value column name for display
+const valueLabel = computed(() => {
+  if (!props.valueColumn) {
+    return 'Tags with Incidents' // Legacy mode default
+  }
+  // Clean up the column name: trim whitespace, replace underscores with spaces, capitalize words
+  return props.valueColumn
+    .trim()
+    .split('_')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+})
 
 const displayChildren = computed(() => {
   if (!props.topChildren?.length) return []
@@ -52,7 +70,7 @@ const displayChildren = computed(() => {
   <div class="card">
     <div class="card-header">
       <h5 class="mb-0">{{ rootName || 'No Data' }}</h5>
-      <p class="mb-0 text-secondary">Tags with Incidents: {{ formatNumber(rootValue) }}</p>
+      <p class="mb-0 text-secondary">{{ valueLabel }}: {{ formatNumber(rootValue) }}</p>
     </div>
     <div class="card-body">
       <ul class="list-unstyled mb-0">

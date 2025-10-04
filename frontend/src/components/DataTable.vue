@@ -83,15 +83,7 @@
 import { ref, onMounted, watch, computed } from 'vue'
 import { fetchApi, API_ENDPOINTS } from '@/services/api'
 
-const headers = ref([
-  'tag_name',
-  'hit_type',
-  'comment_type',
-  'country',
-  'incident',
-  'provider_account',
-  'publisher_name'
-])
+const headers = ref([])  // Will be populated dynamically from data
 
 const currentPage = ref(1)
 const itemsPerPage = ref(20)
@@ -122,6 +114,16 @@ const props = defineProps({
   currentNodeName: {
     type: String,
     required: true
+  },
+  treeOrder: {
+    type: Array,
+    required: false,
+    default: () => []
+  },
+  valueColumn: {
+    type: String,
+    required: false,
+    default: ''
   }
 })
 
@@ -133,9 +135,54 @@ const formatCellContent = (content) => {
 
 const prettyHeader = (header) => {
   return header
+    .trim()
     .split('_')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
+}
+
+// Reorder headers: hierarchy columns, then value column, then others
+const reorderHeaders = (allHeaders) => {
+  if (!props.treeOrder || props.treeOrder.length === 0) {
+    // No tree order defined (legacy mode), return as-is
+    return allHeaders
+  }
+
+  const ordered = []
+  const remaining = [...allHeaders]
+
+  // 1. Add hierarchy columns in tree order
+  props.treeOrder.forEach(col => {
+    // Trim the column name to match CSV headers (which may have whitespace)
+    const trimmedCol = col.trim()
+    const found = remaining.find(h => h.trim() === trimmedCol)
+    if (found) {
+      ordered.push(found)
+      remaining.splice(remaining.indexOf(found), 1)
+    }
+  })
+
+  // 2. Add value column (if not already in hierarchy)
+  if (props.valueColumn) {
+    const trimmedValueCol = props.valueColumn.trim()
+    const found = remaining.find(h => h.trim() === trimmedValueCol)
+    if (found) {
+      ordered.push(found)
+      remaining.splice(remaining.indexOf(found), 1)
+    }
+  }
+
+  // 3. Add all remaining columns in original CSV order
+  ordered.push(...remaining)
+
+  console.log('DataTable - Reordered headers:', {
+    original: allHeaders,
+    treeOrder: props.treeOrder,
+    valueColumn: props.valueColumn,
+    reordered: ordered
+  })
+
+  return ordered
 }
 
 const fetchData = async (page) => {
@@ -180,12 +227,24 @@ const fetchData = async (page) => {
     totalPages.value = Number(response.total_pages) || 1;
     currentPage.value = Number(response.page) || 1;
 
+    // Extract headers dynamically from first row of data
+    if (response.data.length > 0) {
+      const extractedHeaders = Object.keys(response.data[0]);
+      const reordered = reorderHeaders(extractedHeaders);
+      // Only update if headers have changed (to avoid unnecessary reactivity)
+      if (JSON.stringify(headers.value) !== JSON.stringify(reordered)) {
+        headers.value = reordered;
+        console.log('DataTable - Headers updated from data:', headers.value);
+      }
+    }
+
     // Log state updates
     console.log('DataTable - State updated:', {
       rowCount: tableData.value.length,
       totalItems: totalItems.value,
       totalPages: totalPages.value,
       currentPage: currentPage.value,
+      headers: headers.value,
       actualData: response.data.slice(0, 2) // Log first two rows as sample
     });
 
@@ -198,6 +257,7 @@ const fetchData = async (page) => {
 
     // Reset to safe defaults
     tableData.value = [];
+    headers.value = [];
     totalItems.value = 0;
     totalPages.value = 1;
     currentPage.value = 1;

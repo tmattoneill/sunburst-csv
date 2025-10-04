@@ -15,6 +15,7 @@ const chartName = ref('')
 const dateStart = ref('')
 const dateEnd = ref('')
 const treeOrder = ref([])
+const valueColumn = ref('') // Generic mode: name of the value column
 const selectedNode = ref(null)
 const hoveredNode = ref(null);
 const currentPath = ref([])
@@ -104,6 +105,7 @@ const fetchData = async () => {
       // Generic mode
       chartName.value = responseData.chart_name
       treeOrder.value = responseData.tree_order || []
+      valueColumn.value = responseData.value_column || ''
       reportType.value = ''
       dateStart.value = ''
       dateEnd.value = ''
@@ -114,6 +116,7 @@ const fetchData = async () => {
       dateStart.value = responseData.date_start || ''
       dateEnd.value = responseData.date_end || ''
       treeOrder.value = responseData.tree_order || []
+      valueColumn.value = '' // No value column in legacy mode
     }
 
     chartData.value = responseData.data
@@ -206,6 +209,7 @@ const refreshPage = () => {
             :rootName="rootName"
             :rootValue="rootValue"
             :topChildren="topChildren"
+            :valueColumn="valueColumn"
           />
         </div>
       </div>
@@ -219,6 +223,8 @@ const refreshPage = () => {
           :dateStart="dateStart"
           :dateEnd="dateEnd"
           :currentNodeName="rootName"
+          :treeOrder="treeOrder"
+          :valueColumn="valueColumn"
         />
       </div>
     </div>

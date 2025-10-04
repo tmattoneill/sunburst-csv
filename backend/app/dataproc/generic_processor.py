@@ -259,6 +259,7 @@ class GenericProcessor:
                 'chart_name': self.chart_name,
                 'tree_order': self.tree_order,
                 'value_column': self.value_column,
+                'source_file': str(self.raw_data_path.name),  # Store source file name for table queries
                 'data': self.tree
             }
 
