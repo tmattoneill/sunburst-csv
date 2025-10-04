@@ -51,7 +51,9 @@ class GenericProcessor:
                  chart_name: str,
                  tree_order: List[str],
                  value_column: str,
-                 data_path: str = "../data"):
+                 data_path: str = "../data",
+                 session_id: str = "default",
+                 progress_callback=None):
         """
         Initialize the generic processor.
 
@@ -61,15 +63,19 @@ class GenericProcessor:
             tree_order: List of column names forming the hierarchy (e.g., ['dsp_name', 'brand_name', 'buyer_name'])
             value_column: Column name containing numeric values to aggregate (e.g., 'ad_spend')
             data_path: Base path for data storage
+            session_id: Session identifier for multi-user support
+            progress_callback: Optional callback function for progress updates
         """
         self.data_path = Path(os.getenv('DATA_PATH', data_path))
         self.raw_data_path = self.data_path / "raw" / input_file
-        self.sunburst_data_path = self.data_path / "sunburst_data.json"
+        self.sunburst_data_path = self.data_path / f"{session_id}_sunburst_data.json"
 
         self.chart_name = chart_name
         self.tree_order = tree_order
         self.value_column = value_column
         self.tree: Union[TreeRoot, Dict] = {}
+        self.session_id = session_id
+        self.progress_callback = progress_callback
 
         # Validate inputs
         if not tree_order or len(tree_order) < 3:
@@ -78,6 +84,11 @@ class GenericProcessor:
             raise ValueError("value_column is required")
         if not chart_name:
             raise ValueError("chart_name is required")
+
+    def _report_progress(self, current: int, total: int, message: str):
+        """Report progress if callback is set."""
+        if self.progress_callback:
+            self.progress_callback(current, total, message)
 
     @staticmethod
     def clean_numeric_value(value: str) -> float:
@@ -192,13 +203,15 @@ class GenericProcessor:
         print(f"Validated data: {len(df_clean)} rows ready for processing")
         return df_clean
 
-    def build_tree_recursive(self, df: pd.DataFrame, level: int = 0) -> List[TreeNode]:
+    def build_tree_recursive(self, df: pd.DataFrame, level: int = 0, level0_idx: int = 0, level0_total: int = 0) -> List[TreeNode]:
         """
-        Recursively build tree structure from grouped data.
+        Recursively build tree structure from grouped data with progress tracking.
 
         Args:
             df: Dataframe subset for this level
             level: Current hierarchy level (0-indexed)
+            level0_idx: For level 0, the current category index (for progress)
+            level0_total: For level 0, total number of categories (for progress)
 
         Returns:
             List of TreeNode dictionaries
@@ -208,10 +221,20 @@ class GenericProcessor:
 
         col = self.tree_order[level]
         children = []
+        unique_values = df[col].unique()
 
         # Group by current level column
-        for value in df[col].unique():
+        for idx, value in enumerate(unique_values):
             subset = df[df[col] == value]
+
+            # Only report progress at the first level
+            if level == 0:
+                progress_pct = 20 + int((idx / len(unique_values)) * 70)  # 20-90%
+                self._report_progress(
+                    progress_pct,
+                    100,
+                    f"Processing {col}: {value} ({idx + 1}/{len(unique_values)})"
+                )
 
             # Sum the value column for this node
             node_value = subset[self.value_column].sum()
@@ -240,14 +263,19 @@ class GenericProcessor:
         """
         try:
             # Read and validate data
+            self._report_progress(0, 100, "Reading file...")
             df = self.read_dataframe()
+
+            self._report_progress(10, 100, "Validating data...")
             df = self.validate_and_prepare_data(df)
 
             # Build tree structure
+            self._report_progress(20, 100, "Building tree structure...")
             print("Building tree structure...")
             total_value = df[self.value_column].sum()
             children = self.build_tree_recursive(df, level=0)
 
+            self._report_progress(90, 100, "Finalizing...")
             self.tree = {
                 'name': self.chart_name,
                 'value': float(total_value),
@@ -267,6 +295,7 @@ class GenericProcessor:
             with open(self.sunburst_data_path, 'w', encoding='utf-8') as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
 
+            self._report_progress(100, 100, "Complete!")
             print(f"✓ Sunburst data created and saved to {self.sunburst_data_path}")
             print(f"  Total value: {total_value:,.2f}")
             print(f"  Top-level categories: {len(children)}")

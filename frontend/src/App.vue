@@ -8,6 +8,18 @@ import PageHeader from './components/PageHeader.vue'
 import DataTable from "@/components/DataTable.vue";
 import { fetchApi, API_ENDPOINTS } from '@/services/api';
 
+// Session management
+const getOrCreateSessionId = () => {
+  let sessionId = localStorage.getItem('sunburst_session_id')
+  if (!sessionId) {
+    sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2)
+    localStorage.setItem('sunburst_session_id', sessionId)
+  }
+  return sessionId
+}
+
+const sessionId = ref(getOrCreateSessionId())
+
 const chartData = ref({})
 const currentPalette = ref('Ocean')
 const reportType = ref('')
@@ -22,6 +34,7 @@ const currentPath = ref([])
 const currentFilters = ref({}) // for the data table
 const chartRef = ref(null)
 const filterOrder = ref([])
+const isLoadingData = ref(false)
 
 // Computed properties for DataPane
 const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
@@ -96,9 +109,15 @@ const handlePathNavigation = ({ segment, index }) => {
 };
 
 
-const fetchData = async () => {
+const fetchData = async (showLoading = false) => {
   try {
-    const responseData = await fetchApi(API_ENDPOINTS.DATA)
+    if (showLoading) {
+      isLoadingData.value = true
+    }
+    const responseData = await fetchApi(API_ENDPOINTS.DATA, {
+      method: 'GET',
+      params: { session_id: sessionId.value }
+    })
 
     // Support both legacy and generic metadata formats
     if (responseData.chart_name) {
@@ -133,21 +152,51 @@ const fetchData = async () => {
     chartData.value = {}
     selectedNode.value = null
     currentPath.value = []
+  } finally {
+    isLoadingData.value = false
   }
 }
 
-onMounted(() => {
-  fetchData()
+onMounted(async () => {
+  await fetchData()
+
+  // If no data loaded or data is empty, automatically open the upload modal
+  const hasData = chartData.value &&
+                  Object.keys(chartData.value).length > 0 &&
+                  chartData.value.name
+
+  if (!hasData) {
+    // Wait a moment for the modal to be registered in the DOM
+    setTimeout(() => {
+      const modalEl = document.getElementById('mdl-load')
+      if (modalEl && window.bootstrap) {
+        const modal = new window.bootstrap.Modal(modalEl)
+        modal.show()
+      }
+    }, 500)
+  }
 })
 
 const refreshPage = () => {
-  fetchData()
+  fetchData(true)  // Show loading overlay when explicitly refreshing
 }
 </script>
 
 <template>
   <div>
+    <!-- Loading Overlay -->
+    <div v-if="isLoadingData" class="loading-overlay">
+      <div class="loading-content">
+        <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <h4 class="mb-2">Processing Dataset</h4>
+        <p class="text-muted">This may take a moment for large files...</p>
+      </div>
+    </div>
+
     <FileLoaderModal
+      :session-id="sessionId"
       @file-selected="handleFileSelected"
       @upload-complete="refreshPage"
     />
@@ -218,6 +267,7 @@ const refreshPage = () => {
       <div class="col-12">
         <!-- DataTable Component - Updates Dynamically -->
         <DataTable
+          :session-id="sessionId"
           :filters="currentFilters"
           :rootName="chartName"
           :dateStart="dateStart"
@@ -247,5 +297,36 @@ const refreshPage = () => {
 
 .btn {
   z-index: 10;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.loading-content h4 {
+  color: #333;
+  font-weight: 600;
+}
+
+.loading-content p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 </style>

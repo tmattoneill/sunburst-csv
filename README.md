@@ -38,25 +38,29 @@ Originally built for security report analysis, this tool has been generalized to
   1. Upload File - CSV or Excel
   2. Configure Hierarchy - Select and order 3+ columns
   3. Select Value Column - Choose numeric field to aggregate
-  4. Name and Create - Set visualization title
+  4. Name and Create - Set visualization title with real-time progress tracking
+- Automatic modal on fresh start (no existing data)
 - Column validation before processing
-- Real-time error feedback
+- Real-time progress bar with status messages
+- Server-Sent Events for live processing updates
 - Support for both generic mode and legacy security reports
 
 ## Technology Stack
 
 ### Backend
 - Python 3.11
-- Flask web framework
+- Flask web framework with Server-Sent Events
 - Pandas for data processing
 - Gunicorn production server
 - SQLite for legacy mode
+- Session-based data isolation
 
 ### Frontend
 - Vue 3 with Composition API
 - ECharts for sunburst visualization
 - Bootstrap 5 for UI components
-- Axios for API communication
+- Fetch API for streaming progress
+- localStorage for session management
 
 ### Deployment
 - Docker containerization
@@ -87,26 +91,44 @@ docker compose up --build
 
 Access the application at http://localhost:3000
 
+## Session Management
+
+The application uses browser localStorage to maintain isolated sessions per user. Each session gets a unique ID that persists across page reloads but is cleared when:
+- localStorage is cleared
+- Using incognito/private mode
+- Using a different browser
+
+Session data files are stored as `{session_id}_sunburst_data.json` on the backend, preventing data conflicts between users.
+
+To start completely fresh:
+- Clear browser localStorage (DevTools > Application > Local Storage)
+- Or use incognito/private browsing mode
+- The upload modal will automatically appear when no data exists
+
 ## Usage Guide
 
 ### Basic Workflow
 
-1. Click the Upload Data button in the top navigation bar
+1. On first load, the upload modal appears automatically
+   - Or click the Upload Data button to manually open
 
-2. Select your CSV or XLSX file
+2. Step 1: Select your CSV or XLSX file
    - File must contain at least 3 columns for hierarchy
    - At least one column should contain numeric values
 
-3. Configure your hierarchy by selecting columns in order
+3. Step 2: Configure your hierarchy by selecting columns in order
    - Drag to reorder columns
    - Minimum 3 levels required
    - Example: Region > Department > Team
 
-4. Choose your value column
+4. Step 3: Choose your value column
    - Select the numeric field to aggregate
    - Examples: revenue, count, hours, budget
 
-5. Name your visualization and click Create
+5. Step 4: Name your visualization and click Create
+   - Watch real-time progress bar as data processes
+   - See status messages for each processing step
+   - Large files show row-by-row progress
 
 6. Explore your chart
    - Click segments to drill down

@@ -25,6 +25,11 @@ export const fetchApi = async (endpoint, options = {}) => {
     try {
         const { method = 'get', data, params, ...rest } = options;
 
+        // Validate method is defined
+        if (!method || typeof method !== 'string') {
+            throw new Error(`Invalid method parameter: ${method}`);
+        }
+
         // Special handling for GET requests with params
         if (method.toLowerCase() === 'get') {
             // If we have filters in params, ensure they're properly stringified
@@ -57,17 +62,22 @@ export const fetchApi = async (endpoint, options = {}) => {
         const response = await apiClient[method.toLowerCase()](endpoint, data, rest);
         return response.data;
     } catch (error) {
+        const requestMethod = options.method || 'get';
         console.error('API Error:', {
             endpoint,
             status: error.response?.status,
             data: error.response?.data,
             message: error.message,
             request: {
-                method,
+                method: requestMethod,
                 params: options.params,
                 data: options.data
             }
         });
-        throw new Error(error.response?.data?.message || 'An unexpected error occurred');
+        const errorMessage = error.response?.data?.error ||
+                           error.response?.data?.message ||
+                           error.message ||
+                           'An unexpected error occurred';
+        throw new Error(errorMessage);
     }
 };

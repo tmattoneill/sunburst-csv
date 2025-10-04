@@ -1,5 +1,5 @@
 # app/api/routes.py
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, Response, stream_with_context
 import json
 import os
 import pandas as pd
@@ -10,6 +10,8 @@ from dataproc.report_processor import ReportProcessor
 from dataproc.generic_processor import GenericProcessor, analyze_columns, validate_column_selection
 from dataproc.db_handler import DatabaseHandler
 from dotenv import load_dotenv
+import queue
+import threading
 
 load_dotenv()
 
@@ -34,7 +36,14 @@ def health_check():
 @bp.route('/data', methods=['GET'])
 def get_data():
     try:
-        with open( os.path.join(DATA_DIR, 'sunburst_data.json'), 'r') as f:
+        session_id = request.args.get('session_id', 'default')
+        data_file = os.path.join(DATA_DIR, f'{session_id}_sunburst_data.json')
+
+        # Fallback to old format if session file doesn't exist
+        if not os.path.exists(data_file):
+            data_file = os.path.join(DATA_DIR, 'sunburst_data.json')
+
+        with open(data_file, 'r') as f:
             data = json.load(f)
             return jsonify(data), 200
     except FileNotFoundError:
@@ -47,8 +56,15 @@ def get_table_data():
     Get table data - supports both generic mode (CSV) and legacy mode (security.db)
     """
     try:
-        # Check if we're in generic mode by reading metadata
-        metadata_path = Path(DATA_DIR) / 'sunburst_data.json'
+        # Get session ID
+        session_id = request.args.get('session_id', 'default') if request.method == 'GET' else request.get_json().get('session_id', 'default')
+
+        # Check if we're in generic mode by reading session-specific metadata
+        session_metadata_path = Path(DATA_DIR) / f'{session_id}_sunburst_data.json'
+        fallback_metadata_path = Path(DATA_DIR) / 'sunburst_data.json'
+
+        metadata_path = session_metadata_path if session_metadata_path.exists() else fallback_metadata_path
+
         is_generic_mode = False
         source_file = None
         tree_order = []
@@ -67,8 +83,8 @@ def get_table_data():
             if not csv_path.exists():
                 return jsonify({"error": f"Source file not found: {source_file}"}), 404
 
-            # Read CSV
-            df = pd.read_csv(csv_path)
+            # Read CSV (low_memory=False to avoid DtypeWarning on large files)
+            df = pd.read_csv(csv_path, low_memory=False)
 
             # Get filters and pagination params
             page = int(request.args.get('page', 1)) if request.method == 'GET' else 1
@@ -106,7 +122,16 @@ def get_table_data():
             }), 200
 
         else:
-            # Legacy mode - use database
+            # No data available - return empty result instead of falling back to legacy DB
+            if not metadata_path.exists():
+                return jsonify({
+                    'data': [],
+                    'page': 1,
+                    'total': 0,
+                    'total_pages': 0
+                }), 200
+
+            # Legacy mode - use database (only if metadata exists but is legacy format)
             if request.method == 'GET':
                 page = int(request.args.get('page', 1))
                 items_per_page = int(request.args.get('items_per_page', 20))
@@ -272,7 +297,7 @@ def validate_columns_endpoint():
 @bp.route('/process', methods=['POST'])
 def process_file():
     """
-    Process file for sunburst visualization.
+    Process file for sunburst visualization with Server-Sent Events for progress.
     Supports both legacy (security report) and generic modes.
     """
     try:
@@ -286,29 +311,70 @@ def process_file():
         tree_order = data.get("treeOrder")
         value_column = data.get("valueColumn")
         chart_name = data.get("chartName")
+        session_id = data.get("sessionId", "default")
 
         if tree_order and value_column and chart_name:
-            # Generic mode
+            # Generic mode with progress tracking
             print(f"Processing (GENERIC): {chart_name}")
+            print(f"  Session: {session_id}")
             print(f"  Hierarchy: {' → '.join(tree_order)}")
             print(f"  Value: {value_column}")
 
-            try:
-                processor = GenericProcessor(
-                    input_file=input_file,
-                    chart_name=chart_name,
-                    tree_order=tree_order,
-                    value_column=value_column,
-                    data_path=DATA_DIR
-                )
-                processor.process_all()
+            progress_queue = queue.Queue()
 
-            except Exception as proc_error:
-                print(f"Generic processing error: {str(proc_error)}")
-                return jsonify({"error": f"Processing failed: {str(proc_error)}"}), 500
+            def progress_callback(current, total, message):
+                """Callback to send progress updates."""
+                progress_queue.put({
+                    'current': current,
+                    'total': total,
+                    'message': message
+                })
+
+            def generate():
+                """Generator function for SSE."""
+                try:
+                    # Start processing in background thread
+                    def process_in_thread():
+                        try:
+                            processor = GenericProcessor(
+                                input_file=input_file,
+                                chart_name=chart_name,
+                                tree_order=tree_order,
+                                value_column=value_column,
+                                data_path=DATA_DIR,
+                                session_id=session_id,
+                                progress_callback=progress_callback
+                            )
+                            processor.process_all()
+                            progress_queue.put({'done': True})
+                        except Exception as e:
+                            progress_queue.put({'error': str(e)})
+
+                    thread = threading.Thread(target=process_in_thread)
+                    thread.start()
+
+                    # Stream progress updates
+                    while True:
+                        update = progress_queue.get()
+
+                        if 'error' in update:
+                            yield f"data: {json.dumps({'error': update['error']})}\n\n"
+                            break
+                        elif 'done' in update:
+                            yield f"data: {json.dumps({'done': True})}\n\n"
+                            break
+                        else:
+                            yield f"data: {json.dumps(update)}\n\n"
+
+                    thread.join()
+
+                except Exception as e:
+                    yield f"data: {json.dumps({'error': str(e)})}\n\n"
+
+            return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
         else:
-            # Legacy mode - security reports
+            # Legacy mode - security reports (no progress tracking)
             client_name = data.get("clientName")
 
             if not client_name:
@@ -324,7 +390,7 @@ def process_file():
                 print(f"Legacy processing error: {str(proc_error)}")
                 return jsonify({"error": f"Processing failed: {str(proc_error)}"}), 500
 
-        return jsonify({"message": "Report processed successfully"}), 200
+            return jsonify({"message": "Report processed successfully"}), 200
 
     except Exception as e:
         print(f"Error processing file: {str(e)}")

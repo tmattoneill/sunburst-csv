@@ -93,6 +93,10 @@ const tableData = ref([])
 const loading = ref(true)
 
 const props = defineProps({
+  sessionId: {
+    type: String,
+    required: true
+  },
   filters: {
     type: Object,
     default: () => ({})
@@ -190,7 +194,8 @@ const fetchData = async (page) => {
   try {
     const requestParams = {
       page: page.toString(),
-      items_per_page: itemsPerPage.value.toString()
+      items_per_page: itemsPerPage.value.toString(),
+      session_id: props.sessionId
     };
 
     // Only add filters if they exist and aren't empty
@@ -270,7 +275,10 @@ const downloadCurrentView = async () => {
   try {
     const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
       method: 'POST',
-      data: props.filters
+      data: {
+        ...props.filters,
+        session_id: props.sessionId
+      }
     })
 
     const csvRows = [headers.value.join(',')]
@@ -331,16 +339,22 @@ watch(
   () => props.filters,
   (newFilters) => {
     console.log('DataTable - Filter watcher triggered with filters:', newFilters)
-    currentPage.value = 1
-    fetchData(1)
+    // Only fetch if sessionId is set
+    if (props.sessionId) {
+      currentPage.value = 1
+      fetchData(1)
+    }
   },
-  { deep: true, immediate: true }
+  { deep: true }
 )
 
 // Initial data fetch
 onMounted(() => {
-  console.log('DataTable - Initial mount, filters:', props.filters)
-  fetchData(1)
+  console.log('DataTable - Initial mount, sessionId:', props.sessionId, 'filters:', props.filters)
+  // Only fetch if sessionId is set
+  if (props.sessionId) {
+    fetchData(1)
+  }
 })
 </script>
 

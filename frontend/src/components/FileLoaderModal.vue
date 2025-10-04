@@ -127,7 +127,27 @@
                 placeholder="e.g., RTB Ad Spend by DSP and Brand"
                 v-model="chartName"
                 @keyup.enter="processFile"
+                :disabled="isProcessing"
               />
+
+              <!-- Progress Bar (shown when processing) -->
+              <div v-if="isProcessing" class="progress-section mb-4">
+                <div class="progress" style="height: 30px;">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    :style="{ width: (progressCurrent / progressTotal * 100) + '%' }"
+                    :aria-valuenow="progressCurrent"
+                    :aria-valuemin="0"
+                    :aria-valuemax="progressTotal"
+                  >
+                    {{ Math.round(progressCurrent / progressTotal * 100) }}%
+                  </div>
+                </div>
+                <p class="text-center text-muted mt-2 small">
+                  {{ progressMessage }}
+                </p>
+              </div>
 
               <!-- Summary -->
               <div class="config-summary p-3 bg-light rounded">
@@ -218,6 +238,14 @@ import { ref, computed, onMounted } from 'vue'
 import { fetchApi, API_ENDPOINTS } from '@/services/api'
 import ColumnSelector from './ColumnSelector.vue'
 
+// Props
+const props = defineProps({
+  sessionId: {
+    type: String,
+    required: true
+  }
+})
+
 // Component state
 const currentStep = ref(0)
 const selectedFile = ref(null)
@@ -230,6 +258,9 @@ const chartName = ref('')
 const statusMessage = ref('')
 const statusType = ref('')
 const isProcessing = ref(false)
+const progressCurrent = ref(0)
+const progressTotal = ref(100)
+const progressMessage = ref('')
 
 const fileInput = ref(null)
 
@@ -409,6 +440,9 @@ const processFile = async () => {
     isProcessing.value = true
     statusMessage.value = 'Creating visualization...'
     statusType.value = 'info'
+    progressCurrent.value = 0
+    progressTotal.value = 100
+    progressMessage.value = 'Starting...'
 
     // Validate columns first
     const validationResponse = await fetchApi(API_ENDPOINTS.VALIDATE_COLUMNS, {
@@ -424,16 +458,69 @@ const processFile = async () => {
       throw new Error('Validation failed: ' + validationResponse.errors.join(', '))
     }
 
-    // Process the file
-    await fetchApi(API_ENDPOINTS.PROCESS, {
+    // Process the file with SSE for progress
+    const API_BASE_URL = process.env.VUE_APP_BASE_URL || 'http://localhost:6500'
+    const API_PATH = process.env.VUE_APP_API_ROOT_PATH || '/api'
+
+    // Use fetch for SSE instead of EventSource (to support POST with body)
+    const response = await fetch(`${API_BASE_URL}${API_PATH}/process`, {
       method: 'POST',
-      data: {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         filePath: uploadedFileName.value,
         chartName: chartName.value,
         treeOrder: hierarchyColumns.value,
-        valueColumn: valueColumn.value
-      }
+        valueColumn: valueColumn.value,
+        sessionId: props.sessionId
+      })
     })
+
+    if (!response.ok) {
+      throw new Error('Processing request failed')
+    }
+
+    const reader = response.body.getReader()
+    const decoder = new TextDecoder()
+    let buffer = ''
+
+    while (true) {
+      const { done, value } = await reader.read()
+
+      if (done) break
+
+      // Append new chunk to buffer
+      buffer += decoder.decode(value, { stream: true })
+
+      // Process complete events (ending with \n\n)
+      const events = buffer.split('\n\n')
+
+      // Keep incomplete event in buffer
+      buffer = events.pop() || ''
+
+      for (const event of events) {
+        if (event.startsWith('data: ')) {
+          try {
+            const data = JSON.parse(event.substring(6))
+
+            if (data.error) {
+              throw new Error(data.error)
+            } else if (data.done) {
+              progressCurrent.value = 100
+              progressTotal.value = 100
+              progressMessage.value = 'Complete!'
+            } else {
+              progressCurrent.value = data.current
+              progressTotal.value = data.total
+              progressMessage.value = data.message
+            }
+          } catch (parseError) {
+            console.error('Failed to parse SSE event:', event, parseError)
+          }
+        }
+      }
+    }
 
     statusMessage.value = 'Visualization created successfully!'
     statusType.value = 'success'
@@ -448,6 +535,8 @@ const processFile = async () => {
     statusType.value = 'error'
   } finally {
     isProcessing.value = false
+    progressCurrent.value = 0
+    progressMessage.value = ''
   }
 }
 
