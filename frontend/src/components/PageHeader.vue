@@ -12,7 +12,7 @@ const props = defineProps({
   },
   reportType: {
     type: String,
-    required: true
+    default: ''
   },
   chartName: {
     type: String,
@@ -20,17 +20,24 @@ const props = defineProps({
   },
   dateStart: {
     type: String,
-    required: true
+    default: ''
   },
   dateEnd: {
     type: String,
-    required: true
+    default: ''
+  },
+  treeOrder: {
+    type: Array,
+    default: () => []
   },
   currentPath: {
     type: Array,
     default: () => []
   }
 })
+
+// Check if dates are available (legacy mode)
+const hasDates = computed(() => props.dateStart && props.dateEnd)
 
 const emit = defineEmits(['update:paletteName', 'navigate-to'])
 
@@ -69,7 +76,13 @@ const handlePaletteChange = () => {
     <div class="col-12 position-relative">
       <!-- Header -->
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3>{{ reportType }}: {{ chartName }}</h3>
+        <div>
+          <h3>{{ chartName }}</h3>
+          <p v-if="reportType" class="text-muted mb-0 small">Type: {{ reportType }}</p>
+          <p v-if="treeOrder.length > 0" class="text-muted mb-0 small">
+            Hierarchy: {{ treeOrder.join(' → ') }}
+          </p>
+        </div>
         <div class="palette-selector">
           <select v-model="selectedPalette" @change="handlePaletteChange" class="form-select form-select-sm w-auto">
             <option v-for="name in paletteNames" :key="name" :value="name">
@@ -86,11 +99,14 @@ const handlePaletteChange = () => {
           @navigate-to="handlePathNavigation"
       />
 
-      <!-- Dates -->
+      <!-- Dates (optional - shown only for legacy reports) -->
       <div class="mt-3 ps-2 d-flex justify-content-between align-items-end">
-        <div>
+        <div v-if="hasDates">
           <h5 class="mb-1">From: {{ dateStart }}</h5>
           <h5 class="mb-0">To: {{ dateEnd }}</h5>
+        </div>
+        <div v-else>
+          <!-- Placeholder to keep layout consistent -->
         </div>
         <button
           class="btn btn-primary px-4"

@@ -2,9 +2,12 @@
 from flask import Blueprint, jsonify, request
 import json
 import os
+import pandas as pd
+from pathlib import Path
 from datetime import datetime
 from werkzeug.utils import secure_filename
 from dataproc.report_processor import ReportProcessor
+from dataproc.generic_processor import GenericProcessor, analyze_columns, validate_column_selection
 from dataproc.db_handler import DatabaseHandler
 from dotenv import load_dotenv
 
@@ -88,7 +91,6 @@ def upload_file():
         
         # If Excel file, convert to CSV
         if file_ext in ['xls', 'xlsx']:
-            import pandas as pd
             temp_path = os.path.join(UPLOAD_DIR, f"temp_{timestamp}.{file_ext}")
             file.save(temp_path)
             
@@ -121,32 +123,152 @@ def upload_file():
     return jsonify({"error": "File type not allowed. Please upload CSV, XLS, or XLSX files."}), 400
 
 
-@bp.route('/process', methods=['POST'])
-def process_file():
+@bp.route('/file-info', methods=['GET'])
+def get_file_info():
+    """
+    Get column metadata for an uploaded file.
+    Returns column names, types, sample values, and statistics.
+    """
+    try:
+        file_path_param = request.args.get('filePath')
+        if not file_path_param:
+            return jsonify({"error": "Missing filePath parameter"}), 400
+
+        # Construct full path
+        full_path = Path(UPLOAD_DIR) / file_path_param
+
+        if not full_path.exists():
+            return jsonify({"error": f"File not found: {file_path_param}"}), 404
+
+        # Analyze columns
+        columns_info = analyze_columns(full_path)
+
+        # Get row count
+        file_ext = full_path.suffix.lower()
+        if file_ext == '.csv':
+            df = pd.read_csv(full_path)
+        else:
+            df = pd.read_excel(full_path)
+
+        row_count = len(df)
+
+        # Get preview (first 5 rows) - replace NaN with None for valid JSON
+        preview = df.head(5).fillna('').to_dict('records')
+
+        return jsonify({
+            "columns": columns_info,
+            "rowCount": row_count,
+            "preview": preview,
+            "fileName": file_path_param
+        }), 200
+
+    except Exception as e:
+        print(f"Error analyzing file: {str(e)}")
+        return jsonify({"error": f"Failed to analyze file: {str(e)}"}), 500
+
+
+@bp.route('/validate-columns', methods=['POST'])
+def validate_columns_endpoint():
+    """
+    Validate user's column selection before processing.
+    """
     try:
         data = request.json
-        client_name = data.get("clientName")
+        file_path_param = data.get('filePath')
+        tree_order = data.get('treeOrder', [])
+        value_column = data.get('valueColumn')
+
+        if not all([file_path_param, tree_order, value_column]):
+            return jsonify({
+                "valid": False,
+                "errors": ["Missing required parameters: filePath, treeOrder, or valueColumn"]
+            }), 400
+
+        # Construct full path
+        full_path = Path(UPLOAD_DIR) / file_path_param
+
+        if not full_path.exists():
+            return jsonify({
+                "valid": False,
+                "errors": [f"File not found: {file_path_param}"]
+            }), 404
+
+        # Validate selection
+        is_valid, errors = validate_column_selection(full_path, tree_order, value_column)
+
+        return jsonify({
+            "valid": is_valid,
+            "errors": errors,
+            "warnings": []  # Could add warnings for non-critical issues
+        }), 200
+
+    except Exception as e:
+        print(f"Error validating columns: {str(e)}")
+        return jsonify({
+            "valid": False,
+            "errors": [f"Validation failed: {str(e)}"]
+        }), 500
+
+
+@bp.route('/process', methods=['POST'])
+def process_file():
+    """
+    Process file for sunburst visualization.
+    Supports both legacy (security report) and generic modes.
+    """
+    try:
+        data = request.json
         input_file = data.get("filePath")
 
-        print(f"Processing request with client_name: {client_name}, file: {input_file}")  # Debug log
+        if not input_file:
+            return jsonify({"error": "Missing required parameter: filePath"}), 400
 
-        if not client_name or not input_file:
-            return jsonify({"error": "Missing required parameters"}), 400
+        # Check if this is a generic request (has treeOrder and valueColumn)
+        tree_order = data.get("treeOrder")
+        value_column = data.get("valueColumn")
+        chart_name = data.get("chartName")
 
-        # Initialize the report processor
-        processor = ReportProcessor(client_name=client_name, input_file=input_file)
+        if tree_order and value_column and chart_name:
+            # Generic mode
+            print(f"Processing (GENERIC): {chart_name}")
+            print(f"  Hierarchy: {' → '.join(tree_order)}")
+            print(f"  Value: {value_column}")
 
-        try:
-            # Process data for sunburst visualization
-            processor.process_all()
-        except Exception as proc_error:
-            print(f"Detailed processing error: {str(proc_error)}")  # Debug log
-            return jsonify({"error": f"Processing failed: {str(proc_error)}"}), 500
+            try:
+                processor = GenericProcessor(
+                    input_file=input_file,
+                    chart_name=chart_name,
+                    tree_order=tree_order,
+                    value_column=value_column,
+                    data_path=DATA_DIR
+                )
+                processor.process_all()
+
+            except Exception as proc_error:
+                print(f"Generic processing error: {str(proc_error)}")
+                return jsonify({"error": f"Processing failed: {str(proc_error)}"}), 500
+
+        else:
+            # Legacy mode - security reports
+            client_name = data.get("clientName")
+
+            if not client_name:
+                return jsonify({"error": "Missing required parameters. For generic mode: chartName, treeOrder, valueColumn. For legacy mode: clientName"}), 400
+
+            print(f"Processing (LEGACY): {client_name}")
+
+            try:
+                processor = ReportProcessor(client_name=client_name, input_file=input_file)
+                processor.process_all()
+
+            except Exception as proc_error:
+                print(f"Legacy processing error: {str(proc_error)}")
+                return jsonify({"error": f"Processing failed: {str(proc_error)}"}), 500
 
         return jsonify({"message": "Report processed successfully"}), 200
 
     except Exception as e:
-        print(f"Error processing file: {str(e)}")  # Debug log
+        print(f"Error processing file: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 

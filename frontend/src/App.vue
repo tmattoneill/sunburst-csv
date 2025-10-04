@@ -11,8 +11,10 @@ import { fetchApi, API_ENDPOINTS } from '@/services/api';
 const chartData = ref({})
 const currentPalette = ref('Ocean')
 const reportType = ref('')
+const chartName = ref('')
 const dateStart = ref('')
 const dateEnd = ref('')
+const treeOrder = ref([])
 const selectedNode = ref(null)
 const hoveredNode = ref(null);
 const currentPath = ref([])
@@ -25,7 +27,6 @@ const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
 const rootName = computed(() => dataPaneNode.value?.name || chartData.value?.name || '');
 const rootValue = computed(() => dataPaneNode.value?.value || chartData.value?.value || 0);
 const topChildren = computed(() => dataPaneNode.value?.children || chartData.value?.children || []);
-const chartName = computed(() => chartData.value?.name ?? '')
 
 
 // Add handler for node selection
@@ -98,18 +99,34 @@ const fetchData = async () => {
   try {
     const responseData = await fetchApi(API_ENDPOINTS.DATA)
 
-    reportType.value = responseData.report_type
-    dateStart.value = responseData.date_start
-    dateEnd.value = responseData.date_end
+    // Support both legacy and generic metadata formats
+    if (responseData.chart_name) {
+      // Generic mode
+      chartName.value = responseData.chart_name
+      treeOrder.value = responseData.tree_order || []
+      reportType.value = ''
+      dateStart.value = ''
+      dateEnd.value = ''
+    } else {
+      // Legacy mode (security reports)
+      chartName.value = responseData.data?.name || 'Chart'
+      reportType.value = responseData.report_type || ''
+      dateStart.value = responseData.date_start || ''
+      dateEnd.value = responseData.date_end || ''
+      treeOrder.value = responseData.tree_order || []
+    }
+
     chartData.value = responseData.data
-    filterOrder.value = responseData.tree_order
+    filterOrder.value = treeOrder.value
     selectedNode.value = responseData.data
     currentPath.value = [{ name: responseData.data.name, value: responseData.data.value }]
   } catch (error) {
     console.error('Error fetching chart data:', error)
     reportType.value = ''
+    chartName.value = ''
     dateStart.value = ''
     dateEnd.value = ''
+    treeOrder.value = []
     chartData.value = {}
     selectedNode.value = null
     currentPath.value = []
@@ -139,6 +156,7 @@ const refreshPage = () => {
     :chartName="chartName"
     :dateStart="dateStart"
     :dateEnd="dateEnd"
+    :treeOrder="treeOrder"
     :paletteName="currentPalette"
     :currentPath="currentPath"
     @update:paletteName="(name) => currentPalette = name"

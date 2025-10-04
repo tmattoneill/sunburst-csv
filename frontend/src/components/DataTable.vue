@@ -111,11 +111,13 @@ const props = defineProps({
   },
   dateStart: {
     type: String,
-    required: true
+    required: false,
+    default: ''
   },
   dateEnd: {
     type: String,
-    required: true
+    required: false,
+    default: ''
   },
   currentNodeName: {
     type: String,

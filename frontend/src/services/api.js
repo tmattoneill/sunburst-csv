@@ -17,6 +17,8 @@ export const API_ENDPOINTS = {
     DATA: 'data',
     HEALTH: 'health',
     TABLE_DATA: 'table-data',
+    FILE_INFO: 'file-info',
+    VALIDATE_COLUMNS: 'validate-columns',
 };
 
 export const fetchApi = async (endpoint, options = {}) => {
