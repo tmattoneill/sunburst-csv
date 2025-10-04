@@ -264,7 +264,7 @@ const progressMessage = ref('')
 
 const fileInput = ref(null)
 
-const emit = defineEmits(['upload-complete'])
+const emit = defineEmits(['upload-complete', 'processing-progress', 'processing-start', 'processing-complete'])
 
 const stepTitles = [
   'Upload File',
@@ -484,6 +484,7 @@ const processFile = async () => {
     const reader = response.body.getReader()
     const decoder = new TextDecoder()
     let buffer = ''
+    let firstEvent = true
 
     while (true) {
       const { done, value } = await reader.read()
@@ -504,16 +505,25 @@ const processFile = async () => {
           try {
             const data = JSON.parse(event.substring(6))
 
+            // Show overlay on first real progress event
+            if (firstEvent && !data.error && !data.done) {
+              emit('processing-start')
+              firstEvent = false
+            }
+
             if (data.error) {
               throw new Error(data.error)
             } else if (data.done) {
               progressCurrent.value = 100
               progressTotal.value = 100
               progressMessage.value = 'Complete!'
+              emit('processing-progress', 'Complete!')
             } else {
               progressCurrent.value = data.current
               progressTotal.value = data.total
               progressMessage.value = data.message
+              // Emit progress to parent overlay
+              emit('processing-progress', data.message)
             }
           } catch (parseError) {
             console.error('Failed to parse SSE event:', event, parseError)
@@ -522,17 +532,18 @@ const processFile = async () => {
       }
     }
 
-    statusMessage.value = 'Visualization created successfully!'
-    statusType.value = 'success'
+    // Wait a moment to show "Complete!" message
+    await new Promise(resolve => setTimeout(resolve, 1000))
 
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    emit('processing-complete')
     handleClose()
     emit('upload-complete')
 
   } catch (error) {
     console.error('Processing error:', error)
-    statusMessage.value = error.message || 'Processing failed'
-    statusType.value = 'error'
+    emit('processing-complete')
+    // Show error in a way the user can see
+    alert('Processing failed: ' + (error.message || 'Unknown error'))
   } finally {
     isProcessing.value = false
     progressCurrent.value = 0

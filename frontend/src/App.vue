@@ -35,6 +35,7 @@ const currentFilters = ref({}) // for the data table
 const chartRef = ref(null)
 const filterOrder = ref([])
 const isLoadingData = ref(false)
+const loadingMessage = ref('Processing dataset...')
 
 // Computed properties for DataPane
 const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
@@ -191,7 +192,7 @@ const refreshPage = () => {
           <span class="visually-hidden">Loading...</span>
         </div>
         <h4 class="mb-2">Processing Dataset</h4>
-        <p class="text-muted">This may take a moment for large files...</p>
+        <p class="text-primary fw-bold loading-message">{{ loadingMessage }}</p>
       </div>
     </div>
 
@@ -199,6 +200,9 @@ const refreshPage = () => {
       :session-id="sessionId"
       @file-selected="handleFileSelected"
       @upload-complete="refreshPage"
+      @processing-progress="(msg) => loadingMessage = msg"
+      @processing-start="() => { isLoadingData = true; loadingMessage = 'Starting...' }"
+      @processing-complete="() => isLoadingData = false"
     />
 
     <div id="app" class="container py-4">
@@ -328,5 +332,16 @@ const refreshPage = () => {
 .loading-content p {
   margin: 0;
   font-size: 0.95rem;
+}
+
+.loading-message {
+  font-size: 1rem;
+  min-height: 1.5rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 </style>
