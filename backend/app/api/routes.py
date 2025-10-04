@@ -16,7 +16,7 @@ bp = Blueprint('api', __name__)
 DATA_DIR = os.getenv('DATA_DIR', "../data")
 UPLOAD_DIR = os.getenv('UPLOAD_DIR', "../data/raw")
 DB_PATH = os.getenv('DATABASE_URL', "../data/security.db")
-ALLOWED_EXTENSIONS = {'csv'}
+ALLOWED_EXTENSIONS = {'csv', 'xls', 'xlsx'}
 
 db = DatabaseHandler(DB_PATH)
 
@@ -83,18 +83,42 @@ def upload_file():
         # Generate unique filename
         timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
         original_name = secure_filename(file.filename)
-        filename = f"{os.path.splitext(original_name)[0]}-{timestamp}.csv"
-
-        # Save file
-        file_path = os.path.join(UPLOAD_DIR, filename)
-        file.save(file_path)
+        file_ext = original_name.rsplit('.', 1)[1].lower()
+        base_name = os.path.splitext(original_name)[0]
+        
+        # If Excel file, convert to CSV
+        if file_ext in ['xls', 'xlsx']:
+            import pandas as pd
+            temp_path = os.path.join(UPLOAD_DIR, f"temp_{timestamp}.{file_ext}")
+            file.save(temp_path)
+            
+            try:
+                # Read Excel file
+                df = pd.read_excel(temp_path)
+                
+                # Save as CSV
+                filename = f"{base_name}-{timestamp}.csv"
+                file_path = os.path.join(UPLOAD_DIR, filename)
+                df.to_csv(file_path, index=False)
+                
+                # Remove temp Excel file
+                os.remove(temp_path)
+            except Exception as e:
+                if os.path.exists(temp_path):
+                    os.remove(temp_path)
+                return jsonify({"error": f"Failed to convert Excel file: {str(e)}"}), 400
+        else:
+            # Save CSV directly
+            filename = f"{base_name}-{timestamp}.csv"
+            file_path = os.path.join(UPLOAD_DIR, filename)
+            file.save(file_path)
 
         return jsonify({
             "message": "File uploaded successfully",
             "filePath": filename  # Send just the filename, not the full path
         }), 200
 
-    return jsonify({"error": "File type not allowed"}), 400
+    return jsonify({"error": "File type not allowed. Please upload CSV, XLS, or XLSX files."}), 400
 
 
 @bp.route('/process', methods=['POST'])

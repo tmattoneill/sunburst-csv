@@ -126,12 +126,13 @@ const refreshPage = () => {
 </script>
 
 <template>
-  <FileLoaderModal
-    @file-selected="handleFileSelected"
-    @upload-complete="refreshPage"
-  />
+  <div>
+    <FileLoaderModal
+      @file-selected="handleFileSelected"
+      @upload-complete="refreshPage"
+    />
 
-  <div id="app" class="container py-4">
+    <div id="app" class="container py-4">
     <!-- Header -->
   <PageHeader
     :reportType="reportType"
@@ -156,7 +157,8 @@ const refreshPage = () => {
             <SunburstChart
               ref="chartRef"
               :chart-data="chartData"
-              v-model:palette-name="currentPalette"
+              :palette-name="currentPalette"
+              @update:palette-name="(name) => currentPalette = name"
               @node-click="handleNodeClick"
               @node-hover="handleNodeHover"
               @path-change="handlePathChange"
@@ -202,6 +204,7 @@ const refreshPage = () => {
         />
       </div>
     </div>
+  </div>
   </div>
 </template>
 

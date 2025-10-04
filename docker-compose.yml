@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "6500:6500"
+    volumes:
+      - ./backend/data:/app/data
+    environment:
+      - FLASK_ENV=production
+      - HOST=0.0.0.0
+      - FLASK_PORT=6500
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: always
