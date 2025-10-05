@@ -3,8 +3,9 @@ import axios from 'axios';
 
 export const API_CONFIG = {
     API_PATH: process.env.VUE_APP_API_ROOT_PATH || '/api',
-    API_BASE_URL: process.env.VUE_APP_BASE_URL || 'http://localhost:6500'
+    API_BASE_URL: process.env.VUE_APP_BASE_URL || window.location.origin
 };
+
 
 const apiClient = axios.create({
     baseURL: `${API_CONFIG.API_BASE_URL}${API_CONFIG.API_PATH}`,
