@@ -52,3 +52,8 @@ bdesign/
 .env
 .env.*.local
 .env.local
+
+# Code Assist Files
+./CLAUDE.md 
+./PROGRESS.md 
+./ERRORS.md
