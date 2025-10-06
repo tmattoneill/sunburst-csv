@@ -20,6 +20,7 @@ export const API_ENDPOINTS = {
     TABLE_DATA: 'table-data',
     FILE_INFO: 'file-info',
     VALIDATE_COLUMNS: 'validate-columns',
+    ANALYZE: 'analyze',
 };
 
 export const fetchApi = async (endpoint, options = {}) => {

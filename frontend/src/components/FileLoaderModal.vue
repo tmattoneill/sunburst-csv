@@ -1,12 +1,6 @@
 <!-- FileLoaderModal.vue: Multi-Step Upload Wizard -->
 <template>
-  <div
-    class="modal fade"
-    id="mdl-load"
-    tabindex="-1"
-    aria-labelledby="mdl-load-label"
-    aria-hidden="true"
-  >
+  <div class="modal fade" id="mdl-load" tabindex="-1" aria-labelledby="mdl-load-label" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <!-- Modal Header -->
@@ -14,27 +8,17 @@
           <h5 class="modal-title" id="mdl-load-label">
             {{ stepTitles[currentStep] }}
           </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-            @click="handleClose"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            @click="handleClose"></button>
         </div>
 
         <!-- Progress Indicator -->
         <div class="modal-body">
           <div class="progress-stepper mb-4">
-            <div
-              v-for="(title, index) in stepTitles"
-              :key="index"
-              class="step"
-              :class="{
-                'active': index === currentStep,
-                'completed': index < currentStep
-              }"
-            >
+            <div v-for="(title, index) in stepTitles" :key="index" class="step" :class="{
+              'active': index === currentStep,
+              'completed': index < currentStep
+            }">
               <div class="step-number">{{ index + 1 }}</div>
               <div class="step-title">{{ title }}</div>
             </div>
@@ -46,13 +30,8 @@
               <i class="bi bi-cloud-upload display-1 text-primary mb-3"></i>
               <h6>Select a CSV or Excel file</h6>
               <p class="text-muted">Supported formats: CSV, XLS, XLSX</p>
-              <input
-                type="file"
-                @change="handleFileChange"
-                accept=".csv,.xls,.xlsx"
-                class="form-control w-50 mx-auto"
-                ref="fileInput"
-              />
+              <input type="file" @change="handleFileChange" accept=".csv,.xls,.xlsx" class="form-control w-50 mx-auto"
+                ref="fileInput" />
               <div v-if="selectedFile" class="mt-3">
                 <p class="mb-1"><strong>Selected:</strong> {{ selectedFile.name }}</p>
                 <p class="text-muted small">Size: {{ formatFileSize(selectedFile.size) }}</p>
@@ -60,8 +39,76 @@
             </div>
           </div>
 
-          <!-- Step 2: Configure Hierarchy -->
+          <!-- Step 1.5: Verify Headers -->
           <div v-if="currentStep === 1" class="step-content">
+            <div v-if="isAnalyzing" class="text-center">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Analyzing...</span>
+              </div>
+              <p class="mt-2">Analyzing file structure...</p>
+            </div>
+            <div v-else>
+              <!-- Security Report Detection -->
+              <div v-if="isSecurityReport" class="alert alert-success mb-3">
+                <i class="bi bi-check-circle"></i>
+                <strong>Security Report Detected!</strong>
+                <p class="mb-0 mt-2">This looks like a security incident report. You can use automatic processing or
+                  configure it manually.</p>
+                <button class="btn btn-sm btn-success mt-2" @click="useAutomaticProcessing">
+                  Use Automatic Processing
+                </button>
+              </div>
+
+              <div class="alert alert-info mb-3">
+                <i class="bi bi-info-circle"></i>
+                Select the row that contains your column headers. Rows before it will be automatically skipped.
+              </div>
+
+              <!-- Preview Table -->
+              <div class="table-responsive" style="max-height: 400px; overflow: auto;">
+                <table class="table table-sm table-bordered table-hover">
+                  <thead class="sticky-top bg-white">
+                    <tr>
+                      <th style="width: 60px; position: sticky; left: 0; background: white; z-index: 2;">Row</th>
+                      <th v-for="(cell, colIndex) in (previewRows[0] || [])" :key="colIndex"
+                        style="min-width: 120px; white-space: nowrap;">
+                        Col {{ colIndex + 1 }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(row, rowIndex) in previewRows" :key="rowIndex"
+                      :class="{ 'table-primary': rowIndex === selectedHeaderRow }"
+                      @click="selectHeaderRow(rowIndex)"
+                      style="cursor: pointer;">
+                      <td class="text-center fw-bold"
+                        style="position: sticky; left: 0; background: inherit; z-index: 1;">
+                        {{ rowIndex }}
+                      </td>
+                      <td v-for="(cell, cellIndex) in row" :key="cellIndex"
+                        style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        :title="cell">
+                        {{ cell || '(empty)' }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Selected Header Preview -->
+              <div v-if="selectedHeaderRow !== null" class="mt-3 p-3 bg-light rounded">
+                <h6>Selected Header Row (Row {{ selectedHeaderRow }}):</h6>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span v-for="(cell, index) in previewRows[selectedHeaderRow]" :key="index" class="badge bg-primary">
+                    {{ cell || '(empty)' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Configure Hierarchy -->
+          <div v-if="currentStep === 2" class="step-content">
             <div v-if="isLoadingFileInfo" class="text-center">
               <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -73,15 +120,12 @@
                 <i class="bi bi-info-circle"></i>
                 Select at least 3 columns to build your hierarchy. Drag to reorder.
               </div>
-              <ColumnSelector
-                v-model="hierarchyColumns"
-                :columns="availableColumns"
-              />
+              <ColumnSelector v-model="hierarchyColumns" :columns="availableColumns" />
             </div>
           </div>
 
           <!-- Step 3: Select Value Column -->
-          <div v-if="currentStep === 2" class="step-content">
+          <div v-if="currentStep === 3" class="step-content">
             <div class="alert alert-info mb-3">
               <i class="bi bi-info-circle"></i>
               Choose the numeric column whose values will be aggregated in the visualization.
@@ -89,16 +133,9 @@
             <div class="value-column-selector">
               <h6 class="mb-3">Value Column</h6>
               <div class="row">
-                <div
-                  v-for="col in numericColumns"
-                  :key="col.name"
-                  class="col-md-4 mb-3"
-                >
-                  <div
-                    class="value-option"
-                    :class="{ 'selected': valueColumn === col.name }"
-                    @click="selectValueColumn(col.name)"
-                  >
+                <div v-for="col in numericColumns" :key="col.name" class="col-md-4 mb-3">
+                  <div class="value-option" :class="{ 'selected': valueColumn === col.name }"
+                    @click="selectValueColumn(col.name)">
                     <div class="option-header">
                       <span class="option-icon">📊</span>
                       <span class="option-name">{{ col.name }}</span>
@@ -118,29 +155,18 @@
           </div>
 
           <!-- Step 4: Name Chart & Process -->
-          <div v-if="currentStep === 3" class="step-content">
+          <div v-if="currentStep === 4" class="step-content">
             <div class="chart-naming">
               <h6 class="mb-3">Name Your Visualization</h6>
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="e.g., RTB Ad Spend by DSP and Brand"
-                v-model="chartName"
-                @keyup.enter="processFile"
-                :disabled="isProcessing"
-              />
+              <input type="text" class="form-control mb-4" placeholder="e.g., RTB Ad Spend by DSP and Brand"
+                v-model="chartName" @keyup.enter="processFile" :disabled="isProcessing" />
 
               <!-- Progress Bar (shown when processing) -->
               <div v-if="isProcessing" class="progress-section mb-4">
                 <div class="progress" style="height: 30px;">
-                  <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    :style="{ width: (progressCurrent / progressTotal * 100) + '%' }"
-                    :aria-valuenow="progressCurrent"
-                    :aria-valuemin="0"
-                    :aria-valuemax="progressTotal"
-                  >
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    :style="{ width: (progressCurrent / progressTotal * 100) + '%' }" :aria-valuenow="progressCurrent"
+                    :aria-valuemin="0" :aria-valuemax="progressTotal">
                     {{ Math.round(progressCurrent / progressTotal * 100) }}%
                   </div>
                 </div>
@@ -174,10 +200,8 @@
 
           <!-- Error/Status Messages -->
           <div v-if="statusMessage" class="mt-3">
-            <div
-              class="alert"
-              :class="statusType === 'success' ? 'alert-success' : statusType === 'error' ? 'alert-danger' : 'alert-info'"
-            >
+            <div class="alert"
+              :class="statusType === 'success' ? 'alert-success' : statusType === 'error' ? 'alert-danger' : 'alert-info'">
               {{ statusMessage }}
             </div>
           </div>
@@ -185,40 +209,20 @@
 
         <!-- Modal Footer with Navigation -->
         <div class="modal-footer">
-          <button
-            v-if="currentStep > 0"
-            type="button"
-            class="btn btn-secondary"
-            @click="previousStep"
-            :disabled="isProcessing"
-          >
+          <button v-if="currentStep > 0" type="button" class="btn btn-secondary" @click="previousStep"
+            :disabled="isProcessing">
             <i class="bi bi-arrow-left"></i> Back
           </button>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-            @click="handleClose"
-            :disabled="isProcessing"
-          >
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="handleClose"
+            :disabled="isProcessing">
             Cancel
           </button>
-          <button
-            v-if="currentStep < 3"
-            type="button"
-            class="btn btn-primary"
-            @click="nextStep"
-            :disabled="!canProceed || isProcessing"
-          >
+          <button v-if="currentStep < 4" type="button" class="btn btn-primary" @click="nextStep"
+            :disabled="!canProceed || isProcessing">
             Next <i class="bi bi-arrow-right"></i>
           </button>
-          <button
-            v-if="currentStep === 3"
-            type="button"
-            class="btn btn-success"
-            @click="processFile"
-            :disabled="!canProcess || isProcessing"
-          >
+          <button v-if="currentStep === 4" type="button" class="btn btn-success" @click="processFile"
+            :disabled="!canProcess || isProcessing">
             <span v-if="isProcessing">
               <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
               Processing...
@@ -262,12 +266,20 @@ const progressCurrent = ref(0)
 const progressTotal = ref(100)
 const progressMessage = ref('')
 
+// New: Header detection state
+const previewRows = ref([])
+const selectedHeaderRow = ref(0)
+const skipRows = ref(0)
+const isAnalyzing = ref(false)
+const isSecurityReport = ref(false)
+
 const fileInput = ref(null)
 
 const emit = defineEmits(['upload-complete', 'processing-progress', 'processing-start', 'processing-complete'])
 
 const stepTitles = [
   'Upload File',
+  'Verify Headers',
   'Configure Hierarchy',
   'Select Value Column',
   'Name & Create'
@@ -296,10 +308,12 @@ const canProceed = computed(() => {
     case 0:
       return selectedFile.value !== null
     case 1:
-      return hierarchyColumns.value.length >= 3
+      return selectedHeaderRow.value !== null && previewRows.value.length > 0
     case 2:
-      return valueColumn.value !== ''
+      return hierarchyColumns.value.length >= 3
     case 3:
+      return valueColumn.value !== ''
+    case 4:
       return chartName.value.trim() !== ''
     default:
       return false
@@ -308,8 +322,8 @@ const canProceed = computed(() => {
 
 const canProcess = computed(() => {
   return chartName.value.trim() !== '' &&
-         hierarchyColumns.value.length >= 3 &&
-         valueColumn.value !== ''
+    hierarchyColumns.value.length >= 3 &&
+    valueColumn.value !== ''
 })
 
 // Methods
@@ -328,6 +342,45 @@ const selectValueColumn = (colName) => {
   valueColumn.value = colName
 }
 
+const selectHeaderRow = (index) => {
+  selectedHeaderRow.value = index
+  skipRows.value = 0  // Always 0 - pandas handles rows before header automatically
+}
+
+const useAutomaticProcessing = () => {
+  // Skip header selection and use automatic processing
+  selectedHeaderRow.value = 3  // Security reports have headers on row 3
+  nextStep()
+}
+
+const analyzeFile = async (filePath) => {
+  isAnalyzing.value = true
+  try {
+    const response = await fetchApi(API_ENDPOINTS.ANALYZE, {
+      method: 'POST',
+      data: {
+        filePath: filePath,
+        numRows: 10
+      }
+    })
+
+    if (!response.success) {
+      throw new Error(response.error?.user_message || 'Analysis failed')
+    }
+
+    previewRows.value = response.preview_rows || []
+    selectedHeaderRow.value = response.suggested_header_row || 0
+    isSecurityReport.value = response.is_security_report || false
+
+  } catch (error) {
+    console.error('Error analyzing file:', error)
+    statusMessage.value = error.message || 'Failed to analyze file'
+    statusType.value = 'error'
+  } finally {
+    isAnalyzing.value = false
+  }
+}
+
 const nextStep = async () => {
   statusMessage.value = ''
 
@@ -335,9 +388,13 @@ const nextStep = async () => {
     // Upload file
     await uploadFile()
   } else if (currentStep.value === 1 && canProceed.value) {
-    // Validate hierarchy selection
+    // Header selected, now fetch file info with header row
+    await fetchFileInfo(uploadedFileName.value)
     currentStep.value++
   } else if (currentStep.value === 2 && canProceed.value) {
+    // Validate hierarchy selection
+    currentStep.value++
+  } else if (currentStep.value === 3 && canProceed.value) {
     // Move to final step
     currentStep.value++
   }
@@ -374,10 +431,10 @@ const uploadFile = async () => {
     }
 
     uploadedFileName.value = response.filePath
-    statusMessage.value = 'File uploaded! Analyzing columns...'
+    statusMessage.value = 'File uploaded! Analyzing structure...'
 
-    // Fetch file info
-    await fetchFileInfo(response.filePath)
+    // Analyze file structure
+    await analyzeFile(response.filePath)
 
     statusMessage.value = ''
     currentStep.value++
@@ -396,7 +453,11 @@ const fetchFileInfo = async (filePath) => {
   try {
     const response = await fetchApi(API_ENDPOINTS.FILE_INFO, {
       method: 'GET',
-      params: { filePath }
+      params: {
+        filePath,
+        headerRow: selectedHeaderRow.value,
+        skipRows: skipRows.value
+      }
     })
 
     console.log('FileLoaderModal - File info received:', response)
@@ -450,7 +511,9 @@ const processFile = async () => {
       data: {
         filePath: uploadedFileName.value,
         treeOrder: hierarchyColumns.value,
-        valueColumn: valueColumn.value
+        valueColumn: valueColumn.value,
+        headerRow: selectedHeaderRow.value,
+        skipRows: skipRows.value
       }
     })
 
@@ -473,7 +536,9 @@ const processFile = async () => {
         chartName: chartName.value,
         treeOrder: hierarchyColumns.value,
         valueColumn: valueColumn.value,
-        sessionId: props.sessionId
+        sessionId: props.sessionId,
+        headerRow: selectedHeaderRow.value,
+        skipRows: skipRows.value
       })
     })
 
@@ -562,6 +627,11 @@ const resetForm = () => {
   statusMessage.value = ''
   statusType.value = ''
   isProcessing.value = false
+  previewRows.value = []
+  selectedHeaderRow.value = 0
+  skipRows.value = 0
+  isAnalyzing.value = false
+  isSecurityReport.value = false
 
   if (fileInput.value) {
     fileInput.value.value = ''
@@ -675,7 +745,7 @@ onMounted(() => {
 
 .value-option:hover {
   border-color: #0d6efd;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .value-option.selected {

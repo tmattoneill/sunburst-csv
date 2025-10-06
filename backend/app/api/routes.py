@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 from dataproc.report_processor import ReportProcessor
 from dataproc.generic_processor import GenericProcessor, analyze_columns, validate_column_selection
 from dataproc.db_handler import DatabaseHandler
+from dataproc.file_analyzer import FileAnalyzer
 from dotenv import load_dotenv
 import queue
 import threading
@@ -32,6 +33,70 @@ def allowed_file(filename):
 @bp.route('/health')
 def health_check():
     return {'status': 'healthy'}, 200
+
+
+@bp.route('/analyze', methods=['POST'])
+def analyze_file():
+    """
+    Analyze uploaded file structure and provide preview.
+    Returns preview rows, suggested header row, and file type detection.
+    """
+    try:
+        data = request.json
+        file_path = data.get('filePath')
+        num_rows = data.get('numRows', 10)
+        
+        if not file_path:
+            return jsonify({
+                "success": False,
+                "error": {
+                    "code": "MISSING_FILE_PATH",
+                    "user_message": "No file path provided for analysis.",
+                    "suggestions": ["Please upload a file first"]
+                }
+            }), 400
+        
+        # Construct full path
+        full_path = os.path.join(UPLOAD_DIR, file_path)
+        
+        if not os.path.exists(full_path):
+            return jsonify({
+                "success": False,
+                "error": {
+                    "code": "FILE_NOT_FOUND",
+                    "user_message": "The uploaded file could not be found.",
+                    "suggestions": [
+                        "Try uploading the file again",
+                        "Check that the file was uploaded successfully"
+                    ]
+                }
+            }), 404
+        
+        # Analyze file
+        analyzer = FileAnalyzer(full_path)
+        result = analyzer.analyze(num_rows=num_rows)
+        
+        if not result.get('success'):
+            return jsonify(result), 400
+        
+        return jsonify(result), 200
+        
+    except Exception as e:
+        print(f"Error analyzing file: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error": {
+                "code": "ANALYSIS_ERROR",
+                "user_message": "An unexpected error occurred while analyzing your file.",
+                "suggestions": [
+                    "Try uploading the file again",
+                    "Check that the file is a valid CSV or Excel file",
+                    "Contact support if the problem persists"
+                ],
+                "technical_details": str(e)
+            }
+        }), 500
+
 
 @bp.route('/data', methods=['GET'])
 def get_data():
@@ -212,9 +277,13 @@ def get_file_info():
     """
     Get column metadata for an uploaded file.
     Returns column names, types, sample values, and statistics.
+    Supports headerRow and skipRows parameters for flexible file parsing.
     """
     try:
         file_path_param = request.args.get('filePath')
+        header_row = int(request.args.get('headerRow', 0))
+        skip_rows = int(request.args.get('skipRows', 0))
+        
         if not file_path_param:
             return jsonify({"error": "Missing filePath parameter"}), 400
 
@@ -224,15 +293,17 @@ def get_file_info():
         if not full_path.exists():
             return jsonify({"error": f"File not found: {file_path_param}"}), 404
 
-        # Analyze columns
-        columns_info = analyze_columns(full_path)
-
-        # Get row count
+        # Read file with specified header row and skip rows
         file_ext = full_path.suffix.lower()
+        skiprows = list(range(skip_rows)) if skip_rows > 0 else None
+        
         if file_ext == '.csv':
-            df = pd.read_csv(full_path)
+            df = pd.read_csv(full_path, header=header_row, skiprows=skiprows)
         else:
-            df = pd.read_excel(full_path)
+            df = pd.read_excel(full_path, header=header_row, skiprows=skiprows)
+
+        # Analyze columns
+        columns_info = analyze_columns(full_path, header_row=header_row, skip_rows=skip_rows)
 
         row_count = len(df)
 
@@ -243,7 +314,9 @@ def get_file_info():
             "columns": columns_info,
             "rowCount": row_count,
             "preview": preview,
-            "fileName": file_path_param
+            "fileName": file_path_param,
+            "headerRow": header_row,
+            "skipRows": skip_rows
         }), 200
 
     except Exception as e:
@@ -261,6 +334,8 @@ def validate_columns_endpoint():
         file_path_param = data.get('filePath')
         tree_order = data.get('treeOrder', [])
         value_column = data.get('valueColumn')
+        header_row = data.get('headerRow', 0)
+        skip_rows = data.get('skipRows', 0)
 
         if not all([file_path_param, tree_order, value_column]):
             return jsonify({
@@ -278,7 +353,7 @@ def validate_columns_endpoint():
             }), 404
 
         # Validate selection
-        is_valid, errors = validate_column_selection(full_path, tree_order, value_column)
+        is_valid, errors = validate_column_selection(full_path, tree_order, value_column, header_row, skip_rows)
 
         return jsonify({
             "valid": is_valid,
@@ -312,6 +387,8 @@ def process_file():
         value_column = data.get("valueColumn")
         chart_name = data.get("chartName")
         session_id = data.get("sessionId", "default")
+        header_row = data.get("headerRow", 0)
+        skip_rows = data.get("skipRows", 0)
 
         if tree_order and value_column and chart_name:
             # Generic mode with progress tracking
@@ -319,6 +396,7 @@ def process_file():
             print(f"  Session: {session_id}")
             print(f"  Hierarchy: {' → '.join(tree_order)}")
             print(f"  Value: {value_column}")
+            print(f"  Header row: {header_row}, Skip rows: {skip_rows}")
 
             progress_queue = queue.Queue()
 
@@ -343,6 +421,8 @@ def process_file():
                                 value_column=value_column,
                                 data_path=DATA_DIR,
                                 session_id=session_id,
+                                header_row=header_row,
+                                skip_rows=skip_rows,
                                 progress_callback=progress_callback
                             )
                             processor.process_all()

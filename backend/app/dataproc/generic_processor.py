@@ -53,6 +53,8 @@ class GenericProcessor:
                  value_column: str,
                  data_path: str = "../data",
                  session_id: str = "default",
+                 header_row: int = 0,
+                 skip_rows: int = 0,
                  progress_callback=None):
         """
         Initialize the generic processor.
@@ -64,6 +66,8 @@ class GenericProcessor:
             value_column: Column name containing numeric values to aggregate (e.g., 'ad_spend')
             data_path: Base path for data storage
             session_id: Session identifier for multi-user support
+            header_row: Row index to use as column headers (default 0)
+            skip_rows: Number of rows to skip before header (default 0)
             progress_callback: Optional callback function for progress updates
         """
         self.data_path = Path(os.getenv('DATA_PATH', data_path))
@@ -75,6 +79,8 @@ class GenericProcessor:
         self.value_column = value_column
         self.tree: Union[TreeRoot, Dict] = {}
         self.session_id = session_id
+        self.header_row = header_row
+        self.skip_rows = skip_rows
         self.progress_callback = progress_callback
 
         # Validate inputs
@@ -128,8 +134,7 @@ class GenericProcessor:
 
     def read_dataframe(self) -> pd.DataFrame:
         """
-        Read CSV or Excel file without any metadata row assumptions.
-        Directly reads the data with headers in first row.
+        Read CSV or Excel file with configurable header row and skip rows.
         """
         if not self.raw_data_path.exists():
             raise FileNotFoundError(f"Input file not found: {self.raw_data_path}")
@@ -137,10 +142,13 @@ class GenericProcessor:
         # Determine file type and read accordingly
         file_ext = self.raw_data_path.suffix.lower()
 
+        # Prepare skiprows parameter
+        skiprows = list(range(self.skip_rows)) if self.skip_rows > 0 else None
+
         if file_ext == '.csv':
-            df = pd.read_csv(self.raw_data_path)
+            df = pd.read_csv(self.raw_data_path, header=self.header_row, skiprows=skiprows)
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(self.raw_data_path)
+            df = pd.read_excel(self.raw_data_path, header=self.header_row, skiprows=skiprows)
         else:
             raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -288,6 +296,8 @@ class GenericProcessor:
                 'tree_order': self.tree_order,
                 'value_column': self.value_column,
                 'source_file': str(self.raw_data_path.name),  # Store source file name for table queries
+                'header_row': self.header_row,
+                'skip_rows': self.skip_rows,
                 'data': self.tree
             }
 
@@ -320,22 +330,26 @@ class GenericProcessor:
         print("\n✓ Processing complete!")
 
 
-def analyze_columns(file_path: Path) -> List[Dict]:
+def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) -> List[Dict]:
     """
     Analyze columns in a CSV/XLSX file to determine types and suitability.
 
     Args:
         file_path: Path to CSV or XLSX file
+        header_row: Row index to use as column headers (default 0)
+        skip_rows: Number of rows to skip before header (default 0)
 
     Returns:
         List of column metadata dictionaries
     """
-    # Read file
+    # Read file with specified header and skip rows
     file_ext = file_path.suffix.lower()
+    skiprows = list(range(skip_rows)) if skip_rows > 0 else None
+    
     if file_ext == '.csv':
-        df = pd.read_csv(file_path, nrows=1000)  # Sample first 1000 rows
+        df = pd.read_csv(file_path, header=header_row, skiprows=skiprows, nrows=1000)  # Sample first 1000 rows
     elif file_ext in ['.xlsx', '.xls']:
-        df = pd.read_excel(file_path, nrows=1000)
+        df = pd.read_excel(file_path, header=header_row, skiprows=skiprows, nrows=1000)
     else:
         raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -374,7 +388,7 @@ def analyze_columns(file_path: Path) -> List[Dict]:
     return columns_info
 
 
-def validate_column_selection(file_path: Path, tree_order: List[str], value_column: str) -> Tuple[bool, List[str]]:
+def validate_column_selection(file_path: Path, tree_order: List[str], value_column: str, header_row: int = 0, skip_rows: int = 0) -> Tuple[bool, List[str]]:
     """
     Validate user's column selection before processing.
 
@@ -382,6 +396,8 @@ def validate_column_selection(file_path: Path, tree_order: List[str], value_colu
         file_path: Path to data file
         tree_order: Selected hierarchy columns
         value_column: Selected value column
+        header_row: Row index to use as column headers (default 0)
+        skip_rows: Number of rows to skip before header (default 0)
 
     Returns:
         (is_valid, list_of_errors)
@@ -391,10 +407,12 @@ def validate_column_selection(file_path: Path, tree_order: List[str], value_colu
     # Read file
     try:
         file_ext = file_path.suffix.lower()
+        skiprows = list(range(skip_rows)) if skip_rows > 0 else None
+
         if file_ext == '.csv':
-            df = pd.read_csv(file_path)
+            df = pd.read_csv(file_path, header=header_row, skiprows=skiprows)
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(file_path)
+            df = pd.read_excel(file_path, header=header_row, skiprows=skiprows)
         else:
             errors.append(f"Unsupported file type: {file_ext}")
             return False, errors
