@@ -1,0 +1,1143 @@
+{
+  "chart_name": "ZMAT TEST",
+  "tree_order": [
+    "Hit Type",
+    "Provider Account",
+    "Publisher Name",
+    "Malware Condition"
+  ],
+  "value_column": "Priority",
+  "source_file": "7_day_unformatted-20251006-070033.csv",
+  "data_file": "mges5a9jr6bio92f70l_data.csv",
+  "metadata_file": "mges5a9jr6bio92f70l_metadata.csv",
+  "header_row": 3,
+  "skip_rows": 0,
+  "data": {
+    "name": "ZMAT TEST",
+    "value": 4684.0,
+    "children": [
+      {
+        "name": "Malicious",
+        "value": 2286.0,
+        "children": [
+          {
+            "name": "webeye_dsp",
+            "value": 1200.0,
+            "children": [
+              {
+                "name": "mvungle",
+                "value": 1200.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 1200.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ignite2_dsp",
+            "value": 600.0,
+            "children": [
+              {
+                "name": "xiaomi",
+                "value": 240.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 240.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "unity",
+                "value": 220.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 220.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "webeyemintegral",
+                "value": 90.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 80.0,
+                    "children": []
+                  },
+                  {
+                    "name": "Spoofing",
+                    "value": 10.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "inmobimax",
+                "value": 40.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 40.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "duopeakmintegral",
+                "value": 10.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 10.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "operaroi_dsp",
+            "value": 99.0,
+            "children": [
+              {
+                "name": "googleadx",
+                "value": 99.0,
+                "children": [
+                  {
+                    "name": "Compromised Domain",
+                    "value": 99.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "smartad_dsp",
+            "value": 99.0,
+            "children": [
+              {
+                "name": "hungrystudio",
+                "value": 99.0,
+                "children": [
+                  {
+                    "name": "Compromised Domain",
+                    "value": 99.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "mobshark_dsp",
+            "value": 90.0,
+            "children": [
+              {
+                "name": "fyberdisplay",
+                "value": 90.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 90.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "shareit_dsp",
+            "value": 78.0,
+            "children": [
+              {
+                "name": "xiaomi",
+                "value": 39.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 39.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "maticooads",
+                "value": 24.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 24.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "unity",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "mvungle",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "fyber",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bluesea_dsp",
+            "value": 50.0,
+            "children": [
+              {
+                "name": "mvungle",
+                "value": 50.0,
+                "children": [
+                  {
+                    "name": "GhostCat - 3PC",
+                    "value": 50.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Inspiritum_dsp",
+            "value": 21.0,
+            "children": [
+              {
+                "name": "fyber",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "pubmatic",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "algorixeu",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "inmobimax",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "fyberbrand",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "mvungle",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "haxmedia_dsp",
+            "value": 15.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "GhostCat - 3PC",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "vungle",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Redirector",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "prebid_lihuhu",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "GhostCat - 3PC",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bidswitch_dsp",
+            "value": 9.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "betweenx_dsp",
+            "value": 7.0,
+            "children": [
+              {
+                "name": "fyber",
+                "value": 7.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 7.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "silvermob_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "vungle",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "isx",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "cas_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "isx",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Phishing Domain",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "boldwin_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "SocGholish",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "aloha_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "fyberbrand",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "SocGholish",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "afront_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "nexxen",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "GhostCat - 3PC",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Malicious - Indirect Evidence",
+        "value": 1201.0,
+        "children": [
+          {
+            "name": "mobshark_dsp",
+            "value": 1080.0,
+            "children": [
+              {
+                "name": "rakuten",
+                "value": 1080.0,
+                "children": [
+                  {
+                    "name": "Heuristic Flag",
+                    "value": 1080.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opera_dsp",
+            "value": 99.0,
+            "children": [
+              {
+                "name": "pubmatic",
+                "value": 99.0,
+                "children": [
+                  {
+                    "name": "DNE Domain",
+                    "value": 99.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ignite2_dsp",
+            "value": 10.0,
+            "children": [
+              {
+                "name": "xiaomi",
+                "value": 10.0,
+                "children": [
+                  {
+                    "name": "Heuristic Flag",
+                    "value": 10.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bidswitch_dsp",
+            "value": 9.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "Heuristic Flag",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "oms_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Heuristic Flag",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ad Fraud",
+        "value": 1139.0,
+        "children": [
+          {
+            "name": "nasmedia_dsp",
+            "value": 297.0,
+            "children": [
+              {
+                "name": "rakuten",
+                "value": 198.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 198.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "fyber",
+                "value": 99.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 99.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "pubnative",
+            "value": 198.0,
+            "children": [
+              {
+                "name": "pubmaticsdk",
+                "value": 198.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 198.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "operaroi_dsp",
+            "value": 198.0,
+            "children": [
+              {
+                "name": "googleadx",
+                "value": 198.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 198.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opera_dsp",
+            "value": 99.0,
+            "children": [
+              {
+                "name": "xiaomi",
+                "value": 99.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 99.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "magnite_dsp",
+            "value": 99.0,
+            "children": [
+              {
+                "name": "applovinalx",
+                "value": 99.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 99.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "mobshark_dsp",
+            "value": 90.0,
+            "children": [
+              {
+                "name": "rakuten",
+                "value": 90.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 90.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "betweenx_dsp",
+            "value": 42.0,
+            "children": [
+              {
+                "name": "fyber",
+                "value": 42.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 42.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bidswitch_dsp",
+            "value": 18.0,
+            "children": [
+              {
+                "name": "fyberdisplay",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "smaato",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "shareit_dsp",
+            "value": 15.0,
+            "children": [
+              {
+                "name": "xiaomi",
+                "value": 15.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 15.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "acuityads_dsp",
+            "value": 12.0,
+            "children": [
+              {
+                "name": "applovinalx",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "mvungle",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ignite2_dsp",
+            "value": 10.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 10.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 10.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "mobupps_dsp",
+            "value": 10.0,
+            "children": [
+              {
+                "name": "fyber",
+                "value": 10.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 10.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "mobfox_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "vm_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "isx",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "fyberdisplay",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bidmachine_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "applovinalx",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "kelmak_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "silvermob_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "vungle",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Taipei_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "unityads",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "jampp_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "isx",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "playdigo_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tradplusttd_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "isx",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "adipolo_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "spinx_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "unityads",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Ad Fraud",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scam",
+        "value": 20.0,
+        "children": [
+          {
+            "name": "ignite2_dsp",
+            "value": 10.0,
+            "children": [
+              {
+                "name": "unity",
+                "value": 10.0,
+                "children": [
+                  {
+                    "name": "Scam",
+                    "value": 10.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bidmachine_dsp",
+            "value": 6.0,
+            "children": [
+              {
+                "name": "applovinalx",
+                "value": 6.0,
+                "children": [
+                  {
+                    "name": "Scam",
+                    "value": 6.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "oms_dsp",
+            "value": 3.0,
+            "children": [
+              {
+                "name": "xiaomi",
+                "value": 3.0,
+                "children": [
+                  {
+                    "name": "Scam",
+                    "value": 3.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "adwmg_dsp",
+            "value": 1.0,
+            "children": [
+              {
+                "name": "fyberbrand",
+                "value": 1.0,
+                "children": [
+                  {
+                    "name": "Scam",
+                    "value": 1.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fake App Store",
+        "value": 20.0,
+        "children": [
+          {
+            "name": "ignite2_dsp",
+            "value": 20.0,
+            "children": [
+              {
+                "name": "webeyemintegral",
+                "value": 20.0,
+                "children": [
+                  {
+                    "name": "Spoofing",
+                    "value": 20.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Out Of Browser Redirect",
+        "value": 18.0,
+        "children": [
+          {
+            "name": "bidswitch_dsp",
+            "value": 18.0,
+            "children": [
+              {
+                "name": "smaato",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "App Store Redirect iOS",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "unity",
+                "value": 9.0,
+                "children": [
+                  {
+                    "name": "App Store Redirect iOS",
+                    "value": 9.0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
