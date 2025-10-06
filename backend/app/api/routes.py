@@ -140,15 +140,21 @@ def get_table_data():
                 is_generic_mode = 'chart_name' in metadata
                 source_file = metadata.get('source_file')
                 tree_order = metadata.get('tree_order', [])
+                # Get processed data file (falls back to source_file for backwards compatibility)
+                data_file = metadata.get('data_file', source_file)
 
-        if is_generic_mode and source_file:
-            # Generic mode - read from CSV
-            csv_path = Path(UPLOAD_DIR) / source_file
+        if is_generic_mode and data_file:
+            # Generic mode - read from processed data CSV
+            # First try data directory (processed files), then uploads directory (backwards compat)
+            csv_path = Path(DATA_DIR) / data_file
+            if not csv_path.exists():
+                csv_path = Path(UPLOAD_DIR) / data_file
 
             if not csv_path.exists():
-                return jsonify({"error": f"Source file not found: {source_file}"}), 404
+                return jsonify({"error": f"Data file not found: {data_file}"}), 404
 
             # Read CSV (low_memory=False to avoid DtypeWarning on large files)
+            # No header parameters needed - processed file already has correct headers
             df = pd.read_csv(csv_path, low_memory=False)
 
             # Get filters and pagination params

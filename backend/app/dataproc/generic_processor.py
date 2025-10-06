@@ -277,6 +277,33 @@ class GenericProcessor:
             self._report_progress(10, 100, "Validating data...")
             df = self.validate_and_prepare_data(df)
 
+            # Save processed data and metadata files
+            self._report_progress(15, 100, "Saving processed data...")
+
+            # Save clean data CSV (with proper headers) for DataTable
+            data_csv_path = self.data_path / f"{self.session_id}_data.csv"
+            df.to_csv(data_csv_path, index=False)
+            print(f"✓ Saved processed data to {data_csv_path}")
+
+            # Extract and save metadata rows (if header row > 0)
+            metadata_file = None
+            if self.header_row > 0:
+                # Read file again without header to get raw metadata rows
+                file_ext = self.raw_data_path.suffix.lower()
+                skiprows = list(range(self.skip_rows)) if self.skip_rows > 0 else None
+
+                if file_ext == '.csv':
+                    df_full = pd.read_csv(self.raw_data_path, header=None, skiprows=skiprows)
+                else:
+                    df_full = pd.read_excel(self.raw_data_path, header=None, skiprows=skiprows)
+
+                # Extract rows before header (metadata rows)
+                metadata_df = df_full.iloc[0:self.header_row]
+                metadata_csv_path = self.data_path / f"{self.session_id}_metadata.csv"
+                metadata_df.to_csv(metadata_csv_path, index=False, header=False)
+                metadata_file = f"{self.session_id}_metadata.csv"
+                print(f"✓ Saved file metadata to {metadata_csv_path}")
+
             # Build tree structure
             self._report_progress(20, 100, "Building tree structure...")
             print("Building tree structure...")
@@ -295,7 +322,9 @@ class GenericProcessor:
                 'chart_name': self.chart_name,
                 'tree_order': self.tree_order,
                 'value_column': self.value_column,
-                'source_file': str(self.raw_data_path.name),  # Store source file name for table queries
+                'source_file': str(self.raw_data_path.name),  # Original file (for reference)
+                'data_file': f"{self.session_id}_data.csv",    # Processed data for DataTable
+                'metadata_file': metadata_file,                # File metadata rows (if any)
                 'header_row': self.header_row,
                 'skip_rows': self.skip_rows,
                 'data': self.tree
@@ -305,8 +334,14 @@ class GenericProcessor:
             with open(self.sunburst_data_path, 'w', encoding='utf-8') as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
 
+            # TODO: Optional cleanup - delete original upload after processing
+            # os.remove(self.raw_data_path)
+
             self._report_progress(100, 100, "Complete!")
             print(f"✓ Sunburst data created and saved to {self.sunburst_data_path}")
+            print(f"  Processed data saved to: {data_csv_path}")
+            if metadata_file:
+                print(f"  File metadata saved to: {metadata_csv_path}")
             print(f"  Total value: {total_value:,.2f}")
             print(f"  Top-level categories: {len(children)}")
 
