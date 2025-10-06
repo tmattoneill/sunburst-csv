@@ -94,16 +94,6 @@
                   </tbody>
                 </table>
               </div>
-
-              <!-- Selected Header Preview -->
-              <div v-if="selectedHeaderRow !== null" class="mt-3 p-3 bg-light rounded">
-                <h6>Selected Header Row (Row {{ selectedHeaderRow }}):</h6>
-                <div class="d-flex gap-2 flex-wrap">
-                  <span v-for="(cell, index) in previewRows[selectedHeaderRow]" :key="index" class="badge bg-primary">
-                    {{ cell || '(empty)' }}
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
 
