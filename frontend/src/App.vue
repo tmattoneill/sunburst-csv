@@ -36,6 +36,7 @@ const chartRef = ref(null)
 const filterOrder = ref([])
 const isLoadingData = ref(false)
 const loadingMessage = ref('Processing dataset...')
+const isInitialLoad = ref(true); // Controls the initial overlay
 
 // Computed properties for DataPane
 const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
@@ -166,7 +167,9 @@ onMounted(async () => {
                   Object.keys(chartData.value).length > 0 &&
                   chartData.value.name
 
-  if (!hasData) {
+  if (hasData) {
+    isInitialLoad.value = false;
+  } else {
     // Wait a moment for the modal to be registered in the DOM
     setTimeout(() => {
       const modalEl = document.getElementById('mdl-load')
@@ -179,6 +182,7 @@ onMounted(async () => {
 })
 
 const refreshPage = () => {
+  isInitialLoad.value = false;
   fetchData(true)  // Show loading overlay when explicitly refreshing
 }
 </script>
@@ -205,7 +209,7 @@ const refreshPage = () => {
       @processing-complete="() => loadingMessage = 'Loading visualization...'"
     />
 
-    <div id="app" class="container py-4">
+    <div id="app" class="container py-4" :class="{ 'initial-load-overlay': isInitialLoad }">
     <!-- Header -->
   <PageHeader
     :reportType="reportType"
@@ -292,6 +296,23 @@ const refreshPage = () => {
   background: #f8f9fa;
   border-radius: 8px;
 }
+
+#app.initial-load-overlay {
+  position: relative;
+  pointer-events: none; /* Disables clicks on the content behind the overlay */
+}
+
+#app.initial-load-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95); /* A strong white overlay to hide content */
+  z-index: 1041; /* Position it below the modal (z-index 1050+) but above the page content */
+}
+
 
 @media (max-width: 768px) {
   .chart-height {

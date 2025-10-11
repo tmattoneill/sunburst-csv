@@ -52,6 +52,7 @@ bdesign/
 .env
 .env.*.local
 .env.local
+.env.dev
 
 # Code Assist Files
 ./CLAUDE.md 
