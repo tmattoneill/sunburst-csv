@@ -273,6 +273,19 @@ const confirmClearSession = async () => {
     alert('Failed to clear session data: ' + error.message)
   }
 }
+
+const handleProcessingStart = () => {
+  isLoadingData.value = true
+  loadingMessage.value = 'Starting...'
+}
+
+const handleProcessingProgress = (message) => {
+  loadingMessage.value = message
+}
+
+const handleProcessingComplete = () => {
+  loadingMessage.value = 'Loading visualization...'
+}
 </script>
 
 <template>
@@ -313,9 +326,9 @@ const confirmClearSession = async () => {
         :session-id="sessionId"
         @file-selected="handleFileSelected"
         @upload-complete="refreshPage"
-        @processing-progress="(msg) => loadingMessage.value = msg"
-        @processing-start="() => { isLoadingData.value = true; loadingMessage.value = 'Starting...' }"
-        @processing-complete="() => loadingMessage.value = 'Loading visualization...'"
+        @processing-progress="handleProcessingProgress"
+        @processing-start="handleProcessingStart"
+        @processing-complete="handleProcessingComplete"
       />
 
       <div id="app" class="container py-4" :class="{ 'initial-load-overlay': isInitialLoad }">
