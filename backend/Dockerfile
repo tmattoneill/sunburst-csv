@@ -12,11 +12,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app/ ./app
 COPY data/ ./data
 
-# Expose the backend port
-EXPOSE 6500
+# Expose the backend port (default 6500, can be overridden with FLASK_PORT env var)
+EXPOSE ${FLASK_PORT:-6500}
 
 # Set working directory to app folder where the api module is
 WORKDIR /app/app
 
 # Run the Flask app using Gunicorn with environment variables
-CMD ["gunicorn", "--bind", "0.0.0.0:6500", "api:create_app()"]
+CMD sh -c "gunicorn --bind 0.0.0.0:${FLASK_PORT:-6500} 'api:create_app()'"

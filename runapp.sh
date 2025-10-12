@@ -96,6 +96,12 @@ fi
 # ENVIRONMENT SETUP
 # ============================================
 
+# Load environment variables from .env.dev if it exists
+if [ -f "$SCRIPT_DIR/.env.dev" ]; then
+    echo "🔹 Loading environment from .env.dev..."
+    export $(grep -v '^#' "$SCRIPT_DIR/.env.dev" | xargs)
+fi
+
 # Create data directories if they don't exist
 mkdir -p "$DATA_DIR/raw"
 mkdir -p "$DATA_DIR/processed"
@@ -103,17 +109,18 @@ mkdir -p "$DATA_DIR/processed"
 # Set environment variables for the backend
 export OPENBLAS_NUM_THREADS=1
 export OPENBLAS_L2_SIZE=512
-export FLASK_PORT=6500
+export FLASK_PORT=${BACKEND_PORT:-6500}
 export FLASK_DEBUG=0
 export DATA_DIR="$DATA_DIR"
 export UPLOAD_DIR="$DATA_DIR/raw"
 export DATABASE_URL="$DATA_DIR/security.db"
 export DATA_PATH="$DATA_DIR"
+export FRONTEND_PORT=${FRONTEND_PORT:-8080}
 
 echo ""
 echo "🔹 Environment configured:"
-echo "   - Backend: http://0.0.0.0:6500"
-echo "   - Frontend: http://localhost:8080 (Vue dev server)"
+echo "   - Backend: http://0.0.0.0:${FLASK_PORT}"
+echo "   - Frontend: http://localhost:${FRONTEND_PORT:-8080} (Vue dev server)"
 echo "   - Data directory: $DATA_DIR"
 echo ""
 
@@ -124,7 +131,7 @@ echo ""
 # Start the Flask backend server
 echo "🔹 Starting Flask backend..."
 cd "$BACKEND_DIR"
-nohup gunicorn --bind 0.0.0.0:6500 "api:create_app()" > "$SCRIPT_DIR/backend.log" 2>&1 &
+nohup gunicorn --bind 0.0.0.0:${FLASK_PORT} "api:create_app()" > "$SCRIPT_DIR/backend.log" 2>&1 &
 BACKEND_PID=$!
 
 if [ $? -eq 0 ]; then
@@ -164,8 +171,8 @@ echo "🛑 To stop services, run:"
 echo "   kill $BACKEND_PID $FRONTEND_PID"
 echo ""
 echo "📊 Access the application:"
-echo "   Frontend: http://localhost:8080"
-echo "   Backend:  http://localhost:6500/api/health"
+echo "   Frontend: http://localhost:${FRONTEND_PORT:-8080}"
+echo "   Backend:  http://localhost:${FLASK_PORT}/api/health"
 echo ""
 
 exit 0
