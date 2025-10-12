@@ -1,0 +1,2131 @@
+{
+  "chart_name": "Global Campaign Results",
+  "tree_order": [
+    "market",
+    "campaign",
+    "advertiser"
+  ],
+  "value_column": "impressions",
+  "source_file": "ad_campaign_dataset-20251012-073721.csv",
+  "data_file": "mgmlizk0skwy39f3to9_data.csv",
+  "metadata_file": null,
+  "header_row": 0,
+  "skip_rows": 0,
+  "data": {
+    "name": "Global Campaign Results",
+    "value": 483162187.0,
+    "children": [
+      {
+        "name": "Germany",
+        "value": 67930417.0,
+        "children": [
+          {
+            "name": "Spring Launch",
+            "value": 16459911.0,
+            "children": [
+              {
+                "name": "Samsung",
+                "value": 4789843.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2265970.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 2135945.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 2051530.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1952264.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1718978.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1131074.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 414307.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 12720606.0,
+            "children": [
+              {
+                "name": "Samsung",
+                "value": 3384087.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 2331570.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1971954.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1677420.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1492706.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1411390.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 451479.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 10769299.0,
+            "children": [
+              {
+                "name": "CocaCola",
+                "value": 2372347.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 2178446.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1803165.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1386314.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 984121.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 935794.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 881865.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 227247.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 10532113.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 4488129.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 2931570.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1439611.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 915679.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 532883.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 224241.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Black Friday",
+            "value": 8987026.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 2261077.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1722931.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1689594.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1340405.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1175814.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 410502.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 315893.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 70810.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Holiday Sale",
+            "value": 8461462.0,
+            "children": [
+              {
+                "name": "CocaCola",
+                "value": 3140321.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1421739.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1314094.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 969524.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 889980.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 444340.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 223404.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 58060.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UK",
+        "value": 66230005.0,
+        "children": [
+          {
+            "name": "Black Friday",
+            "value": 12784200.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 3687082.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 3620040.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1913960.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1148417.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1043475.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 894378.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 476848.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Holiday Sale",
+            "value": 12722669.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 2438862.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 2007116.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1771103.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1694433.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1379826.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1341356.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1265833.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 824140.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 10809182.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 2899944.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1633122.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1515437.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1276776.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1198404.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1109048.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 919913.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 256538.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 10445054.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 2382854.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 2331249.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1659244.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1388172.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1187752.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1091208.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 372792.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 31783.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 9811308.0,
+            "children": [
+              {
+                "name": "Amazon",
+                "value": 3100307.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1538560.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1134574.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1129898.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 936069.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 895901.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 566136.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 509863.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 9657592.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 2272157.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 2041977.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1408246.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1315431.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 990338.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 864205.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 765238.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "France",
+        "value": 65611791.0,
+        "children": [
+          {
+            "name": "Black Friday",
+            "value": 15068006.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 4255679.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 3343849.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 2921029.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 2476830.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1347114.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 503670.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 121588.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 98247.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 14129637.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 3148861.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 2911251.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 2598302.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2507342.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1119468.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 898876.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 596514.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 349023.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Holiday Sale",
+            "value": 9504299.0,
+            "children": [
+              {
+                "name": "Amazon",
+                "value": 2584616.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 2225822.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1504492.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1403734.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 881995.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 760977.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 102327.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 40336.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 9420098.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 3157869.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1269938.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1252946.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1243758.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 811019.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 747250.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 643387.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 293931.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 9347581.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 2177850.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1605790.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1567960.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1421482.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1220476.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 850793.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 257968.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 245262.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 8142170.0,
+            "children": [
+              {
+                "name": "CocaCola",
+                "value": 2676117.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1958051.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1395418.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 908627.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 734907.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 184691.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 146667.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 137692.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "USA",
+        "value": 60855462.0,
+        "children": [
+          {
+            "name": "Back to School",
+            "value": 12229466.0,
+            "children": [
+              {
+                "name": "Amazon",
+                "value": 3008707.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2063100.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1678222.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1468675.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1430460.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1251328.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 750806.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 578168.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Holiday Sale",
+            "value": 11687466.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 2579202.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2311175.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 2292206.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1693286.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 968490.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 951650.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 891457.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Black Friday",
+            "value": 11470040.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 3083576.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1996922.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1698079.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1450707.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1387110.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1026012.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 666966.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 160668.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 9383902.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 2821723.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1744354.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1731391.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1479734.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 668951.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 570063.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 367686.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 8107815.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 2061446.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1728208.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1165321.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1129609.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 913130.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 503473.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 455014.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 151614.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 7976773.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 3258780.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2134407.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1514952.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 665981.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 398333.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 4320.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Spain",
+        "value": 59127918.0,
+        "children": [
+          {
+            "name": "Holiday Sale",
+            "value": 14683041.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 4024329.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 2514411.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2459484.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 2098077.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1635301.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1040618.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 910821.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 10628804.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 2690582.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 2017873.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1948997.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1487975.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1091653.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 696595.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 695129.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 9687363.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 2746705.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 2635081.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1581087.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1052544.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 832432.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 371188.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 350207.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 118119.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Black Friday",
+            "value": 9647832.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 1884654.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1633950.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1507693.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1386577.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1039198.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 929555.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 832114.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 434091.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 7952836.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 1675741.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1498299.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1392534.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1164397.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 967367.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 964524.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 272849.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 17125.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 6528042.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 1514590.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1235690.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1176406.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1150300.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 709468.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 554477.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 187111.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Brazil",
+        "value": 56434862.0,
+        "children": [
+          {
+            "name": "Holiday Sale",
+            "value": 13131030.0,
+            "children": [
+              {
+                "name": "Samsung",
+                "value": 3189193.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 2091120.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 2081450.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1607577.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1362926.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1326546.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 961009.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 511209.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 12627273.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 3485633.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1949871.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1879976.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1565644.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1403637.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 905257.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 851576.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 585679.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 8717385.0,
+            "children": [
+              {
+                "name": "Adidas",
+                "value": 1999229.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1353683.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1275422.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1209695.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1148333.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 840198.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 837568.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 53257.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 7714277.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 2698832.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1735698.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 965484.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 961983.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 690029.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 442030.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 220221.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Black Friday",
+            "value": 7215113.0,
+            "children": [
+              {
+                "name": "Toyota",
+                "value": 1444584.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1288080.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1146033.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1106175.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 874598.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 820061.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 535582.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 7029784.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 1434389.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1329119.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1027415.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1003405.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 789120.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 742169.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 704167.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Japan",
+        "value": 54521801.0,
+        "children": [
+          {
+            "name": "Holiday Sale",
+            "value": 11333236.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 2372293.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 2318513.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 2288985.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1583407.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1106317.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 725596.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 515439.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 422686.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 10874217.0,
+            "children": [
+              {
+                "name": "Toyota",
+                "value": 3008834.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 2737806.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1127016.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1120485.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 954019.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 744320.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 621633.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 560104.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 9908206.0,
+            "children": [
+              {
+                "name": "Toyota",
+                "value": 2420784.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1566294.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1464042.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 1236889.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 951631.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 943757.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 743116.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 581693.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 9542456.0,
+            "children": [
+              {
+                "name": "Toyota",
+                "value": 2980250.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2479240.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 2079043.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1178610.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 510061.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 315252.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Black Friday",
+            "value": 7116396.0,
+            "children": [
+              {
+                "name": "Toyota",
+                "value": 1954904.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1819867.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1132189.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1022594.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 654888.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 531954.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Summer Blast",
+            "value": 5747290.0,
+            "children": [
+              {
+                "name": "Nike",
+                "value": 1965869.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 1353953.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 975029.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 732097.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 421468.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 298874.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "India",
+        "value": 52449931.0,
+        "children": [
+          {
+            "name": "Summer Blast",
+            "value": 12867893.0,
+            "children": [
+              {
+                "name": "Pepsi",
+                "value": 4372036.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 2688430.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1725290.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1674415.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 1197341.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 994607.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 215774.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Back to School",
+            "value": 10660406.0,
+            "children": [
+              {
+                "name": "CocaCola",
+                "value": 3166282.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 2313512.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 2108606.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 1145277.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 705064.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 528696.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 508835.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 184134.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spring Launch",
+            "value": 8440964.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 2197268.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1758190.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1713047.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1178406.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 617784.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 517950.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 458319.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Black Friday",
+            "value": 7923557.0,
+            "children": [
+              {
+                "name": "Toyota",
+                "value": 2125561.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1813619.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 1473289.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1218976.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 680828.0,
+                "children": []
+              },
+              {
+                "name": "CocaCola",
+                "value": 611284.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Winter Promo",
+            "value": 7907222.0,
+            "children": [
+              {
+                "name": "CocaCola",
+                "value": 2164199.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 1794937.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 1790872.0,
+                "children": []
+              },
+              {
+                "name": "Toyota",
+                "value": 846368.0,
+                "children": []
+              },
+              {
+                "name": "Apple",
+                "value": 688271.0,
+                "children": []
+              },
+              {
+                "name": "Amazon",
+                "value": 375618.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 246957.0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Holiday Sale",
+            "value": 4649889.0,
+            "children": [
+              {
+                "name": "Apple",
+                "value": 1804231.0,
+                "children": []
+              },
+              {
+                "name": "Nike",
+                "value": 1349252.0,
+                "children": []
+              },
+              {
+                "name": "Adidas",
+                "value": 744850.0,
+                "children": []
+              },
+              {
+                "name": "Pepsi",
+                "value": 428222.0,
+                "children": []
+              },
+              {
+                "name": "Samsung",
+                "value": 323334.0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
