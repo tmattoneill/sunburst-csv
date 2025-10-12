@@ -22,6 +22,16 @@ const props = defineProps({
     type: String,
     required: false,
     default: ''
+  },
+  aggregationMode: {
+    type: String,
+    required: false,
+    default: ''
+  },
+  treeOrder: {
+    type: Array,
+    required: false,
+    default: () => []
   }
 })
 
@@ -31,17 +41,65 @@ const formatNumber = (num) => {
   return new Intl.NumberFormat().format(num)
 }
 
-// Format value column name for display
-const valueLabel = computed(() => {
-  if (!props.valueColumn) {
-    return 'Tags with Incidents' // Legacy mode default
-  }
-  // Clean up the column name: trim whitespace, replace underscores with spaces, capitalize words
-  return props.valueColumn
+const humanize = (text = '') => {
+  return text
+    .replace(/[_\-]+/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim()
-    .split('_')
+    .split(' ')
+    .filter(Boolean)
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
+}
+
+const pluralize = (label) => {
+  if (!label) return ''
+  const lower = label.toLowerCase()
+  if (lower.endsWith('data')) return label
+  if (lower.endsWith('ies')) return label
+  if (lower.endsWith('s')) return label
+  if (lower.endsWith('y')) {
+    return label.slice(0, -1) + 'ies'
+  }
+  return `${label}s`
+}
+
+const resolvedFieldName = computed(() => {
+  if (props.valueColumn) {
+    return humanize(props.valueColumn)
+  }
+
+  if (props.aggregationMode && props.treeOrder?.length) {
+    return humanize(props.treeOrder[props.treeOrder.length - 1])
+  }
+
+  return ''
+})
+
+// Format value label based on aggregation mode
+const valueLabel = computed(() => {
+  const mode = props.aggregationMode?.toUpperCase?.() || ''
+  const base = resolvedFieldName.value
+
+  if (!mode && !base) {
+    return 'Tags with Incidents' // Legacy default
+  }
+
+  if (mode === 'SUM') {
+    return base ? `Total ${base}` : 'Total Value'
+  }
+
+  if (mode === 'COUNT_DISTINCT') {
+    const label = base ? pluralize(base) : 'Records'
+    return `Unique ${label}`
+  }
+
+  if (mode === 'COUNT_TOTAL') {
+    const label = base ? pluralize(base) : 'Records'
+    return `Total ${label}`
+  }
+
+  return base || 'Total Value'
 })
 
 const displayChildren = computed(() => {

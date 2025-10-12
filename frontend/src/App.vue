@@ -40,6 +40,7 @@ const loadingMessage = ref('Processing dataset...')
 const isInitialLoad = ref(true); // Controls the initial overlay
 const showLanding = ref(true)
 const hasLaunched = ref(false)
+const aggregationMode = ref('')
 
 // Computed properties for DataPane
 const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
@@ -129,6 +130,7 @@ const fetchData = async (showLoading = false) => {
       chartName.value = responseData.chart_name
       treeOrder.value = responseData.tree_order || []
       valueColumn.value = responseData.value_column || ''
+      aggregationMode.value = responseData.aggregation_mode || (valueColumn.value ? 'SUM' : 'COUNT_TOTAL')
       reportType.value = ''
       dateStart.value = ''
       dateEnd.value = ''
@@ -140,6 +142,7 @@ const fetchData = async (showLoading = false) => {
       dateEnd.value = responseData.date_end || ''
       treeOrder.value = responseData.tree_order || []
       valueColumn.value = '' // No value column in legacy mode
+      aggregationMode.value = responseData.aggregation_mode || ''
     }
 
     chartData.value = responseData.data
@@ -159,6 +162,7 @@ const fetchData = async (showLoading = false) => {
     chartData.value = {}
     selectedNode.value = null
     currentPath.value = []
+    aggregationMode.value = ''
   } finally {
     isLoadingData.value = false
   }
@@ -265,6 +269,7 @@ const confirmClearSession = async () => {
     chartName.value = ''
     treeOrder.value = []
     valueColumn.value = ''
+    aggregationMode.value = ''
 
     // Wait a moment, then open the upload modal
     showUploadModal()
@@ -385,14 +390,16 @@ const handleProcessingComplete = () => {
           <div class="col-md-6">
             <!-- Data Pane -->
             <div class="bg-black rounded shadow-sm p-4 h-100">
-              <DataPane
-                :rootName="rootName"
-                :rootValue="rootValue"
-                :topChildren="topChildren"
-                :valueColumn="valueColumn"
-              />
-            </div>
-          </div>
+          <DataPane
+            :rootName="rootName"
+            :rootValue="rootValue"
+            :topChildren="topChildren"
+            :valueColumn="valueColumn"
+            :aggregationMode="aggregationMode"
+            :treeOrder="treeOrder"
+          />
+        </div>
+      </div>
         </div>
         <div class="row mt-4">
           <div class="col-12">
