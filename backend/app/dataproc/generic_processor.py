@@ -50,7 +50,8 @@ class GenericProcessor:
                  input_file: str,
                  chart_name: str,
                  tree_order: List[str],
-                 value_column: str,
+                 value_column: str = None,
+                 aggregation_mode: str = 'SUM',
                  data_path: str = "../data",
                  session_id: str = "default",
                  header_row: int = 0,
@@ -63,7 +64,8 @@ class GenericProcessor:
             input_file: Name of CSV/XLSX file in data/raw/
             chart_name: User-provided name for the visualization
             tree_order: List of column names forming the hierarchy (e.g., ['dsp_name', 'brand_name', 'buyer_name'])
-            value_column: Column name containing numeric values to aggregate (e.g., 'ad_spend')
+            value_column: Column name containing numeric values to aggregate (optional for COUNT modes)
+            aggregation_mode: How to aggregate values - 'SUM', 'COUNT_DISTINCT', or 'COUNT_TOTAL'
             data_path: Base path for data storage
             session_id: Session identifier for multi-user support
             header_row: Row index to use as column headers (default 0)
@@ -77,6 +79,7 @@ class GenericProcessor:
         self.chart_name = chart_name
         self.tree_order = tree_order
         self.value_column = value_column
+        self.aggregation_mode = aggregation_mode.upper() if aggregation_mode else 'SUM'
         self.tree: Union[TreeRoot, Dict] = {}
         self.session_id = session_id
         self.header_row = header_row
@@ -86,10 +89,21 @@ class GenericProcessor:
         # Validate inputs
         if not tree_order or len(tree_order) < 3:
             raise ValueError("tree_order must contain at least 3 column names")
-        if not value_column:
-            raise ValueError("value_column is required")
         if not chart_name:
             raise ValueError("chart_name is required")
+
+        # Validate aggregation mode and value column combination
+        if self.aggregation_mode not in ['SUM', 'COUNT_DISTINCT', 'COUNT_TOTAL']:
+            raise ValueError(f"Invalid aggregation_mode: {self.aggregation_mode}. Must be SUM, COUNT_DISTINCT, or COUNT_TOTAL")
+
+        if self.aggregation_mode == 'SUM':
+            if not value_column:
+                raise ValueError("value_column is required when aggregation_mode is SUM")
+        elif self.aggregation_mode in ['COUNT_DISTINCT', 'COUNT_TOTAL']:
+            if value_column:
+                raise ValueError("value_column must be None/empty when using COUNT modes")
+            # For COUNT modes, we count the last (deepest) level of the hierarchy
+            self.count_column = tree_order[-1]
 
     def _report_progress(self, current: int, total: int, message: str):
         """Report progress if callback is set."""
@@ -142,13 +156,13 @@ class GenericProcessor:
         # Determine file type and read accordingly
         file_ext = self.raw_data_path.suffix.lower()
 
-        # Prepare skiprows parameter
-        skiprows = list(range(self.skip_rows)) if self.skip_rows > 0 else None
+        # header_row is absolute row index from preview - skip all rows before it
+        skiprows = list(range(self.header_row)) if self.header_row > 0 else None
 
         if file_ext == '.csv':
-            df = pd.read_csv(self.raw_data_path, header=self.header_row, skiprows=skiprows)
+            df = pd.read_csv(self.raw_data_path, header=0, skiprows=skiprows)
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(self.raw_data_path, header=self.header_row, skiprows=skiprows)
+            df = pd.read_excel(self.raw_data_path, header=0, skiprows=skiprows)
         else:
             raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -172,7 +186,12 @@ class GenericProcessor:
         """
         # Check that all required columns exist
         all_columns = set(df.columns)
-        required_columns = set(self.tree_order + [self.value_column])
+
+        if self.aggregation_mode == 'SUM':
+            required_columns = set(self.tree_order + [self.value_column])
+        else:  # COUNT modes
+            required_columns = set(self.tree_order)
+
         missing_columns = required_columns - all_columns
 
         if missing_columns:
@@ -181,16 +200,20 @@ class GenericProcessor:
         # Create a copy to avoid modifying original
         df_clean = df.copy()
 
-        # Clean the value column - handle currency and formatting
-        print(f"Cleaning value column: {self.value_column}")
-        df_clean[self.value_column] = df_clean[self.value_column].apply(self.clean_numeric_value)
+        # Clean the value column only for SUM mode
+        if self.aggregation_mode == 'SUM':
+            print(f"Cleaning value column: {self.value_column}")
+            df_clean[self.value_column] = df_clean[self.value_column].apply(self.clean_numeric_value)
 
-        # Remove rows where value is 0 or NaN
-        initial_count = len(df_clean)
-        df_clean = df_clean[df_clean[self.value_column] > 0]
-        removed_count = initial_count - len(df_clean)
-        if removed_count > 0:
-            print(f"Removed {removed_count} rows with zero or invalid values")
+            # Remove rows where value is 0 or NaN
+            initial_count = len(df_clean)
+            df_clean = df_clean[df_clean[self.value_column] > 0]
+            removed_count = initial_count - len(df_clean)
+            if removed_count > 0:
+                print(f"Removed {removed_count} rows with zero or invalid values")
+        else:
+            # COUNT modes - no value column cleaning needed
+            print(f"COUNT mode: counting occurrences of '{self.count_column}'")
 
         # Remove rows with NaN in any hierarchy column
         initial_count = len(df_clean)
@@ -244,8 +267,20 @@ class GenericProcessor:
                     f"Processing {col}: {value} ({idx + 1}/{len(unique_values)})"
                 )
 
-            # Sum the value column for this node
-            node_value = subset[self.value_column].sum()
+            # Calculate node value based on aggregation mode
+            if self.aggregation_mode == 'SUM':
+                node_value = subset[self.value_column].sum()
+            elif self.aggregation_mode == 'COUNT_DISTINCT':
+                # Count unique values in the LAST hierarchy column (deepest level)
+                if level == len(self.tree_order) - 1:
+                    # At leaf level, each node represents 1 unique value
+                    node_value = 1.0
+                else:
+                    # At parent levels, count distinct children in the deepest column
+                    node_value = float(subset[self.count_column].nunique())
+            elif self.aggregation_mode == 'COUNT_TOTAL':
+                # Count total rows
+                node_value = float(len(subset))
 
             # Recursively build children
             child_nodes = self.build_tree_recursive(subset, level + 1)
@@ -307,7 +342,15 @@ class GenericProcessor:
             # Build tree structure
             self._report_progress(20, 100, "Building tree structure...")
             print("Building tree structure...")
-            total_value = df[self.value_column].sum()
+
+            # Calculate total value based on aggregation mode
+            if self.aggregation_mode == 'SUM':
+                total_value = df[self.value_column].sum()
+            elif self.aggregation_mode == 'COUNT_DISTINCT':
+                total_value = float(df[self.count_column].nunique())
+            elif self.aggregation_mode == 'COUNT_TOTAL':
+                total_value = float(len(df))
+
             children = self.build_tree_recursive(df, level=0)
 
             self._report_progress(90, 100, "Finalizing...")
@@ -322,6 +365,7 @@ class GenericProcessor:
                 'chart_name': self.chart_name,
                 'tree_order': self.tree_order,
                 'value_column': self.value_column,
+                'aggregation_mode': self.aggregation_mode,
                 'source_file': str(self.raw_data_path.name),  # Original file (for reference)
                 'data_file': f"{self.session_id}_data.csv",    # Processed data for DataTable
                 'metadata_file': metadata_file,                # File metadata rows (if any)
@@ -371,20 +415,25 @@ def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) ->
 
     Args:
         file_path: Path to CSV or XLSX file
-        header_row: Row index to use as column headers (default 0)
-        skip_rows: Number of rows to skip before header (default 0)
+        header_row: Row index (from preview) to use as column headers (default 0)
+        skip_rows: Number of rows to skip before header (default 0 - not used, kept for API compat)
 
     Returns:
         List of column metadata dictionaries
     """
-    # Read file with specified header and skip rows
+    # Read file with specified header row
+    # Note: header_row is the absolute row index from the file preview
+    # To use row N as headers, we skip rows 0..(N-1) and then use row 0 as header
     file_ext = file_path.suffix.lower()
-    skiprows = list(range(skip_rows)) if skip_rows > 0 else None
-    
+
+    # Skip all rows before the header row
+    skiprows = list(range(header_row)) if header_row > 0 else None
+
     if file_ext == '.csv':
-        df = pd.read_csv(file_path, header=header_row, skiprows=skiprows, nrows=1000)  # Sample first 1000 rows
+        # After skipping rows before header_row, the header is now at row 0
+        df = pd.read_csv(file_path, header=0, skiprows=skiprows, nrows=1000)  # Sample first 1000 rows
     elif file_ext in ['.xlsx', '.xls']:
-        df = pd.read_excel(file_path, header=header_row, skiprows=skiprows, nrows=1000)
+        df = pd.read_excel(file_path, header=0, skiprows=skiprows, nrows=1000)
     else:
         raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -396,6 +445,7 @@ def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) ->
         if len(series) == 0:
             col_type = 'empty'
             suitable_for_value = False
+            suitable_for_count = False
             sample_value = None
         else:
             # Try to detect if numeric
@@ -406,10 +456,12 @@ def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) ->
             if numeric_ratio > 0.8:  # 80%+ can be converted to numeric
                 col_type = 'numeric'
                 suitable_for_value = True
+                suitable_for_count = False  # Numeric columns typically use SUM, not COUNT
                 sample_value = series.iloc[0]
             else:
                 col_type = 'text'
                 suitable_for_value = False
+                suitable_for_count = True  # Text columns are good for COUNT modes
                 sample_value = str(series.iloc[0])[:50]  # Truncate long samples
 
         columns_info.append({
@@ -417,20 +469,22 @@ def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) ->
             'type': col_type,
             'sample': str(sample_value) if sample_value is not None else None,
             'unique_count': int(df[col].nunique()),
-            'suitable_for_value': suitable_for_value
+            'suitable_for_value': suitable_for_value,
+            'suitable_for_count': suitable_for_count
         })
 
     return columns_info
 
 
-def validate_column_selection(file_path: Path, tree_order: List[str], value_column: str, header_row: int = 0, skip_rows: int = 0) -> Tuple[bool, List[str]]:
+def validate_column_selection(file_path: Path, tree_order: List[str], value_column: str = None, aggregation_mode: str = 'SUM', header_row: int = 0, skip_rows: int = 0) -> Tuple[bool, List[str]]:
     """
     Validate user's column selection before processing.
 
     Args:
         file_path: Path to data file
         tree_order: Selected hierarchy columns
-        value_column: Selected value column
+        value_column: Selected value column (optional for COUNT modes)
+        aggregation_mode: How to aggregate values - 'SUM', 'COUNT_DISTINCT', or 'COUNT_TOTAL'
         header_row: Row index to use as column headers (default 0)
         skip_rows: Number of rows to skip before header (default 0)
 
@@ -438,16 +492,18 @@ def validate_column_selection(file_path: Path, tree_order: List[str], value_colu
         (is_valid, list_of_errors)
     """
     errors = []
+    aggregation_mode = aggregation_mode.upper() if aggregation_mode else 'SUM'
 
     # Read file
     try:
         file_ext = file_path.suffix.lower()
-        skiprows = list(range(skip_rows)) if skip_rows > 0 else None
+        # header_row is absolute row index - skip all rows before it
+        skiprows = list(range(header_row)) if header_row > 0 else None
 
         if file_ext == '.csv':
-            df = pd.read_csv(file_path, header=header_row, skiprows=skiprows)
+            df = pd.read_csv(file_path, header=0, skiprows=skiprows)
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(file_path, header=header_row, skiprows=skiprows)
+            df = pd.read_excel(file_path, header=0, skiprows=skiprows)
         else:
             errors.append(f"Unsupported file type: {file_ext}")
             return False, errors
@@ -455,30 +511,50 @@ def validate_column_selection(file_path: Path, tree_order: List[str], value_colu
         errors.append(f"Failed to read file: {str(e)}")
         return False, errors
 
+    # Validate aggregation mode
+    if aggregation_mode not in ['SUM', 'COUNT_DISTINCT', 'COUNT_TOTAL']:
+        errors.append(f"Invalid aggregation_mode: {aggregation_mode}")
+        return False, errors
+
     # Check column count
     if len(tree_order) < 3:
         errors.append("Hierarchy must have at least 3 levels")
 
-    # Check columns exist
+    # Check columns exist based on aggregation mode
     all_columns = set(df.columns)
-    required = set(tree_order + [value_column])
+
+    if aggregation_mode == 'SUM':
+        # SUM mode requires value_column
+        if not value_column:
+            errors.append("Value column is required when using SUM aggregation mode")
+            return False, errors
+        required = set(tree_order + [value_column])
+    else:
+        # COUNT modes - value_column should be None
+        if value_column:
+            errors.append(f"Value column must not be specified when using {aggregation_mode} mode")
+            return False, errors
+        required = set(tree_order)
+
     missing = required - all_columns
     if missing:
         errors.append(f"Columns not found in file: {', '.join(missing)}")
         return False, errors
 
-    # Check for duplicates
-    if value_column in tree_order:
-        errors.append(f"Value column '{value_column}' cannot also be in hierarchy")
-
+    # Check for duplicates in hierarchy
     if len(tree_order) != len(set(tree_order)):
         errors.append("Hierarchy columns must be unique (no duplicates)")
 
-    # Check value column is numeric
-    cleaned_values = df[value_column].apply(GenericProcessor.clean_numeric_value)
-    numeric_ratio = (cleaned_values != 0).sum() / len(df)
-    if numeric_ratio < 0.5:
-        errors.append(f"Value column '{value_column}' must contain mostly numeric data (only {numeric_ratio*100:.1f}% valid)")
+    # For SUM mode, validate value column is numeric and not in hierarchy
+    if aggregation_mode == 'SUM':
+        if value_column in tree_order:
+            errors.append(f"Value column '{value_column}' cannot also be in hierarchy")
+
+        # Check value column is numeric
+        cleaned_values = df[value_column].apply(GenericProcessor.clean_numeric_value)
+        numeric_ratio = (cleaned_values != 0).sum() / len(df)
+        if numeric_ratio < 0.5:
+            errors.append(f"Value column '{value_column}' must contain mostly numeric data (only {numeric_ratio*100:.1f}% valid)")
 
     # Check hierarchy columns have sufficient variety
     for col in tree_order:

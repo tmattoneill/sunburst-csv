@@ -299,14 +299,15 @@ def get_file_info():
         if not full_path.exists():
             return jsonify({"error": f"File not found: {file_path_param}"}), 404
 
-        # Read file with specified header row and skip rows
+        # Read file with specified header row
+        # header_row is the absolute row index from preview - skip all rows before it
         file_ext = full_path.suffix.lower()
-        skiprows = list(range(skip_rows)) if skip_rows > 0 else None
-        
+        skiprows = list(range(header_row)) if header_row > 0 else None
+
         if file_ext == '.csv':
-            df = pd.read_csv(full_path, header=header_row, skiprows=skiprows)
+            df = pd.read_csv(full_path, header=0, skiprows=skiprows)
         else:
-            df = pd.read_excel(full_path, header=header_row, skiprows=skiprows)
+            df = pd.read_excel(full_path, header=0, skiprows=skiprows)
 
         # Analyze columns
         columns_info = analyze_columns(full_path, header_row=header_row, skip_rows=skip_rows)
@@ -339,14 +340,16 @@ def validate_columns_endpoint():
         data = request.json
         file_path_param = data.get('filePath')
         tree_order = data.get('treeOrder', [])
-        value_column = data.get('valueColumn')
+        value_column = data.get('valueColumn')  # Optional for COUNT modes
+        aggregation_mode = data.get('aggregationMode', 'SUM')
         header_row = data.get('headerRow', 0)
         skip_rows = data.get('skipRows', 0)
 
-        if not all([file_path_param, tree_order, value_column]):
+        # Basic validation - filePath and treeOrder are always required
+        if not file_path_param or not tree_order:
             return jsonify({
                 "valid": False,
-                "errors": ["Missing required parameters: filePath, treeOrder, or valueColumn"]
+                "errors": ["Missing required parameters: filePath and treeOrder"]
             }), 400
 
         # Construct full path
@@ -358,8 +361,15 @@ def validate_columns_endpoint():
                 "errors": [f"File not found: {file_path_param}"]
             }), 404
 
-        # Validate selection
-        is_valid, errors = validate_column_selection(full_path, tree_order, value_column, header_row, skip_rows)
+        # Validate selection (aggregation_mode determines value_column requirements)
+        is_valid, errors = validate_column_selection(
+            full_path,
+            tree_order,
+            value_column,
+            aggregation_mode,
+            header_row,
+            skip_rows
+        )
 
         return jsonify({
             "valid": is_valid,
@@ -388,20 +398,22 @@ def process_file():
         if not input_file:
             return jsonify({"error": "Missing required parameter: filePath"}), 400
 
-        # Check if this is a generic request (has treeOrder and valueColumn)
+        # Check if this is a generic request (has treeOrder and chartName)
         tree_order = data.get("treeOrder")
-        value_column = data.get("valueColumn")
+        value_column = data.get("valueColumn")  # Optional for COUNT modes
+        aggregation_mode = data.get("aggregationMode", "SUM")
         chart_name = data.get("chartName")
         session_id = data.get("sessionId", "default")
         header_row = data.get("headerRow", 0)
         skip_rows = data.get("skipRows", 0)
 
-        if tree_order and value_column and chart_name:
+        if tree_order and chart_name:
             # Generic mode with progress tracking
             print(f"Processing (GENERIC): {chart_name}")
             print(f"  Session: {session_id}")
             print(f"  Hierarchy: {' → '.join(tree_order)}")
-            print(f"  Value: {value_column}")
+            print(f"  Aggregation: {aggregation_mode}")
+            print(f"  Value: {value_column or 'N/A (COUNT mode)'}")
             print(f"  Header row: {header_row}, Skip rows: {skip_rows}")
 
             progress_queue = queue.Queue()
@@ -425,6 +437,7 @@ def process_file():
                                 chart_name=chart_name,
                                 tree_order=tree_order,
                                 value_column=value_column,
+                                aggregation_mode=aggregation_mode,
                                 data_path=DATA_DIR,
                                 session_id=session_id,
                                 header_row=header_row,

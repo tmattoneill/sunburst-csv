@@ -114,13 +114,47 @@
             </div>
           </div>
 
-          <!-- Step 3: Select Value Column -->
+          <!-- Step 3: Select Aggregation Mode & Value Column -->
           <div v-if="currentStep === 3" class="step-content">
             <div class="alert alert-info mb-3">
               <i class="bi bi-info-circle"></i>
-              Choose the numeric column whose values will be aggregated in the visualization.
+              Choose how to aggregate your data: sum numeric values or count occurrences.
             </div>
-            <div class="value-column-selector">
+
+            <!-- Aggregation Mode Selection -->
+            <div class="aggregation-mode-selector mb-4">
+              <h6 class="mb-3">Aggregation Mode</h6>
+              <div class="btn-group w-100 mb-3" role="group">
+                <input type="radio" class="btn-check" id="mode-sum" value="SUM" v-model="aggregationMode" @change="handleAggregationModeChange">
+                <label class="btn btn-outline-primary" for="mode-sum">
+                  <i class="bi bi-calculator me-2"></i>SUM - Aggregate Numeric Values
+                </label>
+
+                <input type="radio" class="btn-check" id="mode-count-distinct" value="COUNT_DISTINCT" v-model="aggregationMode" @change="handleAggregationModeChange">
+                <label class="btn btn-outline-primary" for="mode-count-distinct">
+                  <i class="bi bi-collection me-2"></i>COUNT DISTINCT - Unique Occurrences
+                </label>
+
+                <input type="radio" class="btn-check" id="mode-count-total" value="COUNT_TOTAL" v-model="aggregationMode" @change="handleAggregationModeChange">
+                <label class="btn btn-outline-primary" for="mode-count-total">
+                  <i class="bi bi-list-ol me-2"></i>COUNT TOTAL - All Occurrences
+                </label>
+              </div>
+
+              <!-- Mode Explanation -->
+              <div v-if="aggregationMode === 'SUM'" class="alert alert-light">
+                <strong>SUM Mode:</strong> Select a numeric column to sum values across your hierarchy.
+              </div>
+              <div v-else-if="aggregationMode === 'COUNT_DISTINCT'" class="alert alert-light">
+                <strong>COUNT DISTINCT Mode:</strong> Count unique values at the lowest hierarchy level. No value column needed.
+              </div>
+              <div v-else-if="aggregationMode === 'COUNT_TOTAL'" class="alert alert-light">
+                <strong>COUNT TOTAL Mode:</strong> Count all rows/occurrences in your data. No value column needed.
+              </div>
+            </div>
+
+            <!-- Value Column Selector (only for SUM mode) -->
+            <div v-if="aggregationMode === 'SUM'" class="value-column-selector">
               <h6 class="mb-3">Value Column</h6>
               <div class="row">
                 <div v-for="col in numericColumns" :key="col.name" class="col-md-4 mb-3">
@@ -141,6 +175,12 @@
                 <i class="bi bi-exclamation-triangle display-4"></i>
                 <p class="mt-2">No numeric columns found in your file.</p>
               </div>
+            </div>
+
+            <!-- Success indicator for COUNT modes -->
+            <div v-else class="text-center text-success py-4">
+              <i class="bi bi-check-circle display-1"></i>
+              <p class="mt-2">Counting mode selected. No value column needed.</p>
             </div>
           </div>
 
@@ -180,8 +220,12 @@
                     <ol class="text-muted small ps-3">
                       <li v-for="col in hierarchyColumns" :key="col">{{ col }}</li>
                     </ol>
-                    <p class="mb-2 mt-3"><strong>Value Column:</strong></p>
-                    <p class="text-muted">{{ valueColumn }}</p>
+                    <p class="mb-2 mt-3"><strong>Aggregation Mode:</strong></p>
+                    <p class="text-muted">{{ aggregationMode }}</p>
+                    <template v-if="aggregationMode === 'SUM'">
+                      <p class="mb-2 mt-3"><strong>Value Column:</strong></p>
+                      <p class="text-muted">{{ valueColumn }}</p>
+                    </template>
                   </div>
                 </div>
               </div>
@@ -248,6 +292,7 @@ const fileInfo = ref(null)
 const isLoadingFileInfo = ref(false)
 const hierarchyColumns = ref([])
 const valueColumn = ref('')
+const aggregationMode = ref('SUM')
 const chartName = ref('')
 const statusMessage = ref('')
 const statusType = ref('')
@@ -271,7 +316,7 @@ const stepTitles = [
   'Upload File',
   'Verify Headers',
   'Configure Hierarchy',
-  'Select Value Column',
+  'Select Aggregation',
   'Name & Create'
 ]
 
@@ -302,7 +347,8 @@ const canProceed = computed(() => {
     case 2:
       return hierarchyColumns.value.length >= 3
     case 3:
-      return valueColumn.value !== ''
+      // For SUM mode, value column is required. For COUNT modes, it's not.
+      return aggregationMode.value === 'SUM' ? valueColumn.value !== '' : true
     case 4:
       return chartName.value.trim() !== ''
     default:
@@ -311,9 +357,10 @@ const canProceed = computed(() => {
 })
 
 const canProcess = computed(() => {
-  return chartName.value.trim() !== '' &&
-    hierarchyColumns.value.length >= 3 &&
-    valueColumn.value !== ''
+  const basicRequirements = chartName.value.trim() !== '' && hierarchyColumns.value.length >= 3
+  // For SUM mode, value column is required. For COUNT modes, it's not.
+  const valueRequirement = aggregationMode.value === 'SUM' ? valueColumn.value !== '' : true
+  return basicRequirements && valueRequirement
 })
 
 // Methods
@@ -330,6 +377,13 @@ const handleFileChange = (event) => {
 
 const selectValueColumn = (colName) => {
   valueColumn.value = colName
+}
+
+const handleAggregationModeChange = () => {
+  // Clear value column when switching away from SUM mode
+  if (aggregationMode.value !== 'SUM') {
+    valueColumn.value = ''
+  }
 }
 
 const selectHeaderRow = (index) => {
@@ -501,7 +555,8 @@ const processFile = async () => {
       data: {
         filePath: uploadedFileName.value,
         treeOrder: hierarchyColumns.value,
-        valueColumn: valueColumn.value,
+        valueColumn: valueColumn.value || null,  // null for COUNT modes
+        aggregationMode: aggregationMode.value,
         headerRow: selectedHeaderRow.value,
         skipRows: skipRows.value
       }
@@ -525,7 +580,8 @@ const processFile = async () => {
         filePath: uploadedFileName.value,
         chartName: chartName.value,
         treeOrder: hierarchyColumns.value,
-        valueColumn: valueColumn.value,
+        valueColumn: valueColumn.value || null,  // null for COUNT modes
+        aggregationMode: aggregationMode.value,
         sessionId: props.sessionId,
         headerRow: selectedHeaderRow.value,
         skipRows: skipRows.value
@@ -613,6 +669,7 @@ const resetForm = () => {
   fileInfo.value = null
   hierarchyColumns.value = []
   valueColumn.value = ''
+  aggregationMode.value = 'SUM'
   chartName.value = ''
   statusMessage.value = ''
   statusType.value = ''
