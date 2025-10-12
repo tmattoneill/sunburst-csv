@@ -59,8 +59,6 @@ bdesign/
 ./PROGRESS.md
 ./ERRORS.md
 
-# Ignore all .md files except important ones
+# Ignore all .md files except README
 *.md
 !README.md
-!CLAUDE.md
-!PORT_CONFIG.md
