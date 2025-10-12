@@ -1,15 +1,10 @@
 <!-- PageHeader.vue -->
 <script setup>
-import { ref, computed } from 'vue'
-import { PALETTES } from '@/palettes'
+import { computed } from 'vue'
 import PathBar from './PathBar.vue'
 
 // Props
 const props = defineProps({
-  paletteName: {
-    type: String,
-    default: 'Ocean'
-  },
   reportType: {
     type: String,
     default: ''
@@ -39,13 +34,7 @@ const props = defineProps({
 // Check if dates are available (legacy mode)
 const hasDates = computed(() => props.dateStart && props.dateEnd)
 
-const emit = defineEmits(['update:paletteName', 'navigate-to', 'new-upload'])
-
-const selectedPalette = ref(props.paletteName)
-const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
-
-// Computed palette names for the dropdown
-const paletteNames = computed(() => Object.keys(PALETTES))
+const emit = defineEmits(['navigate-to', 'new-upload'])
 
 // Format path segments
 const formattedPathSegments = computed(() => {
@@ -62,11 +51,6 @@ const handlePathNavigation = (event) => {
   emit('navigate-to', event)
 }
 
-// Handle palette changes
-const handlePaletteChange = () => {
-  colors.value = PALETTES[selectedPalette.value]
-  emit('update:paletteName', selectedPalette.value)
-}
 </script>
 
 <template>
@@ -80,13 +64,6 @@ const handlePaletteChange = () => {
           <p v-if="treeOrder.length > 0" class="text-muted mb-0 small">
             Hierarchy: {{ treeOrder.join(' → ') }}
           </p>
-        </div>
-        <div class="palette-selector">
-          <select v-model="selectedPalette" @change="handlePaletteChange" class="form-select form-select-sm w-auto">
-            <option v-for="name in paletteNames" :key="name" :value="name">
-              {{ name }}
-            </option>
-          </select>
         </div>
       </div>
 
@@ -119,14 +96,3 @@ const handlePaletteChange = () => {
   </div>
 </template>
 
-<style scoped>
-.palette-selector {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.form-select {
-  font-size: 0.875rem;
-}
-</style>
