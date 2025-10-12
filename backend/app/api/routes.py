@@ -300,15 +300,17 @@ def get_file_info():
             return jsonify({"error": f"File not found: {file_path_param}"}), 404
 
         # Read file with specified header row
-        # header_row is the absolute row index - use it directly with pandas
+        # header_row is the absolute row index from the preview
+        # We need to skip all rows BEFORE header_row, then use row 0 as header
         file_ext = full_path.suffix.lower()
 
         print(f"DEBUG /file-info: header_row={header_row}, skip_rows={skip_rows}, file={file_path_param}")
 
         if file_ext == '.csv':
-            df = pd.read_csv(full_path, header=header_row, on_bad_lines='warn')
+            # Skip all rows before the header, then use the next row (index 0) as header
+            df = pd.read_csv(full_path, skiprows=list(range(header_row)), header=0, on_bad_lines='warn')
         else:
-            df = pd.read_excel(full_path, header=header_row)
+            df = pd.read_excel(full_path, skiprows=list(range(header_row)), header=0)
 
         print(f"DEBUG /file-info: Columns read by pandas: {df.columns.tolist()}")
         print(f"DEBUG /file-info: First data row: {df.iloc[0].tolist() if len(df) > 0 else 'NO DATA'}")

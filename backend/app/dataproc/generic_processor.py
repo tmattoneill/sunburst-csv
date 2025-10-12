@@ -157,18 +157,20 @@ class GenericProcessor:
         file_ext = self.raw_data_path.suffix.lower()
 
         # header_row is the absolute row index from preview
-        # Use it directly with pandas - it will use that row as column names
-        # and skip all rows before it automatically
+        # We need to skip all rows BEFORE header_row, then use row 0 as header
+        # This correctly handles empty rows in the file
         if file_ext == '.csv':
             df = pd.read_csv(
                 self.raw_data_path,
-                header=self.header_row,
+                skiprows=list(range(self.header_row)) if self.header_row > 0 else None,
+                header=0,
                 on_bad_lines='warn'  # More forgiving of malformed rows
             )
         elif file_ext in ['.xlsx', '.xls']:
             df = pd.read_excel(
                 self.raw_data_path,
-                header=self.header_row
+                skiprows=list(range(self.header_row)) if self.header_row > 0 else None,
+                header=0
             )
         else:
             raise ValueError(f"Unsupported file type: {file_ext}")
@@ -328,23 +330,29 @@ class GenericProcessor:
             print(f"✓ Saved processed data to {data_csv_path}")
 
             # Extract and save metadata rows (if header row > 0)
+            # Note: Skip this for files with inconsistent column counts (like CSVs with title rows)
+            # as pandas header=None will fail with tokenization errors
             metadata_file = None
             if self.header_row > 0:
-                # Read file again without header to get raw metadata rows
-                file_ext = self.raw_data_path.suffix.lower()
-                skiprows = list(range(self.skip_rows)) if self.skip_rows > 0 else None
+                try:
+                    # Read raw lines to extract metadata rows (safer than pandas for inconsistent CSVs)
+                    metadata_lines = []
+                    with open(self.raw_data_path, 'r', encoding='utf-8', errors='replace') as f:
+                        for i, line in enumerate(f):
+                            if i < self.header_row:
+                                metadata_lines.append(line.strip())
+                            else:
+                                break
 
-                if file_ext == '.csv':
-                    df_full = pd.read_csv(self.raw_data_path, header=None, skiprows=skiprows)
-                else:
-                    df_full = pd.read_excel(self.raw_data_path, header=None, skiprows=skiprows)
-
-                # Extract rows before header (metadata rows)
-                metadata_df = df_full.iloc[0:self.header_row]
-                metadata_csv_path = self.data_path / f"{self.session_id}_metadata.csv"
-                metadata_df.to_csv(metadata_csv_path, index=False, header=False)
-                metadata_file = f"{self.session_id}_metadata.csv"
-                print(f"✓ Saved file metadata to {metadata_csv_path}")
+                    if metadata_lines:
+                        metadata_csv_path = self.data_path / f"{self.session_id}_metadata.csv"
+                        with open(metadata_csv_path, 'w', encoding='utf-8') as f:
+                            f.write('\n'.join(metadata_lines))
+                        metadata_file = f"{self.session_id}_metadata.csv"
+                        print(f"✓ Saved file metadata to {metadata_csv_path}")
+                except Exception as e:
+                    print(f"Warning: Could not extract metadata rows: {e}")
+                    # Continue without metadata - not critical
 
             # Build tree structure
             self._report_progress(20, 100, "Building tree structure...")
@@ -430,17 +438,24 @@ def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) ->
     """
     # Read file with specified header row
     # header_row is the absolute row index from the file preview
+    # We need to skip all rows BEFORE header_row, then use row 0 as header
     file_ext = file_path.suffix.lower()
 
     if file_ext == '.csv':
         df = pd.read_csv(
             file_path,
-            header=header_row,
+            skiprows=list(range(header_row)) if header_row > 0 else None,
+            header=0,
             nrows=1000,  # Sample first 1000 rows
             on_bad_lines='warn'
         )
     elif file_ext in ['.xlsx', '.xls']:
-        df = pd.read_excel(file_path, header=header_row, nrows=1000)
+        df = pd.read_excel(
+            file_path,
+            skiprows=list(range(header_row)) if header_row > 0 else None,
+            header=0,
+            nrows=1000
+        )
     else:
         raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -508,11 +523,16 @@ def validate_column_selection(file_path: Path, tree_order: List[str], value_colu
         if file_ext == '.csv':
             df = pd.read_csv(
                 file_path,
-                header=header_row,
+                skiprows=list(range(header_row)) if header_row > 0 else None,
+                header=0,
                 on_bad_lines='warn'
             )
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(file_path, header=header_row)
+            df = pd.read_excel(
+                file_path,
+                skiprows=list(range(header_row)) if header_row > 0 else None,
+                header=0
+            )
         else:
             errors.append(f"Unsupported file type: {file_ext}")
             return False, errors
