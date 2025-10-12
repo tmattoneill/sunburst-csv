@@ -1,10 +1,11 @@
 <!-- App.vue -->
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import SunburstChart from './components/SunburstChart.vue'
 import FileLoaderModal from './components/FileLoaderModal.vue'
 import DataPane from './components/DataPane.vue'
 import PageHeader from './components/PageHeader.vue'
+import LandingPage from './components/LandingPage.vue'
 import DataTable from "@/components/DataTable.vue";
 import { fetchApi, API_ENDPOINTS } from '@/services/api';
 
@@ -37,6 +38,8 @@ const filterOrder = ref([])
 const isLoadingData = ref(false)
 const loadingMessage = ref('Processing dataset...')
 const isInitialLoad = ref(true); // Controls the initial overlay
+const showLanding = ref(true)
+const hasLaunched = ref(false)
 
 // Computed properties for DataPane
 const dataPaneNode = computed(() => hoveredNode.value || selectedNode.value);
@@ -161,29 +164,73 @@ const fetchData = async (showLoading = false) => {
   }
 }
 
-onMounted(async () => {
-  await fetchData()
+const showUploadModal = (delay = 300) => {
+  if (typeof window === 'undefined') {
+    return
+  }
 
-  // If no data loaded or data is empty, automatically open the upload modal
+  setTimeout(() => {
+    const modalEl = document.getElementById('mdl-load')
+    if (modalEl && window.bootstrap) {
+      const modalInstance = window.bootstrap.Modal.getOrCreateInstance(modalEl)
+      modalInstance.show()
+    }
+  }, delay)
+}
+
+const initializeApp = async () => {
+  await fetchData(true)
+
   const hasData = chartData.value &&
                   Object.keys(chartData.value).length > 0 &&
                   chartData.value.name
 
   if (hasData) {
-    isInitialLoad.value = false;
+    isInitialLoad.value = false
   } else {
-    // Wait a moment for the modal to be registered in the DOM
-    setTimeout(() => {
-      const modalEl = document.getElementById('mdl-load')
-      if (modalEl && window.bootstrap) {
-        const modal = new window.bootstrap.Modal(modalEl)
-        modal.show()
-      }
-    }, 500)
+    showUploadModal(500)
+  }
+}
+
+const launchApp = async () => {
+  if (!showLanding.value) {
+    return
+  }
+
+  showLanding.value = false
+
+  if (typeof window !== 'undefined') {
+    const url = new URL(window.location.href)
+    url.searchParams.set('app', '1')
+    window.history.replaceState({}, '', url)
+  }
+
+  if (hasLaunched.value) {
+    return
+  }
+
+  hasLaunched.value = true
+  await nextTick()
+  await initializeApp()
+}
+
+onMounted(() => {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  const params = new URLSearchParams(window.location.search)
+  const shouldAutoLaunch = params.get('app') === '1' || params.get('launch') === '1' || window.location.hash === '#app'
+
+  if (shouldAutoLaunch) {
+    launchApp()
   }
 })
 
 const refreshPage = () => {
+  if (showLanding.value) {
+    return
+  }
   isInitialLoad.value = false;
   fetchData(true)  // Show loading overlay when explicitly refreshing
 }
@@ -220,13 +267,7 @@ const confirmClearSession = async () => {
     valueColumn.value = ''
 
     // Wait a moment, then open the upload modal
-    setTimeout(() => {
-      const modalEl = document.getElementById('mdl-load')
-      if (modalEl && window.bootstrap) {
-        const modal = new window.bootstrap.Modal(modalEl)
-        modal.show()
-      }
-    }, 300)
+    showUploadModal()
   } catch (error) {
     console.error('Error clearing session:', error)
     alert('Failed to clear session data: ' + error.message)
@@ -235,131 +276,141 @@ const confirmClearSession = async () => {
 </script>
 
 <template>
-  <div>
-    <!-- Loading Overlay -->
-    <div v-if="isLoadingData" class="loading-overlay">
-      <div class="loading-content">
-        <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <h4 class="mb-2">Processing Dataset</h4>
-        <p class="text-primary fw-bold loading-message">{{ loadingMessage }}</p>
-      </div>
-    </div>
-
-    <!-- Clear Session Confirmation Modal -->
-    <div v-if="showClearConfirmModal" class="modal-backdrop fade show"></div>
-    <div v-if="showClearConfirmModal" class="modal fade show d-block" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Clear Current Visualization?</h5>
-            <button type="button" class="btn-close" @click="cancelClearSession" aria-label="Close"></button>
+  <div class="app-shell">
+    <LandingPage v-if="showLanding" @launch-app="launchApp" />
+    <div v-else class="app-surface">
+      <div v-if="isLoadingData" class="loading-overlay">
+        <div class="loading-content">
+          <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
           </div>
-          <div class="modal-body">
-            <p>This will delete all data for the current visualization.</p>
-            <p class="mb-0 text-muted">Are you sure you want to continue?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" @click="cancelClearSession">Cancel</button>
-            <button type="button" class="btn btn-danger" @click="confirmClearSession">OK</button>
-          </div>
+          <h4 class="mb-2">Processing Dataset</h4>
+          <p class="text-primary fw-bold loading-message">{{ loadingMessage }}</p>
         </div>
       </div>
-    </div>
 
-    <FileLoaderModal
-      :session-id="sessionId"
-      @file-selected="handleFileSelected"
-      @upload-complete="refreshPage"
-      @processing-progress="(msg) => loadingMessage = msg"
-      @processing-start="() => { isLoadingData = true; loadingMessage = 'Starting...' }"
-      @processing-complete="() => loadingMessage = 'Loading visualization...'"
-    />
-
-    <div id="app" class="container py-4" :class="{ 'initial-load-overlay': isInitialLoad }">
-    <!-- Header -->
-  <PageHeader
-    :reportType="reportType"
-    :chartName="chartName"
-    :dateStart="dateStart"
-    :dateEnd="dateEnd"
-    :treeOrder="treeOrder"
-    :paletteName="currentPalette"
-    :currentPath="currentPath"
-    @update:paletteName="(name) => currentPalette = name"
-    @navigate-to="handlePathNavigation"
-    @new-upload="handleNewUpload"
-  />
-
-    <div class="row">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <!-- Chart Pane -->
-        <div class="h-100 position-relative">
-          <div
-            v-if="chartData && Object.keys(chartData).length"
-            class="d-flex justify-content-center align-items-center"
-            style="height: 500px;"
-          >
-            <SunburstChart
-              ref="chartRef"
-              :chart-data="chartData"
-              :palette-name="currentPalette"
-              @update:palette-name="(name) => currentPalette = name"
-              @node-click="handleNodeClick"
-              @node-hover="handleNodeHover"
-              @path-change="handlePathChange"
-            />
-            <button
-              class="btn btn-secondary position-absolute"
-              style="bottom: 10px; right: 10px;"
-              @click="refreshPage"
-              title="Refresh Data"
-            >
-              <i class="bi bi-arrow-clockwise"></i>
-            </button>
-          </div>
-          <div
-            v-else
-            class="d-flex justify-content-center align-items-center text-secondary fs-5"
-            style="height: 500px;"
-          >
-            <p class="m-0">Loading chart data...</p>
+      <div v-if="showClearConfirmModal" class="modal-backdrop fade show"></div>
+      <div v-if="showClearConfirmModal" class="modal fade show d-block" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Clear Current Visualization?</h5>
+              <button type="button" class="btn-close" @click="cancelClearSession" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>This will delete all data for the current visualization.</p>
+              <p class="mb-0 text-muted">Are you sure you want to continue?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" @click="cancelClearSession">Cancel</button>
+              <button type="button" class="btn btn-danger" @click="confirmClearSession">OK</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <!-- Data Pane -->
-        <div class="bg-black rounded shadow-sm p-4 h-100">
-          <DataPane
-            :rootName="rootName"
-            :rootValue="rootValue"
-            :topChildren="topChildren"
-            :valueColumn="valueColumn"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-12">
-        <!-- DataTable Component - Updates Dynamically -->
-        <DataTable
-          :session-id="sessionId"
-          :filters="currentFilters"
-          :rootName="chartName"
+
+      <FileLoaderModal
+        :session-id="sessionId"
+        @file-selected="handleFileSelected"
+        @upload-complete="refreshPage"
+        @processing-progress="(msg) => loadingMessage.value = msg"
+        @processing-start="() => { isLoadingData.value = true; loadingMessage.value = 'Starting...' }"
+        @processing-complete="() => loadingMessage.value = 'Loading visualization...'"
+      />
+
+      <div id="app" class="container py-4" :class="{ 'initial-load-overlay': isInitialLoad }">
+        <!-- Header -->
+        <PageHeader
+          :reportType="reportType"
+          :chartName="chartName"
           :dateStart="dateStart"
           :dateEnd="dateEnd"
-          :currentNodeName="rootName"
           :treeOrder="treeOrder"
-          :valueColumn="valueColumn"
+          :paletteName="currentPalette"
+          :currentPath="currentPath"
+          @update:paletteName="(name) => currentPalette = name"
+          @navigate-to="handlePathNavigation"
+          @new-upload="handleNewUpload"
         />
+
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <!-- Chart Pane -->
+            <div class="h-100 position-relative">
+              <div
+                v-if="chartData && Object.keys(chartData).length"
+                class="d-flex justify-content-center align-items-center"
+                style="height: 500px;"
+              >
+                <SunburstChart
+                  ref="chartRef"
+                  :chart-data="chartData"
+                  :palette-name="currentPalette"
+                  @update:palette-name="(name) => currentPalette = name"
+                  @node-click="handleNodeClick"
+                  @node-hover="handleNodeHover"
+                  @path-change="handlePathChange"
+                />
+                <button
+                  class="btn btn-secondary position-absolute"
+                  style="bottom: 10px; right: 10px;"
+                  @click="refreshPage"
+                  title="Refresh Data"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div
+                v-else
+                class="d-flex justify-content-center align-items-center text-secondary fs-5"
+                style="height: 500px;"
+              >
+                <p class="m-0">Loading chart data...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- Data Pane -->
+            <div class="bg-black rounded shadow-sm p-4 h-100">
+              <DataPane
+                :rootName="rootName"
+                :rootValue="rootValue"
+                :topChildren="topChildren"
+                :valueColumn="valueColumn"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <!-- DataTable Component - Updates Dynamically -->
+            <DataTable
+              :session-id="sessionId"
+              :filters="currentFilters"
+              :rootName="chartName"
+              :dateStart="dateStart"
+              :dateEnd="dateEnd"
+              :currentNodeName="rootName"
+              :treeOrder="treeOrder"
+              :valueColumn="valueColumn"
+            />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
 <style scoped>
+.app-shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f1f5f9 0%, #ffffff 100%);
+}
+
+.app-surface {
+  padding: 3rem 0;
+}
+
 #app {
   max-width: 1200px;
   background: #f8f9fa;
