@@ -34,7 +34,7 @@ const props = defineProps({
 // Check if dates are available (legacy mode)
 const hasDates = computed(() => props.dateStart && props.dateEnd)
 
-const emit = defineEmits(['navigate-to', 'new-upload'])
+const emit = defineEmits(['navigate-to'])
 
 // Format path segments
 const formattedPathSegments = computed(() => {
@@ -75,22 +75,9 @@ const handlePathNavigation = (event) => {
       />
 
       <!-- Dates (optional - shown only for legacy reports) -->
-      <div class="mt-3 ps-2 d-flex justify-content-between align-items-end">
-        <div v-if="hasDates">
-          <h5 class="mb-1">From: {{ dateStart }}</h5>
-          <h5 class="mb-0">To: {{ dateEnd }}</h5>
-        </div>
-        <div v-else>
-          <!-- Placeholder to keep layout consistent -->
-        </div>
-        <button
-          class="btn btn-primary px-4"
-          id="mdl-btn-load"
-          type="button"
-          @click="emit('new-upload')"
-        >
-          <i class="bi bi-upload me-2"></i>
-        </button>
+      <div v-if="hasDates" class="mt-3 ps-2">
+        <h5 class="mb-1">From: {{ dateStart }}</h5>
+        <h5 class="mb-0">To: {{ dateEnd }}</h5>
       </div>
     </div>
   </div>

@@ -36,7 +36,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:paletteName', 'update:treeOrder', 'refresh'])
+const emit = defineEmits(['update:paletteName', 'update:treeOrder', 'refresh', 'new-upload'])
 
 const localOrder = ref([...props.treeOrder])
 const draggingIndex = ref(null)
@@ -105,6 +105,17 @@ const handleRefresh = () => {
 
 <template>
   <aside class="sidebar-control">
+    <div class="mb-3">
+      <button
+        class="btn btn-primary w-100"
+        id="mdl-btn-load"
+        type="button"
+        @click="emit('new-upload')"
+      >
+        <i class="bi bi-upload me-2"></i>UPLOAD
+      </button>
+    </div>
+
     <section class="section">
       <h6 class="section-title">Current Data Set</h6>
       <p class="dataset-name mb-1" :class="{ 'text-muted': !chartName }">
@@ -135,13 +146,6 @@ const handleRefresh = () => {
     </section>
 
     <section class="section">
-      <h6 class="section-title">Palette</h6>
-      <select class="form-select form-select-sm" :value="paletteName" @change="handlePaletteChange">
-        <option v-for="name in paletteOptions" :key="name" :value="name">{{ name }}</option>
-      </select>
-    </section>
-
-    <div class="mt-auto pt-3">
       <button
         type="button"
         class="btn btn-primary w-100"
@@ -153,7 +157,14 @@ const handleRefresh = () => {
       <p class="text-muted small mt-2 mb-0">
         Drag fields to adjust hierarchy, then refresh to apply changes.
       </p>
-    </div>
+    </section>
+
+    <section class="section">
+      <h6 class="section-title">Palette</h6>
+      <select class="form-select form-select-sm" :value="paletteName" @change="handlePaletteChange">
+        <option v-for="name in paletteOptions" :key="name" :value="name">{{ name }}</option>
+      </select>
+    </section>
   </aside>
 </template>
 

@@ -500,6 +500,7 @@ const handleSidebarRefresh = () => {
               @update:treeOrder="handleDraftTreeOrderUpdate"
               @update:paletteName="handlePaletteUpdate"
               @refresh="handleSidebarRefresh"
+              @new-upload="handleNewUpload"
             />
           </div>
           <div class="col-lg-9">
@@ -512,7 +513,6 @@ const handleSidebarRefresh = () => {
                 :treeOrder="treeOrder"
                 :currentPath="currentPath"
                 @navigate-to="handlePathNavigation"
-                @new-upload="handleNewUpload"
               />
 
               <div class="row">
