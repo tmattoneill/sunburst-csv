@@ -42,6 +42,9 @@ pnpm-debug.log*
 **/dataset.csv
 data/security.db
 **/sunburst_data.json
+backend/data/*
+!backend/data/.gitkeep
+!backend/data/raw/.gitkeep
 
 # Cache and Library folders
 Library/
