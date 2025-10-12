@@ -8,6 +8,61 @@ Sunburst CSV is a full-stack web application that converts hierarchical CSV/XLSX
 
 Originally built for security report analysis, this tool has been generalized to handle any hierarchical dataset, making it useful for budget analysis, sales data, organizational structures, or any data with nested categories.
 
+## Quick Start
+
+### Prerequisites
+- **Docker**: For containerized deployment
+- **OR Local Development**: Python 3.11+ and Node.js 20+
+
+### Option 1: Docker (Recommended for Production-like Testing)
+
+```bash
+# Clone and start
+git clone https://github.com/tmattoneill/sunburst-csv.git
+cd sunburst-csv
+docker compose up --build
+```
+
+**Access at: http://localhost:3000**
+
+To stop:
+```bash
+docker compose down
+```
+
+### Option 2: Local Development (Faster Iteration)
+
+```bash
+# Make scripts executable
+chmod +x runapp.sh stopapp.sh
+
+# Start both backend and frontend
+./runapp.sh
+```
+
+**Access at: http://localhost:8080**
+
+The script will:
+- Create Python virtual environment (if needed)
+- Install backend dependencies
+- Install frontend dependencies (if needed)
+- Create data directories
+- Start both services in background
+
+To stop:
+```bash
+./stopapp.sh
+```
+
+### Port Reference
+
+| Service | Docker | Local Dev |
+|---------|--------|-----------|
+| Frontend | 3000 | 8080 |
+| Backend | 6500 | 6500 |
+
+See [PORT_CONFIG.md](PORT_CONFIG.md) for detailed port configuration.
+
 ## Key Features
 
 ### Data Processing
@@ -45,6 +100,62 @@ Originally built for security report analysis, this tool has been generalized to
 - Server-Sent Events for live processing updates
 - Support for both generic mode and legacy security reports
 
+## Usage Guide
+
+### Basic Workflow
+
+1. **Upload Data File**
+   - On first load, the upload modal appears automatically
+   - Or click the "Upload Data" button to manually open
+   - Select your CSV or XLSX file
+   - File must contain at least 3 columns for hierarchy
+   - At least one column should contain numeric values
+
+2. **Configure Hierarchy** (Step 2)
+   - Select and order columns for hierarchy
+   - Drag to reorder columns
+   - Minimum 3 levels required
+   - Example: Region > Department > Team
+
+3. **Select Value Column** (Step 3)
+   - Choose the numeric field to aggregate
+   - Examples: revenue, count, hours, budget
+
+4. **Name and Create** (Step 4)
+   - Name your visualization
+   - Click "Create"
+   - Watch real-time progress bar as data processes
+   - See status messages for each processing step
+   - Large files show row-by-row progress
+
+5. **Explore Your Chart**
+   - **Click** segments to drill down
+   - **Hover** segments to see details
+   - Use breadcrumbs to navigate up
+   - View detailed data in the table below
+
+6. **Analyze Data**
+   - Data table shows filtered records based on selection
+   - Use pagination to browse records
+   - Export filtered data as CSV
+
+### Example Datasets
+
+**Marketing Spend:**
+- Hierarchy: dsp_name > brand_name > buyer_name
+- Value: ad_spend
+- Shows advertising budget across platforms and brands
+
+**Sales Data:**
+- Hierarchy: region > product_category > product_name
+- Value: revenue
+- Reveals sales distribution by geography and product
+
+**Budget Allocation:**
+- Hierarchy: department > project > expense_category
+- Value: amount
+- Displays organizational spending patterns
+
 ## Technology Stack
 
 ### Backend
@@ -68,29 +179,6 @@ Originally built for security report analysis, this tool has been generalized to
 - Nginx for frontend serving
 - Hot reload in development mode
 
-## Installation
-
-### Prerequisites
-- Docker and Docker Compose
-- Git
-
-### Quick Start
-
-Clone the repository:
-
-```bash
-git clone https://github.com/tmattoneill/sunburst-csv.git
-cd sunburst-csv
-```
-
-Start the application:
-
-```bash
-docker compose up --build
-```
-
-Access the application at http://localhost:3000
-
 ## Session Management
 
 The application uses browser localStorage to maintain isolated sessions per user. Each session gets a unique ID that persists across page reloads but is cleared when:
@@ -104,54 +192,6 @@ To start completely fresh:
 - Clear browser localStorage (DevTools > Application > Local Storage)
 - Or use incognito/private browsing mode
 - The upload modal will automatically appear when no data exists
-
-## Usage Guide
-
-### Basic Workflow
-
-1. On first load, the upload modal appears automatically
-   - Or click the Upload Data button to manually open
-
-2. Step 1: Select your CSV or XLSX file
-   - File must contain at least 3 columns for hierarchy
-   - At least one column should contain numeric values
-
-3. Step 2: Configure your hierarchy by selecting columns in order
-   - Drag to reorder columns
-   - Minimum 3 levels required
-   - Example: Region > Department > Team
-
-4. Step 3: Choose your value column
-   - Select the numeric field to aggregate
-   - Examples: revenue, count, hours, budget
-
-5. Step 4: Name your visualization and click Create
-   - Watch real-time progress bar as data processes
-   - See status messages for each processing step
-   - Large files show row-by-row progress
-
-6. Explore your chart
-   - Click segments to drill down
-   - Use breadcrumbs to navigate up
-   - Hover for quick value previews
-   - View detailed data in the table below
-
-### Example Datasets
-
-Marketing Spend:
-- Hierarchy: dsp_name > brand_name > buyer_name
-- Value: ad_spend
-- Shows advertising budget across platforms and brands
-
-Sales Data:
-- Hierarchy: region > product_category > product_name
-- Value: revenue
-- Reveals sales distribution by geography and product
-
-Budget Allocation:
-- Hierarchy: department > project > expense_category
-- Value: amount
-- Displays organizational spending patterns
 
 ## Project Structure
 
@@ -168,7 +208,7 @@ sunburst-csv/
 │   │   └── main.py                # Flask application
 │   ├── data/
 │   │   ├── raw/                   # Uploaded files
-│   │   └── sunburst_data.json     # Generated visualization data
+│   │   └── *.json                 # Session visualization data
 │   ├── requirements.txt
 │   └── Dockerfile
 ├── frontend/
@@ -186,9 +226,12 @@ sunburst-csv/
 │   ├── package.json
 │   └── Dockerfile
 ├── docker-compose.yml
+├── runapp.sh                      # Local development startup
+├── stopapp.sh                     # Stop local services
+├── .env.dev                       # Port configuration
+├── PORT_CONFIG.md                 # Port documentation
 ├── CLAUDE.md                      # Development documentation
-├── ERRORS.md                      # Bug fixes log
-└── README.md
+└── README.md                      # This file
 ```
 
 ## API Reference
@@ -201,6 +244,7 @@ Content-Type: multipart/form-data
 
 Parameters:
   - file: CSV or XLSX file
+  - session_id: (optional) Session identifier
 
 Response:
   - filePath: string (saved filename)
@@ -209,7 +253,7 @@ Response:
 ### Get File Info
 
 ```
-GET /api/file-info?filePath=filename.csv
+GET /api/file-info?filePath=filename.csv&session_id=xxx
 
 Response:
   - columns: array of column metadata
@@ -228,6 +272,7 @@ Body:
   - filePath: string
   - treeOrder: array of column names
   - valueColumn: string
+  - session_id: string
 
 Response:
   - valid: boolean
@@ -245,15 +290,17 @@ Body (Generic Mode):
   - chartName: string
   - treeOrder: array of column names
   - valueColumn: string
+  - session_id: string
 
 Response:
-  - message: success confirmation
+  - Server-Sent Events stream with progress updates
+  - Final message: success confirmation
 ```
 
 ### Get Chart Data
 
 ```
-GET /api/data
+GET /api/data?session_id=xxx
 
 Response:
   - chart_name: string
@@ -266,7 +313,7 @@ Response:
 ### Get Table Data
 
 ```
-GET /api/table-data?page=1&items_per_page=20
+GET /api/table-data?page=1&items_per_page=20&session_id=xxx
 
 Optional Parameters:
   - filters: JSON object of column filters
@@ -278,75 +325,65 @@ Response:
   - total_pages: total pages
 ```
 
+### Health Check
+
+```
+GET /api/health
+
+Response:
+  - status: "healthy"
+```
+
 ## Configuration
 
 ### Environment Variables
 
-Backend:
-- DATA_DIR: Base directory for data files (default: ../data)
-- UPLOAD_DIR: Directory for uploaded files (default: ../data/raw)
-- DATABASE_URL: SQLite database path (default: ../data/security.db)
-- FLASK_PORT: Backend server port (default: 6500)
+See [PORT_CONFIG.md](PORT_CONFIG.md) for complete port configuration documentation.
 
-Frontend:
-- VUE_APP_API_ROOT_PATH: API base path (default: /api)
-- VUE_APP_BASE_URL: Backend URL (default: http://localhost:6500)
+**Backend** (.env.dev):
+- `BACKEND_PORT`: Backend server port (default: 6500)
+- `DATA_DIR`: Base directory for data files
+- `UPLOAD_DIR`: Directory for uploaded files
+- `DATABASE_URL`: SQLite database path (legacy mode)
 
-### Docker Compose
+**Frontend** (.env.local for local dev):
+- `VUE_APP_BASE_URL`: Backend API URL (default: http://localhost:6500)
 
-Ports:
-- Frontend: 3000 (nginx)
-- Backend: 6500 (gunicorn)
-
-Volumes:
-- ./backend/app:/app/app (backend code)
-- ./backend/data:/app/data (data persistence)
-- ./frontend/src:/app/src (frontend code)
+**Frontend** (.env.production for Docker):
+- `VUE_APP_BASE_URL`: Backend API URL
 
 ## Development
 
 ### Backend Development
 
-Run Flask in debug mode:
-
 ```bash
 cd backend/app
-python main.py
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
+source ../venv/bin/activate
+pip install -r ../requirements.txt
+python main.py  # Runs on port 6500
 ```
 
 ### Frontend Development
 
-Run Vue dev server:
-
 ```bash
 cd frontend
 npm install
-npm run serve
-```
-
-Build for production:
-
-```bash
-npm run build
+npm run serve  # Runs on port 8080
+npm run build  # Production build
+npm run lint   # Lint code
 ```
 
 ### Code Structure
 
-Generic Processor Pipeline:
+**Generic Processor Pipeline:**
 1. Read CSV/XLSX file
 2. Validate columns exist and have correct types
 3. Clean numeric values (remove currency, commas)
 4. Build tree recursively by grouping and summing
 5. Generate metadata with tree_order and value_column
-6. Save to sunburst_data.json
+6. Save to `{session_id}_sunburst_data.json`
 
-Frontend State Management:
+**Frontend State Management:**
 1. FileLoaderModal handles upload and column selection
 2. App.vue fetches chart data and manages navigation
 3. SunburstChart renders visualization and emits events
@@ -357,7 +394,7 @@ Frontend State Management:
 
 ### Input CSV Structure
 
-```
+```csv
 category_a,category_b,category_c,amount,other_field
 Region1,Dept1,Team1,1000,notes
 Region1,Dept1,Team2,1500,notes
@@ -398,44 +435,92 @@ Region2,Dept3,Team4,2500,notes
 
 ## Troubleshooting
 
-### Common Issues
+### Docker Issues
 
-File upload fails with 400 error:
-- Check file is CSV or XLSX format
-- Ensure file size is reasonable (under 100MB recommended)
-- Verify file has valid headers in first row
-
-No columns appear in hierarchy selector:
-- Confirm file uploaded successfully
-- Check browser console for API errors
-- Verify backend is running on port 6500
-
-DataTable shows no rows:
-- Ensure you have processed a file first
-- Check that source CSV still exists in data/raw
-- Verify filters are not too restrictive
-
-Chart does not render:
-- Confirm data exists in sunburst_data.json
-- Check for JavaScript errors in browser console
-- Try refreshing the page
-
-### Debug Mode
-
-Enable backend logging:
-
-```python
-# backend/app/main.py
-app.run(debug=True, port=6500)
+**Containers won't start:**
+```bash
+docker compose down
+docker compose up --build
 ```
 
-Enable Vue devtools:
+**Can't access frontend:**
+- Check: http://localhost:3000
+- Verify containers are running: `docker ps`
+- Check logs: `docker logs sunburst-csv-frontend-1`
 
-```javascript
-// frontend/vue.config.js
-module.exports = {
-  productionSourceMap: true
-}
+### Local Development Issues
+
+**Backend won't start:**
+- Check logs: `tail -f backend.log`
+- Verify Python 3.x is installed: `python3 --version`
+- Check if port 6500 is in use: `lsof -i :6500`
+- Look for errors in `backend.log`
+
+**Frontend won't start:**
+- Check logs: `tail -f frontend.log`
+- Verify Node.js is installed: `node --version`
+- Check if port 8080 is in use: `lsof -i :8080`
+- Delete `node_modules` and reinstall: `npm install`
+
+**Services still running after stopapp.sh:**
+```bash
+./stopapp.sh
+# Or manually:
+pkill -f gunicorn
+pkill -f "npm run serve"
+pkill -f "vue-cli-service"
+```
+
+### Upload Issues
+
+**Upload fails:**
+- Check file format matches requirements (CSV or XLSX)
+- Ensure file size is reasonable (under 100MB recommended)
+- Verify file has valid headers in first row
+- Check backend logs for specific errors
+
+**No columns appear in hierarchy selector:**
+- Confirm file uploaded successfully
+- Check browser console for API errors (F12)
+- Verify backend is running on port 6500
+- Test backend health: `curl http://localhost:6500/api/health`
+
+### Chart Issues
+
+**Chart not rendering:**
+- Check browser console for errors (F12)
+- Confirm data exists in backend (check API response)
+- Verify API calls are going to port 6500, not 8080
+- Try refreshing the page (hard refresh: Cmd+Shift+R)
+- Check if `/api/data?session_id=xxx` endpoint returns data
+
+**DataTable shows no rows:**
+- Ensure you have processed a file first
+- Check that source CSV still exists in `backend/data/raw/`
+- Verify filters are not too restrictive
+- Check session_id is being passed correctly
+
+### API Connection Issues
+
+**404 errors on API calls:**
+- Verify `frontend/.env.local` exists with `VUE_APP_BASE_URL=http://localhost:6500`
+- Restart frontend after creating/modifying `.env.local`
+- Check Network tab in browser DevTools to see where API calls are going
+- Backend should be running on port 6500
+
+### Viewing Logs
+
+**Docker:**
+```bash
+docker logs sunburst-csv-backend-1
+docker logs sunburst-csv-frontend-1
+docker logs -f sunburst-csv-backend-1  # Follow mode
+```
+
+**Local:**
+```bash
+tail -f backend.log
+tail -f frontend.log
 ```
 
 ## Contributing

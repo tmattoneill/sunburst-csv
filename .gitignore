@@ -55,6 +55,12 @@ bdesign/
 .env.dev
 
 # Code Assist Files
-./CLAUDE.md 
-./PROGRESS.md 
+./CLAUDE.md
+./PROGRESS.md
 ./ERRORS.md
+
+# Ignore all .md files except important ones
+*.md
+!README.md
+!CLAUDE.md
+!PORT_CONFIG.md
