@@ -7,6 +7,7 @@
 node_modules/
 .npm/                # Global npm cache if present
 dist/                # Build output directory
+frontend/dist/
 
 # Python virtual environments
 venv/
