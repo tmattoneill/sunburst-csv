@@ -21,6 +21,7 @@ export const API_ENDPOINTS = {
     FILE_INFO: 'file-info',
     VALIDATE_COLUMNS: 'validate-columns',
     ANALYZE: 'analyze',
+    CLEAR_SESSION: 'clear-session',
 };
 
 export const fetchApi = async (endpoint, options = {}) => {
@@ -65,17 +66,23 @@ export const fetchApi = async (endpoint, options = {}) => {
         return response.data;
     } catch (error) {
         const requestMethod = options.method || 'get';
-        console.error('API Error:', {
-            endpoint,
-            status: error.response?.status,
-            data: error.response?.data,
-            message: error.message,
-            request: {
-                method: requestMethod,
-                params: options.params,
-                data: options.data
-            }
-        });
+        const status = error.response?.status;
+
+        // Only log errors that aren't expected 404s (no data on initial load)
+        if (status !== 404) {
+            console.error('API Error:', {
+                endpoint,
+                status,
+                data: error.response?.data,
+                message: error.message,
+                request: {
+                    method: requestMethod,
+                    params: options.params,
+                    data: options.data
+                }
+            });
+        }
+
         const errorMessage = error.response?.data?.error ||
                            error.response?.data?.message ||
                            error.message ||

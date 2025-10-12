@@ -39,7 +39,7 @@ const props = defineProps({
 // Check if dates are available (legacy mode)
 const hasDates = computed(() => props.dateStart && props.dateEnd)
 
-const emit = defineEmits(['update:paletteName', 'navigate-to'])
+const emit = defineEmits(['update:paletteName', 'navigate-to', 'new-upload'])
 
 const selectedPalette = ref(props.paletteName)
 const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
@@ -48,9 +48,7 @@ const colors = ref(PALETTES[props.paletteName] || PALETTES.Ocean)
 const paletteNames = computed(() => Object.keys(PALETTES))
 
 // Format path segments
-// In PageHeader.vue
 const formattedPathSegments = computed(() => {
-  console.log('Current path in PageHeader:', props.currentPath);
   return props.currentPath.map(segment => ({
     name: segment.name,
     id: segment.id,
@@ -112,8 +110,7 @@ const handlePaletteChange = () => {
           class="btn btn-primary px-4"
           id="mdl-btn-load"
           type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#mdl-load"
+          @click="emit('new-upload')"
         >
           <i class="bi bi-upload me-2"></i>
         </button>

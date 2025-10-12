@@ -61,7 +61,6 @@ const handleNodeHover = (node) => {
 }
 
 const handlePathChange = (path) => {
-  console.log('Path change in App:', path);
   currentPath.value = path;
 
   // Build filters from path
@@ -145,7 +144,10 @@ const fetchData = async (showLoading = false) => {
     selectedNode.value = responseData.data
     currentPath.value = [{ name: responseData.data.name, value: responseData.data.value }]
   } catch (error) {
-    console.error('Error fetching chart data:', error)
+    // Only log error if it's not a 404 (which is expected on initial load with no data)
+    if (!error.message.includes('404') && !error.message.includes('Data file not found')) {
+      console.error('Error fetching chart data:', error)
+    }
     reportType.value = ''
     chartName.value = ''
     dateStart.value = ''
@@ -185,6 +187,51 @@ const refreshPage = () => {
   isInitialLoad.value = false;
   fetchData(true)  // Show loading overlay when explicitly refreshing
 }
+
+// Handle new upload - shows confirmation modal first
+const showClearConfirmModal = ref(false)
+
+const handleNewUpload = () => {
+  showClearConfirmModal.value = true
+}
+
+const cancelClearSession = () => {
+  showClearConfirmModal.value = false
+}
+
+const confirmClearSession = async () => {
+  try {
+    // Close confirmation modal
+    showClearConfirmModal.value = false
+
+    // Call clear-session endpoint
+    await fetchApi(API_ENDPOINTS.CLEAR_SESSION, {
+      method: 'POST',
+      data: { session_id: sessionId.value }
+    })
+
+    // Reset local state
+    chartData.value = {}
+    selectedNode.value = null
+    currentPath.value = []
+    currentFilters.value = {}
+    chartName.value = ''
+    treeOrder.value = []
+    valueColumn.value = ''
+
+    // Wait a moment, then open the upload modal
+    setTimeout(() => {
+      const modalEl = document.getElementById('mdl-load')
+      if (modalEl && window.bootstrap) {
+        const modal = new window.bootstrap.Modal(modalEl)
+        modal.show()
+      }
+    }, 300)
+  } catch (error) {
+    console.error('Error clearing session:', error)
+    alert('Failed to clear session data: ' + error.message)
+  }
+}
 </script>
 
 <template>
@@ -197,6 +244,27 @@ const refreshPage = () => {
         </div>
         <h4 class="mb-2">Processing Dataset</h4>
         <p class="text-primary fw-bold loading-message">{{ loadingMessage }}</p>
+      </div>
+    </div>
+
+    <!-- Clear Session Confirmation Modal -->
+    <div v-if="showClearConfirmModal" class="modal-backdrop fade show"></div>
+    <div v-if="showClearConfirmModal" class="modal fade show d-block" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Clear Current Visualization?</h5>
+            <button type="button" class="btn-close" @click="cancelClearSession" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>This will delete all data for the current visualization.</p>
+            <p class="mb-0 text-muted">Are you sure you want to continue?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="cancelClearSession">Cancel</button>
+            <button type="button" class="btn btn-danger" @click="confirmClearSession">OK</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -221,6 +289,7 @@ const refreshPage = () => {
     :currentPath="currentPath"
     @update:paletteName="(name) => currentPalette = name"
     @navigate-to="handlePathNavigation"
+    @new-upload="handleNewUpload"
   />
 
     <div class="row">

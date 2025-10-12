@@ -156,13 +156,20 @@ class GenericProcessor:
         # Determine file type and read accordingly
         file_ext = self.raw_data_path.suffix.lower()
 
-        # header_row is absolute row index from preview - skip all rows before it
-        skiprows = list(range(self.header_row)) if self.header_row > 0 else None
-
+        # header_row is the absolute row index from preview
+        # Use it directly with pandas - it will use that row as column names
+        # and skip all rows before it automatically
         if file_ext == '.csv':
-            df = pd.read_csv(self.raw_data_path, header=0, skiprows=skiprows)
+            df = pd.read_csv(
+                self.raw_data_path,
+                header=self.header_row,
+                on_bad_lines='warn'  # More forgiving of malformed rows
+            )
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(self.raw_data_path, header=0, skiprows=skiprows)
+            df = pd.read_excel(
+                self.raw_data_path,
+                header=self.header_row
+            )
         else:
             raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -422,18 +429,18 @@ def analyze_columns(file_path: Path, header_row: int = 0, skip_rows: int = 0) ->
         List of column metadata dictionaries
     """
     # Read file with specified header row
-    # Note: header_row is the absolute row index from the file preview
-    # To use row N as headers, we skip rows 0..(N-1) and then use row 0 as header
+    # header_row is the absolute row index from the file preview
     file_ext = file_path.suffix.lower()
 
-    # Skip all rows before the header row
-    skiprows = list(range(header_row)) if header_row > 0 else None
-
     if file_ext == '.csv':
-        # After skipping rows before header_row, the header is now at row 0
-        df = pd.read_csv(file_path, header=0, skiprows=skiprows, nrows=1000)  # Sample first 1000 rows
+        df = pd.read_csv(
+            file_path,
+            header=header_row,
+            nrows=1000,  # Sample first 1000 rows
+            on_bad_lines='warn'
+        )
     elif file_ext in ['.xlsx', '.xls']:
-        df = pd.read_excel(file_path, header=0, skiprows=skiprows, nrows=1000)
+        df = pd.read_excel(file_path, header=header_row, nrows=1000)
     else:
         raise ValueError(f"Unsupported file type: {file_ext}")
 
@@ -497,13 +504,15 @@ def validate_column_selection(file_path: Path, tree_order: List[str], value_colu
     # Read file
     try:
         file_ext = file_path.suffix.lower()
-        # header_row is absolute row index - skip all rows before it
-        skiprows = list(range(header_row)) if header_row > 0 else None
 
         if file_ext == '.csv':
-            df = pd.read_csv(file_path, header=0, skiprows=skiprows)
+            df = pd.read_csv(
+                file_path,
+                header=header_row,
+                on_bad_lines='warn'
+            )
         elif file_ext in ['.xlsx', '.xls']:
-            df = pd.read_excel(file_path, header=0, skiprows=skiprows)
+            df = pd.read_excel(file_path, header=header_row)
         else:
             errors.append(f"Unsupported file type: {file_ext}")
             return False, errors

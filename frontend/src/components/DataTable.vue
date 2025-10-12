@@ -179,13 +179,6 @@ const reorderHeaders = (allHeaders) => {
   // 3. Add all remaining columns in original CSV order
   ordered.push(...remaining)
 
-  console.log('DataTable - Reordered headers:', {
-    original: allHeaders,
-    treeOrder: props.treeOrder,
-    valueColumn: props.valueColumn,
-    reordered: ordered
-  })
-
   return ordered
 }
 
@@ -200,22 +193,12 @@ const fetchData = async (page) => {
 
     // Only add filters if they exist and aren't empty
     if (props.filters && Object.keys(props.filters).length > 0) {
-      // Log the filters we're about to send
-      console.log('DataTable - Current filters:', {
-        raw: props.filters,
-        stringified: JSON.stringify(props.filters)
-      });
       requestParams.filters = props.filters;
     }
-
-    console.log('DataTable - Making API request with params:', requestParams);
 
     const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
       params: requestParams
     });
-
-    // Log the entire response for debugging
-    console.log('DataTable - Raw API response:', response);
 
     // Validate response structure
     if (!response || typeof response !== 'object') {
@@ -239,19 +222,8 @@ const fetchData = async (page) => {
       // Only update if headers have changed (to avoid unnecessary reactivity)
       if (JSON.stringify(headers.value) !== JSON.stringify(reordered)) {
         headers.value = reordered;
-        console.log('DataTable - Headers updated from data:', headers.value);
       }
     }
-
-    // Log state updates
-    console.log('DataTable - State updated:', {
-      rowCount: tableData.value.length,
-      totalItems: totalItems.value,
-      totalPages: totalPages.value,
-      currentPage: currentPage.value,
-      headers: headers.value,
-      actualData: response.data.slice(0, 2) // Log first two rows as sample
-    });
 
   } catch (error) {
     console.error('DataTable - Error details:', {
@@ -338,7 +310,6 @@ const handlePageChange = async (newPage) => {
 watch(
   () => props.filters,
   (newFilters) => {
-    console.log('DataTable - Filter watcher triggered with filters:', newFilters)
     // Only fetch if sessionId is set
     if (props.sessionId) {
       currentPage.value = 1
@@ -350,7 +321,6 @@ watch(
 
 // Initial data fetch
 onMounted(() => {
-  console.log('DataTable - Initial mount, sessionId:', props.sessionId, 'filters:', props.filters)
   // Only fetch if sessionId is set
   if (props.sessionId) {
     fetchData(1)

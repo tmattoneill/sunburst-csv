@@ -300,14 +300,18 @@ def get_file_info():
             return jsonify({"error": f"File not found: {file_path_param}"}), 404
 
         # Read file with specified header row
-        # header_row is the absolute row index from preview - skip all rows before it
+        # header_row is the absolute row index - use it directly with pandas
         file_ext = full_path.suffix.lower()
-        skiprows = list(range(header_row)) if header_row > 0 else None
+
+        print(f"DEBUG /file-info: header_row={header_row}, skip_rows={skip_rows}, file={file_path_param}")
 
         if file_ext == '.csv':
-            df = pd.read_csv(full_path, header=0, skiprows=skiprows)
+            df = pd.read_csv(full_path, header=header_row, on_bad_lines='warn')
         else:
-            df = pd.read_excel(full_path, header=0, skiprows=skiprows)
+            df = pd.read_excel(full_path, header=header_row)
+
+        print(f"DEBUG /file-info: Columns read by pandas: {df.columns.tolist()}")
+        print(f"DEBUG /file-info: First data row: {df.iloc[0].tolist() if len(df) > 0 else 'NO DATA'}")
 
         # Analyze columns
         columns_info = analyze_columns(full_path, header_row=header_row, skip_rows=skip_rows)
@@ -494,6 +498,68 @@ def process_file():
     except Exception as e:
         print(f"Error processing file: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+
+@bp.route('/clear-session', methods=['POST'])
+def clear_session():
+    """
+    Clear all data files for a given session.
+    Deletes uploaded files, processed data, and metadata.
+    """
+    try:
+        data = request.json
+        session_id = data.get('session_id', 'default')
+
+        if not session_id:
+            return jsonify({"error": "Missing session_id parameter"}), 400
+
+        files_deleted = []
+
+        # Delete session-specific files in data directory
+        data_dir = Path(DATA_DIR)
+        for pattern in [
+            f'{session_id}_sunburst_data.json',
+            f'{session_id}_data.csv',
+            f'{session_id}_metadata.csv'
+        ]:
+            file_path = data_dir / pattern
+            if file_path.exists():
+                os.remove(file_path)
+                files_deleted.append(str(file_path))
+                print(f"Deleted: {file_path}")
+
+        # Delete uploaded files in raw directory
+        # Note: We're being conservative and only deleting files that match common patterns
+        # to avoid accidentally deleting important data
+        upload_dir = Path(UPLOAD_DIR)
+        if upload_dir.exists():
+            # Get list of uploaded files from metadata before deletion
+            metadata_path = data_dir / f'{session_id}_sunburst_data.json'
+            if metadata_path.exists():
+                try:
+                    with open(metadata_path, 'r') as f:
+                        metadata = json.load(f)
+                        source_file = metadata.get('source_file')
+                        if source_file:
+                            source_path = upload_dir / source_file
+                            if source_path.exists():
+                                os.remove(source_path)
+                                files_deleted.append(str(source_path))
+                                print(f"Deleted: {source_path}")
+                except Exception as e:
+                    print(f"Warning: Could not read metadata to find source file: {e}")
+
+        return jsonify({
+            "message": "Session data cleared successfully",
+            "files_deleted": files_deleted,
+            "count": len(files_deleted)
+        }), 200
+
+    except Exception as e:
+        print(f"Error clearing session: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": f"Failed to clear session: {str(e)}"}), 500
 
 
 if __name__ == '__main__':
