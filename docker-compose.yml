@@ -1,3 +1,5 @@
+name: dataviz
+
 services:
   backend:
     build:
