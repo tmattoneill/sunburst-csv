@@ -5,12 +5,15 @@ Processes any CSV/XLSX file with hierarchical data into sunburst visualization f
 No hardcoded column assumptions - fully user-configurable.
 """
 
-import pandas as pd
 import json
-import re
-from typing import Dict, List, TypedDict, Union, Tuple
-from pathlib import Path
 import os
+import re
+from pathlib import Path
+from typing import Dict, List, TypedDict, Union, Tuple
+
+import pandas as pd
+
+from dataproc.llm_summary import schedule_dataframe_summary
 
 
 class TreeNode(TypedDict):
@@ -321,6 +324,18 @@ class GenericProcessor:
             self._report_progress(10, 100, "Validating data...")
             df = self.validate_and_prepare_data(df)
 
+            # Kick off async LLM summary before downstream processing continues
+            schedule_dataframe_summary(
+                df,
+                session_id=self.session_id,
+                chart_name=self.chart_name,
+                tree_order=self.tree_order,
+                value_column=self.value_column,
+                aggregation_mode=self.aggregation_mode,
+                data_dir=self.data_path,
+                metadata_path=self.sunburst_data_path
+            )
+
             # Save processed data and metadata files
             self._report_progress(15, 100, "Saving processed data...")
 
@@ -386,7 +401,11 @@ class GenericProcessor:
                 'metadata_file': metadata_file,                # File metadata rows (if any)
                 'header_row': self.header_row,
                 'skip_rows': self.skip_rows,
-                'data': self.tree
+                'data': self.tree,
+                'llm_summary': {
+                    'status': 'pending',
+                    'summary_file': f"{self.session_id}_summary.json"
+                }
             }
 
             # Save to JSON

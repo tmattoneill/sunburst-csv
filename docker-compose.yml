@@ -3,7 +3,10 @@ name: dataviz
 services:
   backend:
     build:
-      context: ./backend
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        REQUIREMENTS_FILE: backend/requirements.txt
     env_file:
       - .env.dev
     ports:

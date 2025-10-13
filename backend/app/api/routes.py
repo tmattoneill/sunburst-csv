@@ -1,18 +1,21 @@
 # app/api/routes.py
-from flask import Blueprint, jsonify, request, Response, stream_with_context
 import json
 import os
-import pandas as pd
 from pathlib import Path
 from datetime import datetime
-from werkzeug.utils import secure_filename
-from dataproc.report_processor import ReportProcessor
-from dataproc.generic_processor import GenericProcessor, analyze_columns, validate_column_selection
-from dataproc.db_handler import DatabaseHandler
-from dataproc.file_analyzer import FileAnalyzer
-from dotenv import load_dotenv
 import queue
 import threading
+
+import pandas as pd
+from dotenv import load_dotenv
+from flask import Blueprint, jsonify, request, Response, stream_with_context
+from werkzeug.utils import secure_filename
+
+from dataproc.db_handler import DatabaseHandler
+from dataproc.file_analyzer import FileAnalyzer
+from dataproc.generic_processor import GenericProcessor, analyze_columns, validate_column_selection
+from dataproc.llm_summary import SUMMARY_FILENAME_TEMPLATE
+from dataproc.report_processor import ReportProcessor
 
 load_dotenv()
 
@@ -113,6 +116,33 @@ def get_data():
             return jsonify(data), 200
     except FileNotFoundError:
         return jsonify({"error": "Data file not found"}), 404
+
+
+@bp.route('/table-summary', methods=['GET'])
+def get_table_summary():
+    """Return the latest LLM-generated dataset summary for a session."""
+    session_id = request.args.get('session_id', 'default')
+    summary_filename = SUMMARY_FILENAME_TEMPLATE.format(session_id=session_id)
+    summary_path = Path(DATA_DIR) / summary_filename
+
+    if not summary_path.exists():
+        return jsonify({
+            'status': 'pending',
+            'summary': None,
+            'generated_at': None
+        }), 200
+
+    try:
+        with summary_path.open('r', encoding='utf-8') as handle:
+            payload = json.load(handle)
+    except json.JSONDecodeError:
+        return jsonify({
+            'status': 'error',
+            'summary': 'Summary file is unreadable. Re-run processing to regenerate.',
+            'generated_at': None
+        }), 500
+
+    return jsonify(payload), 200
 
 
 @bp.route('/table-data', methods=['GET', 'POST'])
@@ -522,7 +552,8 @@ def clear_session():
         for pattern in [
             f'{session_id}_sunburst_data.json',
             f'{session_id}_data.csv',
-            f'{session_id}_metadata.csv'
+            f'{session_id}_metadata.csv',
+            f'{session_id}_summary.json'
         ]:
             file_path = data_dir / pattern
             if file_path.exists():

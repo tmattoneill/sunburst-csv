@@ -2,8 +2,10 @@
 <template>
   <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h3 class="m-0">Data Table: {{ totalItems }} rows</h3>
+      <h3 class="m-0" v-if="activeTab === 'table'">Data Table: {{ totalItems }} rows</h3>
+      <h3 class="m-0" v-else>AI Summary</h3>
       <button
+        v-if="activeTab === 'table'"
         class="btn btn-outline-secondary"
         @click="downloadCurrentView"
         :disabled="loading"
@@ -12,75 +14,112 @@
       </button>
     </div>
 
-    <!-- Loading State -->
-    <div v-if="loading" class="text-center py-4">
-      <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link"
+          :class="{ active: activeTab === 'summary' }"
+          @click="setActiveTab('summary')"
+          :aria-selected="activeTab === 'summary'">
+          Summary
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="nav-link"
+          :class="{ active: activeTab === 'table' }"
+          @click="setActiveTab('table')"
+          :aria-selected="activeTab === 'table'">
+          Table
+        </button>
+      </li>
+    </ul>
+
+    <div v-if="activeTab === 'summary'" class="summary-panel">
+      <div v-if="summaryLoading" class="text-center py-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading summary...</span>
+        </div>
+      </div>
+      <div v-else>
+        <p v-if="summaryStatus === 'ready'" class="summary-text mb-3">{{ summaryText }}</p>
+        <p v-else-if="summaryStatus === 'pending'" class="text-muted mb-3">
+          Generating insights... this usually takes a few seconds.
+        </p>
+        <p v-else class="text-danger mb-3">{{ summaryText }}</p>
+        <p v-if="summaryGeneratedAt" class="text-muted small mb-0">
+          Updated {{ formattedSummaryTimestamp }}
+        </p>
       </div>
     </div>
 
-    <!-- Table Container -->
-    <div v-else class="table-responsive">
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>
-            <th v-for="header in headers"
-                :key="header"
-                class="text-xs px-2 py-1">
-              {{ prettyHeader(header) }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in tableData" :key="item.scan_id">
-            <td v-for="header in headers"
-                :key="header"
-                class="text-xs px-2 py-1"
-                :title="item[header] && String(item[header]).length > 25 ? item[header] : null">
-              {{ formatCellContent(item[header]) }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <template v-else>
+      <div v-if="loading" class="text-center py-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading table...</span>
+        </div>
+      </div>
 
-    <!-- Pagination -->
-    <nav v-if="totalPages > 0" aria-label="Table navigation" class="mt-3">
-      <ul class="pagination justify-content-center">
-        <!-- First/Previous -->
-        <li class="page-item" :class="{ disabled: currentPage === 1 }">
-          <a class="page-link" href="#" @click.prevent="handlePageChange(1)">&lt;&lt;</a>
-        </li>
-        <li class="page-item" :class="{ disabled: currentPage === 1 }">
-          <a class="page-link" href="#" @click.prevent="handlePageChange(currentPage - 1)">&lt;</a>
-        </li>
+      <div v-else class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th v-for="header in headers"
+                  :key="header"
+                  class="text-xs px-2 py-1">
+                {{ prettyHeader(header) }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in tableData" :key="item.scan_id">
+              <td v-for="header in headers"
+                  :key="header"
+                  class="text-xs px-2 py-1"
+                  :title="item[header] && String(item[header]).length > 25 ? item[header] : null">
+                {{ formatCellContent(item[header]) }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <!-- Page Numbers -->
-        <template v-for="page in displayedPages" :key="page">
-          <li v-if="page === '...'" class="page-item disabled">
-            <span class="page-link">...</span>
+      <nav v-if="totalPages > 0" aria-label="Table navigation" class="mt-3">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" :class="{ disabled: currentPage === 1 }">
+            <a class="page-link" href="#" @click.prevent="handlePageChange(1)">&lt;&lt;</a>
           </li>
-          <li v-else
-              class="page-item"
-              :class="{ active: page === currentPage }">
-            <a class="page-link" href="#" @click.prevent="handlePageChange(page)">{{ page }}</a>
+          <li class="page-item" :class="{ disabled: currentPage === 1 }">
+            <a class="page-link" href="#" @click.prevent="handlePageChange(currentPage - 1)">&lt;</a>
           </li>
-        </template>
 
-        <!-- Next/Last -->
-        <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-          <a class="page-link" href="#" @click.prevent="handlePageChange(currentPage + 1)">&gt;</a>
-        </li>
-        <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-          <a class="page-link" href="#" @click.prevent="handlePageChange(totalPages)">&gt;&gt;</a>
-        </li>
-      </ul>
-    </nav>
+          <template v-for="page in displayedPages" :key="page">
+            <li v-if="page === '...'" class="page-item disabled">
+              <span class="page-link">...</span>
+            </li>
+            <li v-else
+                class="page-item"
+                :class="{ active: page === currentPage }">
+              <a class="page-link" href="#" @click.prevent="handlePageChange(page)">{{ page }}</a>
+            </li>
+          </template>
+
+          <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+            <a class="page-link" href="#" @click.prevent="handlePageChange(currentPage + 1)">&gt;</a>
+          </li>
+          <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+            <a class="page-link" href="#" @click.prevent="handlePageChange(totalPages)">&gt;&gt;</a>
+          </li>
+        </ul>
+      </nav>
+    </template>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch, computed } from 'vue'
 import { fetchApi, API_ENDPOINTS } from '@/services/api'
 
 const headers = ref([])  // Will be populated dynamically from data
@@ -91,6 +130,13 @@ const totalPages = ref(0)
 const totalItems = ref(0)
 const tableData = ref([])
 const loading = ref(true)
+const activeTab = ref('table')
+
+const summaryLoading = ref(false)
+const summaryStatus = ref('pending')
+const summaryText = ref('')
+const summaryGeneratedAt = ref('')
+let summaryPollHandle = null
 
 const props = defineProps({
   sessionId: {
@@ -243,6 +289,77 @@ const fetchData = async (page) => {
   }
 };
 
+const clearSummaryPoll = () => {
+  if (summaryPollHandle) {
+    clearTimeout(summaryPollHandle)
+    summaryPollHandle = null
+  }
+}
+
+const resetSummaryState = () => {
+  clearSummaryPoll()
+  summaryStatus.value = 'pending'
+  summaryText.value = ''
+  summaryGeneratedAt.value = ''
+  summaryLoading.value = false
+}
+
+const fetchSummary = async () => {
+  if (!props.sessionId) {
+    return
+  }
+
+  clearSummaryPoll()
+  summaryLoading.value = true
+
+  try {
+    const response = await fetchApi(API_ENDPOINTS.TABLE_SUMMARY, {
+      params: {
+        session_id: props.sessionId
+      }
+    })
+
+    summaryStatus.value = response.status || 'pending'
+    summaryText.value = response.summary || ''
+    summaryGeneratedAt.value = response.generated_at || ''
+
+    if (summaryStatus.value === 'pending') {
+      summaryPollHandle = setTimeout(fetchSummary, 4000)
+    }
+  } catch (error) {
+    summaryStatus.value = 'error'
+    summaryText.value = error.message
+    summaryGeneratedAt.value = ''
+  } finally {
+    summaryLoading.value = false
+  }
+}
+
+const setActiveTab = (tab) => {
+  if (activeTab.value === tab) {
+    return
+  }
+
+  activeTab.value = tab
+
+  if (tab === 'summary' && summaryStatus.value !== 'ready') {
+    fetchSummary()
+  }
+}
+
+const formattedSummaryTimestamp = computed(() => {
+  if (!summaryGeneratedAt.value) {
+    return ''
+  }
+
+  try {
+    return new Date(summaryGeneratedAt.value).toLocaleString()
+  } catch (error) {
+    console.warn('Failed to format summary timestamp:', error)
+    return summaryGeneratedAt.value
+  }
+})
+
 const downloadCurrentView = async () => {
   try {
     const response = await fetchApi(API_ENDPOINTS.TABLE_DATA, {
@@ -319,12 +436,32 @@ watch(
   { deep: true }
 )
 
+// Refresh when session changes
+watch(
+  () => props.sessionId,
+  (newSession, oldSession) => {
+    if (!newSession || newSession === oldSession) {
+      return
+    }
+
+    currentPage.value = 1
+    resetSummaryState()
+    fetchSummary()
+    fetchData(1)
+  }
+)
+
 // Initial data fetch
 onMounted(() => {
   // Only fetch if sessionId is set
   if (props.sessionId) {
     fetchData(1)
+    fetchSummary()
   }
+})
+
+onBeforeUnmount(() => {
+  clearSummaryPoll()
 })
 </script>
 
@@ -355,5 +492,19 @@ onMounted(() => {
 th.text-xs {
   font-weight: 600;
   vertical-align: middle;
+}
+
+.summary-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  min-height: 220px;
+}
+
+.summary-text {
+  white-space: pre-line;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 </style>

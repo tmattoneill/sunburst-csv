@@ -18,6 +18,7 @@ export const API_ENDPOINTS = {
     DATA: 'data',
     HEALTH: 'health',
     TABLE_DATA: 'table-data',
+    TABLE_SUMMARY: 'table-summary',
     FILE_INFO: 'file-info',
     VALIDATE_COLUMNS: 'validate-columns',
     ANALYZE: 'analyze',
