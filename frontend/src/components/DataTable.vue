@@ -15,7 +15,7 @@
     </div>
 
     <ul class="nav nav-tabs mb-3">
-      <li class="nav-item">
+      <li class="nav-item" v-if="summaryEnabled">
         <button
           type="button"
           class="nav-link"
@@ -132,6 +132,9 @@ const tableData = ref([])
 const loading = ref(true)
 const activeTab = ref('table')
 
+// Hidden until the backend confirms summaries are on, so deployments without
+// an LLM never flash the tab.
+const summaryEnabled = ref(false)
 const summaryLoading = ref(false)
 const summaryStatus = ref('pending')
 const summaryText = ref('')
@@ -319,6 +322,13 @@ const fetchSummary = async () => {
       }
     })
 
+    if (response.status === 'disabled') {
+      summaryEnabled.value = false
+      activeTab.value = 'table'
+      return
+    }
+
+    summaryEnabled.value = true
     summaryStatus.value = response.status || 'pending'
     summaryText.value = response.summary || ''
     summaryGeneratedAt.value = response.generated_at || ''

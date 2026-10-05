@@ -1,6 +1,7 @@
 # app/api/routes.py
 import json
 import os
+import re
 from pathlib import Path
 from datetime import datetime
 import queue
@@ -14,7 +15,7 @@ from werkzeug.utils import secure_filename
 from dataproc.db_handler import DatabaseHandler
 from dataproc.file_analyzer import FileAnalyzer
 from dataproc.generic_processor import GenericProcessor, analyze_columns, validate_column_selection
-from dataproc.llm_summary import SUMMARY_FILENAME_TEMPLATE
+from dataproc.llm_summary import SUMMARY_ENABLED, SUMMARY_FILENAME_TEMPLATE
 from dataproc.report_processor import ReportProcessor
 
 load_dotenv()
@@ -26,12 +27,39 @@ DATA_DIR = os.getenv('DATA_DIR', "../data")
 UPLOAD_DIR = os.getenv('UPLOAD_DIR', "../data/raw")
 DB_PATH = os.getenv('DATABASE_URL', "../data/security.db")
 ALLOWED_EXTENSIONS = {'csv', 'xls', 'xlsx'}
+SESSION_ID_PATTERN = re.compile(r'[A-Za-z0-9_-]{1,64}')
 
 db = DatabaseHandler(DB_PATH)
 
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@bp.before_request
+def reject_unsafe_identifiers():
+    """Session IDs and file names from the client become filesystem paths, so
+    refuse anything that could step outside the data directories. This runs
+    before the views because their broad try/except blocks would turn an abort
+    into a 500."""
+    body = request.get_json(silent=True) if request.is_json else None
+    sources = [request.args] + ([body] if isinstance(body, dict) else [])
+
+    for source in sources:
+        for key in ('session_id', 'sessionId'):
+            session_id = source.get(key)
+            if session_id is None:
+                continue
+            if not isinstance(session_id, str) or not SESSION_ID_PATTERN.fullmatch(session_id):
+                return jsonify({"error": f"Invalid {key}"}), 400
+
+        # Uploads are stored under secure_filename() names, so a legitimate
+        # filePath always survives it unchanged.
+        file_name = source.get('filePath')
+        if file_name and (not isinstance(file_name, str) or secure_filename(file_name) != file_name):
+            return jsonify({"error": "Invalid filePath"}), 400
+
+    return None
 
 @bp.route('/health')
 def health_check():
@@ -121,6 +149,13 @@ def get_data():
 @bp.route('/table-summary', methods=['GET'])
 def get_table_summary():
     """Return the latest LLM-generated dataset summary for a session."""
+    if not SUMMARY_ENABLED:
+        return jsonify({
+            'status': 'disabled',
+            'summary': None,
+            'generated_at': None
+        }), 200
+
     session_id = request.args.get('session_id', 'default')
     summary_filename = SUMMARY_FILENAME_TEMPLATE.format(session_id=session_id)
     summary_path = Path(DATA_DIR) / summary_filename

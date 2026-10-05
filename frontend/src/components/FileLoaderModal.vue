@@ -273,7 +273,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { fetchApi, API_ENDPOINTS } from '@/services/api'
+import { fetchApi, API_ENDPOINTS, API_CONFIG } from '@/services/api'
 import ColumnSelector from './ColumnSelector.vue'
 
 // Props
@@ -567,11 +567,8 @@ const processFile = async () => {
     }
 
     // Process the file with SSE for progress
-    const API_BASE_URL = process.env.VUE_APP_BASE_URL || 'http://localhost:6500'
-    const API_PATH = process.env.VUE_APP_API_ROOT_PATH || '/api'
-
     // Use fetch for SSE instead of EventSource (to support POST with body)
-    const response = await fetch(`${API_BASE_URL}${API_PATH}/process`, {
+    const response = await fetch(`${API_CONFIG.API_BASE_URL}${API_CONFIG.API_PATH}/${API_ENDPOINTS.PROCESS}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

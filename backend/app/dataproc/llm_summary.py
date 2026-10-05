@@ -12,6 +12,9 @@ import requests
 
 DEFAULT_OLLAMA_URL = os.getenv('OLLAMA_URL', 'http://127.0.0.1:11434/api/generate')
 DEFAULT_OLLAMA_MODEL = os.getenv('OLLAMA_MODEL', 'gpt-oss:120b-cloud')
+# Production has no Ollama to call; switching this off skips the background
+# request and tells the UI to hide the Summary tab.
+SUMMARY_ENABLED = os.getenv('SUMMARY_ENABLED', 'true').strip().lower() not in ('false', '0', 'no')
 SUMMARY_FILENAME_TEMPLATE = "{session_id}_summary.json"
 SUMMARY_FIELD = 'llm_summary'
 
@@ -156,7 +159,7 @@ def schedule_dataframe_summary(df: pd.DataFrame,
                                model: Optional[str] = None,
                                url: Optional[str] = None) -> None:
     """Spawn a daemon thread to generate a dataset summary with the configured LLM."""
-    if df is None or df.empty:
+    if not SUMMARY_ENABLED or df is None or df.empty:
         return
 
     resolved_model = model or DEFAULT_OLLAMA_MODEL

@@ -66,3 +66,6 @@ bdesign/
 # Ignore all .md files except README
 *.md
 !README.md
+
+# Sub-path distros
+bubble-chart/*
