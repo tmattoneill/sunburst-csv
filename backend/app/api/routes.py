@@ -581,9 +581,20 @@ def clear_session():
             return jsonify({"error": "Missing session_id parameter"}), 400
 
         files_deleted = []
+        data_dir = Path(DATA_DIR)
+
+        # The metadata names the uploaded source file, so read it before the
+        # loop below deletes it.
+        source_file = None
+        metadata_path = data_dir / f'{session_id}_sunburst_data.json'
+        if metadata_path.exists():
+            try:
+                with open(metadata_path, 'r') as f:
+                    source_file = json.load(f).get('source_file')
+            except (OSError, json.JSONDecodeError) as e:
+                print(f"Warning: Could not read metadata to find source file: {e}")
 
         # Delete session-specific files in data directory
-        data_dir = Path(DATA_DIR)
         for pattern in [
             f'{session_id}_sunburst_data.json',
             f'{session_id}_data.csv',
@@ -596,26 +607,15 @@ def clear_session():
                 files_deleted.append(str(file_path))
                 print(f"Deleted: {file_path}")
 
-        # Delete uploaded files in raw directory
-        # Note: We're being conservative and only deleting files that match common patterns
-        # to avoid accidentally deleting important data
-        upload_dir = Path(UPLOAD_DIR)
-        if upload_dir.exists():
-            # Get list of uploaded files from metadata before deletion
-            metadata_path = data_dir / f'{session_id}_sunburst_data.json'
-            if metadata_path.exists():
-                try:
-                    with open(metadata_path, 'r') as f:
-                        metadata = json.load(f)
-                        source_file = metadata.get('source_file')
-                        if source_file:
-                            source_path = upload_dir / source_file
-                            if source_path.exists():
-                                os.remove(source_path)
-                                files_deleted.append(str(source_path))
-                                print(f"Deleted: {source_path}")
-                except Exception as e:
-                    print(f"Warning: Could not read metadata to find source file: {e}")
+        # Delete only the upload this session's metadata points at. The name is
+        # reduced to its last component so a bad metadata file can't reach
+        # outside the upload directory.
+        if source_file:
+            source_path = Path(UPLOAD_DIR) / Path(source_file).name
+            if source_path.exists():
+                os.remove(source_path)
+                files_deleted.append(str(source_path))
+                print(f"Deleted: {source_path}")
 
         return jsonify({
             "message": "Session data cleared successfully",
